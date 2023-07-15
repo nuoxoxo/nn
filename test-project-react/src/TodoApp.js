@@ -13,6 +13,7 @@ import { v4 as uuidv4 } from 'uuid'
 //    component or a custom React Hook function
  
 const LOCAL_STORAGE_KEY = 'TodoApp.todos'
+const BUTTON_FONT = 'Courier'
 
 function TodoApp () {
 
@@ -110,12 +111,16 @@ function TodoApp () {
         placeholder='type something here...'
       />
 
-      <button onClick={ handleAddTodo }>
+      <button onClick={ handleAddTodo } style={{ fontFamily: BUTTON_FONT }} >
         + JOB
       </button>
 
-      <button onClick={ handleClearTodos }>CLEAR</button>
+      <button onClick={ handleClearTodos } style={{ fontFamily: BUTTON_FONT }} >
+        - All
+      </button>
+
       {/* <div>0 Jobs Pending</div> */}
+
       <div>
         {todos.filter(item => !item.checked).length} Jobs Pending
       </div>
