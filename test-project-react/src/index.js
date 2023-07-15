@@ -9,5 +9,5 @@ import App from './App'
 // ReactDOM.render(<App />, document.getElementById('root'));
 
 // React 18
-const root = document.getElementById('root');
-ReactDOM.createRoot(root).render(<App />);
+ReactDOM.createRoot(document.getElementById('root'))
+        .render( <App /> );
