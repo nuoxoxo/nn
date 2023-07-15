@@ -72,7 +72,6 @@ function TodoApp () {
           checked: false}
       ]
     })
-
     console.log(name)
     todoNameRef.current.value = null // clear input field
   }
@@ -86,6 +85,7 @@ function TodoApp () {
 
 
   const handleKeyDown = (e) => {
+
     if (e.key === 'Enter') {
       handleAddTodo()
     }
@@ -93,6 +93,7 @@ function TodoApp () {
 
 
   var toggleTodo = (id) => {
+
     const newTodos = [...todos]
     const todo = newTodos.find(
       todo => todo.id === id
