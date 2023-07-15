@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function TodoList() {
+export default function TodoList(list) {
+  console.log(list)
   return (
     <div>
-      Hello, World!
+      Todo List
     </div>
   )
 }
