@@ -14,7 +14,7 @@ export default function Todo ({ todo, toggleTodo /*2nd arg is a func*/ }) {
           checked={ todo.checked }
           onChange={ handleTodoCheck }
         />
-        {todo.name}
+        { todo.name }
       </label>
     </div>
     // <div>{ todo }</div>

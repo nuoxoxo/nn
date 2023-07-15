@@ -3,12 +3,10 @@ import { useState } from 'react' // hook
 import { useRef } from 'react' // hook
 import { useEffect } from 'react' // hook
 import TodoList from './TodoList'
-
-// import uuid from 'uuid/'
-import { v4 as uuidv4 } from 'uuid'
+import { v4 as uuidv4 } from 'uuid' // ( depr : ) import uuid from 'uuid/'
 
 // const [todos, setTodos] = useState([])
-//    React Hook "useState" cannot be called at the top level. 
+//  - React Hook "useState" cannot be called at the top level. 
 //    React Hooks must be called in a React function 
 //    component or a custom React Hook function
  
@@ -23,8 +21,7 @@ const TODO_STYLE =
 
 function TodoApp () {
 
-  const [todos, setTodos] = useState([]) // Hook
-
+  const [todos, setTodos] = useState( [] ) // Hook
   /*
   const [todos, setTodos] = useState([
     {id: 1, name: '1', checked: 'true'},
@@ -33,8 +30,7 @@ function TodoApp () {
     {id: 4, name: 'xyz', checked: 'false'}
   ])
   */
-
-  const todoNameRef = useRef()
+  const todoNameRef = useRef() // Hook  
 
   useEffect(() => { // for loading
 
@@ -53,26 +49,21 @@ function TodoApp () {
 
   const handleAddTodo = (e) => {
 
-    if (todoNameRef.current == undefined)
+    if (todoNameRef.current == undefined || todoNameRef.current.value === '')
       return
-
     const name = todoNameRef.current.value
-    if (name === '')
-      return
-
     setTodos(prevTodos => {
-
       let id = uuidv4()
-      console.log(id)
       return [
-        ... prevTodos,
+        ...prevTodos,
         {
           id: id,
           name: name,
-          checked: false}
+          checked: false
+        }
       ]
     })
-    console.log(name)
+    // console.log(name)
     todoNameRef.current.value = null // clear input field
   }
 
@@ -98,7 +89,6 @@ function TodoApp () {
     const todo = newTodos.find(
       todo => todo.id === id
     )
-
     todo.checked = !todo.checked
     setTodos(newTodos)
   }
@@ -113,16 +103,22 @@ function TodoApp () {
 
       <input
         type='text'
-        ref={todoNameRef}
-        onKeyDown={handleKeyDown}
-        placeholder='type something here...'
+        ref={ todoNameRef }
+        onKeyDown={ handleKeyDown }
+        placeholder='type something ...'
       />
 
-      <button onClick={ handleAddTodo } style={{ fontFamily: BUTTON_FONT }} >
+      <button 
+        onClick={ handleAddTodo }
+        style={{ fontFamily: BUTTON_FONT }}
+      >
         + JOB
       </button>
 
-      <button onClick={ handleClearTodos } style={{ fontFamily: BUTTON_FONT }} >
+      <button
+        onClick={ handleClearTodos }
+        style={{ fontFamily: BUTTON_FONT }}
+      >
         - All
       </button>
 
@@ -131,10 +127,9 @@ function TodoApp () {
 
       {/* does not seem to work :: */}
       {/* <div style={{ TODO_STYLE }}> {} */}
-      <div>
-        {todos.filter(item => !item.checked).length} Jobs Pending
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;
+        { todos.filter(item => !item.checked).length } Jobs Pending
       </div>
-
     </>
   )
 }
