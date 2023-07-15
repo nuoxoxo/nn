@@ -1,13 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
-import TodoList from './TodoList'
+import TodoApp from './TodoApp'
 
 function App() {
 
   const [todos, setTodos] = useState(['1', '2', 'abc', 'xyz'])
   return (
     <>
-      <TodoList todos={todos}/>
+      <TodoApp todos={todos}/>
       <input type='text' placeholder='type something here...'/>
       <button>+ JOB</button>
       <button>CLEAR</button>

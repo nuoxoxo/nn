@@ -1,8 +1,8 @@
 import React from 'react'
 
-export default function TodoList( list ) {
+export default function TodoApp( todos ) {
 
-  console.log( list )
+  // console.log( todos )
   return (
     <div>
       Todo List
