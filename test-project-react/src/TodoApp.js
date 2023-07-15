@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react' // hook
 import { useRef } from 'react' // hook
 import { useEffect } from 'react' // hook
-import Todos from './Todos'
+import TodoList from './TodoList'
 
 // import uuid from 'uuid/'
 import { v4 as uuidv4 } from 'uuid'
@@ -97,8 +97,8 @@ function TodoApp () {
 
   return (
     <>
-      {/* <Todos todos={todos}/> */}
-      <Todos
+      {/* <TodoList todos={todos}/> */}
+      <TodoList
         todos={ todos }
         toggleTodo={ toggleTodo }
       />
