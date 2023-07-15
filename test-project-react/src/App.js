@@ -2,15 +2,16 @@ import React from 'react'
 import { useState } from 'react' // hook
 import { useRef } from 'react' // hook
 import { useEffect } from 'react' // hook
-// import uuid from 'uuid/'
-import { v4 as uuidv4 } from 'uuid'
 import Todos from './Todos'
 
-// const [todos, setTodos] = useState([])
-//  React Hook "useState" cannot be called at the top level. 
-//  React Hooks must be called in a React function 
-//  component or a custom React Hook function
+// import uuid from 'uuid/'
+import { v4 as uuidv4 } from 'uuid'
 
+// const [todos, setTodos] = useState([])
+//    React Hook "useState" cannot be called at the top level. 
+//    React Hooks must be called in a React function 
+//    component or a custom React Hook function
+ 
 const LOCAL_STORAGE_KEY = 'TodoApp.todos'
 
 function App () {
@@ -29,12 +30,15 @@ function App () {
   const todoNameRef = useRef()
 
   useEffect(() => { // for loading
+
     const storedTodos = JSON.parse(localStorage.getItem( LOCAL_STORAGE_KEY ))
     if (storedTodos)
       setTodos( storedTodos )
   }, [])
 
+
   useEffect(() => { // for storing
+
     localStorage.setItem(
       LOCAL_STORAGE_KEY,
       JSON.stringify( todos ))
@@ -50,6 +54,7 @@ function App () {
       return
 
     setTodos(prevTodos => {
+
       let id = uuidv4()
       console.log(id)
       return [
@@ -65,11 +70,20 @@ function App () {
     todoNameRef.current.value = null // clear input field
   }
 
+
+  function handleClearTodos() {
+
+    const newTodos = todos.filter(item => !item.checked)
+    setTodos(newTodos)
+  }
+
+
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       handleAddTodo()
     }
   }
+
 
   var toggleTodo = (id) => {
     const newTodos = [...todos]
@@ -100,8 +114,11 @@ function App () {
         + JOB
       </button>
 
-      <button>CLEAR</button>
-      <div>0 Jobs Pending</div>
+      <button onClick={ handleClearTodos }>CLEAR</button>
+      {/* <div>0 Jobs Pending</div> */}
+      <div>
+        {todos.filter(item => !item.checked).length} Jobs Pending
+      </div>
 
     </>
   )
