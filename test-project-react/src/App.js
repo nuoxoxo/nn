@@ -6,7 +6,10 @@ function App() {
   return (
     <>
       <TodoList />
-      <input type='text' />
+      <input type='text' placeholder='type something here...'/>
+      <button>+ job</button>
+      <button>clear</button>
+      <div>0 jobs pending</div>
     </>
   )
 
