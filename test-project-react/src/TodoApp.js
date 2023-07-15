@@ -14,6 +14,12 @@ import { v4 as uuidv4 } from 'uuid'
  
 const LOCAL_STORAGE_KEY = 'TodoApp.todos'
 const BUTTON_FONT = 'Courier'
+const TODO_STYLE = 
+  'display: flex; \
+  flex-direction: column; \
+  justify-content: center; \
+  align-items: center; \
+  min-height: 100vh;'
 
 function TodoApp () {
 
@@ -119,8 +125,11 @@ function TodoApp () {
         - All
       </button>
 
+      {/* Draft :: */}
       {/* <div>0 Jobs Pending</div> */}
 
+      {/* does not seem to work :: */}
+      {/* <div style={{ TODO_STYLE }}> {} */}
       <div>
         {todos.filter(item => !item.checked).length} Jobs Pending
       </div>
