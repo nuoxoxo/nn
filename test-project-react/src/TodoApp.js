@@ -14,7 +14,7 @@ import { v4 as uuidv4 } from 'uuid'
  
 const LOCAL_STORAGE_KEY = 'TodoApp.todos'
 
-function App () {
+function TodoApp () {
 
   const [todos, setTodos] = useState([]) // Hook
 
@@ -124,4 +124,4 @@ function App () {
   )
 }
 
-export default App;
+export default TodoApp;
