@@ -1,16 +1,6 @@
-var printer = ( node: any | null = null ) => {
-
-    if ( !node ) {
-
-        console.log()
-        return
-    }
-    console.log( node, ' - ', typeof node )
-}
-
+import { printer } from './_helpers'
 
 //  array
-
 
 const colors = ['red', 21, 'green', 42, 'blue', 'yellow', 'orange', 'purple']
 const [a, b, x, y] = colors
