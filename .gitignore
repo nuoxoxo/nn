@@ -2,7 +2,7 @@
 #
 
 
-
+*sandbox/*.js
 package-lock.json
 */public
 *ts/src/*.js
