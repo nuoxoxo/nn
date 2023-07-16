@@ -5,6 +5,8 @@ import { useEffect } from 'react' // hook
 import TodoList from './TodoList'
 import { v4 as uuidv4 } from 'uuid' // ( depr : ) import uuid from 'uuid/'
 
+import './styles.css'
+
 // const [todos, setTodos] = useState([])
 //  - React Hook "useState" cannot be called at the top level. 
 //    React Hooks must be called in a React function 
