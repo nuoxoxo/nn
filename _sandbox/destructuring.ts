@@ -1,21 +1,12 @@
 import { printer } from './_helpers'
 
-//  array, spread
+//  array, spread, default
 
 const colors = ['red', 21, 'green', 42, 'blue', 1024, 'yellow', 'orange', 'purple']
 const [ a, b, x, y, ... rest ] = colors
 
-/*
-printer( a )
-printer( b )
-printer( x )
-printer( y )
-*/
 printer( a, b, x, y )
-printer()
-
 printer( rest )
-printer()
 
 var doSomeMath = (a: number, b: number) => {
 
@@ -24,10 +15,7 @@ var doSomeMath = (a: number, b: number) => {
 
 const [ sum, mult, div = '(empty)' ] = doSomeMath(2, 3)
 
-printer( sum )
-printer( mult )
-printer( div )
-printer()
+printer( sum, mult, div )
 
 //  object
 
@@ -51,17 +39,10 @@ const { first,
         addr: { street, addr2 },
         addr: { street: st, addr2: a2 }} = person
 
-printer( first )
-printer( last )
-printer( city )
-printer( country )
-printer()
+printer( first, last, city, country )
 
-printer( street )
-printer( addr2 )
-printer()
+printer( street, addr2 )
 
-printer( st )
-printer( a2 )
-printer()
+printer( st, a2 )
+
 

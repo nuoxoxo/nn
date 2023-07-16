@@ -7,5 +7,6 @@ export const printer = ( ...nodes ) => {
     for (let node of nodes) {
         console.log( '(printing)\t', node, ` (${ typeof node })` )
     }
+    console.log()
 }
 
