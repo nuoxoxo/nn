@@ -4,6 +4,6 @@ export const printer = (node: any | null = null) => {
         console.log()
         return
     }
-    console.log( '(printing)\t', node, ' - ', typeof node )
+    console.log( '(printing)\t', node, ` (${ typeof node })` )
 }
 
