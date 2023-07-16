@@ -12,12 +12,7 @@ import { v4 as uuidv4 } from 'uuid' // ( depr : ) import uuid from 'uuid/'
  
 const LOCAL_STORAGE_KEY = 'TodoApp.todos'
 const BUTTON_FONT = 'Courier'
-const TODO_STYLE = 
-  'display: flex; \
-  flex-direction: column; \
-  justify-content: center; \
-  align-items: center; \
-  min-height: 100vh;'
+// const TODO_STYLE = 'display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh;'
 
 function TodoApp () {
 
@@ -49,7 +44,7 @@ function TodoApp () {
 
   const handleAddTodo = (e) => {
 
-    if (todoNameRef.current == undefined || todoNameRef.current.value === '')
+    if (todoNameRef.current === undefined || todoNameRef.current.value === '')
       return
     const name = todoNameRef.current.value
     setTodos(prevTodos => {
