@@ -5,13 +5,28 @@ import { printer } from './_helpers'
 const colors = ['red', 21, 'green', 42, 'blue', 1024, 'yellow', 'orange', 'purple']
 const [ a, b, x, y, ... rest ] = colors
 
+/*
 printer( a )
 printer( b )
 printer( x )
 printer( y )
+*/
+printer( a, b, x, y )
 printer()
 
 printer( rest )
+printer()
+
+var doSomeMath = (a: number, b: number) => {
+
+    return [ a + b, a * b, /* a / b */ ]
+}
+
+const [ sum, mult, div = '(empty)' ] = doSomeMath(2, 3)
+
+printer( sum )
+printer( mult )
+printer( div )
 printer()
 
 //  object

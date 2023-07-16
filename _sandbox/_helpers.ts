@@ -1,9 +1,11 @@
-export const printer = (node: any | null = null) => {
+export const printer = ( ...nodes ) => {
 
-    if ( !node ) {
+    if ( nodes.length === 0 ) {
         console.log()
         return
     }
-    console.log( '(printing)\t', node, ` (${ typeof node })` )
+    for (let node of nodes) {
+        console.log( '(printing)\t', node, ` (${ typeof node })` )
+    }
 }
 
