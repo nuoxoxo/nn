@@ -46,7 +46,7 @@ printer( street, addr2 )
 printer( st, a2 )
 
 
-// use ... to make 2 objects become 1
+//  use ... to make 2 objects become 1
 
 const animal = {
   first: 'Deau',
@@ -63,4 +63,15 @@ const animal = {
 const combined = { ...person, ...animal }
 
 printer( combined )
+
+
+//  destructuring an object in function
+
+var printCombined = ({ nameAnimal, namePerson }) => {
+
+    console.log( `Beast: ${ nameAnimal }\nMoral: ${ namePerson }\n` )
+}
+
+
+printCombined( combined )
 
