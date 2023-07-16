@@ -2,8 +2,8 @@
 #
 
 package-lock.json
-test-project-react-1/public
-test-project-react-ts/src/*.js
+*/public
+*ts/src/*.js
 
 # dependencies
 /node_modules
