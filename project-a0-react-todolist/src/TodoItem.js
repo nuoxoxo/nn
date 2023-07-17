@@ -8,6 +8,7 @@ export default function TodoItem ({ todo, toggleTodo /*2nd arg is a func*/ }) {
   }
 
   return (
+
     <div>
       <label>
         <input
@@ -18,6 +19,5 @@ export default function TodoItem ({ todo, toggleTodo /*2nd arg is a func*/ }) {
         { todo.name }
       </label>
     </div>
-    // <div>{ todo }</div>
   )
 }

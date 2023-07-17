@@ -18,7 +18,6 @@ const LOCAL_STORAGE_KEY = 'TodoApp.todos'
 
 function TodoApp () {
 
-  const [todos, setTodos] = useState( [] ) // Hook
   /*
   const [todos, setTodos] = useState([
     {id: 1, name: '1', checked: 'true'},
@@ -27,7 +26,9 @@ function TodoApp () {
     {id: 4, name: 'xyz', checked: 'false'}
   ])
   */
-  const todoNameRef = useRef() // Hook  
+
+  const [todos, setTodos] = useState( [] )  //  Hook
+  const todoNameRef = useRef()  //  Hook  
 
   useEffect(() => { // for loading
 
@@ -92,6 +93,17 @@ function TodoApp () {
 
   return (
     <>
+
+      {/* Draft :: */}
+      {/* <div>0 Jobs Pending</div> */}
+
+      {/* does not seem to work :: */}
+      {/* <div style={{ TODO_STYLE }}> {} */}
+      <div>&nbsp;
+        {/* &nbsp;&nbsp;&nbsp;&nbsp; */}
+        { todos.filter(item => !item.checked).length } Jobs Pending
+      </div>
+
       <input
         type='text'
         ref={ todoNameRef }
@@ -113,20 +125,12 @@ function TodoApp () {
         - All
       </button>
 
+
+
       <TodoList
         todos={ todos }
         toggleTodo={ toggleTodo }
       />
-
-      {/* Draft :: */}
-      {/* <div>0 Jobs Pending</div> */}
-
-      {/* does not seem to work :: */}
-      {/* <div style={{ TODO_STYLE }}> {} */}
-      <div>&nbsp;
-        {/* &nbsp;&nbsp;&nbsp;&nbsp; */}
-        { todos.filter(item => !item.checked).length } Jobs Pending
-      </div>
     </>
   )
 }

@@ -5,13 +5,16 @@ export default function TodoList ({ todos, toggleTodo }) {
 
   return (
 
-    todos.map(item => {
-      // console.log(item)
-      return <TodoItem 
-        key = { item.id }
-        todo = { item }
-        toggleTodo = { toggleTodo }
-      />
-    })
+    <div className='todolist'> {
+      todos.map(item =>
+        // console.log(item)
+        <TodoItem
+          key = { item.id }
+          todo = { item }
+          toggleTodo = { toggleTodo }
+        />
+      )
+    }
+    </div>
   )
 }

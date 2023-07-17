@@ -3,18 +3,26 @@ body {
     background-color: black;
     color: white;
     
-    /* transform: scale(1.25);
-    transform-origin: top left; */
+    /* transform: scale(1.25); */
+    /* transform-origin: top left; */
+    display: flex;
+    justify-content: center; /* center all children horizontally */
+    align-items: center; /* center all children vertically */
+    /* height: 100vh; */
 }
 
 :root {
 
     --FONT-SIZE: 42px;
     --FONT-SIZE-HALF: calc(var(--FONT-SIZE) / 2);
-    --FONT-SIZE-QUARTER: calc(var(--FONT-SIZE) / 4);
-    --FONT-SIZE-X2: 256px;
+    --FONT-SIZE-QUART: calc(var(--FONT-SIZE) / 4);
+    --FONT-SIZE-PLACEHOLDER: 16px;
     --FONT-BUTTON: 'Courier New', 'Inconsolata', 'Consolas';
-    --FONT-TEXT  : 'Courier', 'Inconsolata', 'Menlo';
+    --FONT-TEXT: 'Courier', 'Inconsolata', 'Menlo';
+    --MARGIN-S: .2em;
+    --WIDTH-M: 192px;
+
+
 }
 
 #root {
@@ -24,11 +32,30 @@ body {
     margin: 1em;
     font-family: var(--FONT-TEXT);
     font-size: var(--FONT-SIZE);
+
+    width: 50vw;
+}
+
+button {
+
+    margin-left: var(--MARGIN-S);
+    margin-right: var(--MARGIN-S);
+    font-family : var(--FONT-BUTTON);
+    font-size : var(--FONT-SIZE-HALF);
+
 }
 
 input[type='text'] {
 
-    height : var(--FONT-SIZE-HALF);
+    height: calc(var(--FONT-SIZE-HALF) + 4px);
+    width : var(--WIDTH-M);
+    margin: calc(var(--MARGIN-S) * 2);
+}
+
+::placeholder {
+
+    font-family : var(--FONT-BUTTON);
+    font-size: var(--FONT-SIZE-PLACEHOLDER);
 }
 
 input[type='checkbox'] {
@@ -38,8 +65,14 @@ input[type='checkbox'] {
     margin-right: 3em;
 }
 
-button {
+.todolist {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+}
 
-    font-family : var(--FONT-BUTTON);
-    font-size : var(--FONT-SIZE-HALF);    
+.todolist > div {
+
+    display: flex;
+    padding-left: var(--MARGIN-S);
 }
