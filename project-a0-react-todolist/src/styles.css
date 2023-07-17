@@ -22,6 +22,9 @@ body {
     --BUTTON-SIZE: 36px;
     --MARGIN-S: .2em;
     --WIDTH-M: 192px;
+    --TIME-TRANS: 0.3s;
+    --RED-PV: palevioletred;
+    --RED-TQ: paleturquoise;
 }
 
 #root {
@@ -104,39 +107,28 @@ input[type='checkbox'] {
 
 .btn-delete-job {
 
-    color: palevioletred
+    color: var(--RED-PV)
 }
 
 .todoitem-text {
 
-    color: paleturquoise;
+    color: var(--RED-TQ);
 }
 
-.btn-clear-job:hover::after {
-    content: "This is a clear job button!";
+.btn-add-job:hover {
 
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #f0f0f0;
-    color: #333;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 12px;
+    background-color:var(--RED-PV);
+    transition: var(--TIME-TRANS);
+    padding: 1px;
+    border-radius: 50px;
     opacity: 0.8;
 }
 
-.btn-add-job:hover::after {
-    content: "This is a add job button!";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #f0f0f0;
-    color: #333;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 12px;
+.btn-clear-job:hover {
+
+    background-color: var(--RED-TQ);
+    transition: var(--TIME-TRANS);
+    padding: 1px;
+    border-radius: 50px;
     opacity: 0.8;
 }
