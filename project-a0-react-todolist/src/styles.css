@@ -8,7 +8,7 @@ body {
     display: flex;
     justify-content: center; /* center all children horizontally */
     align-items: center; /* center all children vertically */
-    /* height: 100vh; */
+    height: 100vh;
 }
 
 :root {
@@ -19,10 +19,9 @@ body {
     --FONT-SIZE-PLACEHOLDER: 16px;
     --FONT-BUTTON: 'Courier New', 'Inconsolata', 'Consolas';
     --FONT-TEXT: 'Courier', 'Inconsolata', 'Menlo';
+    --BUTTON-SIZE: 36px;
     --MARGIN-S: .2em;
     --WIDTH-M: 192px;
-
-
 }
 
 #root {
@@ -40,9 +39,14 @@ button {
 
     margin-left: var(--MARGIN-S);
     margin-right: var(--MARGIN-S);
-    font-family : var(--FONT-BUTTON);
     font-size : var(--FONT-SIZE-HALF);
+    font-family : var(--FONT-BUTTON);
+    /* border-radius: 2px; */
+}
 
+.btn-twin {
+    height: var(--BUTTON-SIZE);
+    width: var(--BUTTON-SIZE);
 }
 
 input[type='text'] {
@@ -50,12 +54,12 @@ input[type='text'] {
     height: calc(var(--FONT-SIZE-HALF) + 4px);
     width : var(--WIDTH-M);
     margin: calc(var(--MARGIN-S) * 2);
-}
+    padding-top: calc(var(--MARGIN-S) * 2 + 2px);
 
-::placeholder {
-
+    color: cornflowerblue;
     font-family : var(--FONT-BUTTON);
     font-size: var(--FONT-SIZE-PLACEHOLDER);
+    
 }
 
 input[type='checkbox'] {
@@ -67,6 +71,14 @@ input[type='checkbox'] {
     margin-top: 1em;
     margin-bottom: 1em;
     /* margin-right: 3em; */
+
+}
+
+::placeholder {
+
+    font-family : var(--FONT-BUTTON);
+    font-size: var(--FONT-SIZE-PLACEHOLDER);
+    font-weight: 100;
 }
 
 .todolist {
@@ -98,4 +110,33 @@ input[type='checkbox'] {
 .todoitem-text {
 
     color: paleturquoise;
+}
+
+.btn-clear-job:hover::after {
+    content: "This is a clear job button!";
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.btn-add-job:hover::after {
+    content: "This is a add job button!";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0.8;
 }
