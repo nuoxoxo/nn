@@ -1,16 +1,22 @@
 import React from 'react'
-import Todo from './Todo'
+import TodoItem from './TodoItem'
 
-export default function TodoList ({ todos, toggleTodo }) {
+export default function TodoList ({ 
+  todos, toggleTodo, /*Added a DELETE button*/ deleteTodo }) {
 
   return (
-    todos.map(item => {
-      console.log(item)
-      return <Todo 
-        key = { item.id }
-        todo = { item }
-        toggleTodo = { toggleTodo }
-      />
-    })
+
+    <div className='todolist'> {
+      todos.map(item =>
+
+        <TodoItem
+          key = { item.id }
+          todo = { item }
+          toggleTodo = { toggleTodo }
+          deleteTodo = { deleteTodo } // Added a DELETE button
+        />
+      )
+    }
+    </div>
   )
 }

@@ -1,10 +1,10 @@
 import React from 'react'
-import { useState } from 'react' // hook
-import { useRef } from 'react' // hook
-import { useEffect } from 'react' // hook
-import TodoList from './TodoList'
-import { v4 as uuidv4 } from 'uuid' // ( depr : ) import uuid from 'uuid/'
+import { useState, useRef, useEffect } from 'react' // hook
 
+import { v4 as uuidv4 } from 'uuid'
+// ( depr : ) import uuid from 'uuid/'
+
+import TodoList from './TodoList'
 import './styles.css'
 
 // const [todos, setTodos] = useState([])
@@ -13,12 +13,9 @@ import './styles.css'
 //    component or a custom React Hook function
  
 const LOCAL_STORAGE_KEY = 'TodoApp.todos'
-const BUTTON_FONT = 'Courier'
-// const TODO_STYLE = 'display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh;'
 
 function TodoApp () {
 
-  const [todos, setTodos] = useState( [] ) // Hook
   /*
   const [todos, setTodos] = useState([
     {id: 1, name: '1', checked: 'true'},
@@ -27,7 +24,9 @@ function TodoApp () {
     {id: 4, name: 'xyz', checked: 'false'}
   ])
   */
-  const todoNameRef = useRef() // Hook  
+
+  const [todos, setTodos] = useState( [] )  //  Hook
+  const todoNameRef = useRef()  //  Hook  
 
   useEffect(() => { // for loading
 
@@ -79,24 +78,35 @@ function TodoApp () {
     }
   }
 
+  var toggleTodo = ( id ) => {
 
-  var toggleTodo = (id) => {
-
-    const newTodos = [...todos]
-    const todo = newTodos.find(
+    const arr = [ ...todos ]
+    const todo = arr.find(
       todo => todo.id === id
     )
     todo.checked = !todo.checked
-    setTodos(newTodos)
+    setTodos( arr )
   }
 
+
+  // NEW !!! - Added a DELETE button
+  var deleteTodo = ( id ) => {
+    console.log( 'click' )
+    const arr = [ ...todos ].filter( job => job.id !== id )
+    setTodos(arr)
+  }
+
+
   return (
+
     <>
-      {/* <TodoList todos={todos}/> */}
-      <TodoList
-        todos={ todos }
-        toggleTodo={ toggleTodo }
-      />
+
+      <div className='pending-jobs-counter'>
+        <div>
+          {/* &nbsp;&nbsp;&nbsp;&nbsp; */}
+          { todos.filter(item => !item.checked).length } Jobs Pending
+        </div>
+      </div>
 
       <input
         type='text'
@@ -105,28 +115,18 @@ function TodoApp () {
         placeholder='type something ...'
       />
 
-      <button 
-        onClick={ handleAddTodo }
-        style={{ fontFamily: BUTTON_FONT }}
-      >
-        + JOB
+      <button onClick={ handleAddTodo } className='btn-add-job btn-twin'>
+        ⊹
+      </button>
+      <button onClick={ handleClearTodos } className='btn-clear-job btn-twin'>
+        ∅
       </button>
 
-      <button
-        onClick={ handleClearTodos }
-        style={{ fontFamily: BUTTON_FONT }}
-      >
-        - All
-      </button>
-
-      {/* Draft :: */}
-      {/* <div>0 Jobs Pending</div> */}
-
-      {/* does not seem to work :: */}
-      {/* <div style={{ TODO_STYLE }}> {} */}
-      <div>&nbsp;&nbsp;&nbsp;&nbsp;
-        { todos.filter(item => !item.checked).length } Jobs Pending
-      </div>
+      <TodoList
+        todos={ todos }
+        toggleTodo={ toggleTodo }
+        deleteTodo={ deleteTodo }
+      />
     </>
   )
 }
