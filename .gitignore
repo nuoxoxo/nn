@@ -4,11 +4,11 @@
 
 *sandbox/*.js
 package-lock.json
-*/public
+*/public/*
+!*/public/index.html
 *ts/src/*.js
 *.eslintrc.cjs
 *.svg
-
 
 
 # dependencies
