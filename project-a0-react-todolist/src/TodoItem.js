@@ -1,8 +1,9 @@
 import React from 'react'
 
-export default function Todo ({ todo, toggleTodo /*2nd arg is a func*/ }) {
+export default function TodoItem ({ todo, toggleTodo /*2nd arg is a func*/ }) {
 
   var handleTodoCheck = () => {
+
     toggleTodo(todo.id)
   }
 

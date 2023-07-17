@@ -1,6 +1,45 @@
 body {
+
     background-color: black;
     color: white;
-    transform: scale(1.25);
-    transform-origin: top left;
+    
+    /* transform: scale(1.25);
+    transform-origin: top left; */
+}
+
+:root {
+
+    --FONT-SIZE: 42px;
+    --FONT-SIZE-HALF: calc(var(--FONT-SIZE) / 2);
+    --FONT-SIZE-QUARTER: calc(var(--FONT-SIZE) / 4);
+    --FONT-SIZE-X2: 256px;
+    --FONT-BUTTON: 'Courier New', 'Inconsolata', 'Consolas';
+    --FONT-TEXT  : 'Courier', 'Inconsolata', 'Menlo';
+}
+
+#root {
+
+    min-height: calc(100vh - 3rem);
+    text-align: center;
+    margin: 1em;
+    font-family: var(--FONT-TEXT);
+    font-size: var(--FONT-SIZE);
+}
+
+input[type='text'] {
+
+    height : var(--FONT-SIZE-HALF);
+}
+
+input[type='checkbox'] {
+
+    transform: scale(2);
+    margin: 1em;
+    margin-right: 3em;
+}
+
+button {
+
+    font-family : var(--FONT-BUTTON);
+    font-size : var(--FONT-SIZE-HALF);    
 }

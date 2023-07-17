@@ -13,7 +13,7 @@ import './styles.css'
 //    component or a custom React Hook function
  
 const LOCAL_STORAGE_KEY = 'TodoApp.todos'
-const BUTTON_FONT = 'Courier'
+// const BUTTON_FONT = 'Courier'
 // const TODO_STYLE = 'display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh;'
 
 function TodoApp () {
@@ -92,12 +92,6 @@ function TodoApp () {
 
   return (
     <>
-      {/* <TodoList todos={todos}/> */}
-      <TodoList
-        todos={ todos }
-        toggleTodo={ toggleTodo }
-      />
-
       <input
         type='text'
         ref={ todoNameRef }
@@ -107,24 +101,30 @@ function TodoApp () {
 
       <button 
         onClick={ handleAddTodo }
-        style={{ fontFamily: BUTTON_FONT }}
+        // style={{ fontFamily: BUTTON_FONT }}
       >
         + JOB
       </button>
 
       <button
         onClick={ handleClearTodos }
-        style={{ fontFamily: BUTTON_FONT }}
+        // style={{ fontFamily: BUTTON_FONT }}
       >
         - All
       </button>
+
+      <TodoList
+        todos={ todos }
+        toggleTodo={ toggleTodo }
+      />
 
       {/* Draft :: */}
       {/* <div>0 Jobs Pending</div> */}
 
       {/* does not seem to work :: */}
       {/* <div style={{ TODO_STYLE }}> {} */}
-      <div>&nbsp;&nbsp;&nbsp;&nbsp;
+      <div>&nbsp;
+        {/* &nbsp;&nbsp;&nbsp;&nbsp; */}
         { todos.filter(item => !item.checked).length } Jobs Pending
       </div>
     </>
