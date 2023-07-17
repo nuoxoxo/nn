@@ -115,10 +115,16 @@ function TodoApp () {
         placeholder='type something ...'
       />
 
-      <button onClick={ handleAddTodo } className='btn-add-job btn-twin'>
+      <button
+        onClick={ handleAddTodo }
+        title="Click here to add a job."
+        className='btn-add-job btn-twin'>
         ⊹
       </button>
-      <button onClick={ handleClearTodos } className='btn-clear-job btn-twin'>
+      <button
+        onClick={ handleClearTodos }
+        className='btn-clear-job btn-twin'
+        title="Click here to clear finished jobs.">
         ∅
       </button>
 
