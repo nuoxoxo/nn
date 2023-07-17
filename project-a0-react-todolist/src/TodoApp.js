@@ -1,10 +1,10 @@
 import React from 'react'
-import { useState } from 'react' // hook
-import { useRef } from 'react' // hook
-import { useEffect } from 'react' // hook
-import TodoList from './TodoList'
-import { v4 as uuidv4 } from 'uuid' // ( depr : ) import uuid from 'uuid/'
+import { useState, useRef, useEffect } from 'react' // hook
 
+import { v4 as uuidv4 } from 'uuid'
+// ( depr : ) import uuid from 'uuid/'
+
+import TodoList from './TodoList'
 import './styles.css'
 
 // const [todos, setTodos] = useState([])
@@ -13,8 +13,6 @@ import './styles.css'
 //    component or a custom React Hook function
  
 const LOCAL_STORAGE_KEY = 'TodoApp.todos'
-// const BUTTON_FONT = 'Courier'
-// const TODO_STYLE = 'display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh;'
 
 function TodoApp () {
 
@@ -94,14 +92,11 @@ function TodoApp () {
   return (
     <>
 
-      {/* Draft :: */}
-      {/* <div>0 Jobs Pending</div> */}
-
-      {/* does not seem to work :: */}
-      {/* <div style={{ TODO_STYLE }}> {} */}
-      <div>&nbsp;
-        {/* &nbsp;&nbsp;&nbsp;&nbsp; */}
-        { todos.filter(item => !item.checked).length } Jobs Pending
+      <div className='pending-jobs-counter'>
+        <div>
+          {/* &nbsp;&nbsp;&nbsp;&nbsp; */}
+          { todos.filter(item => !item.checked).length } Jobs Pending
+        </div>
       </div>
 
       <input
@@ -113,14 +108,12 @@ function TodoApp () {
 
       <button 
         onClick={ handleAddTodo }
-        // style={{ fontFamily: BUTTON_FONT }}
       >
         + JOB
       </button>
 
       <button
         onClick={ handleClearTodos }
-        // style={{ fontFamily: BUTTON_FONT }}
       >
         - All
       </button>
