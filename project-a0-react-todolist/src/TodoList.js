@@ -1,7 +1,8 @@
 import React from 'react'
 import TodoItem from './TodoItem'
 
-export default function TodoList ({ todos, toggleTodo }) {
+export default function TodoList ({ 
+  todos, toggleTodo, /*Added a DELETE button*/ deleteTodo }) {
 
   return (
 
@@ -12,6 +13,7 @@ export default function TodoList ({ todos, toggleTodo }) {
           key = { item.id }
           todo = { item }
           toggleTodo = { toggleTodo }
+          deleteTodo = { deleteTodo } // Added a DELETE button
         />
       )
     }

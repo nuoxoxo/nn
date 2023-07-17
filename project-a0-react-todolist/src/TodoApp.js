@@ -79,15 +79,24 @@ function TodoApp () {
   }
 
 
-  var toggleTodo = (id) => {
+  var toggleTodo = ( id ) => {
 
-    const newTodos = [...todos]
-    const todo = newTodos.find(
+    const arr = [ ...todos ]
+    const todo = arr.find(
       todo => todo.id === id
     )
     todo.checked = !todo.checked
-    setTodos(newTodos)
+    setTodos( arr )
   }
+
+
+  // NEW !!! - Added a DELETE button
+  var deleteTodo = ( id ) => {
+    console.log( 'click' )
+    const arr = [ ...todos ].filter( job => job.id !== id )
+    setTodos(arr)
+  }
+
 
   return (
     <>
@@ -123,6 +132,7 @@ function TodoApp () {
       <TodoList
         todos={ todos }
         toggleTodo={ toggleTodo }
+        deleteTodo={ deleteTodo }
       />
     </>
   )

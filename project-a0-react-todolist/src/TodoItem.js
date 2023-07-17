@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function TodoItem ({ todo, toggleTodo /*2nd arg is a func*/ }) {
+export default function TodoItem ({ todo, toggleTodo, /*Added a DELETE button*/ deleteTodo }) {
 
   var handleTodoCheck = () => {
 
@@ -10,6 +10,11 @@ export default function TodoItem ({ todo, toggleTodo /*2nd arg is a func*/ }) {
   return (
 
     <div>
+
+      <button onClick={ () => deleteTodo( todo.id )} className="btn-delete-job">
+        - Del
+      </button>
+
       <label>
         <input
           type='checkbox'

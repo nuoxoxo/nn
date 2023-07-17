@@ -10,5 +10,5 @@ import TodoApp from './TodoApp'
 // ReactDOM.render(<TodoApp />, document.getElementById('root'));
 
 // React 18
-ReactDOM.createRoot(document.getElementById('root'))
+ReactDOM.createRoot( document.getElementById('root') )
         .render( <TodoApp /> );
