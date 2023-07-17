@@ -8,7 +8,7 @@ export default function TodoList ({
 
     <div className='todolist'> {
       todos.map(item =>
-        // console.log(item)
+
         <TodoItem
           key = { item.id }
           todo = { item }

@@ -61,8 +61,12 @@ input[type='text'] {
 input[type='checkbox'] {
 
     transform: scale(2);
-    margin: 1em;
-    margin-right: 3em;
+    transform-origin: bottom;
+
+    margin: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    /* margin-right: 3em; */
 }
 
 .todolist {
@@ -75,5 +79,23 @@ input[type='checkbox'] {
 .todolist > div {
 
     display: flex;
-    padding-left: var(--MARGIN-S);
+    /* padding-left: var(--MARGIN-S); */
+}
+
+.todolist > div > button {
+
+    height: default;
+    align-self: center;
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+
+.btn-delete-job {
+
+    color: palevioletred
+}
+
+.todoitem-text {
+
+    color: paleturquoise;
 }

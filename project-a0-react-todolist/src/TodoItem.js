@@ -9,19 +9,18 @@ export default function TodoItem ({ todo, toggleTodo, /*Added a DELETE button*/ 
 
   return (
 
-    <div>
+    <div className='todoitem'>
 
-      <button onClick={ () => deleteTodo( todo.id )} className="btn-delete-job">
-        - Del
-      </button>
-
+      <button onClick={ () => deleteTodo( todo.id )} className="btn-delete-job"> ✖ </button>
       <label>
         <input
           type='checkbox'
           checked={ todo.checked }
           onChange={ handleTodoCheck }
         />
-        { todo.name }
+        <span className='todoitem-text'>
+          { todo.name }
+        </span>
       </label>
     </div>
   )

@@ -78,7 +78,6 @@ function TodoApp () {
     }
   }
 
-
   var toggleTodo = ( id ) => {
 
     const arr = [ ...todos ]
@@ -99,6 +98,7 @@ function TodoApp () {
 
 
   return (
+
     <>
 
       <div className='pending-jobs-counter'>
@@ -126,8 +126,6 @@ function TodoApp () {
       >
         - All
       </button>
-
-
 
       <TodoList
         todos={ todos }
