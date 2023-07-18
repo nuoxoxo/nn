@@ -43,7 +43,7 @@ function TodoApp () {
       JSON.stringify( todos ))
   }, [todos])
 
-  const handleAddTodo = (e) => {
+  const handleAddTodo = () => {
 
     if (todoNameRef.current === undefined || todoNameRef.current.value === '')
       return
