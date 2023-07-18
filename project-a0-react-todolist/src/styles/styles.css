@@ -35,7 +35,8 @@ body {
     font-family: var(--FONT-TEXT);
     font-size: var(--FONT-SIZE);
 
-    width: calc(100vw / 3 + 128px);
+    /* width: calc(100vw / 3 + 128px); */
+    width: calc(100vw / 3)
 }
 
 button {
@@ -48,6 +49,7 @@ button {
 }
 
 .btn-twin {
+
     height: var(--BUTTON-SIZE);
     width: var(--BUTTON-SIZE);
 }

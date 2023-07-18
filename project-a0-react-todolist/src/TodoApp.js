@@ -101,6 +101,9 @@ function TodoApp () {
 
     <>
 
+      {/* Render */}
+      {/* display "n pending jobs" */}
+
       <div className='pending-jobs-counter'>
         <div>
           {/* &nbsp;&nbsp;&nbsp;&nbsp; */}
@@ -108,12 +111,20 @@ function TodoApp () {
         </div>
       </div>
 
+
+      {/* Render */}
+      {/* 2nd row, Left : input field */}
+
       <input
         type='text'
         ref={ todoNameRef }
         onKeyDown={ handleKeyDown }
         placeholder='type something ...'
       />
+
+
+      {/* Render */}
+      {/* 2nd row, Right : two buttons */}
 
       <button
         onClick={ handleAddTodo }
@@ -128,11 +139,16 @@ function TodoApp () {
         ∅
       </button>
 
+
+      {/* Render */}
+      {/* Todo list */}
+
       <TodoList
         todos={ todos }
         toggleTodo={ toggleTodo }
         deleteTodo={ deleteTodo }
       />
+
     </>
   )
 }
