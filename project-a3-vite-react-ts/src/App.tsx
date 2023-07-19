@@ -1,10 +1,10 @@
-import Tube from './Tube'
+import NamePrinter from './NamePrinter'
 
 function App() {
   return (
     <>
-      <h1>Hello, World!</h1>
-      <div><Tube></Tube></div>
+      <div className='tube'>Hello World</div>
+      <div><NamePrinter /></div>
     </>
   )
 }
