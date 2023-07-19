@@ -1,0 +1,19 @@
+:root {
+
+    --FONT-SIZE: 42px;
+}
+
+body {
+
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center; /* center all children horizontally */
+    align-items: center; /* center all children vertically */
+    height: 100vh;
+}
+
+.tube {
+    text-align: center;
+    font-size: var(--FONT-SIZE);
+}
