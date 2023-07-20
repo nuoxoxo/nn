@@ -1,5 +1,5 @@
 :root {
-
+    --FONT-TEXT: 'Courier';
     --FONT-SIZE: 42px;
 }
 
@@ -11,6 +11,7 @@ body {
     justify-content: center; /* center all children horizontally */
     align-items: center; /* center all children vertically */
     height: 100vh;
+    font-family: var(--FONT-TEXT);
 }
 
 .tube {
