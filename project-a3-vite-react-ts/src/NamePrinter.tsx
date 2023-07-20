@@ -16,15 +16,17 @@ var NamePrinter = () => { // PascalCasing: a react convention
     ]
 
     const name: string = names[ Math.floor(Math.random() * names.length) ]
-    const colorOffset: number = 42
-    const colorOffsetInverted: number = 255 - colorOffset
+    const offset: number = 42
+    const offsetInverted: number = 255 - offset
     const tubeColor = {
-        color: `rgb(${Math.round(Math.random() * colorOffsetInverted + colorOffset)},
-                    ${Math.round(Math.random() * colorOffsetInverted + colorOffset)},
-                    ${Math.round(Math.random() * colorOffsetInverted + colorOffset)},
-                    ${1})`,
+        color: 'rgb(' 
+            + Math.round(Math.random() * offsetInverted + offset) + ',' 
+            + Math.round(Math.random() * offsetInverted + offset) + ',' 
+            + Math.round(Math.random() * offsetInverted + offset) + ','
+            + '1)',
         fontWeight: 'bold',
     };
+    console.log(tubeColor['color'])
 
     return <span className='tube' style={ tubeColor }>{name}</span>
 };
