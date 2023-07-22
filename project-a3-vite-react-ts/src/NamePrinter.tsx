@@ -1,4 +1,4 @@
-import React, { useState } from 'react' // Import useState hook
+import { useState } from 'react' // Import useState hook
 
 var NamePrinter = () => {
 
@@ -32,7 +32,7 @@ var NamePrinter = () => {
                 + Math.round(Math.random() * offsetInverted + offset) + ','
                 + '1)',
             fontWeight: 'bold',
-            userSelect: 'none',
+            // userSelect: 'none',
             cursor: 'pointer',
         }
     }
@@ -50,7 +50,7 @@ var NamePrinter = () => {
         <span
             onClick={handleOnClick}
             className='tube'
-            style="{ tubeColor }">
+            style={ tubeColor }>
             { name }
         </span>
     )
