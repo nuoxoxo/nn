@@ -34,13 +34,13 @@ function App() {
   
   const group: GroupBTN = {
     Top: (
-      <div><button onClick={reset}>⏼</button>
-      <button onClick={increment}>⍤</button></div>
+      <div><button title='reset to zero' onClick={reset} >⏼</button>
+      <button title='increment' onClick={increment}>⍤</button></div>
     ),
     Bottom: (
       <div>
-        <button onClick={random}>⏻</button>
-        <button onClick={decrement}>⍥</button>
+        <button title='reset to a random number' onClick={random}>⏻</button>
+        <button title='decrement' onClick={decrement}>⍥</button>
       </div>
     ),
   }
