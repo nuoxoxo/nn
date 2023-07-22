@@ -50,7 +50,7 @@ var NamePrinter = () => {
         <span
             onClick={handleOnClick}
             className='tube'
-            style={ tubeColor }>
+            style="{ tubeColor }">
             { name }
         </span>
     )
