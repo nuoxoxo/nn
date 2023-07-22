@@ -10,15 +10,22 @@ function App() {
   let [ count, setCount ] = useState( start )
   let [ css, setCSS ] = useState( startCSS )
 
+
+  //  btn functionality
+
+  let reset = () => { setCount( 0 ) }
+
   let increment = () => { setCount( count += GetRandomPosShort() ) }
   let decrement = () => { setCount( count -= GetRandomPosShort() ) }
-  let reset = () => { setCount( 0 ) }
 
   let random = () => {
 
     setCount( Math.floor(GetRandomPosShort()) )
     setCSS( GetRandomColorCSS() )
   }
+
+
+  //  interface
 
   interface GroupBTN {
     Top: JSX.Element
@@ -27,11 +34,8 @@ function App() {
   
   const group: GroupBTN = {
     Top: (
-      <div>
-        <button onClick={reset}>⏼</button>
-        <button onClick={increment}>⍤</button>
-        
-      </div>
+      <div><button onClick={reset}>⏼</button>
+      <button onClick={increment}>⍤</button></div>
     ),
     Bottom: (
       <div>

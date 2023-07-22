@@ -1,6 +1,8 @@
 const GetRandomColorCSS = () => {
+
     const offset = 42
     const offsetInverted = 255 - offset
+
     return {
         color: 'rgb('
             + Math.round(Math.random() * offsetInverted + offset) + ','
@@ -13,10 +15,12 @@ const GetRandomColorCSS = () => {
 }
 
 const GetRandomPosShort = () => {
+
     return Math.floor(Math.random() * 32768)
 }
 
 const GetRandomPosInt = () => {
+
     return Math.floor(Math.random() * 2147483648)
 }
 
