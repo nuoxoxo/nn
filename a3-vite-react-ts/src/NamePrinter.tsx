@@ -4,16 +4,16 @@ var NamePrinter = () => {
 
     const names = [
         'Wahou !',
-        'L\’ultima notte di Amore (Dernière nuit à Milan)',
-        'The Pope\'s Exorcist (L\'exorciste du Vatican)',
+        'L\’ultima notte di Amore',
+        'The Pope\'s Exorcist',
         'Le principal',
-        'About My Father (Mon père et moi)',
+        'About My Father',
         'Sick of Myself',
-        'The Boogeyman (Le Croque-Mitaine)',
+        'The Boogeyman',
         'L\'amour et les forêts',
         'Umami',
         'Jeanne du Barry',
-        'No Hard Feelings (Le Challenge)',
+        'No Hard Feelings',
         'Asteroid City'
     ]
 
@@ -50,6 +50,7 @@ var NamePrinter = () => {
         <span
             onClick={handleOnClick}
             className='tube'
+            title='click me !!!'
             style={ tubeColor }>
             { name }
         </span>
