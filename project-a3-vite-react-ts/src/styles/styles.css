@@ -12,9 +12,11 @@ body {
     align-items: center; /* center all children vertically */
     height: 100vh;
     font-family: var(--FONT-TEXT);
+    /* user-select: 'none'; */
 }
 
 .tube {
     text-align: center;
     font-size: var(--FONT-SIZE);
+    user-select: none;
 }
