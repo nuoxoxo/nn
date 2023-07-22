@@ -8,9 +8,16 @@ const GetRandomColorCSS = () => {
             + Math.round(Math.random() * offsetInverted + offset) + ','
             + '1)',
         fontWeight: 'bold',
-        userSelect: 'none',
         cursor: 'pointer',
     }
 }
 
-export default GetRandomColorCSS
+const GetRandomPosShort = () => {
+    return Math.floor(Math.random() * 32768)
+}
+
+const GetRandomPosInt = () => {
+    return Math.floor(Math.random() * 2147483648)
+}
+
+export { GetRandomColorCSS, GetRandomPosShort, GetRandomPosInt }

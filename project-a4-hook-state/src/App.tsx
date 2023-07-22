@@ -1,22 +1,22 @@
-import React from 'react'
+// import React from 'react'
 import { useState } from 'react'
-import GetRandomColorCSS from './GetRandomColorCSS'
+import { GetRandomPosShort, GetRandomColorCSS } from './GetRandomStuff'
 
 function App() {
 
-  const start = Math.floor(Math.random() * 32767)
+  const start = GetRandomPosShort()
   const startCSS = GetRandomColorCSS()
 
   let [ count, setCount ] = useState( start )
   let [ css, setCSS ] = useState( startCSS )
 
-  let increment = () => { setCount( ++count ) }
-  let decrement = () => { setCount( --count ) }
+  let increment = () => { setCount( count += GetRandomPosShort() ) }
+  let decrement = () => { setCount( count -= GetRandomPosShort() ) }
   let reset = () => { setCount( 0 ) }
 
   let random = () => {
 
-    setCount( Math.floor(Math.random() * 32767) )
+    setCount( Math.floor(GetRandomPosShort()) )
     setCSS( GetRandomColorCSS() )
   }
 
