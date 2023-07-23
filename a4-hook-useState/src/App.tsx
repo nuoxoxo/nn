@@ -7,8 +7,12 @@ function App() {
   const start = GetRandomPosShort()
   const startCSS = GetRandomColorCSS()
 
+  // Learning Hooks
+  //  1st part : counter and counter CSS
   let [ count, setCount ] = useState( start )
   let [ css, setCSS ] = useState( startCSS )
+
+  //  2nd part : input bar
 
 
   //  btn functionality
@@ -52,7 +56,7 @@ function App() {
       <div className='div-counter' style={ css } >{ count }</div>
       { group.Bottom }
       <div className='div-input' >
-        <input>
+        <input style={{outline: 'none'}}>
 
         </input>
       </div>
