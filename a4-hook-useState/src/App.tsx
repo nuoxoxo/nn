@@ -35,12 +35,12 @@ function App() {
   const group: GroupBTN = {
     Top: (
       <div><button title='reset to zero' onClick={reset} >⏼</button>
-      <button title='increment' onClick={increment}>⍤</button></div>
+      <button title='decrement randomly' onClick={decrement}>⍤</button></div>
     ),
     Bottom: (
       <div>
         <button title='reset to a random number' onClick={random}>⏻</button>
-        <button title='decrement' onClick={decrement}>⍥</button>
+        <button title='increment randomly' onClick={increment}>⍥</button>
       </div>
     ),
   }
@@ -49,8 +49,13 @@ function App() {
 
     <>
       { group.Top }
-      <div style={ css }>{ count }</div>
+      <div className='div-counter' style={ css } >{ count }</div>
       { group.Bottom }
+      <div className='div-input' >
+        <input>
+
+        </input>
+      </div>
     </>
   )
 }
