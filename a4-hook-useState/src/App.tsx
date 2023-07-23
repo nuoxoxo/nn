@@ -2,13 +2,20 @@
 import { useState } from 'react'
 import { GetRandomPosShort, GetRandomColorCSS } from './GetRandomStuff'
 
+const countStart = GetRandomPosShort()
+const cssCountStart = GetRandomColorCSS()
+
+const textArr: string[] = [
+  'M.M.J.', 'MMJ', 'M.M. Jun',
+  'n.c.e.', 'nce', '🐷🐷'
+]
+const defaultInput: string = textArr[ Math.floor(Math.random() * textArr.length) ]
+
+
 function App() {
 
   // Learning Hooks
   //  1st part : counter and counter CSS
-
-  const countStart = GetRandomPosShort()
-  const cssCountStart = GetRandomColorCSS()
 
   let [ count, setCount ] = useState( countStart )
   let [ cssCount, setCSSCount ] = useState( cssCountStart )
@@ -36,24 +43,31 @@ function App() {
   const groupBtn: GroupBTN = {
     Top: (
       <div>
-        <button title='reset to zero' onClick={reset} >⏼</button>
-        <button title='decrement randomly' onClick={decrement}>⍤</button>
+        <button title='reset to zero' onClick={ reset } >⏼</button>
+        <button title='decrement randomly' onClick={ decrement }>⍤</button>
       </div>
     ),
     Bottom: (
       <div>
-        <button title='reset to a random number' onClick={random}>⏻</button>
-        <button title='increment randomly' onClick={increment}>⍥</button>
+        <button title='reset to a random number' onClick={ random }>⏻</button>
+        <button title='increment randomly' onClick={ increment }>⍥</button>
       </div>
     ),
   }
 
   //  2nd part : input bar
 
-  const defaultInput: string = 'M.M.J.'
+  // const textArr: string[] = [
+  //   'M.M.J.', 'MMJ', 'M.M. Jun',
+  //   'n.c.e.', 'nce', '🐷🐷'
+  // ]
+  // const defaultInput: string = textArr[ Math.floor(Math.random() * textArr.length) ]
+
   let [ input, displayInput ] = useState( defaultInput )
 
   let onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+
+    console.log(e, e.target)
     const value = e.target.value
     if (value === '') {
       displayInput( defaultInput )
