@@ -1,7 +1,7 @@
 | Task  | Description         | Status         |
 |:-----:|---------------------|----------------|
-| a0    | todolist            |                |
-| a1    | todolist            | _in progress_  |
+| a0    | todolist (JS)       |                |
+| a1    | todolist (TS)       | _in progress_  |
 | a2    | hangman             | _in progress_  |
 | a3    | film titles         |                |
 | a4    | useState . useRef   | _fix : emoji height problem_ |
