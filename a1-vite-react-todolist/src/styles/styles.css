@@ -39,6 +39,11 @@ div {
     margin: var(--MARGIN-S)
 }
 
+input {
+
+    outline: none
+}
+
 .header {
 
     text-align: center;
