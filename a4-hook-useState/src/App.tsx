@@ -2,14 +2,23 @@
 import { useState } from 'react'
 import { GetRandomPosShort, GetRandomColorCSS } from './GetRandomStuff'
 
+const countStart = GetRandomPosShort()
+const cssCountStart = GetRandomColorCSS()
+
+const textArr: string[] = [
+  'M.M.J.', 'MMJ', 'M.M. Jun',
+  'n.c.e.', 'nce', '🐷🐷'
+]
+const defaultInput: string = textArr[ Math.floor(Math.random() * textArr.length) ]
+
+
 function App() {
 
-  const start = GetRandomPosShort()
-  const startCSS = GetRandomColorCSS()
+  // Learning Hooks
+  //  1st part : counter and counter CSS
 
-  let [ count, setCount ] = useState( start )
-  let [ css, setCSS ] = useState( startCSS )
-
+  let [ count, setCount ] = useState( countStart )
+  let [ cssCount, setCSSCount ] = useState( cssCountStart )
 
   //  btn functionality
 
@@ -21,9 +30,8 @@ function App() {
   let random = () => {
 
     setCount( Math.floor(GetRandomPosShort()) )
-    setCSS( GetRandomColorCSS() )
+    setCSSCount( GetRandomColorCSS() )
   }
-
 
   //  interface
 
@@ -32,25 +40,63 @@ function App() {
     Bottom: JSX.Element
   }
   
-  const group: GroupBTN = {
+  const groupBtn: GroupBTN = {
     Top: (
-      <div><button title='reset to zero' onClick={reset} >⏼</button>
-      <button title='increment' onClick={increment}>⍤</button></div>
+      <div>
+        <button title='reset to zero' onClick={ reset } >⏼</button>
+        <button title='decrement randomly' onClick={ decrement }>⍤</button>
+      </div>
     ),
     Bottom: (
       <div>
-        <button title='reset to a random number' onClick={random}>⏻</button>
-        <button title='decrement' onClick={decrement}>⍥</button>
+        <button title='reset to a random number' onClick={ random }>⏻</button>
+        <button title='increment randomly' onClick={ increment }>⍥</button>
       </div>
     ),
   }
- 
+
+  //  2nd part : input bar
+
+  // const textArr: string[] = [
+  //   'M.M.J.', 'MMJ', 'M.M. Jun',
+  //   'n.c.e.', 'nce', '🐷🐷'
+  // ]
+  // const defaultInput: string = textArr[ Math.floor(Math.random() * textArr.length) ]
+
+  let [ input, displayInput ] = useState( defaultInput )
+
+  let onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+
+    console.log(e, e.target)
+    const value = e.target.value
+    if (value === '') {
+      displayInput( defaultInput )
+      return
+    }
+    displayInput( value )
+  }
+
   return (
 
     <>
-      { group.Top }
-      <div style={ css }>{ count }</div>
-      { group.Bottom }
+
+      {/* Counter */}
+      { groupBtn.Top }
+      <div className='div-count' style={ cssCount }>
+        { count }
+      </div>
+      { groupBtn.Bottom }
+
+      {/* Input */}
+      <div className='div-input-field' >
+        <input className='input-field'
+          placeholder={defaultInput}
+          onChange={ onChange } >
+        </input>
+      </div>
+      <div className='div-input-text'>
+        { input }
+      </div>
     </>
   )
 }
