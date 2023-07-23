@@ -82,21 +82,26 @@ function App() {
 
       {/* Counter */}
       { groupBtn.Top }
+
       <div className='div-count' style={ cssCount }>
         { count }
       </div>
+
       { groupBtn.Bottom }
 
       {/* Input */}
       <div className='div-input-field' >
         <input className='input-field'
+          id='input-field'
           placeholder={defaultInput}
           onChange={ onChange } >
         </input>
       </div>
-      <div className='div-input-text'>
+
+      <div id='div-input-text' className='div-input-text' >
         { input }
       </div>
+
     </>
   )
 }
