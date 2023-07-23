@@ -1,13 +1,15 @@
 // import React from 'react'
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { GetRandomPosShort, GetRandomColorCSS } from './GetRandomStuff'
 
 const countStart = GetRandomPosShort()
 const cssCountStart = GetRandomColorCSS()
 
 const textArr: string[] = [
-  'M.M.J.', 'MMJ', 'M.M. Jun',
-  'n.c.e.', 'nce', '🐷🐷'
+  'M.M.J.', 'MMJ', 'maymayjune',
+  'n.c.e.', 'nce', 'nonchaoer',
+  '🌞🆕🌙🔄', 'rxyy', 
+  '🐷🐷', '☕☕', '🐯🐯'
 ]
 const defaultInput: string = textArr[ Math.floor(Math.random() * textArr.length) ]
 
@@ -57,18 +59,15 @@ function App() {
 
   //  2nd part : input bar
 
-  // const textArr: string[] = [
-  //   'M.M.J.', 'MMJ', 'M.M. Jun',
-  //   'n.c.e.', 'nce', '🐷🐷'
-  // ]
-  // const defaultInput: string = textArr[ Math.floor(Math.random() * textArr.length) ]
+  const inputRef = useRef< HTMLInputElement | null >(null) // Added useRef
+  const [ input, displayInput ] = useState( defaultInput )
 
-  let [ input, displayInput ] = useState( defaultInput )
+  let onChange = (/*e: React.ChangeEvent<HTMLInputElement>*/ /*Switching to useRef*/) => {
 
-  let onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // const value = e.target.value // Switching to useRef
 
-    console.log(e, e.target)
-    const value = e.target.value
+    const value = inputRef.current?.value || ''  // Added for useRef
+
     if (value === '') {
       displayInput( defaultInput )
       return
@@ -94,12 +93,14 @@ function App() {
         <input className='input-field'
           id='input-field'
           placeholder={defaultInput}
-          onChange={ onChange } >
+          onChange={ onChange } 
+          ref={inputRef} // Added for useRef
+          >
         </input>
       </div>
 
       <div id='div-input-text' className='div-input-text' >
-        { input }
+        <div className='div-input-text-content'>{ input }</div>
       </div>
 
     </>

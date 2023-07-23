@@ -62,5 +62,10 @@ button {
 
 .div-input-text {
 
-    font-family: VAR(--FONT-INPUT-DISPLAY);
+    font-family: VAR(--FONT-INPUT-DISPLAY);    
+}
+
+.div-input-text-content {
+
+    height: var(--BUTTON-SIZE); /*fixed emoji/letter diff heigh problem*/
 }
