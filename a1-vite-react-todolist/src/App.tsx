@@ -6,12 +6,11 @@ export default function App() {
   const [ newItem, setNewItem ] = useState('')
   const [ todos, setTodos ] = useState([])
 
-  // const handleSubmit = ( e: React.ChangeEvent<HTMLInputElement> ) => {
-    const handleSubmit = ( e ) => {
+  const handleSubmit = ( e: React.ChangeEvent<HTMLInputElement> ) => {
 
     e.preventDefault()
 
-    setTodos( (currentTodos) => {
+    setTodos( currentTodos => {
       return [...currentTodos,
         {
           id: crypto.randomUUID(),
@@ -38,9 +37,7 @@ export default function App() {
       </form>
       <h1 className='header'>Jobs</h1>
       <ul className='list'>
-
-        {
-          todos.map( job => {
+      todos.map( job => {
             return
             <li>
               <label><input type='checkbox' checked={ job.checked } />
@@ -49,19 +46,6 @@ export default function App() {
               <button className='btn btn-delete'> del job </button>
             </li>
           })
-        }
-
-
-        {/* <li>
-          <label><input type='checkbox' /> job one </label>
-          <button className='btn btn-delete'> del job </button>
-        </li>
-
-        <li>
-          <label><input type='checkbox' /> job 2 </label>
-          <button className='btn btn-delete'> del job </button>
-        </li> */}
-
       </ul>
     </>
   )
