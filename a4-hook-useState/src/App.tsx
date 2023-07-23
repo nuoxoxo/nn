@@ -53,7 +53,7 @@ function App() {
   const defaultInput: string = 'M.M.J.'
   let [ input, displayInput ] = useState( defaultInput )
 
-  let onChange = (e) => {
+  let onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
     if (value === '') {
       displayInput( defaultInput )
@@ -74,14 +74,13 @@ function App() {
       { groupBtn.Bottom }
 
       {/* Input */}
-      <div className='div-input' >
-        <input 
-          style={{ outline: 'none' }}
+      <div className='div-input-field' >
+        <input className='input-field'
           placeholder={defaultInput}
           onChange={ onChange } >
         </input>
       </div>
-      <div className='div-input'>
+      <div className='div-input-text'>
         { input }
       </div>
     </>

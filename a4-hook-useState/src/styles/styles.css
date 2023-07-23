@@ -2,9 +2,6 @@ body {
 
     background-color: black;
     color: white;
-    
-    /* transform: scale(1.25); */
-    /* transform-origin: top left; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,6 +17,7 @@ body {
     --FONT-SIZE-PLACEHOLDER: 16px;
     --FONT-BUTTON: 'Inconsolata';
     --FONT-TEXT: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --FONT-INPUT-DISPLAY: Georgia, 'Times New Roman', Times, serif;
     --BUTTON-SIZE: 52px;
     --MARGIN-S: .2em;
     --WIDTH-M: 192px;
@@ -49,6 +47,12 @@ button {
     width: calc(var(--BUTTON-SIZE) * 2);
 }
 
-.div-input {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.div-input-field input {
+
+    outline: none;
+}
+
+.div-input-text {
+
+    font-family: VAR(--FONT-INPUT-DISPLAY);
 }
