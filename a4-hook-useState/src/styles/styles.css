@@ -19,7 +19,7 @@ body {
     --FONT-SIZE-QUART: calc(var(--FONT-SIZE) / 4);
     --FONT-SIZE-PLACEHOLDER: 16px;
     --FONT-BUTTON: 'Inconsolata';
-    --FONT-TEXT: 'Inconsolata';
+    --FONT-TEXT: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --BUTTON-SIZE: 52px;
     --MARGIN-S: .2em;
     --WIDTH-M: 192px;
@@ -43,8 +43,12 @@ button {
     margin-left: var(--MARGIN-S);
     margin-right: var(--MARGIN-S);
     font-size : var(--FONT-SIZE);
-    font-family : var(--FONT-BUTTON);
+    /* font-family : var(--FONT-BUTTON); */
     /* border-radius: 2px; */
     height: var(--BUTTON-SIZE);
     width: calc(var(--BUTTON-SIZE) * 2);
+}
+
+.div-input {
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }

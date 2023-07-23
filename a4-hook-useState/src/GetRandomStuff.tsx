@@ -11,6 +11,7 @@ const GetRandomColorCSS = () => {
             + '1)',
         fontWeight: 'bold',
         cursor: 'pointer',
+        outline: 'none'
     }
 }
 

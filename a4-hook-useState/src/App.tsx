@@ -4,16 +4,14 @@ import { GetRandomPosShort, GetRandomColorCSS } from './GetRandomStuff'
 
 function App() {
 
-  const start = GetRandomPosShort()
-  const startCSS = GetRandomColorCSS()
-
   // Learning Hooks
   //  1st part : counter and counter CSS
-  let [ count, setCount ] = useState( start )
-  let [ css, setCSS ] = useState( startCSS )
 
-  //  2nd part : input bar
+  const countStart = GetRandomPosShort()
+  const cssCountStart = GetRandomColorCSS()
 
+  let [ count, setCount ] = useState( countStart )
+  let [ cssCount, setCSSCount ] = useState( cssCountStart )
 
   //  btn functionality
 
@@ -25,9 +23,8 @@ function App() {
   let random = () => {
 
     setCount( Math.floor(GetRandomPosShort()) )
-    setCSS( GetRandomColorCSS() )
+    setCSSCount( GetRandomColorCSS() )
   }
-
 
   //  interface
 
@@ -36,10 +33,12 @@ function App() {
     Bottom: JSX.Element
   }
   
-  const group: GroupBTN = {
+  const groupBtn: GroupBTN = {
     Top: (
-      <div><button title='reset to zero' onClick={reset} >⏼</button>
-      <button title='decrement randomly' onClick={decrement}>⍤</button></div>
+      <div>
+        <button title='reset to zero' onClick={reset} >⏼</button>
+        <button title='decrement randomly' onClick={decrement}>⍤</button>
+      </div>
     ),
     Bottom: (
       <div>
@@ -48,17 +47,42 @@ function App() {
       </div>
     ),
   }
- 
+
+  //  2nd part : input bar
+
+  const defaultInput: string = 'M.M.J.'
+  let [ input, displayInput ] = useState( defaultInput )
+
+  let onChange = (e) => {
+    const value = e.target.value
+    if (value === '') {
+      displayInput( defaultInput )
+      return
+    }
+    displayInput( value )
+  }
+
   return (
 
     <>
-      { group.Top }
-      <div className='div-counter' style={ css } >{ count }</div>
-      { group.Bottom }
-      <div className='div-input' >
-        <input style={{outline: 'none'}}>
 
+      {/* Counter */}
+      { groupBtn.Top }
+      <div className='div-count' style={ cssCount }>
+        { count }
+      </div>
+      { groupBtn.Bottom }
+
+      {/* Input */}
+      <div className='div-input' >
+        <input 
+          style={{ outline: 'none' }}
+          placeholder={defaultInput}
+          onChange={ onChange } >
         </input>
+      </div>
+      <div className='div-input'>
+        { input }
       </div>
     </>
   )
