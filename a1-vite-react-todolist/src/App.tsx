@@ -1,7 +1,12 @@
-import './styles.css'
+import { useState } from 'react'
+import './styles/styles.css'
 
 export default function App() {
-  return (  
+
+  const [ newItem, setNewItem ] = useState('')
+
+  return (
+
     <>
       <form className='new-item-form'>
         <div className='form-row new-item-form-row'>

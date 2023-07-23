@@ -1,0 +1,45 @@
+body {
+
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    user-select: none;
+}
+
+:root {
+
+    --FONT-SIZE: 42px;
+    --FONT-SIZE-HALF: calc(var(--FONT-SIZE) / 2);
+    --FONT-SIZE-QUART: calc(var(--FONT-SIZE) / 4);
+    --FONT-SIZE-PLACEHOLDER: 21px;
+    --FONT-BUTTON: 'Inconsolata';
+    --FONT-TEXT: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --FONT-INPUT-DISPLAY: Georgia, 'Times New Roman', Times, serif;
+    --INPUTBAR-SIZE: 42px;
+    --BUTTON-SIZE: 52px;
+    --MARGIN-S: .2em;
+    --WIDTH-M: 192px;
+    --TIME-TRANS: 0.3s;
+    --RED-PV: palevioletred;
+    --RED-TQ: paleturquoise;
+}
+
+#root {
+
+    text-align: left;
+    margin: .2em;
+    font-family: var(--FONT-TEXT);
+}
+
+div {
+
+    margin: var(--MARGIN-S)
+}
+
+.header {
+
+    text-align: center;
+}
