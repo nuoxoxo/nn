@@ -40,33 +40,35 @@ const App = () => {
 
   return (
     <>
-      <div style={{ backgroundColor: bgc }}>
-        <form id='new-item-form' className='new-item-form'>
-          <div className='form-row'>
-            <label htmlFor='item'> (null) </label>
-            <input id='item' type='text' />
-            <button className='btn'> add a job </button>
-          </div>
-        </form>
+      <div>
+        <div className='new-item-form-div'>
+          <form id='new-item-form' className='new-item-form'>
+            <div className='form-row'>
+              <label htmlFor='item'> (null) </label>
+              <input id='item' type='text' />
+              <button className='btn'> add a job </button>
+            </div>
+          </form>
+        </div>
         <h1 className='jobs-header'> Jobs </h1>
         <ul className='list'>
           <li>
-            <label>
-              <input type='checkbox' />
-              item 1
-            </label>
             <button className='btn btn-alert'>
               delete
             </button>
+            <label>
+              <input type='checkbox' />
+              item one
+            </label>         
           </li>
           <li>
-            <label>
-              <input type='checkbox' />
-              item 2
-            </label>
             <button className='btn btn-alert'>
               delete
             </button>
+            <label>
+              <input type='checkbox' />
+              item two
+            </label>
           </li>
         </ul>
       </div>
