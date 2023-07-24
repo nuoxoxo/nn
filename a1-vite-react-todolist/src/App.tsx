@@ -7,7 +7,6 @@ const App = () => {
 
   useEffect( () => {
 
-    bgc = getRandomColor()
     const c_oppo = getOppositeColor(bgc)
 
     setBGC(bgc)
