@@ -15,12 +15,19 @@ const App = () => {
     document.body.style.color = c_oppo
   }, []) // useEffect() : strange syntax
 
+  const handleSubmit = ( e: React.FormEvent<HTMLFormElement> ) => {
+
+    e.preventDefault();
+  }
 
   return (
     <>
       <div>
         <div className='new-item-form-div'>
-          <form id='new-item-form' className='new-item-form'>
+          <form id='new-item-form'
+            className='new-item-form'
+            onSubmit={ handleSubmit }
+          >
             <div className='form-row'>
               <label htmlFor='item'> (null) </label>
               <input id='item' type='text' />
