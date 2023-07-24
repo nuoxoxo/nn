@@ -18,16 +18,31 @@ const App = () => {
 
   const handleSubmit = ( e: React.FormEvent<HTMLFormElement> ) => {
 
-    setTodos( [...todos,
-      { id:crypto.randomUUID(),
+    e.preventDefault() // prevent page to refresh
+
+    setTodos( (currentTodos: Todo[]) => {
+
+      return [...currentTodos, {
+        id: crypto.randomUUID(),
         title: newItem,
         checked: false
-      }
-    ])
-    e.preventDefault() // prevent page to refresh
+      }]
+    })
+
+    setNewItem('')
   }
 
-  console.log(todos)
+  const handleToggle = ( id: string, checked: boolean ) => {
+
+    setTodos( currentTodos => {
+      return currentTodos.map( todo => {
+        if (id === todo.id) {
+          return { ...todo, checked }
+        }
+        return todo
+      })
+    })
+  }
 
   return (
     <>
@@ -50,7 +65,22 @@ const App = () => {
         </div>
         <h1 className='jobs-header'> Jobs </h1>
         <ul className='list'>
-          <li>
+          { todos.map((todo) => (
+              <li key={ todo.id }>
+                <button className='btn btn-alert'>
+                  delete
+                </button>
+                <label>
+                  <input type='checkbox'
+                    checked={ todo.checked }
+                    onChange={ e => { handleToggle( todo.id, e.target.checked ) }}
+                  />
+                  { todo.title }
+                </label>         
+              </li>
+            ))
+          }
+          {/* <li>
             <button className='btn btn-alert'>
               delete
             </button>
@@ -67,7 +97,7 @@ const App = () => {
               <input type='checkbox' />
               item two
             </label>
-          </li>
+          </li> */}
         </ul>
       </div>
     </>
