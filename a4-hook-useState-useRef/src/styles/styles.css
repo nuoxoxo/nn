@@ -19,7 +19,7 @@ body {
     --FONT-TEXT: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --FONT-INPUT-DISPLAY: Georgia, 'Times New Roman', Times, serif;
     --INPUTBAR-SIZE: 42px;
-    --BUTTON-SIZE: 52px;
+    --BUTTON-SIZE: 64px;
     --MARGIN-S: .2em;
     --WIDTH-M: 192px;
     --TIME-TRANS: 0.3s;
@@ -29,12 +29,10 @@ body {
 
 #root {
 
-    /* min-height: calc(100vh - 6rem); */
     text-align: center;
-    margin: 1em;
+    margin: .2em;
     font-family: var(--FONT-TEXT);
     font-size: var(--FONT-SIZE);
-    /* width: calc(100vw / 2) */
 }
 
 div {
@@ -46,8 +44,6 @@ button {
     margin-left: var(--MARGIN-S);
     margin-right: var(--MARGIN-S);
     font-size : var(--FONT-SIZE);
-    /* font-family : var(--FONT-BUTTON); */
-    /* border-radius: 2px; */
     height: var(--BUTTON-SIZE);
     width: calc(var(--BUTTON-SIZE) * 2);
 }
@@ -62,5 +58,10 @@ button {
 
 .div-input-text {
 
-    font-family: VAR(--FONT-INPUT-DISPLAY);
+    font-family: VAR(--FONT-INPUT-DISPLAY);    
+}
+
+.div-input-text-content {
+
+    height: var(--BUTTON-SIZE); /*fixed emoji/letter diff heigh problem*/
 }
