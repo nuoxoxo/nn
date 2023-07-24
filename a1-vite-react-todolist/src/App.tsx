@@ -1,24 +1,33 @@
 import { useState, useEffect } from 'react'
-import { getRandomColor, getOppositeColor } from './GetColor.tsx'
+import { getRandomColor, getOppositeColor } from './GetColor'
+import { Todo } from './InterfaceTodo'
 
 const App = () => {
 
-  let [ bgc, setBGC ] = useState( getRandomColor() )
+  const [ bgc, setBGC ] = useState( getRandomColor() )
+  const [ newItem, setNewItem ] = useState( '' )
+  const [ todos, setTodos ]= useState<Todo []>( [] )
 
   useEffect( () => {
 
-    const c_oppo = getOppositeColor(bgc)
-
-    setBGC(bgc)
-
+    setBGC( bgc )
     document.body.style.backgroundColor = bgc
-    document.body.style.color = c_oppo
+    document.body.style.color = getOppositeColor( bgc )
   }, []) // useEffect() : strange syntax
+
 
   const handleSubmit = ( e: React.FormEvent<HTMLFormElement> ) => {
 
-    e.preventDefault();
+    setTodos( [...todos,
+      { id:crypto.randomUUID(),
+        title: newItem,
+        checked: false
+      }
+    ])
+    e.preventDefault() // prevent page to refresh
   }
+
+  console.log(todos)
 
   return (
     <>
@@ -30,7 +39,11 @@ const App = () => {
           >
             <div className='form-row'>
               <label htmlFor='item'> (null) </label>
-              <input id='item' type='text' />
+              <input id='item' type='text'
+                placeholder='add a job...'
+                value={ newItem }
+                onChange={ e =>  setNewItem( e.target.value )}
+              />
               <button className='btn'> add a job </button>
             </div>
           </form>
