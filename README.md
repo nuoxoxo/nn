@@ -1,6 +1,6 @@
 | Task  | Description         | Status         | Run            |
 |:-----:|---------------------|----------------|----------------|
-| a0    | Todolist            |                | npm start (EACCES bug)
+| a0    | Todolist            | _EACCES bug_   | npm start
 | a1    | Todolist (vite)     | _in progress_  |
 | a2    | Hangman             | _in progress_  |
 | a3    | Film titles         |                | npm run dev    |
