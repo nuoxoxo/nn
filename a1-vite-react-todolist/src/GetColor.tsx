@@ -17,4 +17,14 @@ const getOppositeColor = (color: string): string => {
     return invertedColor
 }
 
-export { getRandomColor, getOppositeColor }
+const setBtnTextColor = (color: string) => {
+
+    const B = document.querySelectorAll('.btn');
+    B.forEach(( b ) => {
+      if (b instanceof HTMLButtonElement) {
+        b.style.color = color;
+      }
+    })
+  }
+
+export { getRandomColor, getOppositeColor, setBtnTextColor }

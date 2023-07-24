@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getRandomColor, getOppositeColor } from './GetColor'
+import { getRandomColor, getOppositeColor, setBtnTextColor } from './GetColor'
 import { Todo } from './InterfaceTodo'
 
 const App = () => {
@@ -8,12 +8,18 @@ const App = () => {
   const [ newItem, setNewItem ] = useState( '' )
   const [ todos, setTodos ]= useState<Todo []>( [] )
 
+
   useEffect( () => {
 
+    const bcgOppo = getOppositeColor( bgc )
     setBGC( bgc )
     document.body.style.backgroundColor = bgc
-    document.body.style.color = getOppositeColor( bgc )
-  }, []) // useEffect() : strange syntax
+    document.body.style.color = bcgOppo
+
+    setBtnTextColor( bcgOppo ) 
+
+  }, [ bgc ]) // useEffect() : strange syntax
+  // with or without bgc inside [] Will work
 
 
   const handleSubmit = ( e: React.FormEvent<HTMLFormElement> ) => {
@@ -22,6 +28,8 @@ const App = () => {
 
     setTodos( (currentTodos: Todo[]) => {
 
+      if (newItem === '')
+        return [...currentTodos]
       return [...currentTodos, {
         id: crypto.randomUUID(),
         title: newItem,
@@ -44,15 +52,34 @@ const App = () => {
     })
   }
 
+  const handleDelete = ( id: string ) => {
+
+    setTodos( currentTodos => {
+      return currentTodos.filter( todo =>
+        id !== todo.id)
+    })
+  }
+
+  const handleClear = () => {
+
+    setTodos((currentTodos) => {
+      return currentTodos.filter((todo) => 
+        !todo.checked);
+    })
+  }
+
   return (
     <>
-      <div>
+      <div className='the-whole-thing-div-is-it-flex'>
         <div className='new-item-form-div'>
           <form id='new-item-form'
             className='new-item-form'
             onSubmit={ handleSubmit }
           >
             <div className='form-row'>
+              <button onClick={ handleClear } className='btn btn-clear'>
+                Clear
+              </button>
               <label htmlFor='item'> (null) </label>
               <input id='item' type='text'
                 placeholder='add a job...'
@@ -60,14 +87,17 @@ const App = () => {
                 onChange={ e =>  setNewItem( e.target.value )}
               />
               <button className='btn'> add a job </button>
+
             </div>
+
           </form>
         </div>
         <h1 className='jobs-header'> Jobs </h1>
         <ul className='list'>
           { todos.map((todo) => (
               <li key={ todo.id }>
-                <button className='btn btn-alert'>
+                <button className='btn btn-alert'
+                  onClick={ () => handleDelete(todo.id) }>
                   delete
                 </button>
                 <label>
