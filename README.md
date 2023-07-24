@@ -1,4 +1,4 @@
-| Task  | Description         | Status             | Run            |
+| Task  | Desc.         | Status             | Run            |
 |:-----:|---------------------|--------------------|----------------|
 | a0    | Todolist            | _bug : EACCES bug_ | npm start
 | a1    | Todolist (vite)     | _in progress_      |
