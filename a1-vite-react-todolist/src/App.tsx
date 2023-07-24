@@ -11,7 +11,7 @@ const App = () => {
     let res: string = '#'
     let i: number = -1
     while (++i < 6)
-      res += hex[Math.floor(Math.random() * 13 + 3)]
+      res += hex[Math.floor(Math.random() * 9)] // changed from 16 to favor more contrast
     return res
   }
 
@@ -45,6 +45,7 @@ const App = () => {
           <div className='form-row'>
             <label htmlFor='item'> (null) </label>
             <input id='item' type='text' />
+            <button className='btn'> add a job </button>
           </div>
         </form>
         <h1 className='jobs-header'> Jobs </h1>

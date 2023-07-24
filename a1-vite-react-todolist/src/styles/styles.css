@@ -5,7 +5,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 64vh;
     user-select: none;
 }
 
@@ -13,6 +13,7 @@ body {
 
     --FONT-SIZE: 42px;
     --FONT-SIZE-HALF: calc(var(--FONT-SIZE) / 2);
+    --FONT-SIZE-3RD: calc(var(--FONT-SIZE) / 3);
     --FONT-SIZE-QUART: calc(var(--FONT-SIZE) / 4);
     --FONT-SIZE-PLACEHOLDER: 21px;
     --FONT-BUTTON: 'Inconsolata';
@@ -30,6 +31,7 @@ body {
 #root {
 
     text-align: left;
+    font-size: var(--FONT-SIZE-3RD);
     margin: .2em;
     font-family: var(--FONT-TEXT);
 }
@@ -42,6 +44,19 @@ div {
 input {
 
     outline: none
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: flex;
+}
+
+button {
+    margin-right: var(--MARGIN-S);
+    margin-left: var(--MARGIN-S)
 }
 
 .jobs-header {
