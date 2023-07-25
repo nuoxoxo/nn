@@ -16,7 +16,7 @@ body {
     /* user-select: 'none'; */
 }
 
-.tube {
+.text {
     text-align: center;
     font-size: var(--FONT-SIZE-3X);
     user-select: none;

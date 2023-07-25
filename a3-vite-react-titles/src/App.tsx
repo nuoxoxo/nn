@@ -3,8 +3,8 @@ import Printer from './Printer'
 function App() {
   return (
     <>
-      {/* <div className='tube'>Hello World</div> */}
-      <div className='tube'><Printer /></div>
+      {/* <div className='text'>Hello World</div> */}
+      <div className='text'><Printer /></div>
     </>
   )
 }

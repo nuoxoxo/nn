@@ -55,7 +55,7 @@ var Printer: React.FC = () => {
   // )
   // console.log(name) // testing
 
-  const [tubeColor, setTubeColor] = useState(getRandomTubeColor())
+  const [textColor, setTextColor] = useState(getRandomTextColor())
   const [name, setSingleName] = useState<string>(() => {
     if (names.length === 0) return ""
     return names[Math.floor(Math.random() * names.length)]
@@ -70,8 +70,8 @@ var Printer: React.FC = () => {
 
   // console.log(name) // testing
 
-  // Function to generate a random tube color
-  function getRandomTubeColor() {
+  // Function to generate a random text color
+  function getRandomTextColor() {
     const offset = 42
     const offsetInverted = 255 - offset
     return {
@@ -92,19 +92,19 @@ var Printer: React.FC = () => {
 
   // Function to handle the click event
   var handleOnClick = () => {
-    setTubeColor(getRandomTubeColor())
+    setTextColor(getRandomTextColor())
     if (names.length === 0) return
     setSingleName(names[Math.floor(Math.random() * names.length)])
   }
 
-  // console.log(tubeColor["color"]) // test
+  // console.log(textColor["color"]) // test
 
   return (
     <span
       onClick={handleOnClick}
-      className="tube"
+      className="text"
       title="click me !!!"
-      style={tubeColor}
+      style={ textColor }
     >
       { name }<br/>{ names.indexOf(name) }
     </span>
