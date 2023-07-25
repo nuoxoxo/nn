@@ -1,72 +1,111 @@
 import { useState, useEffect } from 'react'
+import { getRandomColor,getOppositeColor, setBtnTextColor } from './GetColor'
+import { Todo } from './InterfaceTodo'
 
 const App = () => {
 
-  const [ bgc, setBGC ] = useState('')
+  const [bgc, setBGC] = useState(getRandomColor())
+  const [newItem, setNewItem] = useState('')
+  const [todos, setTodos] = useState<Todo[]>([])
 
+  useEffect(() => {
 
-  const getRandomColor = (): string => {
+    const bcgOppo = getOppositeColor(bgc)
+    setBGC(bgc)
+    document.body.style.backgroundColor = bgc
+    document.body.style.color = bcgOppo
+    setBtnTextColor(bcgOppo)
+  }, [bgc])
 
-    const hex: string = '0123456789ABCDEF'
-    let res: string = '#'
-    let i: number = -1
-    while (++i < 6)
-      res += hex[Math.floor(Math.random() * 13 + 3)]
-    return res
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+
+    e.preventDefault()
+    if (newItem.trim() === '') { // prevent adding empty jobs
+      return
+    }
+    setTodos((currentTodos) => [
+      ...currentTodos,
+      {
+        id: crypto.randomUUID(),
+        title: newItem,
+        checked: false,
+      },
+    ])
+    setNewItem('')
   }
 
+  const handleToggle = (id: string, checked: boolean) => {
 
-  const getOppositeColor = (color: string): string => {
-
-    color = color.slice(1) // pop the '#'
-    const rgb = parseInt(color, 16) // rgb <- hex
-    const white = 0xffffff
-    const invertedColor = '#' + (white - rgb).toString(16).padStart(6, '0');
-    return invertedColor
+    setTodos((currentTodos) =>
+      currentTodos.map((todo) =>
+        todo.id === id ? { ...todo, checked } : todo
+      )
+    )
   }
 
+  const handleDelete = (id: string) => {
 
-  useEffect( () => {
+    setTodos( (currentTodos) =>
+      currentTodos.filter( (todo) =>
+        todo.id !== id
+      )
+    )
+  }
 
-    const c = getRandomColor()
-    const c_oppo = getOppositeColor(c)
+  const handleClear = () => {
 
-    setBGC(c)
-
-    document.body.style.backgroundColor = c
-    document.body.style.color = c_oppo
-  }, []) // strange syntax
-
+    setTodos( (currentTodos) =>
+      currentTodos.filter( (todo) =>
+        !todo.checked
+      )
+    )
+  }
 
   return (
     <>
-      <div style={{ backgroundColor: bgc }}>
-        <form id='new-item-form' className='new-item-form'>
-          <div className='form-row'>
-            <label htmlFor='item'> (null) </label>
-            <input id='item' type='text' />
-          </div>
-        </form>
+      <div className='the-whole-thing-div-is-it-flex'>
+        <div className='new-item-form-div'>
+          <form
+            id='new-item-form'
+            className='new-item-form'
+            onSubmit={handleSubmit}>
+            <div className='form-row'>
+              <button onClick={handleClear} className='btn btn-clear'>
+                Clear
+              </button>
+              <label htmlFor='item'> (null) </label>
+              <input
+                id='item'
+                type='text'
+                placeholder='add a job...'
+                value={newItem}
+                onChange={(e) => setNewItem(e.target.value)}
+              />
+              <button className='btn'> add a job </button>
+            </div>
+          </form>
+        </div>
         <h1 className='jobs-header'> Jobs </h1>
         <ul className='list'>
-          <li>
-            <label>
-              <input type='checkbox' />
-              item 1
-            </label>
-            <button className='btn btn-alert'>
+          {todos.length === 0 && '🈳️🈳️🈳️'} {/* short circuit */}
+          {todos.map( ( todo ) => (
+            <li key={ todo.id }>
+              <button
+                className='btn btn-alert'
+                onClick={ () => handleDelete(todo.id) }
+              >
               delete
-            </button>
-          </li>
-          <li>
-            <label>
-              <input type='checkbox' />
-              item 2
-            </label>
-            <button className='btn btn-alert'>
-              delete
-            </button>
-          </li>
+              </button>
+              <label>
+                <input
+                  type='checkbox'
+                  checked={todo.checked}
+                  onChange={(e) => handleToggle(todo.id, e.target.checked)}
+                />
+                {todo.title}
+              </label>
+            </li>
+          ))}
         </ul>
       </div>
     </>
