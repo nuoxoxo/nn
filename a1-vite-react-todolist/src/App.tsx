@@ -6,7 +6,16 @@ const App = () => {
 
   const [bgc, setBGC] = useState(getRandomColor())
   const [newItem, setNewItem] = useState('')
-  const [todos, setTodos] = useState<Todo[]>([])
+
+  // const [todos, setTodos] = useState<Todo[]>([])
+  const [todos, setTodos] = useState<Todo[]>(() => {
+    const localValue = localStorage.getItem('ITEMS')
+    return localValue ? JSON.parse(localValue) : []
+  })
+
+  useEffect(() => {
+    localStorage.setItem('ITEMS', JSON.stringify(todos))
+  }, [todos])
 
   useEffect(() => {
 
