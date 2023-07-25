@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { getRandomColor, getOppositeColor, setBtnTextColor } from "./GetColor"
-import { InterfaceTodo, InterfaceTodoList } from "./InterfaceTodo"
+import { InterfaceTodoList } from "./InterfaceTodo"
 import { TodoList } from "./TodoList"
 import { NewItemForm } from "./NewItemForm"
 
@@ -98,9 +98,10 @@ const App = () => {
     setTodos((currentTodos) => {
       return {
         todos: currentTodos.todos.filter((todo) => id !== todo.id),
-      }
-    })
-  }
+      };
+    });
+  };
+  
 
   const handleClear = () => {
     setTodos((currentTodos) => {
@@ -114,29 +115,8 @@ const App = () => {
     <>
       <div className="the-whole-thing-div-is-it-flex">
         <NewItemForm addTodo={addTodo} handleClear={handleClear} />
-        {/* <div className='new-item-form-div'>
-          <form id='new-item-form'
-            className='new-item-form'
-            onSubmit={ handleSubmit }
-          >
-            <div className='form-row'>
-              <button onClick={ handleClear } className='btn btn-clear'>
-                Clear
-              </button>
-              <label htmlFor='item'> (null) </label>
-              <input id='item' type='text'
-                placeholder='add a job...'
-                value={ newItem }
-                onChange={ e =>  setNewItem( e.target.value )}
-              />
-              <button className='btn'> add a job </button>
-
-            </div>
-
-          </form>
-        </div> */}
         <h1 className="jobs-header"> Jobs </h1>
-        <TodoList todos={ todos.todos } />
+        <TodoList todos={todos.todos} handleToggle={handleToggle} handleDelete={handleDelete} />
       </div>
     </>
   )

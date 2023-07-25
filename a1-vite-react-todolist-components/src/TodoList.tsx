@@ -1,29 +1,23 @@
 import { InterfaceTodoList } from './InterfaceTodo'
+import { TodoItem } from './TodoItem'
 
-export function TodoList({todos}: InterfaceTodoList) {
+interface TodoListProps extends InterfaceTodoList {
+  handleToggle: (id: string, checked: boolean) => void;
+  handleDelete: (id: string) => void;
+}
+
+export function TodoList({ todos, handleToggle, handleDelete }: TodoListProps) {
   return (
     <ul className="list">
       {todos.length === 0 && "🈳️🈳️🈳️"} {/* short circuit */}
       {todos.map((todo) => (
-        <li key={todo.id}>
-          <button
-            className="btn btn-alert"
-            //   onClick={ () => handleDelete(todo.id) }
-          >
-            delete
-          </button>
-          <label>
-            <input
-              type="checkbox"
-              checked={todo.checked}
-              // onChange={ e => { handleToggle( todo.id, e.target.checked ) }}
-            />
-            {todo.title}
-          </label>
-        </li>
+        <TodoItem
+          {...todo}
+          key={todo.id}
+          handleToggle={handleToggle}
+          handleDelete={handleDelete}
+        />
       ))}
     </ul>
-  )
+  );
 }
-
-
