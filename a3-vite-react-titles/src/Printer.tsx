@@ -7,7 +7,7 @@ interface Idiom {
   word: string
 }
 
-var Printer: React.FC = () => {
+var Printer = () => {
   /*
   const names: string[] = [
       'Wahou !',
