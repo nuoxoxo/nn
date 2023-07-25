@@ -106,7 +106,8 @@ var Printer: React.FC = () => {
       title="click me !!!"
       style={ textColor }
     >
-      { name }<br/>{ names.indexOf(name) }
+      {name}<br />
+      {names.length > 0 && names.indexOf(name)}
     </span>
   )
 }
