@@ -43,6 +43,7 @@ div {
 
 input {
     outline: none
+    autoFocus
 }
 
 ul {
