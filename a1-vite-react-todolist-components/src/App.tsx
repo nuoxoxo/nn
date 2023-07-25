@@ -1,29 +1,33 @@
 import { useState, useEffect } from "react"
 import { getRandomColor, getOppositeColor, setBtnTextColor } from "./GetColor"
-import { InterfaceTodoList } from "./InterfaceTodo"
+import { InterfaceTodo } from "./InterfaceTodo"
 import { TodoList } from "./TodoList"
 import { NewItemForm } from "./NewItemForm"
 
 const App = () => {
   const [bgc, setBGC] = useState(getRandomColor())
-  // const [ todos, setTodos ]= useState<InterfaceTodoList>( [] )
-  const [todos, setTodos] = useState<InterfaceTodoList>({ todos: [] })
+  const [todos, setTodos] = useState<InterfaceTodo[]>(() => {
+    const localValue = localStorage.getItem('ITEMS')
+    return localValue ? JSON.parse(localValue) : []
+  })
 
   const addTodo = (title: string) => {
-    setTodos((currentTodos: InterfaceTodoList) => {
-      if (title === "") return { ...currentTodos }
-      return {
-        todos: [
-          ...currentTodos.todos,
-          {
-            id: crypto.randomUUID(),
-            title,
-            checked: false,
-          },
-        ],
-      }
+    setTodos((currentTodos) => {
+      if (title === "") return [...currentTodos]
+      return [
+        ...currentTodos,
+        {
+          id: crypto.randomUUID(),
+          title,
+          checked: false,
+        },
+      ]
     })
   }
+
+  useEffect(() => {
+    localStorage.setItem('ITEMS', JSON.stringify(todos))
+  }, [todos])
 
   useEffect(() => {
     const bcgOppo = getOppositeColor(bgc)
@@ -32,83 +36,22 @@ const App = () => {
     document.body.style.color = bcgOppo
 
     setBtnTextColor(bcgOppo)
-  }, [bgc]) // useEffect() : strange syntax
-  // with or without bgc inside [] Will work
-
-  // const handleSubmit = ( e: React.FormEvent<HTMLFormElement> ) => {
-
-  //   e.preventDefault() // prevent page to refresh
-
-  //   setTodos( (currentTodos: Todo[]) => {
-
-  //     if (newItem === '')
-  //       return [...currentTodos]
-  //     return [...currentTodos, {
-  //       id: crypto.randomUUID(),
-  //       title: newItem,
-  //       checked: false
-  //     }]
-  //   })
-
-  //   setNewItem('')
-  // }
-
-  // const handleToggle = ( id: string, checked: boolean ) => {
-
-  //   setTodos( currentTodos => {
-  //     return currentTodos.map( todo => {
-  //       if (id === todo.id) {
-  //         return { ...todo, checked }
-  //       }
-  //       return todo
-  //     })
-  //   })
-  // }
-
-  // const handleDelete = ( id: string ) => {
-
-  //   setTodos( currentTodos => {
-  //     return currentTodos.filter( todo =>
-  //       id !== todo.id)
-  //   })
-  // }
-
-  // const handleClear = () => {
-
-  //   setTodos((currentTodos) => {
-  //     return currentTodos.filter((todo) =>
-  //       !todo.checked)
-  //   })
-  // }
+  }, [bgc])
 
   const handleToggle = (id: string, checked: boolean) => {
-    setTodos((currentTodos) => {
-      return {
-        todos: currentTodos.todos.map((todo) => {
-          if (id === todo.id) {
-            return { ...todo, checked }
-          }
-          return todo
-        }),
-      }
-    })
+    setTodos((currentTodos) =>
+      currentTodos.map((todo) =>
+        todo.id === id ? { ...todo, checked } : todo
+      )
+    )
   }
 
   const handleDelete = (id: string) => {
-    setTodos((currentTodos) => {
-      return {
-        todos: currentTodos.todos.filter((todo) => id !== todo.id),
-      };
-    });
-  };
-  
+    setTodos((currentTodos) => currentTodos.filter((todo) => todo.id !== id))
+  }
 
   const handleClear = () => {
-    setTodos((currentTodos) => {
-      return {
-        todos: currentTodos.todos.filter((todo) => !todo.checked),
-      }
-    })
+    setTodos((currentTodos) => currentTodos.filter((todo) => !todo.checked))
   }
 
   return (
@@ -116,7 +59,18 @@ const App = () => {
       <div className="the-whole-thing-div-is-it-flex">
         <NewItemForm addTodo={addTodo} handleClear={handleClear} />
         <h1 className="jobs-header"> Jobs </h1>
-        <TodoList todos={todos.todos} handleToggle={handleToggle} handleDelete={handleDelete} />
+        
+        {todos.length === 0 ? (
+          <span className='empty-emoji'>
+            🈳️
+          </span> // or any loading indicator you prefer
+        ) : (
+          <TodoList
+            todos={todos}
+            handleToggle={handleToggle}
+            handleDelete={handleDelete}
+          />
+        )}
       </div>
     </>
   )

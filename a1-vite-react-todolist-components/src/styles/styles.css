@@ -30,7 +30,8 @@ body {
 
 #root {
 
-    text-align: left;
+    /* text-align: left; */
+    text-align: center;
     font-size: var(--FONT-SIZE-3RD);
     margin: .2em;
     font-family: var(--FONT-TEXT);
@@ -82,6 +83,11 @@ button {
 
     text-align: center;
 }
+
+/* .empty-emoji {
+
+    text-align: center;
+} */
 
 /* 
 .btn-clear {
