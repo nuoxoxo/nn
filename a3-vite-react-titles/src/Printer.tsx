@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react"
 
+const sourcePath = 
+  'https://raw.githubusercontent.com/crazywhalecc/idiom-database/master/data/idiom.json'
+
+
 interface Idiom {
   word: string
 }
@@ -24,11 +28,15 @@ var Printer: React.FC = () => {
 
   // Define state variables to keep track of the current name and style
 
+
   const [names, setNames] = useState<string[]>([])
 
   const fetchData = async () => {
     try {
-      const resp = await fetch("../_chengyu_database_/data/idiom.json")
+
+      // const resp = await fetch("../_chengyu_database_/data/idiom.json")
+      const resp = await fetch(sourcePath)
+
       const data: Idiom[] = await resp.json()
 
       const extractedNames = data
@@ -47,19 +55,14 @@ var Printer: React.FC = () => {
     fetchData()
   }, [])
 
-  // console.log(names.length, names[1])
-
-  // const [name, setSingleName] = useState(
-
-  //   names[Math.floor(Math.random() * names.length)]
-  // )
-  // console.log(name) // testing
 
   const [textColor, setTextColor] = useState(getRandomTextColor())
+
   const [name, setSingleName] = useState<string>(() => {
     if (names.length === 0) return ""
     return names[Math.floor(Math.random() * names.length)]
   })
+
 
   useEffect(() => {
     if (names.length > 0) {
@@ -85,7 +88,6 @@ var Printer: React.FC = () => {
         "," +
         "1)",
       fontWeight: "bold",
-      // userSelect: 'none',
       cursor: "pointer",
     }
   }
@@ -100,15 +102,19 @@ var Printer: React.FC = () => {
   // console.log(textColor["color"]) // test
 
   return (
-    <span
-      onClick={handleOnClick}
-      className="text"
-      title="click me !!!"
-      style={ textColor }
-    >
-      {name}<br />
-      {names.length > 0 && names.indexOf(name)}
-    </span>
+    <>
+      <span
+        onClick={ handleOnClick }
+        className="text"
+        title="click me !!!"
+        style={ textColor }
+      >
+        {name}
+        {/*<br/> { names.length > 0 && names.indexOf(name) } */}
+      </span>
+      <br />
+      <span>{ names.length > 0 && names.indexOf(name) }</span>
+    </>
   )
 }
 
