@@ -1,6 +1,7 @@
 :root {
     --FONT-TEXT: 'Courier';
     --FONT-SIZE: 42px;
+    --FONT-SIZE-3X: 144px;
 }
 
 body {
@@ -15,8 +16,8 @@ body {
     /* user-select: 'none'; */
 }
 
-.tube {
+.text {
     text-align: center;
-    font-size: var(--FONT-SIZE);
+    font-size: var(--FONT-SIZE-3X);
     user-select: none;
 }
