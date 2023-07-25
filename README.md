@@ -2,7 +2,7 @@
 |:-----:|-----------------------|--------------------|----------------|
 | a0    | Todolist              | _bug : EACCES bug_ | npm start
 | a1    | Todolist (vite)       |                    | npm run dev 
-| a1    | Todolist (components) |                    | npm run dev
+|&#8203;| Todolist (components) |                    | npm run dev
 | a2    | Hangman               | _in progress_      |
 | a3    | Film titles           |                    | npm run dev 
 | a4    | useState . useRef     | _fix : emoji height problem_ | npm run dev
