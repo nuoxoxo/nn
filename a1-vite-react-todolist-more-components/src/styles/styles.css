@@ -1,0 +1,89 @@
+body {
+
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 64vh;
+    user-select: none;
+}
+
+:root {
+
+    --FONT-SIZE: 42px;
+    --FONT-SIZE-HALF: calc(var(--FONT-SIZE) / 2);
+    --FONT-SIZE-3RD: calc(var(--FONT-SIZE) / 3);
+    --FONT-SIZE-QUART: calc(var(--FONT-SIZE) / 4);
+    --FONT-SIZE-PLACEHOLDER: 21px;
+    --FONT-BUTTON: 'Inconsolata';
+    --FONT-TEXT: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --FONT-INPUT-DISPLAY: Georgia, 'Times New Roman', Times, serif;
+    --INPUTBAR-SIZE: 64px;
+    --BUTTON-SIZE: 52px;
+    --MARGIN-S: .2em;
+    --WIDTH-M: 192px;
+    --TIME-TRANS: 0.3s;
+    --RED-PV: palevioletred;
+    --RED-TQ: paleturquoise;
+}
+
+#root {
+
+    text-align: left;
+    font-size: var(--FONT-SIZE-3RD);
+    margin: .2em;
+    font-family: var(--FONT-TEXT);
+}
+
+div {
+
+    margin: var(--MARGIN-S)
+}
+
+input {
+    outline: none
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: flex;
+}
+
+.list li:has(input:checked) label::after {
+    content: " ✔";
+    /* background: hsl(200, 100%, 40%);
+    color: hsl(200, 100%, 90%);
+    font-size: 0.75rem;
+    font-weight: bold; */
+  }
+
+button {
+    margin-right: var(--MARGIN-S);
+    margin-left: var(--MARGIN-S);
+    background: hsl(200, 100%, 50%, 0.6);
+    border: 1px solid hsl(200, 100%, 50%);
+    /* color: hsl(200, 100%, 50%); */
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    outline: none;
+}
+
+.new-item-form-div {
+    display: flex;
+}
+
+.jobs-header {
+
+    text-align: center;
+}
+
+/* 
+.btn-clear {
+
+}
+*/
