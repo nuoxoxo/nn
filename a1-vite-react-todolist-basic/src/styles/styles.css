@@ -42,19 +42,23 @@ div {
 }
 
 input {
+
     outline: none
     autoFocus
 }
 
 ul {
+
     list-style: none;
 }
 
 li {
+
     display: flex;
 }
 
 .list li:has(input:checked) label::after {
+
     content: " ✔";
     /* background: hsl(200, 100%, 40%);
     color: hsl(200, 100%, 90%);
@@ -63,6 +67,7 @@ li {
   }
 
 button {
+
     margin-right: var(--MARGIN-S);
     margin-left: var(--MARGIN-S);
     background: hsl(200, 100%, 50%, 0.6);
@@ -75,6 +80,7 @@ button {
 }
 
 .new-item-form-div {
+
     display: flex;
 }
 

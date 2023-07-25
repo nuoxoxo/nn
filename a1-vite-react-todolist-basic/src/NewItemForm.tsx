@@ -1,51 +1,26 @@
 import { useState } from "react";
-// import { Todo } from './InterfaceTodo'
 
 interface NewItemFormProps {
+
   addTodo: (title: string) => void;
   handleClear: () => void; // Crucial line
 }
 
 const NewItemForm = (props: NewItemFormProps) => {
+
   const [newItem, setNewItem] = useState("");
-  // const [ todos, setTodos ]= useState<Todo []>( [] )
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+
     e.preventDefault(); // prevent page to refresh
-
-    // setTodos( (currentTodos: Todo[]) => {
-
-    //   if (newItem === '')
-    //     return [...currentTodos]
-    //   return [...currentTodos, {
-    //     id: crypto.randomUUID(),
-    //     title: newItem,
-    //     checked: false
-    //   }]
-    // })
-
     if (newItem === "") {
       return;
     }
-
     props.addTodo(newItem);
     setNewItem("");
   };
 
-  // const handleClear = () => {
-
-  //     // props.addTodo((currentTodos) => {
-  //     //     return currentTodos.filter((todo) =>
-  //     //     !todo.checked);
-  //     // })
-  //     setTodos( (currentTodos) =>
-  //         currentTodos.filter( (todo) =>
-  //             !todo.checked
-  //         )
-  //     )
-  // }
-
   const handleClear = () => {
+
     props.handleClear();
   };
 

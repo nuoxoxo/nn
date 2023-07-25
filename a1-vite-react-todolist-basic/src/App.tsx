@@ -9,11 +9,13 @@ const App = () => {
 
   // const [todos, setTodos] = useState<Todo[]>([])
   const [todos, setTodos] = useState<Todo[]>(() => {
+
     const localValue = localStorage.getItem('ITEMS')
     return localValue ? JSON.parse(localValue) : []
   })
 
   useEffect(() => {
+
     localStorage.setItem('ITEMS', JSON.stringify(todos))
   }, [todos])
 
@@ -33,6 +35,7 @@ const App = () => {
       return
     }
     setTodos((currentTodos) => [
+
       ...currentTodos,
       {
         id: crypto.randomUUID(),
