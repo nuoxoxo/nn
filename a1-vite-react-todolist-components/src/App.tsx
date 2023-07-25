@@ -1,40 +1,39 @@
-import { useState, useEffect } from 'react'
-import { getRandomColor, getOppositeColor, setBtnTextColor } from './GetColor'
-import { Todo } from './InterfaceTodo'
-import { NewItemForm } from './NewItemForm'
-
+import { useState, useEffect } from "react"
+import { getRandomColor, getOppositeColor, setBtnTextColor } from "./GetColor"
+import { InterfaceTodo, InterfaceTodoList } from "./InterfaceTodo"
+import { TodoList } from "./TodoList"
+import { NewItemForm } from "./NewItemForm"
 
 const App = () => {
-
-  const [ bgc, setBGC ] = useState( getRandomColor() )
-  const [ todos, setTodos ]= useState<Todo []>( [] )
+  const [bgc, setBGC] = useState(getRandomColor())
+  // const [ todos, setTodos ]= useState<InterfaceTodoList>( [] )
+  const [todos, setTodos] = useState<InterfaceTodoList>({ todos: [] })
 
   const addTodo = (title: string) => {
-
-    setTodos( (currentTodos: Todo[]) => {
-
-      if (title === '')
-        return [...currentTodos]
-      return [...currentTodos, {
-        id: crypto.randomUUID(),
-        title,
-        checked: false
-      }]
+    setTodos((currentTodos: InterfaceTodoList) => {
+      if (title === "") return { ...currentTodos }
+      return {
+        todos: [
+          ...currentTodos.todos,
+          {
+            id: crypto.randomUUID(),
+            title,
+            checked: false,
+          },
+        ],
+      }
     })
   }
 
-  useEffect( () => {
-
-    const bcgOppo = getOppositeColor( bgc )
-    setBGC( bgc )
+  useEffect(() => {
+    const bcgOppo = getOppositeColor(bgc)
+    setBGC(bgc)
     document.body.style.backgroundColor = bgc
     document.body.style.color = bcgOppo
 
-    setBtnTextColor( bcgOppo ) 
-
-  }, [ bgc ]) // useEffect() : strange syntax
+    setBtnTextColor(bcgOppo)
+  }, [bgc]) // useEffect() : strange syntax
   // with or without bgc inside [] Will work
-
 
   // const handleSubmit = ( e: React.FormEvent<HTMLFormElement> ) => {
 
@@ -77,47 +76,44 @@ const App = () => {
   // const handleClear = () => {
 
   //   setTodos((currentTodos) => {
-  //     return currentTodos.filter((todo) => 
-  //       !todo.checked);
+  //     return currentTodos.filter((todo) =>
+  //       !todo.checked)
   //   })
   // }
 
-  const handleToggle = ( id: string, checked: boolean ) => {
-
-    setTodos( currentTodos => {
-        return currentTodos.map( todo => {
-        if (id === todo.id) {
+  const handleToggle = (id: string, checked: boolean) => {
+    setTodos((currentTodos) => {
+      return {
+        todos: currentTodos.todos.map((todo) => {
+          if (id === todo.id) {
             return { ...todo, checked }
-        }
-        return todo
-        })
+          }
+          return todo
+        }),
+      }
     })
-}
+  }
 
-const handleDelete = ( id: string ) => {
-
-    setTodos( currentTodos => {
-        return currentTodos.filter( todo =>
-        id !== todo.id)
+  const handleDelete = (id: string) => {
+    setTodos((currentTodos) => {
+      return {
+        todos: currentTodos.todos.filter((todo) => id !== todo.id),
+      }
     })
-}
+  }
 
-    const handleClear = () => {
-
-      setTodos( (currentTodos) =>
-        currentTodos.filter( (todo) =>
-          !todo.checked
-        )
-      )
-    }
-
+  const handleClear = () => {
+    setTodos((currentTodos) => {
+      return {
+        todos: currentTodos.todos.filter((todo) => !todo.checked),
+      }
+    })
+  }
 
   return (
     <>
-      <div className='the-whole-thing-div-is-it-flex'>
-      <NewItemForm
-        addTodo={addTodo}
-        handleClear={handleClear} />
+      <div className="the-whole-thing-div-is-it-flex">
+        <NewItemForm addTodo={addTodo} handleClear={handleClear} />
         {/* <div className='new-item-form-div'>
           <form id='new-item-form'
             className='new-item-form'
@@ -139,44 +135,8 @@ const handleDelete = ( id: string ) => {
 
           </form>
         </div> */}
-        <h1 className='jobs-header'> Jobs </h1>
-        <ul className='list'>
-          { todos.length === 0 && '🈳️🈳️🈳️' } {/* short circuit */}
-          { todos.map((todo) => (
-              <li key={ todo.id }>
-                <button className='btn btn-alert'
-                  onClick={ () => handleDelete(todo.id) }>
-                  delete
-                </button>
-                <label>
-                  <input type='checkbox'
-                    checked={ todo.checked }
-                    onChange={ e => { handleToggle( todo.id, e.target.checked ) }}
-                  />
-                  { todo.title }
-                </label>         
-              </li>
-            ))
-          }
-          {/* <li>
-            <button className='btn btn-alert'>
-              delete
-            </button>
-            <label>
-              <input type='checkbox' />
-              item one
-            </label>         
-          </li>
-          <li>
-            <button className='btn btn-alert'>
-              delete
-            </button>
-            <label>
-              <input type='checkbox' />
-              item two
-            </label>
-          </li> */}
-        </ul>
+        <h1 className="jobs-header"> Jobs </h1>
+        <TodoList todos={ todos.todos } />
       </div>
     </>
   )
