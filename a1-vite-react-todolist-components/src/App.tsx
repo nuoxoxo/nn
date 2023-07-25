@@ -63,7 +63,7 @@ const App = () => {
         {todos.length === 0 ? (
           <span className='empty-emoji'>
             🈳️
-          </span> // or any loading indicator you prefer
+          </span>
         ) : (
           <TodoList
             todos={todos}
