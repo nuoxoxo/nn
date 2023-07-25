@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from 'react'
 
-const sourcePath = 
+const sourcePath =
   'https://raw.githubusercontent.com/crazywhalecc/idiom-database/master/data/idiom.json'
-
 
 interface Idiom {
   word: string
@@ -28,13 +27,12 @@ var Printer: React.FC = () => {
 
   // Define state variables to keep track of the current name and style
 
-
   const [names, setNames] = useState<string[]>([])
+  const [loading, setLoading] = useState(true)
 
   const fetchData = async () => {
     try {
-
-      // const resp = await fetch("../_chengyu_database_/data/idiom.json")
+      // const resp = await fetch('../_chengyu_database_/data/idiom.json')
       const resp = await fetch(sourcePath)
 
       const data: Idiom[] = await resp.json()
@@ -44,8 +42,10 @@ var Printer: React.FC = () => {
         .filter((name: string) => name.length === 4)
 
       setNames(extractedNames)
+      setLoading(false)
     } catch (error) {
-      console.error("Error fetching data:", error)
+      console.error('Error fetching data:', error)
+      setLoading(false)
     }
   }
 
@@ -55,14 +55,12 @@ var Printer: React.FC = () => {
     fetchData()
   }, [])
 
-
   const [textColor, setTextColor] = useState(getRandomTextColor())
 
   const [name, setSingleName] = useState<string>(() => {
-    if (names.length === 0) return ""
+    if (names.length === 0) return ''
     return names[Math.floor(Math.random() * names.length)]
   })
-
 
   useEffect(() => {
     if (names.length > 0) {
@@ -79,16 +77,16 @@ var Printer: React.FC = () => {
     const offsetInverted = 255 - offset
     return {
       color:
-        "rgb(" +
+        'rgb(' +
         Math.round(Math.random() * offsetInverted + offset) +
-        "," +
+        ',' +
         Math.round(Math.random() * offsetInverted + offset) +
-        "," +
+        ',' +
         Math.round(Math.random() * offsetInverted + offset) +
-        "," +
-        "1)",
-      fontWeight: "bold",
-      cursor: "pointer",
+        ',' +
+        '1)',
+      fontWeight: 'bold',
+      cursor: 'pointer',
     }
   }
 
@@ -99,21 +97,22 @@ var Printer: React.FC = () => {
     setSingleName(names[Math.floor(Math.random() * names.length)])
   }
 
-  // console.log(textColor["color"]) // test
+  // console.log(textColor['color']) // test
 
   return (
     <>
-      <span
-        onClick={ handleOnClick }
-        className="text"
-        title="click me !!!"
-        style={ textColor }
-      >
-        {name}
-        {/*<br/> { names.length > 0 && names.indexOf(name) } */}
-      </span>
-      <br />
-      <span>{ names.length > 0 && names.indexOf(name) }</span>
+      { loading ? (
+        <span>Loading...</span>
+      ) : (
+        <>
+          <span className='text' title='click me !!!'
+            onClick={ handleOnClick }
+            style={ textColor }
+          >{ name }</span>
+          <br/>
+          <span>{names.length > 0 && names.indexOf(name)}</span>
+        </>
+      )}
     </>
   )
 }
