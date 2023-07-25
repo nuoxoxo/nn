@@ -31,19 +31,26 @@ var Printer = () => {
   const [loading, setLoading] = useState(true)
 
   const fetchData = async () => {
+
     try {
+
       // const resp = await fetch('../_chengyu_database_/data/idiom.json')
       const resp = await fetch(sourcePath)
 
       const data: Idiom[] = await resp.json()
 
       const extractedNames = data
-        .map((line: Idiom) => line.word)
-        .filter((name: string) => name.length === 4)
+        .map(
+          (line: Idiom) => line.word
+        )
+        .filter(
+          (name: string) => name.length === 4
+        )
 
       setNames(extractedNames)
       setLoading(false)
     } catch (error) {
+
       console.error('Error fetching data:', error)
       setLoading(false)
     }
@@ -52,18 +59,21 @@ var Printer = () => {
   // console.log(names.length, names[1]) // testing
 
   useEffect(() => {
+
     fetchData()
   }, [])
 
   const [textColor, setTextColor] = useState(getRandomTextColor())
 
   const [name, setSingleName] = useState<string>(() => {
-    if (names.length === 0) return ''
+    if (names.length === 0)
+      return ''
     return names[Math.floor(Math.random() * names.length)]
   })
 
   useEffect(() => {
     if (names.length > 0) {
+
       const res = names[Math.floor(Math.random() * names.length)]
       setSingleName(res)
     }
@@ -93,7 +103,8 @@ var Printer = () => {
   // Function to handle the click event
   var handleOnClick = () => {
     setTextColor(getRandomTextColor())
-    if (names.length === 0) return
+    if (names.length === 0)
+      return
     setSingleName(names[Math.floor(Math.random() * names.length)])
   }
 
@@ -110,7 +121,7 @@ var Printer = () => {
             style={ textColor }
           >{ name }</span>
           <br/>
-          <span>{names.length > 0 && names.indexOf(name)}</span>
+          <span>{ names.length > 0 && names.indexOf(name) }</span>
         </>
       )}
     </>
