@@ -1,11 +1,11 @@
 import { InterfaceTodo } from './InterfaceTodo';
 
-interface TodoItemProps extends InterfaceTodo {
+interface props extends InterfaceTodo {
   handleToggle: (id: string, checked: boolean) => void;
   handleDelete: (id: string) => void;
 }
 
-export function TodoItem({ id, title, checked, handleToggle, handleDelete }: TodoItemProps) {
+export function TodoItem({ id, title, checked, handleToggle, handleDelete }: props) {
   return (
     <li>
       <button
