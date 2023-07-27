@@ -17,31 +17,31 @@ import PrinterHSK from "./PrinterHSK";
 import PrinterIDM from "./PrinterIDM";
 
 function App() {
-  const [isSwitched, setIsSwitched] =
-    useState<boolean>(true);
+  const [isSwitched, setIsSwitched] = useState<boolean>(true);
 
   const toggleIO = () => {
-    setIsSwitched( (prevChoice: boolean) => !prevChoice );
+    setIsSwitched((prevChoice: boolean) => !prevChoice);
   };
 
   return (
     <>
+      <div className="main-body-upper">
+        <button className="toggle-button" onClick={toggleIO}>
+          {isSwitched ? "成語" : "漢語"}
+        </button>
+      </div>
 
-        <div className="main-body-upper">
-          <button className="toggle-button" onClick={ toggleIO }>
-            { isSwitched ? "成語" : "漢語" }
-          </button>
-        </div>
+      {/*
         <div className="main-body-lower">
-          <div className="text">
-            {/* <button className='toggle-button' onClick={toggleIO}>
-              Toggle
-            </button> */}
-          </div>
           <div className="text">
             {isSwitched ? <PrinterHSK /> : <PrinterIDM />}
           </div>
         </div>
+        */}
+
+      {/* Goal : make clickable area big again */}
+
+      {isSwitched ? <PrinterHSK /> : <PrinterIDM />}
     </>
   );
 }

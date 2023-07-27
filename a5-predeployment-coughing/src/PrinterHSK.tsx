@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const sourcePath =
-  'https://raw.githubusercontent.com/koynoyno/hsk3.0-json/main/hsk3.json';
+  "https://raw.githubusercontent.com/koynoyno/hsk3.0-json/main/hsk3.json";
 
 interface Word {
   words: string;
@@ -20,7 +20,7 @@ var PrinterHSK = () => {
       setWords(data.words);
       setLoading(false);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error("Error fetching data:", error);
       setLoading(false);
     }
   };
@@ -32,7 +32,7 @@ var PrinterHSK = () => {
   const [textColor, setTextColor] = useState(getRandomTextColor());
 
   const [name, setSingleName] = useState<string>(() => {
-    if (words.length === 0) return '';
+    if (words.length === 0) return "";
     return words[Math.floor(Math.random() * words.length)].simplified;
   });
 
@@ -48,16 +48,15 @@ var PrinterHSK = () => {
     const offsetInverted = 255 - offset;
     return {
       color:
-        'rgb(' +
+        "rgb(" +
         Math.round(Math.random() * offsetInverted + offset) +
-        ',' +
+        "," +
         Math.round(Math.random() * offsetInverted + offset) +
-        ',' +
+        "," +
         Math.round(Math.random() * offsetInverted + offset) +
-        ',' +
-        '1)',
-      fontWeight: 'bold',
-      cursor: 'pointer',
+        "," +
+        "1)",
+      fontWeight: "bold",
     };
   }
 
@@ -69,22 +68,25 @@ var PrinterHSK = () => {
 
   return (
     <>
-      {loading ? (
-        <span>Loading...</span>
-      ) : (
-        <>
-          <span
-            className='text'
-            title='click me !!!'
-            onClick={handleOnClick}
-            style={textColor}
-          >
-            {name}
-          </span>
-          <br />
-          {/* <span>{words.length > 0 && words.indexOf(name)}</span> */}
-        </>
-      )}
+      <div className="main-body-lower" onClick={handleOnClick}>
+        <div className="div-text">
+          {loading ? (
+            <span>Loading...</span>
+          ) : (
+            <>
+              <span
+                className="span-text"
+                title="click me !!!"
+                // onClick={handleOnClick}
+                style={textColor}
+              >
+                {name}
+              </span>
+              <br />
+            </>
+          )}
+        </div>
+      </div>
     </>
   );
 };
