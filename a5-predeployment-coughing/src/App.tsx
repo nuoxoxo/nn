@@ -32,16 +32,19 @@ function App() {
             { isSwitched ? "成語" : "漢語" }
           </button>
         </div>
+
+        {/*
         <div className="main-body-lower">
-          <div className="text">
-            {/* <button className='toggle-button' onClick={toggleIO}>
-              Toggle
-            </button> */}
-          </div>
           <div className="text">
             {isSwitched ? <PrinterHSK /> : <PrinterIDM />}
           </div>
         </div>
+        */}
+
+        {/* Goal : make clickable area big again */}
+
+        {isSwitched ? <PrinterHSK /> : <PrinterIDM />}
+
     </>
   );
 }
