@@ -86,7 +86,6 @@ var PrinterIDM = () => {
         "," +
         "1)",
       fontWeight: "bold",
-      // cursor: "pointer",
     };
   }
 

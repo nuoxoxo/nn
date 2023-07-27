@@ -57,7 +57,6 @@ var PrinterHSK = () => {
         "," +
         "1)",
       fontWeight: "bold",
-      // cursor: "pointer",
     };
   }
 
