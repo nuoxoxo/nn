@@ -6,7 +6,7 @@
 | a2    | Hangman               | _in progress_         |
 | a3    | Words: Idioms         |                       | npm run dev 
 | a4    | Words: HSK-3          |                       | npm run dev
-| a5    | Deploy: `io/coughing` | _deployed_            | [Link](https://nuoxoxo.github.io/coughing)
+| a5    | Deploy: `io/coughing` | _deployed_            | [here](https://nuoxoxo.github.io/coughing)
 | a6    | useState . useRef     | _fix : emoji height problem_ | npm run dev
 
 ![](https://i.imgur.com/Vi97P6T.jpg)
