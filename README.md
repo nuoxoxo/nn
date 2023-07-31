@@ -8,7 +8,7 @@
 | a4    | Words: HSK-3          |                                        | npm run dev
 | a5    | Deploy: `io/coughing` | :green_circle: _deployed_              | [here](https://nuoxoxo.github.io/coughing)
 | a6    | useState . useRef     | _fix : emoji height problem_           | npm run dev
-| a7    | Weather               | :yellow_circle: _init : with template_ | 
+| a7    | 🌦️ Weather               | :yellow_circle: _init : with template_ | 
 | b0    | AOC: access to input  | :red_circle: _not working_             | 
 |&#8203;| 👆 todo :: _read from_| 👆 _simple-tasks instead_ 
 
