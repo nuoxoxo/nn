@@ -4,8 +4,8 @@
 | a1    | Todolist (vite)       |                                        | npm run dev 
 |&#8203;| Todolist (components) |                                        | npm run dev
 | a2    | Hangman               | _in progress_                          |
-| a3    | Words: Idioms         |                                        | npm run dev 
-| a4    | Words: HSK-3          |                                        | npm run dev
+| a3    | Idioms                |                                        | npm run dev 
+| a4    | HSK-3                 |                                        | npm run dev
 | a5    | `io/coughing`         | :green_circle: _deployed_              | [Here](https://nuoxoxo.github.io/coughing)
 | a6    | useState . useRef     | _fix : emoji height problem_           | npm run dev
 | a7    | 🌦️ Weather               | :yellow_circle: _init : with template_ | 
