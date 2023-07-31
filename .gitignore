@@ -2,6 +2,7 @@
 #
 
 .env
+.*token
 
 *sandbox/*.js
 !*sandbox/runner*.js
