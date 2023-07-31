@@ -9,6 +9,7 @@ async function get_input(day) {
 
   const url = `https://adventofcode.com/2022/day/${day}/input`
   const headers = { Cookie: `session=${token}` }
+  
 
   try {
 
