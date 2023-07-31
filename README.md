@@ -8,5 +8,6 @@
 | a4    | Words: HSK-3          |                       | npm run dev
 | a5    | Deploy: `io/coughing` | _deployed_            | [here](https://nuoxoxo.github.io/coughing)
 | a6    | useState . useRef     | _fix : emoji height problem_ | npm run dev
+| b0    | AOC: access to input  | _not working_         | idem
 
 ![](https://i.imgur.com/Vi97P6T.jpg)
