@@ -5,25 +5,39 @@ function App() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const fetchToken = async () => {
+    try {
+      const response = await axios.get('.aoc-token');
+      return response.data.trim(); // trim any leading/trailing whitespace
+    } catch (error: any) {
+      console.error('Error while fetching token:', error.message);
+      return null;
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       const url = `https://adventofcode.com/2022/day/10/input`;
-      const axiosConfig: Object = {
-        headers: { 
-          'content-Type': 'application/json',
-          "Accept": "/",
-          "Cache-Control": "no-cache",
-          'Cookie': `session=${process.env.advent_of_code_session_token}`,
-        },
-        credentials: "same-origin"
+      const sessionToken = await fetchToken();
+
+      if (!sessionToken) {
+        console.error('Session token not found.');
+        setLoading(false);
+        return;
       }
-      // const headers = { Authorization: `Bearer ${process.env.advent_of_code_session_token}` }
+
+      const headers = {
+        'content-Type': 'application/json',
+        'Accept': '/',
+        'Cache-Control': 'no-cache',
+        'Cookie': `session=${sessionToken}`,
+      };
+
       axios.defaults.withCredentials = true;
       try {
-        const response = await axios.get(url, /*{ headers }*/ axiosConfig);
+        const response = await axios.get(url, { headers });
         setData(response.data);
-      } catch (error:any) {
-        // console.error('Error while fetching data:', error.message);
+      } catch (error) {
         console.error(error);
       } finally {
         setLoading(false);
