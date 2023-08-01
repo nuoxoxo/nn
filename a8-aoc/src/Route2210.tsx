@@ -20,9 +20,6 @@ var Route2210 = () => {
     }
   }
 
-  //  Testing ... 
-  // console.log(lines)
-
   useEffect( () => {
     fetchLines()
   }, [])

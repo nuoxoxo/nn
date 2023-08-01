@@ -20,9 +20,6 @@ var Route(@@@@) = () => {
     }
   }
 
-  //  Testing ... 
-  // console.log(lines)
-
   useEffect( () => {
     fetchLines()
   }, [])
