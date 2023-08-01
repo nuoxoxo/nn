@@ -1,61 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react'
+
+const path = 'https://raw.githubusercontent.com/nuoxoxo/simple-tasks/main/_inputs_/2210.0'
 
 function App() {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [lines, setLines] = useState<string[]>([])
+  const [loading, setLoading] = useState(true)
 
-  const fetchToken = async () => {
+  const fetchLines = async () => {
     try {
-      const response = await axios.get('.aoc-token');
-      return response.data.trim(); // trim any leading/trailing whitespace
+      const resp = await fetch( path )
+      const temp = await resp.text()
+      const data: string[] = temp.trim().split('\n')
+      setLines(data)
+      setLoading(false)
     } catch (error: any) {
-      console.error('Error while fetching token:', error.message);
-      return null;
+      console.error("Error fetching data: ", error);
+      setLoading(false);
     }
-  };
+  }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const url = `https://adventofcode.com/2022/day/10/input`;
-      const sessionToken = await fetchToken();
+  console.log(lines)
 
-      if (!sessionToken) {
-        console.error('Session token not found.');
-        setLoading(false);
-        return;
-      }
-
-      const headers = {
-        'content-Type': 'application/json',
-        'Accept': '/',
-        'Cache-Control': 'no-cache',
-        'Cookie': `session=${sessionToken}`,
-      };
-
-      axios.defaults.withCredentials = true;
-      try {
-        const response = await axios.get(url, { headers });
-        setData(response.data);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
+  useEffect( () => {
+    fetchLines()
+  }, [])
 
   return (
     <div>
       {loading ? (
         <p>Loading data...</p>
       ) : (
-        <pre>{data ? JSON.stringify(data, null, 2) : 'No data available.'}</pre>
+        <pre>{lines ? JSON.stringify(lines, null, 2) : 'No data available.'}</pre>
       )}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
