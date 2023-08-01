@@ -1,10 +1,10 @@
-import Aoc2210 from "./Aoc2210";
+import Route2210 from "./Route2210";
 
 var App = () => {
 
   return (
     <>
-      { <Aoc2210 /> }
+      { <Route2210 /> }
     </>
   )
 }

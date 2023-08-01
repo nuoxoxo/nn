@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 const path = 
   'https://raw.githubusercontent.com/nuoxoxo/simple-tasks/main/_inputs_/2210.0'
 
-var Aoc2210 = () => {
+var Route2210 = () => {
   const [lines, setLines] = useState<string[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -20,7 +20,7 @@ var Aoc2210 = () => {
     }
   }
 
-  //  Testing ...
+  //  Testing ... 
   // console.log(lines)
 
   useEffect( () => {
@@ -38,4 +38,4 @@ var Aoc2210 = () => {
   )
 }
 
-export default Aoc2210
+export default Route2210
