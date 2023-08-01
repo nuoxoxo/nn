@@ -20,7 +20,7 @@ var PrinterHSK = () => {
       setWords(data.words);
       setLoading(false);
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error("Error fetching data: ", error);
       setLoading(false);
     }
   };
