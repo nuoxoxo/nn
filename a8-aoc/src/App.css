@@ -29,3 +29,18 @@ body {
 
   font-size: var(--FONT-SIZE-HALF);
 }
+
+/* .container-btns {
+  position: absolute;
+
+}
+
+.top-right-button {
+  position: relative;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1; 
+} */
