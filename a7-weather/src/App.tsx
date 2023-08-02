@@ -1,10 +1,14 @@
-import { useState } from 'react'
+// import { useState } from 'react'
+import Researcher from './components/Researcher.ts'
 
 function App() {
 
   return (
     <>
-      Hello, World!
+      <div>Hello, World!</div>
+      <div className='div-researcher'>
+        <Researcher />
+      </div>
     </>
   )
 }
