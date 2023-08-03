@@ -4,18 +4,47 @@ const path =
   'https://raw.githubusercontent.com/nuoxoxo/simple-tasks/main/_inputs_/2210.0'
 
 var Route2210 = () => {
-  const [lines, setLines] = useState<(string | number)[]>([])
+  const [lines, setLines] = useState<number[]>([])
   const [loading, setLoading] = useState(true)
+  const [res, setRes] = useState<number>(0)
 
-  let res: number = 0
+  const Solver = () => {
+    let x: number = 1
+    let tt: number = 0
+    let i: number = 0
+    let cc: number = 0
+    while (true) {
+      if (lines.length === i) {
+        i %= lines.length
+      }
+      if (i + 1 === 20 || (i + 1) % 40 === 20) {
+        tt += (i + 1) * x
+        // console.log(tt)
+      }
+      x += lines[i]
+      i++
+      cc++
+      if (cc === 220) {
+        break
+      }
+    }
+    setRes(tt)
+  }
 
   const fetchLines = async () => {
     try {
       const resp = await fetch( path )
       const temp = await resp.text()
-      const data: (string | number)[] = temp.trim().split('\n') // 'string | number' to avoid type error
-      data[1] = parseInt(data[1] as string, 10) // 'as string' to avoid type error
-      setLines(data)
+      const arr: number[] = []
+      const raw: string[] = temp.trim().split('\n')
+      for (let line of raw) {
+        arr.push(0)
+        let temp: string[] = line.split(' ')
+        if (temp.length === 2) {
+          arr.push(parseInt(temp[1], 10))
+        }
+      }
+      setLines(arr)
       setLoading(false)
     } catch (error: any) {
       console.error("Error fetching data: ", error);
@@ -25,30 +54,14 @@ var Route2210 = () => {
 
   useEffect( () => {
     fetchLines()
-
-    let x: number = 1
-    // let res: number = 0 // moved up
-    let i: number = 0
-    let cc: number = 0
-    while (true) {
-      if (lines.length === i) {
-        i %= lines.length
-      }
-      if (i + 1 === 20 || (i + 1) % 40 === 20) {
-        res += (i + 1) * x
-      }
-      x += lines[i] as number
-      i++
-      cc++
-      if (cc === 220) {
-        break
-      }
-    }
-
   }, [])
 
+  useEffect(() => {
+    Solver()
+  }, [lines])
+
   return (
-    <div>
+    <>
       {loading ? (
         <p>Loading data...</p>
       ) : (
@@ -59,7 +72,7 @@ var Route2210 = () => {
           </pre>
         </>
       )}
-    </div>
+    </>
   )
 }
 
