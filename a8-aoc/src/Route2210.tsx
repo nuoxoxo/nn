@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 const path = 
-  'https://raw.githubusercontent.com/nuoxoxo/simple-tasks/main/_inputs_/2210.0'
+  'https://raw.githubusercontent.com/nuoxoxo/in/main/2210.0'
 
 var Route2210 = () => {
   const [lines, setLines] = useState<number[]>([])
