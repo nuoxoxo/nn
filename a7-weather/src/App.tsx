@@ -1,8 +1,8 @@
-import Researcher from './components/Researcher.ts'
+import Researcher from './components/Researcher'
 
 function App() {
 
-  const handleOnSearchChange = (data) => {
+  const handleOnSearchChange = (data: any) => {
     console.log(data)
   }
 
