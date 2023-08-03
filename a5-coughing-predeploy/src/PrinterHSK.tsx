@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const sourcePath =
-  "https://raw.githubusercontent.com/koynoyno/hsk3.0-json/main/hsk3.json";
+  "https://raw.githubusercontent.com/nuoxoxo/in/main/hsk3.json";
 
 interface Word {
   words: string;
