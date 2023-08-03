@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const sourcePath =
-  "https://raw.githubusercontent.com/crazywhalecc/idiom-database/master/data/idiom.json";
+  "https://raw.githubusercontent.com/nuoxoxo/in/main/idiom.json";
 
 interface Idiom {
   word: string;
