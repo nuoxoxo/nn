@@ -4,7 +4,8 @@
   --FONT-SIZE: 42px;
   --FONT-SIZE-HALF: calc(var(--FONT-SIZE) / 2);
   --FONT-SIZE-2X: calc(var(--FONT-SIZE) * 2);
-  --FONT-SIZE-3X: calc(var(--FONT-SIZE) * 3)
+  --FONT-SIZE-3X: calc(var(--FONT-SIZE) * 3);
+  --BTN-WATER-GREEN: #23aeba;
 }
 
 body {
@@ -40,4 +41,35 @@ pre, span, div {
 
 .container-R > span {
   margin-bottom: 1.2em;
+}
+
+nav > ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  border: 1px solid var(--BTN-WATER-GREEN);
+  border-radius: 20px;
+  padding: 4px 10px;
+  margin: 0 3px;
+  font-size: 16px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+  
+  color: white;
+}
+
+button:hover {
+
+  background-color: var(--BTN-WATER-GREEN);
 }
