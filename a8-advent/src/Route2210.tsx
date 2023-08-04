@@ -99,7 +99,7 @@ var Route2210 = () => {
 
   useEffect(() => {
     Solver_Part_Two()
-  }, [p2])
+  }, [nums])
 
   return (
     <>
