@@ -8,9 +8,9 @@ var Route2210 = () => {
   const [loading, setLoading] = useState<boolean>( true )
   const [lines, setLines] = useState<string[]>( [] )
   const [nums, setNums] = useState<number[]>( [] )
-  const [res, setRes] = useState<number>( 0 )
+  const [p1, setP1] = useState<number>( 0 )
 
-  const Solver = () => {
+  const Solver_Part_One = () => {
 
     let x: number = 1
     let tt: number = 0
@@ -31,7 +31,7 @@ var Route2210 = () => {
         break
       }
     }
-    setRes(tt)
+    setP1(tt)
   }
 
   const fetchLines = async () => {
@@ -62,7 +62,7 @@ var Route2210 = () => {
   }, [])
 
   useEffect(() => {
-    Solver()
+    Solver_Part_One()
   }, [nums])
 
   return (
@@ -70,14 +70,14 @@ var Route2210 = () => {
       {loading ? (
         <p>Loading data...</p>
       ) : (
-        <div className='container'>
+        <div className='container-L'>
           <pre>
             { lines ? lines.join('\n') : 'No data available.' }
           </pre>
           <pre>
             { nums ? nums.join('\n') : 'No data available.' }
           </pre>
-          <span>res: { res }</span>
+          <span>p1: { p1 }</span>
         </div>
       )}
     </>

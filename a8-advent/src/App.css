@@ -19,7 +19,7 @@ body {
   font-size: var(--FONT-SIZE-HALF);
 }
 
-.container {
+.container-L {
 
   display: flex;
   justify-content: center;
