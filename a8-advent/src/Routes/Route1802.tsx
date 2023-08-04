@@ -31,39 +31,20 @@ var Route1802 = () => {
       while (++i < D.length) {
         if (D[i] === 2) {
           ok2 = true
-          char2 = String.fromCharCode(i)
+          char2 = String.fromCharCode(i + 'a'.charCodeAt(0))
         }
         if (D[i] === 3) {
           ok3 = true
-          char3 = String.fromCharCode(i)
+          char3 = String.fromCharCode(i + 'a'.charCodeAt(0))
         }
       }
       if (ok2) {
         c2++
-        // for (let c of line) {
-        //   if (c === char2) {
-        //     strToPush += c.toUpperCase()
-        //   } else {
-        //     strToPush += c
-        //   }
-        // }
-
-        console.log(strToPush)
-        strToPush = strToPush.replace(char2, char2.toUpperCase())
-        console.log(strToPush)
+        strToPush = strToPush.replace(new RegExp(char2, 'gi'), '▒')
       }
       if (ok3) {
         c3++
-        // for (let c of line) {
-        //   if (c === char3) {
-        //     strToPush += c.toUpperCase()
-        //   } else {
-        //     strToPush += c
-        //   }
-        // }
-        console.log(strToPush)
-        strToPush = strToPush.replace(char3, char3.toUpperCase())
-        console.log(strToPush)
+        strToPush = strToPush.replace(new RegExp(char3, 'gi'), '▒')
       }
       if (strToPush.length !== 0) {
         tempLines23.push(strToPush)
