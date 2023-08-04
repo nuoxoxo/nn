@@ -9,7 +9,8 @@ var Route2210 = () => {
   const [lines, setLines] = useState<string[]>( [] )
   const [nums, setNums] = useState<number[]>( [] )
   const [p1, setP1] = useState<number>( 0 )
-  const [p2, setP2] = useState<string>( '' )
+  // const [p2, setP2] = useState<string>( '' )
+  const [p2, setP2] = useState<string[]>( [] )
 
   const Solver_Part_One = () => {
 
@@ -59,10 +60,12 @@ var Route2210 = () => {
       if (cycle === 240) {
         break
       }
-      console.log(cycle)
+      // console.log(cycle)
       i++
+      setP2([...p2, ss])
     }
-    setP2(ss)
+    // setP2(ss)
+    // setP2([...p2, ss])
   }
 
   const fetchLines = async () => {
@@ -116,7 +119,9 @@ var Route2210 = () => {
             <div className='container-R'>
               <span>p1: { p1 }</span>
               <span>p2: </span>
-              <span>{ p2 }</span>
+              <pre>
+                { p2 ? p2.join('\n') : 'No data available.' }
+              </pre>
             </div>
           </div>
         </>
