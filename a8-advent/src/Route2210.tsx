@@ -9,7 +9,6 @@ var Route2210 = () => {
   const [lines, setLines] = useState<string[]>( [] )
   const [nums, setNums] = useState<number[]>( [] )
   const [p1, setP1] = useState<number>( 0 )
-  // const [p2, setP2] = useState<string>( '' )
   const [p2, setP2] = useState<string[]>( [] )
 
   const Solver_Part_One = () => {
@@ -42,6 +41,7 @@ var Route2210 = () => {
     let x: number = 1
     let i: number = 0
     let cycle: number = 0
+    let temp: string[] = []
     while (true) {
       if (i === nums.length) {
         i %= nums.length
@@ -60,12 +60,10 @@ var Route2210 = () => {
       if (cycle === 240) {
         break
       }
-      // console.log(cycle)
       i++
-      setP2([...p2, ss])
+      temp.push(ss + '\n')
     }
-    // setP2(ss)
-    // setP2([...p2, ss])
+    setP2(temp)
   }
 
   const fetchLines = async () => {
@@ -108,23 +106,21 @@ var Route2210 = () => {
       {loading ? (
         <p>Loading data...</p>
       ) : (
-        <>
-          <div className='container-L'>
+        <div className='container-L'>
+          <pre>
+            { lines ? lines.join('\n') : 'No data available.' }
+          </pre>
+          <pre>
+            { nums ? nums.join('\n') : 'No data available.' }
+          </pre>
+          <div className='container-R'>
+            <span>Part 1: { p1 }</span>
+            <span>Part 2: </span>
             <pre>
-              { lines ? lines.join('\n') : 'No data available.' }
+              { p2 ? [...p2].reverse().join('\n') : 'No data available.' }
             </pre>
-            <pre>
-              { nums ? nums.join('\n') : 'No data available.' }
-            </pre>
-            <div className='container-R'>
-              <span>p1: { p1 }</span>
-              <span>p2: </span>
-              <pre>
-                { p2 ? p2.join('\n') : 'No data available.' }
-              </pre>
-            </div>
           </div>
-        </>
+        </div>
       )}
     </>
   )
