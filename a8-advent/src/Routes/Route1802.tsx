@@ -8,12 +8,14 @@ var Route1802 = () => {
 
   const [ loading, setLoading ] = useState<boolean>( true )
   const [ lines, setLines ] = useState<string[]>( [] )
+  const [ lines23, setLines23 ] = useState<string[]>( [] )
   const [ p1, setP1 ] = useState<number>( 0 )
 
   const Solver_Part_One = () => {
 
     let c2: number = 0
     let c3: number = 0
+    let tempLines23: string[] = []
     for (const line of lines) {
       // console.log(line)
       let D: number[] = new Array(26).fill(0)
@@ -22,22 +24,52 @@ var Route1802 = () => {
       }
       let ok2: boolean = false
       let ok3: boolean = false
-      for (const d of D) {
-        if (d === 2) {
+      let char2: string = ''
+      let char3: string = ''
+      let strToPush: string = line
+      let i: number = -1
+      while (++i < D.length) {
+        if (D[i] === 2) {
           ok2 = true
+          char2 = String.fromCharCode(i)
         }
-        if (d === 3) {
+        if (D[i] === 3) {
           ok3 = true
+          char3 = String.fromCharCode(i)
         }
       }
       if (ok2) {
         c2++
+        // for (let c of line) {
+        //   if (c === char2) {
+        //     strToPush += c.toUpperCase()
+        //   } else {
+        //     strToPush += c
+        //   }
+        // }
+
+        console.log(strToPush)
+        strToPush = strToPush.replace(char2, char2.toUpperCase())
+        console.log(strToPush)
       }
       if (ok3) {
         c3++
+        // for (let c of line) {
+        //   if (c === char3) {
+        //     strToPush += c.toUpperCase()
+        //   } else {
+        //     strToPush += c
+        //   }
+        // }
+        console.log(strToPush)
+        strToPush = strToPush.replace(char3, char3.toUpperCase())
+        console.log(strToPush)
+      }
+      if (strToPush.length !== 0) {
+        tempLines23.push(strToPush)
       }
     }
-
+    setLines23(tempLines23)
     setP1(c2 * c3)
   }
 
@@ -68,6 +100,9 @@ var Route1802 = () => {
         <div className='container-L'>
           <pre>
             { lines ? lines.join('\n') : 'No data available.' }
+          </pre>
+          <pre>
+            { lines23 ? lines23.join('\n') : 'No data available.' }
           </pre>
           <div className='container-R'>
             <span>--- 2018 Day 2: Inventory Management System ---</span>
