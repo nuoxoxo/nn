@@ -4,9 +4,9 @@ const path =
   'https://raw.githubusercontent.com/nuoxoxo/in/main/2210.0'
 
 var Route2210 = () => {
-  const [lines, setLines] = useState<number[]>([])
-  const [loading, setLoading] = useState(true)
-  const [res, setRes] = useState<number>(0)
+  const [loading, setLoading] = useState<boolean>( true )
+  const [nums, setNums] = useState<number[]>( [] )
+  const [res, setRes] = useState<number>( 0 )
 
   const Solver = () => {
     let x: number = 1
@@ -14,14 +14,14 @@ var Route2210 = () => {
     let i: number = 0
     let cc: number = 0
     while (true) {
-      if (lines.length === i) {
-        i %= lines.length
+      if (nums.length === i) {
+        i %= nums.length
       }
       if (i + 1 === 20 || (i + 1) % 40 === 20) {
         tt += (i + 1) * x
         // console.log(tt)
       }
-      x += lines[i]
+      x += nums[i]
       i++
       cc++
       if (cc === 220) {
@@ -44,7 +44,7 @@ var Route2210 = () => {
           arr.push(parseInt(temp[1], 10))
         }
       }
-      setLines(arr)
+      setNums(arr)
       setLoading(false)
     } catch (error: any) {
       console.error("Error fetching data: ", error);
@@ -58,7 +58,7 @@ var Route2210 = () => {
 
   useEffect(() => {
     Solver()
-  }, [lines])
+  }, [nums])
 
   return (
     <>
@@ -68,7 +68,7 @@ var Route2210 = () => {
         <>
           <span>res: { res }</span>
           <pre>
-            { lines ? lines.join('\n') : 'No data available.' }
+            { nums ? nums.join('\n') : 'No data available.' }
           </pre>
         </>
       )}
