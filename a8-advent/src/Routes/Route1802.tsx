@@ -4,12 +4,16 @@ import { FetchData } from './FetchData'
 const path = 
   'https://raw.githubusercontent.com/nuoxoxo/in/main/1802.in'
 
+const special2 = '⓶'
+const special3 = '⓷'
+
 var Route1802 = () => {
 
   const [ loading, setLoading ] = useState<boolean>( true )
   const [ lines, setLines ] = useState<string[]>( [] )
   const [ lines23, setLines23 ] = useState<string[]>( [] )
   const [ p1, setP1 ] = useState<number>( 0 )
+  // const [ p2, setP2 ] = useState<string>( '' )
 
   const Solver_Part_One = () => {
 
@@ -40,11 +44,11 @@ var Route1802 = () => {
       }
       if (ok2) {
         c2++
-        strToPush = strToPush.replace(new RegExp(char2, 'gi'), '▒')
+        strToPush = strToPush.replace(new RegExp(char2, 'gi'), special2)
       }
       if (ok3) {
         c3++
-        strToPush = strToPush.replace(new RegExp(char3, 'gi'), '▒')
+        strToPush = strToPush.replace(new RegExp(char3, 'gi'), special3)
       }
       if (strToPush.length !== 0) {
         tempLines23.push(strToPush)
