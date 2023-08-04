@@ -26,8 +26,8 @@ var App = () => {
 
         {/* must define routes below nav */}
         <Routes>
-          <Route path="/route1802" element={<Route1802 />} />
-          <Route path="/route2210" element={<Route2210 />} />
+          <Route path="/route1802" element={ <Route1802 /> } />
+          <Route path="/route2210" element={ <Route2210 /> } />
           {/* <Route path="/route2113" element={<Route2113 />} /> */}
         </Routes>
       </>
