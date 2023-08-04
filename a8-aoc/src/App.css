@@ -11,31 +11,22 @@ body {
 
   background-color: black;
   color: white;
-
-  /* display: flex;
-  justify-content: center; */
-
-  /* center all children horizontally */
-  /* align-items: center; */
-
-  /* center all children vertically */
   font-family: var(--FONT-TEXT);
-
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, 0%);
-  /* min-height: 100vh */
-
   font-size: var(--FONT-SIZE-HALF);
 }
 
 .container {
+
   display: flex;
   justify-content: center;
 }
 
 pre, span {
+
   margin: 0;
   margin-right: 1em
 }
