@@ -4,12 +4,16 @@ import { FetchData } from './FetchData'
 const path = 
   'https://raw.githubusercontent.com/nuoxoxo/in/main/1802.in'
 
+const special2 = '🔵'
+const special3 = '🟠'
+
 var Route1802 = () => {
 
   const [ loading, setLoading ] = useState<boolean>( true )
   const [ lines, setLines ] = useState<string[]>( [] )
   const [ lines23, setLines23 ] = useState<string[]>( [] )
   const [ p1, setP1 ] = useState<number>( 0 )
+  const [ p2, setP2 ] = useState<string>( '' )
 
   const Solver_Part_One = () => {
 
@@ -40,11 +44,11 @@ var Route1802 = () => {
       }
       if (ok2) {
         c2++
-        strToPush = strToPush.replace(new RegExp(char2, 'gi'), '▒')
+        strToPush = strToPush.replace(new RegExp(char2, 'gi'), special2)
       }
       if (ok3) {
         c3++
-        strToPush = strToPush.replace(new RegExp(char3, 'gi'), '▒')
+        strToPush = strToPush.replace(new RegExp(char3, 'gi'), special3)
       }
       if (strToPush.length !== 0) {
         tempLines23.push(strToPush)
@@ -52,6 +56,33 @@ var Route1802 = () => {
     }
     setLines23(tempLines23)
     setP1(c2 * c3)
+  }
+
+  const Solver_Part_Two = () => {
+
+    let i: number = -1
+    let len: number = lines.length > 0 ? lines[0].length : 0
+    let res2: string = ''
+    while (++i < len)
+    {
+      let j: number = -1
+      while (++j < lines.length) {
+        let L: string = lines[j].substr(0, i) + lines[j].substr(i + 1, len - 1 - i)
+        let k: number = -1
+        while (++k < lines.length) {
+          if (j === k) {
+            continue
+          }
+          let R: string = lines[k].substr(0, i) + lines[k].substr(i + 1, len - 1 - i)
+          if (L === R) {
+            res2 = L
+            break
+          }
+        }
+
+      }
+    }
+    setP2(res2)
   }
 
   const handleData = async () => {
@@ -73,21 +104,26 @@ var Route1802 = () => {
     Solver_Part_One()
   }, [lines])
 
+  useEffect( () => {
+    Solver_Part_Two()
+  }, [lines])
+
   return (
     <>
       {loading ? (
         <p>Loading data...</p>
       ) : (
         <div className='container-L'>
-          <pre>
+          <pre style={{ fontSize: '16px' }}>
             { lines ? lines.join('\n') : 'No data available.' }
           </pre>
-          <pre>
+          <pre style={{ fontSize: '16px' }}>
             { lines23 ? lines23.join('\n') : 'No data available.' }
           </pre>
           <div className='container-R'>
             <span>--- 2018 Day 2: Inventory Management System ---</span>
-            <span>Part 1: { p1 }</span>
+            <span>Part 1: <br />{ p1 }</span>
+            <span>Part 2: <br />{ p2 }</span>
           </div>
         </div>
       )}
