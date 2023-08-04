@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
+import { FetchData } from './FetchData'
 
 const path = 
-  'https://raw.githubusercontent.com/nuoxoxo/in/main/2210.0'
+  'https://raw.githubusercontent.com/nuoxoxo/in/main/2210.in'
 
 var Route2210 = () => {
 
@@ -66,12 +67,9 @@ var Route2210 = () => {
     setP2(temp)
   }
 
-  const fetchLines = async () => {
+  const handleData = async () => {
     try {
-
-      const resp = await fetch( path )
-      const text = await resp.text()
-      const raws: string[] = text.trim().split('\n')
+      const raws = await FetchData( path )
       const arr: number[] = []
       for (let raw of raws) {
         arr.push(0)
@@ -90,7 +88,7 @@ var Route2210 = () => {
   }
 
   useEffect( () => {
-    fetchLines()
+    handleData()
   }, [])
 
   useEffect(() => {
@@ -114,6 +112,7 @@ var Route2210 = () => {
             { nums ? nums.join('\n') : 'No data available.' }
           </pre>
           <div className='container-R'>
+            <span>--- 2022 Day 10: Cathode-Ray Tube ---</span>
             <span>Part 1: { p1 }</span>
             <span>Part 2: </span>
             <pre>

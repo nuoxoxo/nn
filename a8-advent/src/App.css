@@ -41,19 +41,3 @@ pre, span, div {
 .container-R > span {
   margin-bottom: 1.2em;
 }
-
-
-/* .container-btns {
-  position: absolute;
-
-}
-
-.top-right-button {
-  position: relative;
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  z-index: 1; 
-} */
