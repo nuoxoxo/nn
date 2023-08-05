@@ -12,6 +12,6 @@
 | a8    | Advent                  |                                        | 
 | `A9`  | [`io/gig`](https://nuoxoxo.github.io/gig) |  _deployed_          | _-backup-_
 
-- Reading from URL : [a5-coughing-predeploy/README.md](a5-coughing-predeploy/README.md)
+---
 
 ![](https://i.imgur.com/Vi97P6T.jpg)
