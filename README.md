@@ -12,8 +12,9 @@
 | a8    | Advent                  | _refreshable_                          | `npm run dev` 
 | a9    | `io/gig` _- obsolete_   | _unrefreshable routes_                 | _-backup-_
 | `bO`  | [`io/gig`](https://nuoxoxo.github.io/gig) _- deployed_ | _note: removed router_ | _-backup-_
-|       |                         | _upd.: now has cat pics_                 |
-| b1    | FCC Cat Gallery         | A clone . Use React                    |
+|       |                         | _upd.: now has cat pics_               |
+| b1    | FCC Cat Gallery         | _A clone . Use React_                  | 
+| a2    | Dad Jokes               | _in progress_                          | :yellow_circle:
 
 ---
 
