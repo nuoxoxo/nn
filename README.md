@@ -12,7 +12,7 @@
 | a8    | Advent                  | _note: refreshable_                    | `npm run dev` 
 | `a9`  | `io/gig`                | _note: unrefreshable routes_           | _-backup-_
 | `bO`  | [`io/gig`](https://nuoxoxo.github.io/gig) _- deployed_ | _note: deleted router_ | _-backup-_
-| `b1`  | FCC: Gallery            | Use React
+| `b1`  | Cat Gallery            | A FCC project clone . Use React         |
 
 ---
 
