@@ -4,6 +4,7 @@ import Route1802 from "./Routes/Route1802"
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
 
 var App = () => {
+
   return (
     <Router basename={import.meta.env.DEV ? "/" : "/gig/"}>
       <>
