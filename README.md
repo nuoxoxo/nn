@@ -6,11 +6,11 @@
 | a2    | Hangman                 | _in progress_                          | :yellow_circle:
 | a3    | Idioms                  |                                        | 
 | a4    | HSK-3                   |                                        | 
-| `A5`  | [`io/coughing`](https://nuoxoxo.github.io/coughing) | _deployed_ | _-backup-_
+| `a5`  | [`io/coughing`](https://nuoxoxo.github.io/coughing) | _deployed_ | _-backup-_
 | a6    | useState . useRef       | _fix : emoji height_                   | 
 | a7    | :sun_behind_rain_cloud: Weather |  _fix : tsx <--- ts_           | :yellow_circle:
 | a8    | Advent                  |                                        | 
-| `A9`  | [`io/gig`](https://nuoxoxo.github.io/gig) |  _deployed_          | _-backup-_
+| `a9`  | [`io/gig`](https://nuoxoxo.github.io/gig) |  _deployed_          | _-backup-_
 
 ---
 
