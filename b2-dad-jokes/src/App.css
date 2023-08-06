@@ -1,35 +1,42 @@
 :root {
 
   --FONT-TEXT: Consolas;
-  --FONT-SIZE: 42px;
+  --FONT-SIZE: 32px;
   --FONT-SIZE-HALF: calc(var(--FONT-SIZE) / 2);
   --FONT-SIZE-2X: calc(var(--FONT-SIZE) * 2);
   --FONT-SIZE-3X: calc(var(--FONT-SIZE) * 3);
   --BTN-WATER-GREEN: #23aeba;
+  --PADDING-TOP: 14%;
+  --PADDING-BOTTOM: 21%;
+  --PADDING-LR: 42vh;
 }
 
 body {
 
   background-color: black;
   color: white;
-  font-family: var(--FONT-TEXT);
-  position: relative;
-  top: 50%;
-  left: 50%;
-  /* transform: translate(-50%, 0%); */
-  font-size: var(--FONT-SIZE-HALF);
-}
+  white-space: pre-wrap;
+  user-select: none;
 
-pre, span, div {
-
-  font-family: var(--FONT-TEXT);
+  height: 100%;
   margin: 0;
-  margin-right: 1em
+  padding: 0;
 }
 
-.container-L {
+.container {
 
+  padding-left: var(--PADDING-LR);
+  padding-right: var(--PADDING-LR);
+  padding-top: var(--PADDING-TOP);
+  padding-bottom: var(--PADDING-BOTTOM);
+
+  font-family: var(--FONT-TEXT);
+  font-size: var(--FONT-SIZE);
+  cursor: pointer;
+  /* display: block; */
+  height: 88%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  margin: auto;
 }
