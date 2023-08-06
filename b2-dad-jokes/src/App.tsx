@@ -31,9 +31,9 @@ function App() {
       {loading ? (
         <p>Loading data...</p>
       ) : (
-        <div className='container-L'>
+        <div className='container'>
           <pre>
-            { lines ? lines.join('\n\n') : 'No data available.' }
+            { lines ? lines[Math.floor(Math.random() * lines.length)] : 'No data available.' }
           </pre>
         </div>
       )}

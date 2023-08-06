@@ -12,24 +12,15 @@ body {
 
   background-color: black;
   color: white;
+}
+
+.container {
   font-family: var(--FONT-TEXT);
-  position: relative;
-  top: 50%;
-  left: 50%;
-  /* transform: translate(-50%, 0%); */
   font-size: var(--FONT-SIZE-HALF);
-}
-
-pre, span, div {
-
-  font-family: var(--FONT-TEXT);
-  margin: 0;
-  margin-right: 1em
-}
-
-.container-L {
-
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
+  cursor: pointer;
+  user-select: none;
 }
