@@ -8,6 +8,8 @@ function App() {
 
   const [loading, setLoading] = useState<boolean>( true )
   const [lines, setLines] = useState<string[]>( [] )
+  const [index, setIndex] = useState<number>( 0 )
+
 
   const handleData = async () => {
     try {
@@ -25,19 +27,27 @@ function App() {
     handleData()
   }, [])
 
+  const handleClick = () => {
+
+    let randIdx = Math.floor(Math.random() * lines.length)
+    while (randIdx === index) {
+      randIdx = Math.floor(Math.random() * lines.length)
+    }
+    setIndex(randIdx)
+  }
 
   return (
-    <>
+    <div className='container' onClick={handleClick}>
       {loading ? (
         <p>Loading data...</p>
       ) : (
-        <div className='container'>
-          <pre>
+        <div>
+          <span>
             { lines ? lines[Math.floor(Math.random() * lines.length)] : 'No data available.' }
-          </pre>
+          </span>
         </div>
       )}
-    </>
+    </div>
   )
 }
 
