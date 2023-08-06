@@ -13,7 +13,7 @@ body {
     align-items: center; /* center all children vertically */
     height: 100vh;
     font-family: var(--FONT-TEXT);
-    /* user-select: 'none'; */
+    /* user-select: none; */
 }
 
 .text {
