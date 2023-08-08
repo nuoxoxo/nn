@@ -1,0 +1,86 @@
+body {
+
+  background-color: black;
+}
+
+
+.container {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(96vh - 3rem); // Ensure the container takes up the full viewport height
+  flex-wrap: wrap;
+}
+
+
+.btn {
+
+  font-family: monospace, "Lucida Console", Courier;
+  // font-family: 'Ariel';
+  height: 256px;
+  width: 256px;
+  border: 2px;
+  margin: 2px;
+  text-align: center;
+  font-size: 42px;
+  user-select: none;
+  cursor: pointer;
+  transition:
+    background-color 0.1s ease-in-out, border-color 0.1s ease-in-out; // Add transition property
+  border:
+    6px solid white;
+}
+
+
+.btn-L {
+
+  border-radius: 12%;
+}
+
+
+.btn-R {
+
+  border-radius: 50%;
+}
+
+
+@media (max-width: 320px) {
+  .container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(96vh - 3rem); // Ensure the container takes up the full viewport height
+    flex-wrap: wrap;
+  }
+  .btn {
+
+    font-family: monospace, "Lucida Console", Courier;
+    // font-family: 'Ariel';
+    height: 128px;
+    width: 128px;
+    border: 2px;
+    margin: 2px;
+    text-align: center;
+    font-size: 21px;
+    user-select: none;
+    cursor: pointer;
+    transition:
+      background-color 0.1s ease-in-out, border-color 0.1s ease-in-out; // Add transition property
+    border:
+      6px solid white;
+  }
+
+
+  .btn-L {
+
+    border-radius: 12%;
+  }
+
+  .btn-R {
+
+    border-radius: 50%;
+  }
+}
