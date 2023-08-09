@@ -1,23 +1,23 @@
-:root {
+$bg-color: black;
+$text-color: #23aeba;
+$btn-water-green: #23aeba;
 
-  --FONT-TEXT: Consolas;
-  --FONT-SIZE: 32px;
-  --FONT-SIZE-HALF: calc(var(--FONT-SIZE) / 2);
-  --FONT-SIZE-2X: calc(var(--FONT-SIZE) * 2);
-  --FONT-SIZE-3X: calc(var(--FONT-SIZE) * 3);
-  --BTN-WATER-GREEN: #23aeba;
-  --PADDING-TOP: 14%;
-  --PADDING-BOTTOM: 21%;
-  --PADDING-LR: 42vh;
-}
+$pre-wrap: pre-wrap;
+$user-select: none;
+
+$container-height: 88%;
+$container-padding-lr: 42vh;
+$container-padding-top: 14%;
+$container-padding-bottom: 21%;
+
+$font-family: Consolas;
+$font-size: 32px;
 
 body {
-
-  background-color: black;
-  color: white;
-  white-space: pre-wrap;
-  user-select: none;
-
+  background-color: $bg-color;
+  color: $text-color;
+  white-space: $pre-wrap;
+  user-select: $user-select;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -25,16 +25,14 @@ body {
 
 .container {
 
-  padding-left: var(--PADDING-LR);
-  padding-right: var(--PADDING-LR);
-  padding-top: var(--PADDING-TOP);
-  padding-bottom: var(--PADDING-BOTTOM);
-
-  font-family: var(--FONT-TEXT);
-  font-size: var(--FONT-SIZE);
+  padding-left: $container-padding-lr;
+  padding-right: $container-padding-lr;
+  padding-top: $container-padding-top;
+  padding-bottom: $container-padding-bottom;
+  font-family: $font-family;
+  font-size: $font-size;
   cursor: pointer;
-  /* display: block; */
-  height: 88%;
+  height: $container-height;
   display: flex;
   justify-content: center;
   align-items: center;
