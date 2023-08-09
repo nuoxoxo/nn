@@ -3,11 +3,7 @@ $border-width: 2px;
 $border-radius-l: 12%;
 $border-radius-r: 50%;
 
-//  define @mixins
-
-@mixin container-styles
-{
-
+@mixin container-styles {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,14 +11,7 @@ $border-radius-r: 50%;
   flex-wrap: wrap;
 }
 
-@mixin button-styles(
-
-$size: 256px,
-  $fontSize: 42px,
-  $borderRadius: 0
-)
-{
-
+@mixin button-styles($size, $fontSize, $borderRadius: 0) {
   font-family: $font-family;
   height: $size;
   width: $size;
@@ -37,52 +26,42 @@ $size: 256px,
   border-radius: $borderRadius;
 }
 
-//  use mixins
-
-body
-{
+body {
   background-color: black;
+
+  .container {
+    @include container-styles;
+  }
 }
 
-.container
-{
-  @include container-styles;
-}
-
-.btn
-{
+.btn {
   @include button-styles(256px, 42px);
 }
 
-.btn-L
-{
+.btn-L {
   @include button-styles(256px, 42px, $border-radius-l);
 }
 
-.btn-R
-{
+.btn-R {
   @include button-styles(256px, 42px, $border-radius-r);
 }
 
-@media (max-width: 320px)
-{
-  .container
-  {
-    @include container-styles;
+@media (max-width: 320px) {
+  body {
+    .container {
+      @include container-styles;
+    }
   }
 
-  .btn
-  {
+  .btn {
     @include button-styles(128px, 21px);
   }
 
-  .btn-L
-  {
+  .btn-L {
     @include button-styles(128px, 21px, $border-radius-l);
   }
 
-  .btn-R
-  {
+  .btn-R {
     @include button-styles(128px, 21px, $border-radius-r);
   }
 }
