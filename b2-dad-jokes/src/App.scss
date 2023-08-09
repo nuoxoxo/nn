@@ -1,6 +1,6 @@
 $bg-color: black;
 $text-color: #23aeba;
-$btn-water-green: #23aeba;
+$btn-water-green: #ABF8E4;
 
 $pre-wrap: pre-wrap;
 $user-select: none;
@@ -13,7 +13,10 @@ $container-padding-bottom: 21%;
 $font-family: Consolas;
 $font-size: 32px;
 
-body {
+
+//  define @mixin
+
+@mixin body-styles {
   background-color: $bg-color;
   color: $text-color;
   white-space: $pre-wrap;
@@ -23,8 +26,7 @@ body {
   padding: 0;
 }
 
-.container {
-
+@mixin container-styles {
   padding-left: $container-padding-lr;
   padding-right: $container-padding-lr;
   padding-top: $container-padding-top;
@@ -37,4 +39,15 @@ body {
   justify-content: center;
   align-items: center;
   margin: auto;
+}
+
+
+//  deploy @minxin
+
+body {
+  @include body-styles;
+}
+
+.container {
+  @include container-styles;
 }
