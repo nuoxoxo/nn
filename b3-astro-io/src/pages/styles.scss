@@ -1,7 +1,13 @@
-//  define mixins
+$font-family: monospace, "Lucida Console", Courier;
+$border-width: 2px;
+$border-radius-l: 12%;
+$border-radius-r: 50%;
+
+//  define @mixins
 
 @mixin container-styles
 {
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,28 +16,28 @@
 }
 
 @mixin button-styles(
-  $size: 256px,
+
+$size: 256px,
   $fontSize: 42px,
   $borderRadius: 0
 )
 {
-  font-family: monospace, "Lucida Console", Courier;
+
+  font-family: $font-family;
   height: $size;
   width: $size;
-  border: 2px;
-  margin: 2px;
+  border: $border-width;
+  margin: $border-width;
   text-align: center;
   font-size: $fontSize;
   user-select: none;
   cursor: pointer;
-  transition: 
-    background-color 0.1s ease-in-out, 
-    border-color 0.1s ease-in-out;
-  border: 6px solid white;
+  transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out;
+  border: $border-width solid white;
   border-radius: $borderRadius;
 }
 
-//  deploy mixins
+//  use mixins
 
 body
 {
@@ -50,12 +56,12 @@ body
 
 .btn-L
 {
-  @include button-styles(256px, 42px, 12%);
+  @include button-styles(256px, 42px, $border-radius-l);
 }
 
 .btn-R
 {
-  @include button-styles(256px, 42px, 50%);
+  @include button-styles(256px, 42px, $border-radius-r);
 }
 
 @media (max-width: 320px)
@@ -72,11 +78,11 @@ body
 
   .btn-L
   {
-    @include button-styles(128px, 21px, 12%);
+    @include button-styles(128px, 21px, $border-radius-l);
   }
 
   .btn-R
   {
-    @include button-styles(128px, 21px, 50%);
+    @include button-styles(128px, 21px, $border-radius-r);
   }
 }
