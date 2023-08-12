@@ -1,104 +1,173 @@
-* {
-  box-sizing: border-box;
-}
+$font-size: 16px;
+$background-color: #000000;
+$text-color: #ffffff;
+$border-color: #ffffff;
+$border-bottom-color: #888989;
 
-html {
-  font-size: 16px;
-}
-
-body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #000000;
-  color: #ffffff
-}
-
-.label {
-  border: 2px solid #ffffff;
+@mixin label {
+  border: 2px solid $border-color;
   width: 320px;
   margin: 20px auto;
   padding: 0 7px;
 }
 
-header h1 {
+@mixin header {
   text-align: center;
   margin: -4px 0;
-  letter-spacing: 0.15px
+  letter-spacing: 0.15px;
+}
+
+@mixin divider {
+  border-bottom: 1px solid $border-bottom-color;
+  margin: 2px 0;
+}
+
+@mixin bold {
+  font-weight: 800;
+}
+
+@mixin large {
+  height: 10px;
+  background-color: $border-color;
+  border: 0;
+}
+
+@mixin medium {
+  height: 5px;
+  background-color: $border-color;
+  border: 0;
+}
+
+@mixin small-text {
+  font-size: 0.85rem;
+}
+
+@mixin calories-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+@mixin left-container {
+  p {
+    margin: -5px -2px;
+    font-size: 2em;
+    font-weight: 700;
+  }
+}
+
+@mixin calories-info-span {
+  margin: -7px -2px;
+  font-size: 2.4em;
+  font-weight: 700;
+}
+
+@mixin right {
+  justify-content: flex-end;
+}
+
+@mixin indent($amount) {
+  margin-left: $amount;
+}
+
+@mixin note {
+  padding: 0 8px;
+  text-indent: -8px;
+  font-size: 0.6rem;
+  margin: 5px 0;
+}
+
+.wen-xing-ti-xing {
+  padding: 4px;
+}
+
+// Actual SASS styles using mixins and variables
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $font-size;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+.label {
+  @include label;
+}
+
+header h1 {
+  @include header;
 }
 
 p {
   margin: 0;
   display: flex;
   justify-content: space-between;
+  .divider {
+    @include divider;
+  }
 }
 
 .divider {
-  border-bottom: 1px solid #888989;
-  margin: 2px 0;
+  @include divider;
 }
 
 .bold {
-  font-weight: 800;
+  @include bold;
 }
 
 .large {
-  height: 10px;
-}
-
-.large, .medium {
-  background-color: #ffffff;
-  border: 0;
+  @include large;
 }
 
 .medium {
-  height: 5px;
+  @include medium;
 }
 
 .small-text {
-  font-size: 0.85rem;
+  @include small-text;
 }
-
 
 .calories-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  @include calories-info;
+
+  h2 {
+    margin: 0;
+  }
+
+  .calories-info-span {
+    @include calories-info-span;
+  }
 }
 
-.calories-info h2 {
-  margin: 0;
-}
-
-.left-container p {
-  margin: -5px -2px;
-  font-size: 2em;
-  font-weight: 700;
-}
-
-.calories-info span {
-  margin: -7px -2px;
-  font-size: 2.4em;
-  font-weight: 700;
+.left-container {
+  @include left-container;
 }
 
 .right {
-  justify-content: flex-end;
+  @include right;
 }
 
 .indent {
-  margin-left: 1em;
+  @include indent(1em);
 }
 
 .double-indent {
-  margin-left: 2em;
+  @include indent(2em);
 }
 
-.daily-value p:not(.no-divider) {
-  border-bottom: 1px solid #888989;
+.daily-value {
+  p:not(.no-divider) {
+    @include divider;
+  }
 }
 
 .note {
-  padding: 0 8px;
-  text-indent: -8px;
-  font-size: 0.6rem;
-  margin: 5px 0;
+  @include note;
 }
