@@ -1,3 +1,5 @@
+env.d.ts
+
 # build output
 dist/
 # generated types
