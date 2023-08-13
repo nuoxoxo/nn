@@ -7,7 +7,7 @@ $border-bottom-color: #888989;
 @mixin label {
   border: 2px solid $border-color;
   width: 320px;
-  margin: 20px auto;
+  margin: 21px;
   padding: 0 7px;
 }
 
@@ -81,8 +81,6 @@ $border-bottom-color: #888989;
   padding: 4px;
 }
 
-// Actual SASS styles using mixins and variables
-
 * {
   box-sizing: border-box;
 }
@@ -95,6 +93,11 @@ body {
   font-family: 'Open Sans', sans-serif;
   background-color: $background-color;
   color: $text-color;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .label {
@@ -170,4 +173,8 @@ p {
 
 .note {
   @include note;
+}
+
+.label-lightgreen {
+  color: lightgreen;
 }
