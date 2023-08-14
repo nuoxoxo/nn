@@ -20,7 +20,7 @@
 | b4      | Coffee                  | _init to Astro + Sass_                 | :green_circle:
 | b5      | Nutrition Label         | _upd. 3 new labels_                   | :green_circle:
 || [*io/sneak*](https://nuoxoxo.github.io/sneak/)
-| b6      | Boots                   | `.container-fluid` _not OK_            | :yellow_circle:
+| b6      | Boots                   | `.container-fluid` _not working_            | :red_circle:
 
 ---
 
