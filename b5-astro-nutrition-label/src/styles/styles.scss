@@ -5,8 +5,8 @@ $text-color: #ffffff;
 $border-color-default: #ffffff;
 $border-bottom-color-default: #888989;
 
-$macaroni-cheese: #52c1d2;
-$macaroni-cheese-divider: #42767e;
+$mac-n-cheese: #52c1d2;
+$mac-n-cheese-divider: #42767e;
 
 
 @mixin label {
@@ -23,12 +23,12 @@ $macaroni-cheese-divider: #42767e;
 }
 
 @mixin divider {
-  border-bottom: 1px solid $macaroni-cheese-divider;
+  border-bottom: 1px solid $mac-n-cheese-divider;
   margin: 2px 0;
 }
 
-@mixin divider-macaroni-cheese {
-  border-bottom: 1px solid $macaroni-cheese;
+@mixin divider-mac-n-cheese {
+  border-bottom: 1px solid $mac-n-cheese;
   margin: 2px 0;
 }
 
@@ -115,9 +115,9 @@ body {
 
 }
 
-.label-macaroni-cheese {
-  color: $macaroni-cheese;
-  border: 2px solid $macaroni-cheese
+.label-mac-n-cheese {
+  color: $mac-n-cheese;
+  border: 2px solid $mac-n-cheese
 }
 
 header h1 {
@@ -145,18 +145,18 @@ p {
   @include large;
 }
 
-.label-macaroni-cheese .large {
-  @include divider-macaroni-cheese;
-  background-color: $macaroni-cheese;
+.label-mac-n-cheese .large {
+  @include divider-mac-n-cheese;
+  background-color: $mac-n-cheese;
 }
 
 .medium {
   @include medium;
 }
 
-.label-macaroni-cheese .medium {
-  @include divider-macaroni-cheese;
-  background-color: $macaroni-cheese;
+.label-mac-n-cheese .medium {
+  @include divider-mac-n-cheese;
+  background-color: $mac-n-cheese;
 }
 
 .small-text {
