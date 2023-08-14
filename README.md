@@ -19,7 +19,7 @@
 |         | `astro projects`
 | b3      | io                      | _OK : convert to Astro + Sass_         | :green_circle:
 | b4      | coffee                  | _init to Astro + Sass_                 | :green_circle:
-| b5      | nutrition.              | _todo: macaroni cheese_
+| b5      | nutrition               | _todo: macaroni cheese_
 
 ---
 
