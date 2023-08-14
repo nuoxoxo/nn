@@ -21,6 +21,7 @@
 | b5      | Nutrition Label         | _upd. 3 new labels_                    | :green_circle:
 || [*io/sneak*](https://nuoxoxo.github.io/sneak/)
 | b6      | Boots                   | `.container-fluid` _not working_       | :red_circle:
+| b7      | Empty                   | _redo : AOC 22.10 and 18.02_
 
 ![](https://i.imgur.com/2hQLua4.png)
 
