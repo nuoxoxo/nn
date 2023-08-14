@@ -144,7 +144,7 @@ p {
     margin: 0;
   }
 
-  .calories-info-span {
+  span  {
     @include calories-info-span;
   }
 }
