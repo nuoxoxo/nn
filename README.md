@@ -13,12 +13,12 @@
 | a8      | Advent                  | _refreshable_                          | `npm run dev` 
 | a9      | io/gig - _depr._      | _unrefreshable routes_                 | _backup_
 | bO      | [*io/gig*](https://nuoxoxo.github.io/gig) _- deployed_ | _note: removed router_ | _-backup-_
-| &#8203; |                         | _upd.: now has cat pics_               |
+| &#8203; |                         | _upd. : now has cat pics_               |
 | b1      | FCC Cat Gallery         | _A clone . Use React_                  | 
 | b2      | Dad Jokes               |                                        | :green_circle:
 | b3      | io                      | _OK : convert to Astro + Sass_         | :green_circle:
 | b4      | Coffee                  | _init to Astro + Sass_                 | :green_circle:
-| b5      | Nutrition Label         | _upd.: 3 new labels_                   | :green_circle:
+| b5      | Nutrition Label         | _upd. : 3 new labels_                   | :green_circle:
 || [*io/sneak*](https://nuoxoxo.github.io/sneak/)
 | b6      | Boots                   | `.container-fluid` _not OK_            | :yellow_circle:
 
