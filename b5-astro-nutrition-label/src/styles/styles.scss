@@ -107,6 +107,7 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -128,8 +129,6 @@ header {
     @include header;
   }
 }
-
-
 
 p {
   margin: 0;
