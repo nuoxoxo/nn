@@ -125,7 +125,7 @@ body {
 .daily-value {
   p:not(.no-divider) {
     @include divider;
-    border-bottom: 1px solid $border-color-default  
+    border-bottom: 1px solid $border-bottom-color-default
   }
 }
 
