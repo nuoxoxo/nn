@@ -18,8 +18,8 @@
 | b2      | Dad Jokes               |                                        | :green_circle:
 |         | `Astro`
 | b3      | io                      | _OK : convert to Astro + Sass_         | :green_circle:
-| b4      | coffee                  | _init to Astro + Sass_                 | :green_circle:
-| b5      | nutrition               | _todo: macaroni cheese_
+| b4      | Coffee                  | _init to Astro + Sass_                 | :green_circle:
+| b5      | Nutrition Label         | _todo: macaroni cheese_
 
 ---
 
