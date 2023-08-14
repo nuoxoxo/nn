@@ -16,7 +16,7 @@
 | &#8203; |                         | _upd.: now has cat pics_               |
 | b1      | FCC Cat Gallery         | _A clone . Use React_                  | 
 | b2      | Dad Jokes               |                                        | :green_circle:
-|         | `astro projects`
+|         | `Astro`
 | b3      | io                      | _OK : convert to Astro + Sass_         | :green_circle:
 | b4      | coffee                  | _init to Astro + Sass_                 | :green_circle:
 | b5      | nutrition               | _todo: macaroni cheese_
