@@ -22,8 +22,6 @@
 || [*io/sneak*](https://nuoxoxo.github.io/sneak/)
 | b6      | Boots                   | `.container-fluid` _not working_       | :red_circle:
 
----
-
 ![](https://i.imgur.com/2hQLua4.png)
 
 ![](https://i.imgur.com/Vi97P6T.jpg)
