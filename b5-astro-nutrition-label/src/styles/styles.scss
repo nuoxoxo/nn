@@ -5,12 +5,28 @@ $text-color: #ffffff;
 $border-color-default: #ffffff;
 $border-bottom-color-default: #888989;
 
-$mac-n-cheese: #52c1d2;
-$mac-n-cheese-divider: #42767e;
+$mac-n-cheese: #f19703;
+$mac-n-cheese-divider: #f2c99b;
 
+$camel-milk: #2095c7;
+$camel-milk-divider: #106c92;
 
 @mixin label {
-  border: 4px solid $border-color-default;
+  border: 6px solid $border-color-default;
+  width: 320px;
+  margin: 21px;
+  padding: 0 7px;
+}
+
+@mixin mac-n-cheese-label {
+  border: 4px solid $mac-n-cheese;
+  width: 320px;
+  margin: 21px;
+  padding: 0 7px;
+}
+
+@mixin camel-milk-label {
+  border: 4px solid $camel-milk;
   width: 320px;
   margin: 21px;
   padding: 0 7px;
@@ -106,13 +122,35 @@ body {
   justify-content: center;
 }
 
+.daily-value {
+  p:not(.no-divider) {
+    @include divider;
+    border-bottom: 1px solid $border-color-default  
+  }
+}
+
 .label {
   @include label;
 }
 
 .label-mac-n-cheese {
-  @include label;
-  border: 4px solid $mac-n-cheese
+  @include mac-n-cheese-label;
+  .daily-value {
+    p:not(.no-divider) {
+      @include divider;
+      border-bottom: 1px solid $mac-n-cheese-divider 
+    }
+  }
+}
+
+.label-camel-milk {
+  @include camel-milk-label;
+  .daily-value {
+    p:not(.no-divider) {
+      @include divider;
+      border-bottom: 1px solid $camel-milk-divider 
+    }
+  }
 }
 
 header {
@@ -138,6 +176,10 @@ p {
   border-bottom: 1px solid $mac-n-cheese-divider;
 }
 
+.devider-camel-milk {
+  border-bottom: 1px solid $camel-milk-divider;
+}
+
 .bold {
   @include bold;
 }
@@ -146,18 +188,30 @@ p {
   @include large;
 }
 
-.label-mac-n-cheese .large {
-  @include large;
-  background-color: $mac-n-cheese;
-}
-
 .medium {
   @include medium;
 }
 
-.label-mac-n-cheese .medium {
-  @include medium;
-  background-color: $mac-n-cheese;
+.label-camel-milk {
+  .large {
+    @include large;
+    background-color: $camel-milk;
+  }
+  .medium {
+    @include medium;
+    background-color: $camel-milk;
+  }
+}
+
+.label-mac-n-cheese {
+  .large {
+    @include large;
+    background-color: $mac-n-cheese;
+  }
+  .medium {
+    @include medium;
+    background-color: $mac-n-cheese;
+  }
 }
 
 .small-text {
@@ -190,14 +244,6 @@ p {
 
 .double-indent {
   @include indent(2em);
-}
-
-.daily-value {
-  p:not(.no-divider) {
-    @include divider;
-    border-bottom: 1px solid $mac-n-cheese-divider;
-    
-  }
 }
 
 .note {
