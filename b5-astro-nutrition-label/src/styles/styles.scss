@@ -23,14 +23,14 @@ $mac-n-cheese-divider: #42767e;
 }
 
 @mixin divider {
-  border-bottom: 1px solid $mac-n-cheese-divider;
+  border-bottom: 1px solid $border-bottom-color-default;
   margin: 2px 0;
 }
 
-@mixin divider-mac-n-cheese {
-  border-bottom: 1px solid $mac-n-cheese;
-  margin: 2px 0;
-}
+// @mixin divider-mac-n-cheese {
+//   border-bottom: 1px solid $mac-n-cheese;
+//   margin: 2px 0;
+// }
 
 @mixin bold {
   font-weight: 800;
@@ -115,14 +115,21 @@ body {
 
 }
 
-.label-mac-n-cheese {
-  color: $mac-n-cheese;
-  border: 2px solid $mac-n-cheese
+// .label-mac-n-cheese {
+//   color: $mac-n-cheese;
+//   border: 2px solid $mac-n-cheese
+// }
+
+header {
+  h1 {
+    @include header;
+  }
+  h2 {
+    @include header;
+  }
 }
 
-header h1 {
-  @include header;
-}
+
 
 p {
   margin: 0;
@@ -145,18 +152,18 @@ p {
   @include large;
 }
 
-.label-mac-n-cheese .large {
-  @include divider-mac-n-cheese;
-  background-color: $mac-n-cheese;
-}
+// .label-mac-n-cheese .large {
+//   @include divider-mac-n-cheese;
+//   background-color: $mac-n-cheese;
+// }
 
 .medium {
   @include medium;
 }
 
 .label-mac-n-cheese .medium {
-  @include divider-mac-n-cheese;
-  background-color: $mac-n-cheese;
+  // @include divider-mac-n-cheese;
+  background-color: $border-color-default;
 }
 
 .small-text {
