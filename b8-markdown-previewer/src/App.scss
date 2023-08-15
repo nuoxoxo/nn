@@ -1,15 +1,37 @@
 $BGColor: #000000;
-$TextColor: #ffffff;
+$TextColor: #a00606;
 $Size-1: 42px;
 $Size-2: 84px;
+$Font-1: monospace, "Courier New", "Lucida Console", Courier;
 
 
 body {
 
+  font-family: $Font-1;
   font-size: $Size-2;
   color: $TextColor;
   background-color: $BGColor;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none;
 }
