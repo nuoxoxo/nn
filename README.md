@@ -21,7 +21,7 @@
 | b5      | Nutrition Label         | _upd. 3 new labels_                    | :green_circle:
 || [*io/sneak*](https://nuoxoxo.github.io/sneak/)
 | b6      | Boots                   | `.container-fluid` _not working_       | :red_circle:
-| b7      | Simple                  | _for : aoc simple tasks_               | :green_circle:
+| b7      | Simple                  | _for : aoc simple tasks_               | 
 ||| _done : 15:01_
 | b8      | Markdown Previewer      | _bug : textarea div different height_  | :green_circle:
 || [*io/mdp*](https://nuoxoxo.github.io/mdp/)
