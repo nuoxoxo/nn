@@ -1,12 +1,17 @@
 import { useState } from 'react'
+import { GetRandomColor } from './Helpers'
 import './App.scss'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [textColor, SetTextColor] = useState(GetRandomColor())
 
   return (
     <>
-      <h1>Hello World</h1>
+      <h1>
+        <span style={{ color: textColor }}>Hello</span>
+        &nbsp;
+        <span style={{ color: textColor }}>World</span>
+      </h1>
     </>
   )
 }
