@@ -1,76 +1,80 @@
-:root {
+$FONT-TEXT: Consolas;
+$FONT-SIZE: 42px;
+$FONT-SIZE-HALF: calc(#{$FONT-SIZE} / 2);
+$FONT-SIZE-2X: calc(#{$FONT-SIZE} * 2);
+$FONT-SIZE-3X: calc(#{$FONT-SIZE} * 3);
+$BTN-WATER-GREEN: #23aeba;
 
-  --FONT-TEXT: Consolas;
-  --FONT-SIZE: 42px;
-  --FONT-SIZE-HALF: calc(var(--FONT-SIZE) / 2);
-  --FONT-SIZE-2X: calc(var(--FONT-SIZE) * 2);
-  --FONT-SIZE-3X: calc(var(--FONT-SIZE) * 3);
-  --BTN-WATER-GREEN: #23aeba;
-}
+// :root {
+//   --FONT-TEXT: #{$FONT-TEXT};
+//   --FONT-SIZE: #{$FONT-SIZE};
+//   --FONT-SIZE-HALF: #{$FONT-SIZE-HALF};
+//   --FONT-SIZE-2X: #{$FONT-SIZE-2X};
+//   --FONT-SIZE-3X: #{$FONT-SIZE-3X};
+//   --BTN-WATER-GREEN: #{$BTN-WATER-GREEN};
+// }
 
 body {
-
   background-color: black;
   color: white;
-  font-family: var(--FONT-TEXT);
+  font-family: $FONT-TEXT;
   position: relative;
   top: 50%;
   left: 50%;
   transform: translate(-50%, 0%);
-  font-size: var(--FONT-SIZE-HALF);
-}
+  font-size: $FONT-SIZE-HALF;
 
-pre, span, div {
-
-  font-family: var(--FONT-TEXT);
-  margin: 0;
-  margin-right: 1em
+  pre, span, div {
+    font-family: $FONT-TEXT;
+    margin: 0;
+    margin-right: 1em;
+  }
 }
 
 .container-L {
-
   display: flex;
   justify-content: center;
 }
 
 .container-R {
-
   display: flex;
   flex-direction: column;
   white-space: pre-wrap; /* show \n inside strings */
+
+  > span {
+    margin-bottom: 1.2em;
+  }
 }
 
-.container-R > span {
-  margin-bottom: 1.2em;
+nav {
+  > ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
-nav > ul {
-  list-style: none;
-  padding: 0;
-  margin: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-button {
+@mixin button-style {
   -webkit-user-select: none;
-  /* Safari */
   -ms-user-select: none;
-  /* IE 10 and IE 11 */
   user-select: none;
-  border: 1px solid var(--BTN-WATER-GREEN);
+  border: 1px solid $BTN-WATER-GREEN;
   border-radius: 20px;
   padding: 4px 10px;
   margin: 0 3px;
   font-size: 16px;
   background-color: transparent;
   transition: background-color 0.3s ease;
-  
   color: white;
+
+  &:hover {
+    background-color: $BTN-WATER-GREEN;
+  }
 }
 
-button:hover {
-
-  background-color: var(--BTN-WATER-GREEN);
+button {
+  @include button-style;
 }
