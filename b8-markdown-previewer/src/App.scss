@@ -1,0 +1,15 @@
+$BGColor: #000000;
+$TextColor: #ffffff;
+$Size-1: 42px;
+$Size-2: 84px;
+
+
+body {
+
+  font-size: $Size-2;
+  color: $TextColor;
+  background-color: $BGColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
