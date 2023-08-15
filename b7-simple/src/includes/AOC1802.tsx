@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "./Helpers"
 
-const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/1502.in"
+const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/1802.in"
 
-var AOC1501 = () => {
+var AOC1802 = () => {
   const [lines, setLines] = useState<string[]>( [] )
 
   const handleData = async () => {
@@ -38,4 +38,4 @@ var AOC1501 = () => {
   )
 }
 
-export default AOC1501
+export default AOC1802

@@ -79,7 +79,7 @@ var AOC1501 = () => {
 
   return (
     <>
-    {lines?
+    { lines ?
       <div className='playground'>
         <div className="field data-fetched">
           {lines
@@ -100,7 +100,9 @@ var AOC1501 = () => {
             <span>Part 2: {p2}</span>
           </>
         </div>
-      </div> : <p>Loading data...</p>
+      </div>
+      :
+      <p>Loading data...</p>
 }
     </>
   )
