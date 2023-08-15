@@ -1,15 +1,85 @@
 $BGColor: #000000;
 $TextColor: #ffffff;
+$InputColor: #FEFBEA;
+$InputColor: #FEFBEA;
 $Size-1: 42px;
 $Size-2: 84px;
-
+$Font-1: monospace, "Courier New", "Lucida Console", Courier;
 
 body {
+  background-color: $BGColor;
+}
 
+.mdp-body {
+
+  font-family: $Font-1;
   font-size: $Size-2;
   color: $TextColor;
-  background-color: $BGColor;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+}
+
+.container-hello {
+  font-family: $Font-1;
+  font-size: $Size-2;
+  color: $TextColor;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none;
+}
+
+.input {
+  width: 500px;
+  height: 500px;
+  background-color: #FEFBEA;
+  margin-left: auto;
+  margin-right: 3px;
+  padding: 10px;
+  font-family: Georgia;
+  font-size: 21px;
+}
+
+.output {
+  width: 500px;
+  height: 500px;
+  background-color: #E6FFE6;
+  // background-color: $BGColor;
+  color: $BGColor;
+  margin-left: 3px;
+  margin-right: auto;
+  padding: 10px;
+  font-family: Georgia;
+  font-size: 21px;
+}
+
+@media (max-width: 960px) {
+  .mdp-body {
+    flex-direction: column;
+  }
+
+  .container-hello {
+    font-size: $Size-1;
+  }
+
+  .input, .output {
+    width: 400px;
+    height: 400px;
+  }
+
 }
