@@ -10,6 +10,15 @@ var Aoc1501 = () => {
   const [p1, setP1] = useState<number>(0)
   const [p2, setP2] = useState<number>(0)
 
+  const handleData = async () => {
+    try {
+      const raws = await FetchData(path)
+      setLines(raws)
+    } catch (error: any) {
+      console.error("Error fetching data: ", error)
+    }
+  }
+
   const Solver = () => {
     if (lines === undefined || lines[0] === undefined)
       return
@@ -80,15 +89,6 @@ var Aoc1501 = () => {
     return res.filter(
       (item, pos, arr) => pos === 0 || item !== arr[pos - 1]
     )
-  }
-
-  const handleData = async () => {
-    try {
-      const raws = await FetchData(path)
-      setLines(raws)
-    } catch (error: any) {
-      console.error("Error fetching data: ", error)
-    }
   }
 
   useEffect(() => {
