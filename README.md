@@ -1,8 +1,8 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------- |
-| aO      | Todolist                | _bug : EACCES_                         | `npm start`
-| a1      | Todolist (vite)         |                                        | `npm run dev`
-| &#8203; | Todolist (cmpnt.)         |                                        | 
+| aO      | Todolist                | _bug : EACCES_                         | `start`
+| a1      | Todolist (vite)         |                                        | `run dev`
+| &#8203; | Todolist (cmpnt.)       |                                        | 
 | a2      | Hangman                 | _in progress_                          | :yellow_circle:
 | a3      | Idioms                  |                                        | 
 | a4      | HSK-3                   |                                        | 
@@ -10,7 +10,7 @@
 | a6      | React Hooks             | _useState . useRef_                    | 
 | &#8203; |                         | _fix : emoji height_                   | 
 | a7      | :sun_behind_rain_cloud: Weather |  _fix : tsx <--- ts_           | :yellow_circle:
-| a8      | Advent                  | _refreshable_                          | `npm run dev` 
+| a8      | Advent                  | _refreshable_                          | `run dev` 
 | a9      | _io/gig - depr._        | _unrefreshable routes_                 | _backup_
 | bO      | _io/gig - depr._        | _`router` removed_                     | _backup_
 | b1      | Cat Album               | _fcc project clone + react_                  | 
