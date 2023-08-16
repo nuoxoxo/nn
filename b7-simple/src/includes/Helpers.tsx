@@ -11,7 +11,19 @@ export const FetchData = async ( path: string ): Promise<string[]> => {
   }
 }
 
+export const GetRandomHexColor = () => {
+
+  const chars: string = '0123456789ABCDEF'
+  let hex: string = '#'
+  let i: number = -1
+  while (++i < 6) {
+    hex += chars[Math.floor(Math.random() * 16)];
+  }
+  return hex;
+}
+
 export const LenNStrsFromLine = (s: string, n: number): string[] => {
+
   let res: string[] = []
   let i: number = 0
   while (i < s.length) {

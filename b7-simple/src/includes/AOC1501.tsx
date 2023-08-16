@@ -5,14 +5,10 @@ const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/1501.in"
 
 var Aoc1501 = () => {
   const [lines, setLines] = useState<string[]>( [] )
-  const [floors, setFloors] = usestate<number[]>( [] )
+  const [floors, setFloors] = useState<number[]>( [] )
   const [upDown, setUpDown] = useState<string[]>( [] )
   const [p1, setP1] = useState<number>(0)
   const [p2, setP2] = useState<number>(0)
-
-  const drawsoemthing = () => {
-
-  }
 
   const Solver = () => {
     if (lines === undefined || lines[0] === undefined)
@@ -22,6 +18,7 @@ var Aoc1501 = () => {
     let res2: number = 0
 
     let process: string[] = []
+    let saveCurrentFloors: number[] = []
     let prev: string = s[0]
     let basement: boolean = false
     let basementChecked: boolean = false
@@ -35,6 +32,7 @@ var Aoc1501 = () => {
       } else {
         --res1
       }
+      saveCurrentFloors.push(res1)
       let symbol = ' '
       if (prev !== c) {
         if (prev === '(') {
@@ -60,9 +58,28 @@ var Aoc1501 = () => {
       console.log(temp)
       prev = c
     }
+    setFloors(saveCurrentFloors)
     setUpDown(process)
     setP1(res1)
     setP2(res2)
+  }
+
+  const computeFloors = () => {
+    let low: number = Math.min(...floors)
+    let width = Math.max(...floors) - low
+    let res: string[] = []
+    let char: string = '.'
+    for (let n of floors) {
+      let temp: string = char.repeat(21)
+      let dist: number = Math.floor((n - low) / width * temp.length)
+      temp = temp.substring(0, dist) + '🎅🏻' // + '|' + temp.substring(dist)
+      console.log(temp.length)
+      res.push(temp)
+    }
+    console.log(Math.min(...floors), Math.max(...floors))
+    return res.filter(
+      (item, pos, arr) => pos === 0 || item !== arr[pos - 1]
+    )
   }
 
   const handleData = async () => {
@@ -96,6 +113,11 @@ var Aoc1501 = () => {
         <div className="field data-field">
           {upDown
             ? [...upDown].reverse().join("\n")
+            : "No data available."}
+        </div>
+        <div className="field data-field">
+          {lines
+            ? computeFloors().join('\n')
             : "No data available."}
         </div>
         <div className="field res">

@@ -3,6 +3,7 @@ import Aoc2210 from "./includes/Aoc2210"
 import Aoc1802 from "./includes/Aoc1802"
 import Aoc1502 from "./includes/Aoc1502"
 import Aoc1501 from "./includes/Aoc1501"
+import { GetRandomHexColor } from "./includes/Helpers"
 import './styles/App.scss'
 
 type TargetRoute = React.FC
@@ -16,6 +17,8 @@ const routes: { [key: string]: TargetRoute } = {
 
 function App() {
   const [ route, setRoute ] = useState<string>( '' )
+  // const [ buttonHoverColor, setButtonHoverColor ] = useState<string>(GetRandomHexColor())
+
   const handleSetRoute = (r: string) => {
     setRoute(r)
   }
@@ -25,16 +28,31 @@ function App() {
     <>
       <h2>Hello World</h2>
       <div className='nav'>
-        <button className='btn' onClick={()=>handleSetRoute('1501')}>
+        <button 
+          className='btn' 
+          onClick={()=>handleSetRoute('1501')}
+          // onMouseEnter={() => setButtonHoverColor(GetRandomHexColor())}
+          // style={{ color: buttonHoverColor, border: `2px solid ${buttonHoverColor}`  }}
+          // onMouseLeave={() => setButtonHoverColor(GetRandomHexColor())}
+        >
           15:01
         </button>
-        <button className='btn' onClick={()=>handleSetRoute('1502')}>
+        <button 
+          className='btn' 
+          onClick={()=>handleSetRoute('1502')}
+        >
           15:02
         </button>
-        <button className='btn' onClick={()=>handleSetRoute('1802')}>
+        <button 
+          className='btn' 
+          onClick={()=>handleSetRoute('1802')}
+        >
           18:02
         </button>
-        <button className='btn' onClick={()=>handleSetRoute('2210')}>
+        <button 
+          className='btn' 
+          onClick={()=>handleSetRoute('2210')}
+        >
           22:10
         </button>
       </div>

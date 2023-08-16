@@ -9,7 +9,7 @@ $CREAM-WHITE: #FFFDD0;
 $HOT-PINK: #EF7C8E;
 
 $ButtonColor: $CREAM-WHITE;
-$ButtonTextColor: $HOT-PINK;
+$ButtonHoverColor: $WATER-GREEN;
 $ButtonOutline: 2px;
 
 body {
@@ -79,8 +79,8 @@ h2 {
 
   &:hover {
     background-color: $ButtonColor;
-    color: $ButtonTextColor;
-    border: $ButtonOutline solid $ButtonTextColor;
+    color: $ButtonHoverColor;
+    border: $ButtonOutline solid $ButtonHoverColor;
   }
 }
 
