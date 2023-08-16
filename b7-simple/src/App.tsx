@@ -16,8 +16,7 @@ const routes: { [key: string]: TargetRoute } = {
 }
 
 function App() {
-  const [ route, setRoute ] = useState<string>( '' )
-  // const [ buttonHoverColor, setButtonHoverColor ] = useState<string>(GetRandomHexColor())
+  const [ route, setRoute ] = useState<string>( Object.keys(routes)[Math.floor(Math.random() * Object.keys(routes).length)] )
 
   const handleSetRoute = (r: string) => {
     setRoute(r)
@@ -31,9 +30,6 @@ function App() {
         <button 
           className='btn' 
           onClick={()=>handleSetRoute('1501')}
-          // onMouseEnter={() => setButtonHoverColor(GetRandomHexColor())}
-          // style={{ color: buttonHoverColor, border: `2px solid ${buttonHoverColor}`  }}
-          // onMouseLeave={() => setButtonHoverColor(GetRandomHexColor())}
         >
           15:01
         </button>
