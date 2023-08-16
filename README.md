@@ -11,8 +11,8 @@
 | &#8203; |                         | _fix : emoji height_                   | 
 | a7      | :sun_behind_rain_cloud: Weather |  _fix : tsx <--- ts_           | :yellow_circle:
 | a8      | Advent                  | _refreshable_                          | `npm run dev` 
-| a9      | io/gig - _depr._        | _unrefreshable routes_                 | _backup_
-| bO      | io/gig - _depr._        | _`router` removed_                     | _backup_
+| a9      | _io/gig - depr._        | _unrefreshable routes_                 | _backup_
+| bO      | _io/gig - depr._        | _`router` removed_                     | _backup_
 | b1      | FCC Cat Gallery         | _A clone . Use React_                  | 
 | b2      | Dad Jokes               |                                        | :green_circle:
 | b3      | io                      | _OK : convert to Astro + Sass_         | :green_circle:
