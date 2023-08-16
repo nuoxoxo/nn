@@ -8,14 +8,6 @@ var Aoc1501 = () => {
   const [p1, setP1] = useState<number>( 0 )
   const [p2, setP2] = useState<number>( 0 )
 
-  /*
-  const [wrappingPaperPart1, setWrappingPaperPart1] = useState<number>( 0 )
-  const [slackPart1, setSlackPart1] = useState<number>( 0 )
-
-  const [presentPaperPart2, setPresentPaperPart2] = useState<number>( 0 )
-  const [bowPaperPart2, setBowPaperPart2] = useState<number>( 0 )
-  */
-
   const handleData = async () => {
     try {
       const raws = await FetchData(path)
@@ -61,6 +53,11 @@ var Aoc1501 = () => {
     <>
     { lines ?
       <div className='playground'>
+        <div className="field res">
+          <span>--- Day 2: I Was Told There Would Be No Math ---</span>
+          <span>Part 1: {p1}</span>
+          <span>Part 2: {p2}</span>
+        </div>
         <div className="field data-field">
           {lines
             ? lines.length === 1
@@ -68,17 +65,10 @@ var Aoc1501 = () => {
               : lines.join("\n")
             : "No data available."}
         </div>
-        <div className="field res">
-          <>
-            <span>--- Day 2: I Was Told There Would Be No Math ---</span>
-            <span>Part 1: {p1}</span>
-            <span>Part 2: {p2}</span>
-          </>
-        </div>
       </div>
       :
       <p>Loading data...</p>
-}
+    }
     </>
   )
 }

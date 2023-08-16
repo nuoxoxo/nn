@@ -1,7 +1,7 @@
 $BGColor: #000000;
 $TextColor: #ffffff;
 $TextSize-1: 42px;
-$TextSize-05: calc($TextSize-1 / 2);
+$TextSize-05: calc($TextSize-1 / 2 - 3px);
 $TextSize-025: calc($TextSize-1 / 4);
 
 $WATER-GREEN: #23aeba;
@@ -14,7 +14,7 @@ $ButtonOutline: 2px;
 
 body {
 
-  font-size: $TextSize-1;
+  font-size: $TextSize-05;
   font-family: monospace, "Courier New", "Lucida Console", Courier;
   background-color: $BGColor;
   color: $TextColor;

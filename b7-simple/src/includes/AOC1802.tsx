@@ -1,14 +1,17 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "./Helpers"
 
-const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/1802.in"
+const path = 
+  "https://raw.githubusercontent.com/nuoxoxo/in/main/1802.in"
+
+const special2 = '🔵'
+const special3 = '🟠'
 
 var Aoc1802 = () => {
-  const [lines, setLines] = useState<string[]>( [] )
+  const [ lines, setLines ] = useState<string[]>( [] )
   const [ lines23, setLines23 ] = useState<string[]>( [] )
   const [ p1, setP1 ] = useState<number>( 0 )
   const [ p2, setP2 ] = useState<string>( '' )
-
 
   const handleData = async () => {
     try {
@@ -18,7 +21,6 @@ var Aoc1802 = () => {
       console.error("Error fetching data: ", error)
     }
   }
-
 
   const Solver_Part_One = () => {
 
@@ -94,16 +96,35 @@ var Aoc1802 = () => {
     handleData()
   }, [])
 
+  useEffect(() => {
+    Solver_Part_One()
+    Solver_Part_Two()
+  }, [lines])
+
   return (
     <>
     { lines ?
       <div className='playground'>
+        <div className="field res">
+          <span>--- Day 2: Inventory Management System ---</span>
+          <span>Part 1: {p1}</span>
+          <span>Part 2: {p2}</span>
+        </div>
         <div className="field data-field">
-          {lines
+          { lines
+            ? lines.length === 1
+              ? LenNStrsFromLine(lines23[0], 16).join("\n")
+              : lines23.join("\n")
+            : "No data available."
+          }
+        </div>
+        <div className="field data-field">
+          { lines
             ? lines.length === 1
               ? LenNStrsFromLine(lines[0], 16).join("\n")
               : lines.join("\n")
-            : "No data available."}
+            : "No data available."
+          }
         </div>
       </div>
       :

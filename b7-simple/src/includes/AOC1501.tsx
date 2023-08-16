@@ -64,7 +64,7 @@ var Aoc1501 = () => {
         
       }
       process.push(temp)
-      console.log(temp)
+      // console.log(temp)
       prev = c
     }
     setFloors(saveCurrentFloors)
@@ -82,10 +82,10 @@ var Aoc1501 = () => {
       let temp: string = char.repeat(21)
       let dist: number = Math.floor((n - low) / width * temp.length)
       temp = temp.substring(0, dist) + '🎅🏻' // + '|' + temp.substring(dist)
-      console.log(temp.length)
+      // console.log(temp.length)
       res.push(temp)
     }
-    console.log(Math.min(...floors), Math.max(...floors))
+    // console.log(Math.min(...floors), Math.max(...floors))
     return res.filter(
       (item, pos, arr) => pos === 0 || item !== arr[pos - 1]
     )
@@ -104,11 +104,9 @@ var Aoc1501 = () => {
     { lines ?
       <div className='playground'>
         <div className="field res">
-          <>
-            <span>--- 2015 Day 1: Not Quite Lisp ---</span>
-            <span>Part 1: {p1}</span>
-            <span>Part 2: {p2}</span>
-          </>
+          <span>--- 2015 Day 1: Not Quite Lisp ---</span>
+          <span>Part 1: {p1}</span>
+          <span>Part 2: {p2}</span>
         </div>
         <div className="field data-field">
           {lines
@@ -130,7 +128,7 @@ var Aoc1501 = () => {
       </div>
       :
       <p>Loading data...</p>
-}
+    }
     </>
   )
 }
