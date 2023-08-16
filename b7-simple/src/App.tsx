@@ -1,17 +1,17 @@
 import { useState } from 'react'
-import AOC2210 from "./includes/AOC2210"
-import AOC1802 from "./includes/AOC1802"
-import AOC1502 from "./includes/AOC1502"
-import AOC1501 from "./includes/AOC1501"
+import Aoc2210 from "./includes/Aoc2210"
+import Aoc1802 from "./includes/Aoc1802"
+import Aoc1502 from "./includes/Aoc1502"
+import Aoc1501 from "./includes/Aoc1501"
 import './styles/App.scss'
 
 type TargetRoute = React.FC
 
 const routes: { [key: string]: TargetRoute } = {
-  '2210': AOC2210,
-  '1802': AOC1802,
-  '1502': AOC1502,
-  '1501': AOC1501,
+  '2210': Aoc2210,
+  '1802': Aoc1802,
+  '1502': Aoc1502,
+  '1501': Aoc1501,
 }
 
 function App() {

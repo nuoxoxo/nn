@@ -3,7 +3,7 @@ import { FetchData, LenNStrsFromLine } from "./Helpers"
 
 const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/1802.in"
 
-var AOC1802 = () => {
+var Aoc1802 = () => {
   const [lines, setLines] = useState<string[]>( [] )
 
   const handleData = async () => {
@@ -38,4 +38,4 @@ var AOC1802 = () => {
   )
 }
 
-export default AOC1802
+export default Aoc1802
