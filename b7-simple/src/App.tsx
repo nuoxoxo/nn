@@ -3,7 +3,6 @@ import Aoc2210 from "./includes/Aoc2210"
 import Aoc1802 from "./includes/Aoc1802"
 import Aoc1502 from "./includes/Aoc1502"
 import Aoc1501 from "./includes/Aoc1501"
-import { GetRandomHexColor } from "./includes/Helpers"
 import './styles/App.scss'
 
 type TargetRoute = React.FC

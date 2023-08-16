@@ -11,7 +11,7 @@ export const FetchData = async ( path: string ): Promise<string[]> => {
   }
 }
 
-export const GetRandomHexColor = () => {
+export const GetRandomHexColorCode = () => {
 
   const chars: string = '0123456789ABCDEF'
   let hex: string = '#'
