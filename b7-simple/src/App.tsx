@@ -28,26 +28,22 @@ function App() {
       <div className='nav'>
         <button 
           className='btn' 
-          onClick={()=>handleSetRoute('1501')}
-        >
+          onClick={()=>handleSetRoute('1501')} >
           15:01
         </button>
         <button 
           className='btn' 
-          onClick={()=>handleSetRoute('1502')}
-        >
+          onClick={()=>handleSetRoute('1502')} >
           15:02
         </button>
         <button 
           className='btn' 
-          onClick={()=>handleSetRoute('1802')}
-        >
+          onClick={()=>handleSetRoute('1802')} >
           18:02
         </button>
         <button 
           className='btn' 
-          onClick={()=>handleSetRoute('2210')}
-        >
+          onClick={()=>handleSetRoute('2210')} >
           22:10
         </button>
       </div>
