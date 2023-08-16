@@ -1,5 +1,4 @@
-$BGColor: #000000;
-$TextColor: #ffffff;
+
 $TextSize-1: 42px;
 $TextSize-05: calc($TextSize-1 / 2);
 $TextSize-025: calc($TextSize-1 / 4);
@@ -12,10 +11,15 @@ $ButtonColor: $CREAM-WHITE;
 $ButtonHoverColor: $WATER-GREEN;
 $ButtonOutline: 2px;
 
+$TransitionS: .2s;
+
+$BGColor: #000000;
+$TextColor: #ffffff;
+
 body {
 
   font-size: $TextSize-05;
-  font-family: monospace, "Courier New", "Lucida Console", Courier;
+  font-family: /*monospace, "Courier New",*/ "Lucida Console", Courier;
   background-color: $BGColor;
   color: $TextColor;
 
@@ -66,11 +70,11 @@ h2 {
   color: $ButtonColor;
   border: $ButtonOutline solid $ButtonColor;
   border-radius: 12px;
-  font-size: 16px;
+  font-size: 13px;
   padding: 4px 10px;
   margin: 0 3px;
   background-color: transparent;
-  transition: background-color 0.4s ease;
+  transition: background-color $TransitionS ease, color $TransitionS ease, border $TransitionS ease;
   cursor: pointer;
   -webkit-user-select: none;
   -ms-user-select: none;
