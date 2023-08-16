@@ -6,6 +6,7 @@ const path =
 
 const special2 = '🔵'
 const special3 = '🟠'
+const fontSize1802 = '16px'
 
 var Aoc1802 = () => {
   const [ lines, setLines ] = useState<string[]>( [] )
@@ -105,12 +106,14 @@ var Aoc1802 = () => {
     <>
     { lines ?
       <div className='playground'>
-        <div className="field res">
+        <div className="field res"
+          style={{ fontSize: fontSize1802 }} >
           <span>--- Day 2: Inventory Management System ---</span>
           <span>Part 1: {p1}</span>
           <span>Part 2: {p2}</span>
         </div>
-        <div className="field data-field">
+        <div className="field data-field" 
+          style={{ fontSize: fontSize1802 }} >
           { lines
             ? lines.length === 1
               ? LenNStrsFromLine(lines23[0], 16).join("\n")
@@ -118,7 +121,8 @@ var Aoc1802 = () => {
             : "No data available."
           }
         </div>
-        <div className="field data-field">
+        <div className="field data-field"
+          style={{ fontSize: fontSize1802 }} >
           { lines
             ? lines.length === 1
               ? LenNStrsFromLine(lines[0], 16).join("\n")

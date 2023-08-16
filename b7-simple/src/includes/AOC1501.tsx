@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "./Helpers"
 
-const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/1501.in"
+const path = 
+  "https://raw.githubusercontent.com/nuoxoxo/in/main/1501.in"
+const fontSize1501 = '16px'
 
 var Aoc1501 = () => {
   const [lines, setLines] = useState<string[]>( [] )
@@ -103,7 +105,8 @@ var Aoc1501 = () => {
     <>
     { lines ?
       <div className='playground'>
-        <div className="field res">
+        <div className="field res"
+          style={{ fontSize: fontSize1501 }} >
           <span>--- 2015 Day 1: Not Quite Lisp ---</span>
           <span>Part 1: {p1}</span>
           <span>Part 2: {p2}</span>
@@ -113,14 +116,16 @@ var Aoc1501 = () => {
             ? computeFloors().join('\n')
             : "No data available."}
         </div>
-        <div className="field data-field">
+        <div className="field data-field"
+          style={{ fontSize: fontSize1501 }} >
           {lines
             ? lines.length === 1
               ? LenNStrsFromLine(lines[0], 16).join("\n")
               : lines.join("\n")
             : "No data available."}
         </div>
-        <div className="field data-field">
+        <div className="field data-field"
+          style={{ fontSize: fontSize1501 }} >
           {upDown
             ? [...upDown].reverse().join("\n")
             : "No data available."}
