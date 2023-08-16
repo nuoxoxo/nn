@@ -103,6 +103,18 @@ var Aoc1501 = () => {
     <>
     { lines ?
       <div className='playground'>
+        <div className="field res">
+          <>
+            <span>--- 2015 Day 1: Not Quite Lisp ---</span>
+            <span>Part 1: {p1}</span>
+            <span>Part 2: {p2}</span>
+          </>
+        </div>
+        <div className="field data-field">
+          {lines
+            ? computeFloors().join('\n')
+            : "No data available."}
+        </div>
         <div className="field data-field">
           {lines
             ? lines.length === 1
@@ -114,18 +126,6 @@ var Aoc1501 = () => {
           {upDown
             ? [...upDown].reverse().join("\n")
             : "No data available."}
-        </div>
-        <div className="field data-field">
-          {lines
-            ? computeFloors().join('\n')
-            : "No data available."}
-        </div>
-        <div className="field res">
-          <>
-            <span>--- 2015 Day 1: Not Quite Lisp ---</span>
-            <span>Part 1: {p1}</span>
-            <span>Part 2: {p2}</span>
-          </>
         </div>
       </div>
       :
