@@ -14,7 +14,6 @@ var Aoc2210 = () => {
     try {
       const raws = await FetchData(path)
       const arr: number[] = []
-
       for (let raw of raws) {
         arr.push(0)
         let temp: string[] = raw.split(' ')

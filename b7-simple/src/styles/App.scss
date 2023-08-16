@@ -1,5 +1,6 @@
 
 $TextSize-1: 42px;
+$TextSize-2: calc($TextSize-1 * 2);
 $TextSize-05: calc($TextSize-1 / 2);
 $TextSize-025: calc($TextSize-1 / 4);
 
@@ -96,11 +97,25 @@ h2 {
   // user-select: none;
 }
 
-@media only screen and (max-width: 600px) {
+.dad-jokes-field {
+  font-size: $TextSize-2;
+  height: 96vh;
+  white-space: pre-wrap;
+  cursor: pointer;
+  user-select: none;
+
+  br {
+    content: '\n';
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .nav, .playground, .field {
     flex-direction: column;
     align-items: center;
-    font-size: $TextSize-025;
+    font-size: 16px;
   }
   .playground {
     margin-top: .3em;
