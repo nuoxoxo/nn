@@ -8,6 +8,14 @@ var Aoc1501 = () => {
   const [p1, setP1] = useState<number>( 0 )
   const [p2, setP2] = useState<number>( 0 )
 
+  /*
+  const [wrappingPaperPart1, setWrappingPaperPart1] = useState<number>( 0 )
+  const [slackPart1, setSlackPart1] = useState<number>( 0 )
+
+  const [presentPaperPart2, setPresentPaperPart2] = useState<number>( 0 )
+  const [bowPaperPart2, setBowPaperPart2] = useState<number>( 0 )
+  */
+
   const handleData = async () => {
     try {
       const raws = await FetchData(path)
