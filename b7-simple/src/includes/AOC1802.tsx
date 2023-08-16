@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { FetchData, LenNStrsFromLine } from "./Helpers"
+import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
 const path = 
   "https://raw.githubusercontent.com/nuoxoxo/in/main/1802.in"

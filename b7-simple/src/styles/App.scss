@@ -1,14 +1,16 @@
 
 $TextSize-1: 42px;
+$TextSize-15: calc($TextSize-1 * 1.5);
 $TextSize-2: calc($TextSize-1 * 2);
 $TextSize-05: calc($TextSize-1 / 2);
 $TextSize-025: calc($TextSize-1 / 4);
 
 $WATER-GREEN: #23aeba;
-$CREAM-WHITE: #FFFDD0;
+$CREAM-YELLO: #FFFDD0;
+$CREAM-WHITE: #FAEED5;
 $HOT-PINK: #EF7C8E;
 
-$ButtonColor: $CREAM-WHITE;
+$ButtonColor: $CREAM-YELLO;
 $ButtonHoverColor: $WATER-GREEN;
 $ButtonOutline: 2px;
 
@@ -16,6 +18,12 @@ $TransitionS: .2s;
 
 $BGColor: #000000;
 $TextColor: #ffffff;
+
+//  Dad jokes
+$DadMarginL: 16%;
+$DadMarginR: 8%;
+$DadMarginV: 169px;
+
 
 body {
 
@@ -36,6 +44,7 @@ body {
 
 h2 {
   margin: 0;
+  user-select: none;
 }
 
 .nav {
@@ -98,22 +107,18 @@ h2 {
 }
 
 .dad-jokes-field {
-  font-size: $TextSize-2;
+  font-size: $TextSize-1;
+  color: $CREAM-WHITE;
   height: 96vh;
-  white-space: pre-wrap;
-  cursor: pointer;
   user-select: none;
-
-  br {
-    content: '\n';
-    display: inline-block;
-    width: 100%;
-  }
+  margin-left: $DadMarginL;
+  margin-right: $DadMarginR;
+  margin-top: $DadMarginV;
 }
 
 @media only screen and (max-width: 768px) {
   .nav, .playground, .field {
-    flex-direction: column;
+    // flex-direction: column;
     align-items: center;
     font-size: 16px;
   }
@@ -125,5 +130,10 @@ h2 {
   }
   h2 {
     font-size: $TextSize-05;
+  }
+  .dad-jokes-field {
+    font-size: $TextSize-1;
+    // height: 96vh;
+    user-select: none;
   }
 }

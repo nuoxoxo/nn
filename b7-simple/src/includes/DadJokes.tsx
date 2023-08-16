@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { FetchData } from "./Helpers"
+import { FetchData } from "../helpers/Helpers"
 
 const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/jokes.in"
 
@@ -9,7 +9,8 @@ var DadJokes = () => {
 
   const handleData = async () => {
     try {
-      const raws = await FetchData(path)
+      let raws = await FetchData(path)
+      raws = raws.map(str => str.replace(/<br\s*[\/]?>/gi, '\n'))
       setLines(raws)
     } catch (error: any) {
       console.error("Error fetching data: ", error)
