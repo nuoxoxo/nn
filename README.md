@@ -17,7 +17,7 @@
 | b2      | Dad Jokes               |                                        | :green_circle:
 | b3      | io                      | _OK : convert to Astro + Sass_         | :green_circle:
 | b4      | :bubble_tea: Coffee     | _init to Astro + Sass_                 | :green_circle:
-| b5      | Nutrition Label         | _upd. 3 new labels_                    | :green_circle:
+| b5      | :pill: Nutrition               | _upd. 3 new labels_                    | :green_circle:
 || [*io/sneak*](https://nuoxoxo.github.io/sneak/)
 | b6      | Bootstrap               | `.container-fluid` _not working_       | :red_circle:
 | b7      | Simple                  | _to replace old io/gig_                    | 
