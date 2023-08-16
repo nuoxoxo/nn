@@ -5,9 +5,14 @@ const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/1501.in"
 
 var Aoc1501 = () => {
   const [lines, setLines] = useState<string[]>( [] )
-  const [processBothParts, setProcessBothParts] = useState<string[]>( [] )
+  const [floors, setFloors] = usestate<number[]>( [] )
+  const [upDown, setUpDown] = useState<string[]>( [] )
   const [p1, setP1] = useState<number>(0)
   const [p2, setP2] = useState<number>(0)
+
+  const drawsoemthing = () => {
+
+  }
 
   const Solver = () => {
     if (lines === undefined || lines[0] === undefined)
@@ -55,7 +60,7 @@ var Aoc1501 = () => {
       console.log(temp)
       prev = c
     }
-    setProcessBothParts(process)
+    setUpDown(process)
     setP1(res1)
     setP2(res2)
   }
@@ -81,16 +86,16 @@ var Aoc1501 = () => {
     <>
     { lines ?
       <div className='playground'>
-        <div className="field data-fetched">
+        <div className="field data-field">
           {lines
             ? lines.length === 1
               ? LenNStrsFromLine(lines[0], 16).join("\n")
               : lines.join("\n")
             : "No data available."}
         </div>
-        <div className="field data-fetched">
-          {processBothParts
-            ? [...processBothParts].reverse().join("\n")
+        <div className="field data-field">
+          {upDown
+            ? [...upDown].reverse().join("\n")
             : "No data available."}
         </div>
         <div className="field res">

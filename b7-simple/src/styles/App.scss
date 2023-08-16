@@ -71,7 +71,7 @@ h2 {
   padding: 4px 10px;
   margin: 0 3px;
   background-color: transparent;
-  transition: background-color 0.1s ease;
+  transition: background-color 0.4s ease;
   cursor: pointer;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -88,6 +88,6 @@ h2 {
   @include button-style;
 }
 
-.data-fetched {
+.data-field {
   font-size: $TextSize-05;
 }

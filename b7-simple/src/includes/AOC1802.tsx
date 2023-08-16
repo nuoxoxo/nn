@@ -23,7 +23,7 @@ var Aoc1802 = () => {
     <>
     { lines ?
       <div className='playground'>
-        <div className="field data-fetched">
+        <div className="field data-field">
           {lines
             ? lines.length === 1
               ? LenNStrsFromLine(lines[0], 16).join("\n")
