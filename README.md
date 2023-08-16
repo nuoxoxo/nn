@@ -1,7 +1,7 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------- |
-| aO      | _Todolist_              | _bug : EACCES_                         | `npm start`
-| a1      | _Todolist (vite)_         |                                        | `npm run dev`
+| aO      | Todolist                | _bug : EACCES_                         | `npm start`
+| a1      | Todolist (vite)         |                                        | `npm run dev`
 | &#8203; | Todolist (components)   |                                        | 
 | a2      | Hangman                 | _in progress_                          | :yellow_circle:
 | a3      | Idioms                  |                                        | 
