@@ -2,7 +2,7 @@
 | :-----: | :---------------------- | :------------------------------------- | :------------- |
 | aO      | Todolist                | _bug : EACCES_                         | `npm start`
 | a1      | Todolist (vite)         |                                        | `nom run dev`
-| &#8203; | Todolist (cmpnt.)       |                                        | 
+| &#8203; | Todolist                | _use components_ 
 | a2      | Hangman                 | _in progress_                          | :yellow_circle:
 | a3      | Idioms                  |                                        | 
 | a4      | HSK-3                   |                                        | 
