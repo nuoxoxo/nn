@@ -46,7 +46,7 @@ h2 {
 .playground {
   display: flex;
   flex-direction: row;
-  // flex-wrap: nowrap;
+  flex-wrap: nowrap;
   justify-content: center;
   font-size: $TextSize-05;
 }
@@ -89,6 +89,7 @@ h2 {
 
 .data-field {
   font-size: $TextSize-05;
+  // user-select: none;
 }
 
 @media only screen and (max-width: 600px) {

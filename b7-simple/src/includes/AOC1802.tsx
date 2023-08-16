@@ -6,7 +6,7 @@ const path =
 
 const special2 = '🔵'
 const special3 = '🟠'
-const fontSize1802 = '16px'
+const fontSize1802 = '17px'
 
 var Aoc1802 = () => {
   const [ lines, setLines ] = useState<string[]>( [] )
@@ -108,7 +108,7 @@ var Aoc1802 = () => {
       <div className='playground'>
         <div className="field res"
           style={{ fontSize: fontSize1802 }} >
-          <span>--- Day 2: Inventory Management System ---</span>
+          <span>--- 2018 Day 2: Inventory Management System ---</span>
           <span>Part 1: {p1}</span>
           <span>Part 2: {p2}</span>
         </div>

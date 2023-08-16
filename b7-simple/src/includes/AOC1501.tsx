@@ -3,7 +3,9 @@ import { FetchData, LenNStrsFromLine } from "./Helpers"
 
 const path = 
   "https://raw.githubusercontent.com/nuoxoxo/in/main/1501.in"
-const fontSize1501 = '16px'
+const fontSize1501: string = '17px'
+const santaArray: string[] = ['🎅🏻', '🎅🏼', '🎅🏽', '🎅🏾', '🎅🏿', '🎄']
+const santaString: string = santaArray[Math.floor(Math.random() * santaArray.length)]
 
 var Aoc1501 = () => {
   const [lines, setLines] = useState<string[]>( [] )
@@ -83,7 +85,7 @@ var Aoc1501 = () => {
     for (let n of floors) {
       let temp: string = char.repeat(21)
       let dist: number = Math.floor((n - low) / width * temp.length)
-      temp = temp.substring(0, dist) + '🎅🏻' // + '|' + temp.substring(dist)
+      temp = temp.substring(0, dist) + santaString // + '|' + temp.substring(dist)
       // console.log(temp.length)
       res.push(temp)
     }

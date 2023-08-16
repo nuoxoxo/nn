@@ -54,7 +54,7 @@ var Aoc1501 = () => {
     { lines ?
       <div className='playground'>
         <div className="field res">
-          <span>--- Day 2: I Was Told There Would Be No Math ---</span>
+          <span>--- 2015 Day 2: I Was Told There Would Be No Math ---</span>
           <span>Part 1: {p1}</span>
           <span>Part 2: {p2}</span>
         </div>
