@@ -22,7 +22,6 @@
 || [*io/sneak*](https://nuoxoxo.github.io/sneak/)
 | b6      | Boots                   | `.container-fluid` _not working_       | :red_circle:
 | b7      | Simple                  | _for : aoc simple tasks_               | 
-||| u don't need router - see [io/gig](https://github.com/nuoxoxo/gig/blob/main/src/App.tsx)
 | b8      | Markdown Previewer      | _bug : textarea div different height_  | :green_circle:
 || [*io/mdp*](https://nuoxoxo.github.io/mdp/)
 
