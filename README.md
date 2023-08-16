@@ -12,7 +12,7 @@
 | a7      | :sun_behind_rain_cloud: Weather |  _fix : tsx <--- ts_           | :yellow_circle:
 | a8      | Advent                  | _refreshable_                          | `npm run dev` 
 | a9      | _io/gig - depr._        | _unrefreshable routes_                 | _backup_
-| bO      | _io/gig - depr._        | _`router` removed_                     | _backup_
+| bO      | _io/gig - depr._        | _replace Route by Function Component_  | _backup_
 | b1      | Cat Album               | _fcc project clone + react_            | 
 | b2      | Dad Jokes               |                                        | :green_circle:
 | b3      | io                      | _OK : convert to Astro + Sass_         | :green_circle:
