@@ -22,7 +22,8 @@
 | b6      | Bootstrap               | `.container-fluid` _not working_       | :red_circle:
 | b7      | Simple                  | _replaced old io/gig_                  | :green_circle:
 || [*io/gig*](https://nuoxoxo.github.io/gig/)
-| b8      | Markdown Previewer      | _bug : textarea div different height_  | :green_circle:
+| b8      | Markdown Previewer      | _bug : textarea div different height_  | :yellow_circle:
+need fix
 || [*io/mdp*](https://nuoxoxo.github.io/mdp/)
 
 ![](https://i.imgur.com/2hQLua4.png)
