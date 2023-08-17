@@ -103,8 +103,7 @@ var Aoc1501 = () => {
     <>
       { lines ? (
         <div className="playground">
-          <div
-            className="field data-field santa-mid"
+          <div className="field data-field santa-mid"
             // style={{ fontSize: fontSize1501 }}
           >
             { lines
@@ -113,8 +112,7 @@ var Aoc1501 = () => {
                 : lines.join("\n")
               : "No data available."}
           </div>
-          <div
-            className="field data-field"
+          <div className="field data-field"
             // style={{ fontSize: fontSize1501 }}
           >
             {upDown ? [...upDown].reverse().join("\n") : "No data available."}
