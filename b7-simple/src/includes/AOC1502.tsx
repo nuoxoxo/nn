@@ -59,7 +59,7 @@ var Aoc1501 = () => {
           <span>Part 2: {p2}</span>
         </div>
         <div className="field data-field">
-          {lines
+          { lines
             ? lines.length === 1
               ? LenNStrsFromLine(lines[0], 16).join("\n")
               : lines.join("\n")
