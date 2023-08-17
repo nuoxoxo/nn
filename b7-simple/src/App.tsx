@@ -28,7 +28,9 @@ function App() {
 
   return (
     <>
-      <h2 style={{ color: ColorHeader }}>Hello World</h2>
+      <h2 className='gig-header' style={{ color: ColorHeader }} >
+        Hello World
+      </h2>
       <div className='nav'>
         <button 
           className='btn' 
