@@ -101,13 +101,13 @@ var Aoc1501 = () => {
 
   return (
     <>
-      {lines ? (
+      { lines ? (
         <div className="playground">
           <div
             className="field data-field santa-mid"
             // style={{ fontSize: fontSize1501 }}
           >
-            {lines
+            { lines
               ? lines.length === 1
                 ? LenNStrsFromLine(lines[0], 16).join("\n")
                 : lines.join("\n")
