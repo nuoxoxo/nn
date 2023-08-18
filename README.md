@@ -21,7 +21,7 @@
 || [*io/sneak*](https://nuoxoxo.github.io/sneak/)
 | b6      | Bootstrap               | `.container-fluid` _not working_       | :red_circle:
 | b7      | Simple                  | _done : 19:08; todo : 21:13_ 
-|| [*io/gig*](https://nuoxoxo.github.io/gig/)
+|| [*io/gig*](https://nuoxoxo.github.io/gig/) | _todo : rainbow (fireship)_
 | b8      | Markdown Previewer      | _bug : textarea div different height_  | :yellow_circle: need fix
 || [*io/mdp*](https://nuoxoxo.github.io/mdp/)
 
