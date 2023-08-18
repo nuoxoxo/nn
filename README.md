@@ -20,7 +20,8 @@
 | b5      | :pill: Labels           | _upd. 3 new labels_                    | :green_circle:
 || [*io/sneak*](https://nuoxoxo.github.io/sneak/)
 | b6      | Bootstrap               | `.container-fluid` _not working_       | :red_circle:
-| b7      | Simple                  | _replaced old io/gig_                  | :green_circle:
+| b7      | Simple                  | _done : 19:08_                         | 
+|         |                         | _todo : 21:13_                         | 
 || [*io/gig*](https://nuoxoxo.github.io/gig/)
 | b8      | Markdown Previewer      | _bug : textarea div different height_  | :yellow_circle: need fix
 || [*io/mdp*](https://nuoxoxo.github.io/mdp/)
