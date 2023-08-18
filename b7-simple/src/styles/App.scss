@@ -117,6 +117,10 @@ body {
   margin-top: $DadMarginV;
 }
 
+.res-field-1908-image {
+  font-size: 42px;
+}
+
 @media only screen and (max-width: 768px) {
 
   .nav, .playground, .field {
@@ -127,12 +131,17 @@ body {
     font-size: 11px;
   }
 
+  .res-field-1908-image {
+    font-size: 9px;
+  }
+
   .playground {
     margin-top: .3em;
   }
 
   .btn {
     font-size: $TextSize-025;
+    
   }
 
   h2 {
@@ -145,4 +154,9 @@ body {
     margin-left: calc($DadMarginL - 5px);
     user-select: none;
   }
+
+  .data-field-2223 {
+    font-size: 7px;
+  }
 }
+
