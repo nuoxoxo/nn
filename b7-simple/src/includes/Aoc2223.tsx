@@ -28,7 +28,6 @@ var Aoc2223 = () => {
     for (let i = 0; i < lines.length; i++) {
       const row = lines[i].trim()
       for (let j = 0; j < row.length; j++) {
-        console.log(row[j], row[j] === '#')
         if (row[j] === '#') {
           input_1.add([i, j])
         }
@@ -46,14 +45,14 @@ var Aoc2223 = () => {
     <>
       { lines ? (
         <>
-          <div className="field res">
+          <div className="field res-field">
             <span>--- 2022 Day 23: Unstable Diffusion ---</span>
             <span>Part 1: </span>
             <span>Part 2: </span>
           </div>
 
           <div className="playground">
-            <div className="field data-field">
+            <div className="field data-field data-field-2223">
               { lines ? lines.length === 1 
                   ? LenNStrsFromLine(lines[0], 16).join("\n")
                   : lines.join("\n")
