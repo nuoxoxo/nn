@@ -9,15 +9,15 @@
 | a5      | [*io/coughing*](https://nuoxoxo.github.io/coughing) | _deployed_ | _backup_
 | a6      | React Hooks             | _useState . useRef_                    | 
 | &#8203; |                         | _fix : emoji height_                   | 
-| a7      | :sun_behind_rain_cloud: Weather |  _fix : tsx <--- ts_           | :yellow_circle:
+| a7      | Weather |  _fix : tsx <--- ts_           | :yellow_circle:
 | a8      | Advent                  | _refreshable_                          | `npm run dev` 
 | a9      | _io/gig - depr._        | _unrefreshable routes_                 | _backup_
 | bO      | _io/gig - depr._        | _Function Component <--- Route_        | _backup_
 | b1      | Cat Album               | _fcc project clone + react_            | 
 | b2      | Dad Jokes               |                                        | :green_circle:
 | b3      | io                      | _OK : convert to Astro + Sass_         | :green_circle:
-| b4      | :bubble_tea: Coffee     | _init to Astro + Sass_                 | :green_circle:
-| b5      | :pill: Labels           | _upd. 3 new labels_                    | :green_circle:
+| b4      | Coffee     | _init to Astro + Sass_                 | :green_circle:
+| b5      | Labels           | _upd. 3 new labels_                    | :green_circle:
 || [*io/sneak*](https://nuoxoxo.github.io/sneak/)
 | b6      | Bootstrap               | `.container-fluid` _not working_       | :red_circle:
 | b7      | Simple                  | _done : 19:08_                         | 
