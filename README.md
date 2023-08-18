@@ -1,6 +1,6 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------- |
-| aO      | Todolist                | _bug : EACCES_                         | :red_circle: `npm start`
+| aO      | Todolist                | :red_circle: _bug : EACCES_            | `npm start`
 | a1      | Todolist (vite)         |                                        | `nom run dev`
 | &#8203; | Todolist                | _use components_ 
 | a2      | Hangman                 | _in progress_                          | :yellow_circle:
