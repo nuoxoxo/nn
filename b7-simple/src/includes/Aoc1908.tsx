@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react"
-import { FetchData, LenNStrsFromLine, Deepcopy2DArray } from "../helpers/Helpers"
+import { FetchData, /*LenNStrsFromLine, */ Deepcopy2DArray } from "../helpers/Helpers"
 
 const path = 
   "https://raw.githubusercontent.com/nuoxoxo/advent-of-code/main/_inputs_/1908.0"
 
-const roundChars:string[] = ['o', 'O', '0', '8', '@']
 const sparseChars:string[] = [':']
-const denseChars:string[] = ['▓']//, '@', '✲', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '✺', '✻', '✼', '✽', '✾', '✿', '❀']
-
-const roundChar:string = roundChars[Math.floor(Math.random() * roundChars.length)]
 const sparseChar:string = sparseChars[Math.floor(Math.random() * sparseChars.length)]
+
+const roundChars:string[] = ['o', 'O', '0', '8', '@']
+const roundChar:string = roundChars[Math.floor(Math.random() * roundChars.length)]
+
+const denseChars:string[] = ['▓']//, '@', '✲', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '✺', '✻', '✼', '✽', '✾', '✿', '❀']
 const denseChar:string = denseChars[Math.floor(Math.random() * denseChars.length)]
 
 var Aoc1908 = () => {
@@ -75,7 +76,7 @@ var Aoc1908 = () => {
           }
         }
       }
-      console.log(zero, one, two, res)
+      // console.log(zero, one, two, res)
       if (max > zero) {
         max = zero
         res = one * two
@@ -112,7 +113,7 @@ var Aoc1908 = () => {
     <>
       { lines ? (
         <>
-          <div className="playground">
+          <div className="playground playground-1908">
             <div className="field res-field res-field-1908" >
               <span>--- 2019 Day 8: Space Image Format ---</span>
               <span>Part 1: { p1 }</span>
@@ -127,9 +128,10 @@ var Aoc1908 = () => {
                 { imgStart.map(line => line.join('')).join('\n') }
               </span>
             </div>
-            <div className="field data-field">
+            <div className="field data-field data-field-single-line-string" >
               { lines ? lines.length === 1 
-                  ? LenNStrsFromLine(lines[0], 42).join("\n")
+                  ? lines[0]
+                  // ? LenNStrsFromLine(lines[0], 32).join("\n")
                   : lines.join("\n")
                 : "No data available."
               }
