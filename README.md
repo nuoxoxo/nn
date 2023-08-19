@@ -27,8 +27,6 @@
 |         | [*io/gig*](https://nuoxoxo.github.io/gig/) | 
 | b8      | Markdown Preview        | _bug : textarea div different height_  | :yellow_circle: 
 |         | [*io/mdp*](https://nuoxoxo.github.io/mdp/) | _to remake_  | :yellow_circle: 
-| b9      | Coughing *ver.2*        | _todo : backup_                        | _backup_
-|         | [*io/coughing*](https://nuoxoxo.github.io/gig/)
 
 
 ![](https://i.imgur.com/2FVvwuZ.png)
