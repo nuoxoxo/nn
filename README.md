@@ -6,9 +6,8 @@
 | a2      | Hangman                 | _in progress_                          | :yellow_circle:
 | a3      | Idioms 
 | a4      | HSK-3 
-| a5      | _io/coughing - depr._   | _old code_                             | _backup_
-||| _done : del. Route_ 
-||| _done : remake_ 
+| a5      | Coughing                | _done : del. Route_                    | _backup_
+|         | [*io/coughing*](https://nuoxoxo.github.io/coughing/) |           | _done : remake_ 
 | a6      | React Hooks             | _useState . useRef_ 
 ||                                  | _fix : emoji height_ 
 | a7      | Weather                 |  _fix : tsx <--- ts_                   | :yellow_circle:
