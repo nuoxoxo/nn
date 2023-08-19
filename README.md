@@ -7,6 +7,7 @@
 | a3      | Idioms                  |                                        | 
 | a4      | HSK-3                   |                                        | 
 | a5      | [*io/coughing*](https://nuoxoxo.github.io/coughing) | _deployed_ | _backup_
+||                                  | _todo : grid, io button_               | :yellow_circle: 
 | a6      | React Hooks             | _useState . useRef_                    | 
 | &#8203; |                         | _fix : emoji height_                   | 
 | a7      | Weather |  _fix : tsx <--- ts_           | :yellow_circle:
@@ -16,7 +17,8 @@
 | b1      | Cat Album               | _fcc project clone + react_            | 
 | b2      | Dad Jokes               |                                        | :green_circle:
 | b3      | io                      | _OK : convert to Astro + Sass_ 
-||                                  | _todo : rainbow header_                | :yellow_circle:
+||                                  | _todo : rainbow header_                | :green_circle:
+||                                  | _todo : + sneak_                       | :yellow_circle:
 | b4      | Coffee                  | _init to Astro + Sass_                 | :green_circle:
 | b5      | Labels                  | _upd. 3 new labels_                    | :green_circle:
 || [*io/sneak*](https://nuoxoxo.github.io/sneak/)
@@ -29,5 +31,7 @@
 ![](https://i.imgur.com/2FVvwuZ.png)
 
 ![](https://i.imgur.com/nIAzsy5.png)
+
+<!--![](https://i.imgur.com/JdAHyEc.png)--->
 
 ![](https://i.imgur.com/Vi97P6T.jpg)
