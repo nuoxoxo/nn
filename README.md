@@ -24,9 +24,8 @@
 | b5      | Labels                  | _upd. 3 new labels_                    | :green_circle:
 |         | [*io/sneak*](https://nuoxoxo.github.io/sneak/)
 | b6      | Bootstrap               | `.container-fluid` _not working_       | :red_circle:
-| b7      | Gig                     | _OK : rainbow (fireship)_  
-||                                  | _todo : 21:13_ 
-|         | [*io/gig*](https://nuoxoxo.github.io/gig/)
+| b7      | Gig                     | _todo : 21:13_  
+|         | [*io/gig*](https://nuoxoxo.github.io/gig/) | 
 | b8      | Markdown Preview        | _bug : textarea div different height_  | :yellow_circle: 
 |         | [*io/mdp*](https://nuoxoxo.github.io/mdp/) | _to remake_  | :yellow_circle: 
 | b9      | Coughing *ver.2*        | _todo : backup_                        | _backup_
