@@ -11,7 +11,7 @@
 | a6      | React Hooks             | _useState . useRef_ 
 ||                                  | _fix : emoji height_ 
 | a7      | Weather                 |  _fix : tsx <--- ts_                   | :yellow_circle:
-| a8      | Advent                  |                                        | `npm run dev` 
+| a8      | Advent                  |                                        | :green_circle:
 | a9      | _io/gig - depr._        | _unrefreshable routes_                 | _backup_
 | bO      | _io/gig - depr._        | _Function Component <--- Route_        | _backup_
 | b1      | Cat Album               | _fcc project clone + react_ 
