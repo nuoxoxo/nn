@@ -1,6 +1,6 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------- |
-| aO      | Todolist                | :red_circle: _bug : EACCES_            | `npm start`
+| aO      | Todolist                | _bug : EACCES_                         | :yellow_circle:
 | a1      | Todolist (vite)         |                                        | `npm run dev`
 | &#8203; | Todolist                | _use components_ 
 | a2      | Hangman                 | _in progress_                          | :yellow_circle:
@@ -15,14 +15,14 @@
 | bO      | _io/gig - depr._        | _Function Component <--- Route_        | _backup_
 | b1      | Cat Album               | _fcc project clone + react_            | 
 | b2      | Dad Jokes               |                                        | :green_circle:
-| b3      | io                      | _OK : convert to Astro + Sass_         | :green_circle:
-||                                  | _todo : rainbow header_
+| b3      | io                      | _OK : convert to Astro + Sass_ 
+||                                  | _todo : rainbow header_                | :yellow_circle:
 | b4      | Coffee                  | _init to Astro + Sass_                 | :green_circle:
 | b5      | Labels                  | _upd. 3 new labels_                    | :green_circle:
 || [*io/sneak*](https://nuoxoxo.github.io/sneak/)
 | b6      | Bootstrap               | `.container-fluid` _not working_       | :red_circle:
 | b7      | Simple                  | _done : 19:08; todo : 21:13_ 
-|| [*io/gig*](https://nuoxoxo.github.io/gig/) | _todo : rainbow (fireship)_
+|| [*io/gig*](https://nuoxoxo.github.io/gig/) | _todo : rainbow (fireship)_  | :yellow_circle:
 | b8      | Markdown Previewer      | _bug : textarea div different height_  | :yellow_circle: need fix
 || [*io/mdp*](https://nuoxoxo.github.io/mdp/)
 
