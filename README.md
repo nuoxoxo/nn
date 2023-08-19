@@ -32,6 +32,6 @@
 
 ![](https://i.imgur.com/nIAzsy5.png)
 
-![](https://i.imgur.com/JdAHyEc.png)
+<!--![](https://i.imgur.com/JdAHyEc.png)--->
 
 ![](https://i.imgur.com/Vi97P6T.jpg)
