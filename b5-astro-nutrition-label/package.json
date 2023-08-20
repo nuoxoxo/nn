@@ -1,5 +1,5 @@
 {
-  "name": "b5-astro-nutrition-label",
+  "name": "nut",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -11,5 +11,8 @@
   },
   "dependencies": {
     "astro": "^2.10.7"
+  },
+  "devDependencies": {
+    "sass": "^1.66.1"
   }
 }
