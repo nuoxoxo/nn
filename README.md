@@ -7,7 +7,7 @@
 | a3      | Idioms 
 | a4      | HSK-3 
 | a5      | Coughing                | _done : del. Route_                    | _backup_
-|         | [*io/coughing*](https://nuoxoxo.github.io/coughing/) | _done : remake_ 
+|| [*io/coughing*](https://nuoxoxo.github.io/coughing/) | _done : remake_ 
 | a6      | React Hooks             | _useState . useRef_ 
 ||                                  | _fix : emoji height_ 
 | a7      | Weather                 |  _fix : tsx <--- ts_                   | :yellow_circle:
@@ -21,12 +21,12 @@
 ||                                  | _todo : + sneak_                       | :yellow_circle:
 | b4      | Coffee                  | _init to Astro + Sass_                 | :green_circle:
 | b5      | Labels                  | _upd. 3 new labels_                    | :green_circle:
-|         | [*io/sneak*](https://nuoxoxo.github.io/sneak/)
+|| [*io/sneak*](https://nuoxoxo.github.io/sneak/) | :yellow_circle: should be io/nut
 | b6      | Bootstrap               | `.container-fluid` _not working_       | :red_circle:
 | b7      | Gig                     | _todo : 21:13_  
-|         | [*io/gig*](https://nuoxoxo.github.io/gig/) | 
+|| [*io/gig*](https://nuoxoxo.github.io/gig/) | 
 | b8      | Markdown Preview        | _bug : textarea div different height_  | :yellow_circle: 
-|         | [*io/mdp*](https://nuoxoxo.github.io/mdp/) | _to remake_  | :yellow_circle: 
+|| [*io/mdp*](https://nuoxoxo.github.io/mdp/) | _to remake_  | :yellow_circle: 
 
 
 ![](https://i.imgur.com/2FVvwuZ.png)
