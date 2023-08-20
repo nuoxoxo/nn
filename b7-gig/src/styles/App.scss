@@ -4,6 +4,7 @@ $TextSize-15: calc($TextSize-1 * 1.5);
 $TextSize-2: calc($TextSize-1 * 2);
 $TextSize-05: calc($TextSize-1 / 2);
 $TextSize-025: calc($TextSize-1 / 4);
+$TextSize-02: calc($TextSize-1 / 5);
 
 $WATER-GREEN: #23aeba;
 $CREAM-YELLO: #FFFDD0;
@@ -48,6 +49,7 @@ body {
   display: flex;
   flex-direction: row;
   // flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
@@ -105,9 +107,10 @@ body {
   color: $ButtonColor;
   border: $ButtonOutline solid $ButtonColor;
   border-radius: 12px;
-  font-size: 13px;
-  padding: 4px 10px;
-  margin: 0 3px;
+  font-size: 16px;
+  padding: 5px;
+  margin: 0 1px;
+  width: 77px;
   background-color: transparent;
   transition: background-color $TransitionS ease, color $TransitionS ease, border $TransitionS ease;
   cursor: pointer;
@@ -184,8 +187,9 @@ body {
   }
 
   .dad-jokes-field {
-    font-size: 16px;
-    height: 76vh;
+    font-size: 5vh;
+    // height: 76vh;
+    margin-top: 77px;
     margin-left: calc($DadMarginL - 5px);
     user-select: none;
   }
