@@ -20,7 +20,7 @@
 ||                                  | _done : rainbow header_  
 ||                                  | _todo : + sneak_                       | :yellow_circle:
 | b4      | Coffee                  | _init to Astro + Sass_                 | :green_circle:
-| b5      | Nut                     | _deployed_                             | :green_circle:
+| b5      | Nutrition               | _deployed_                             | :green_circle:
 || [*io/nut*](https://nuoxoxo.github.io/nut) 
 | b6      | Bootstrap               | `.container-fluid` _not working_       | :red_circle:
 | b7      | Gig                     | _todo : 21:13_  
