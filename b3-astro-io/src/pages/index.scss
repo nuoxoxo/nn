@@ -1,0 +1,105 @@
+$WATER-GREEN: #23aeba;
+$CREAM-YELLO: #FFFDD0;
+$CREAM-WHITE: #FAEED5;
+$TEAL-DEER: #99E6B3;
+$HOT-PINK: #EF7C8E;
+
+$TEXT-COLOR: $CREAM-WHITE;
+$FONT: Courier;
+$BG-COLOR: #000000;
+
+body {
+  background-color: $BG-COLOR;
+  font-family: $FONT;
+  color: $TEXT-COLOR;
+}
+
+@keyframes rainbow-rotate {
+  from {
+    filter: hue-rotate(0deg);
+  } to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@mixin animation-rainbow-rotate {
+
+  animation: rainbow-rotate 5s;
+  animation-iteration-count: infinite;
+  // animation-direction: alternate;
+}
+
+@mixin margin-LR {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+@mixin click-me {
+  font-size: 16vh;
+  cursor: pointer;
+  user-select: none;
+  white-space: wrap;
+  @include animation-rainbow-rotate;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+#outer {
+  height: 77vh;
+  display: grid;
+  place-items: center;
+  @include margin-LR;
+}
+
+.click-me {
+  @include click-me
+}
+
+#click-me-header {
+  color: $WATER-GREEN;
+  font-size: 17vh;
+}
+
+#click-me-gig {
+  color: $HOT-PINK;
+  @include click-me;
+  font-size: 18vh;
+}
+
+#click-me-coughing {
+  // font-size: 23px;
+  color: $CREAM-YELLO;
+  @include click-me;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 13vh;
+}
+
+#click-me-nut {
+  color: $TEAL-DEER;
+  @include click-me;
+  font-family:'Courier New', monospace;
+  font-size: 18.5vh;
+}
+
+@media only screen and (max-width: 768px) {
+  #outer {
+    margin: 0;
+  }
+  .click-me {
+    font-size: 155px;
+    font-family:monospace;
+    font-weight: bold;
+    white-space: pre-wrap;
+  }
+  #click-me-gig {
+    font-size: 15vh;
+  }
+  #click-me-nut {
+    font-size: 15vh;
+  }
+  #click-me-coughing {
+    font-size: 9vh;
+  }
+}

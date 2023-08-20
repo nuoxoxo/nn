@@ -1,135 +1,33 @@
 ---
-
 ---
 <astro>
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-    />
+    <title>io</title>
   </head>
-  <style>
-    @import './styles.scss';
-  </style>
+  <style> @import './index.scss'; </style>
   <body>
     <main>
-      <div class="container">
-        <div class="container btn-container">
-          <button class="btn btn-L"
-            onclick="location.href = 'https\://nuoxoxo.github.io/coughing'"
-          >L</button>
-          <button class="btn btn-R"
-            onclick="location.href = 'https\://nuoxoxo.github.io/gig'"
-          >R</button>
-        </div>
+      <div id="outer">
+        <div></div>
+        <div>
+          <h1 class='click-me' id="click-me-header" title="click me">Hello World</h1>
+          <h1>
+            <span class='click-me' id="click-me-gig" title="click me"
+              onclick="location.href = 'https://nuoxoxo.github.io/gig'">Gig</span>
+            &nbsp;
+            <span class='click-me' id="click-me-nut" title="click me"
+              onclick="location.href = 'https://nuoxoxo.github.io/nut'">Nut</span>
+          </h1>
+          <span class='click-me' id="click-me-coughing" title="click me"
+            onclick="location.href = 'https://nuoxoxo.github.io/coughing'">Coughing</span>
+        <div></div>
+        <div></div>
       </div>
     </main>
-    <script>
-
-      const intToHex = (code: number) => {
-        let hex = code.toString(16)
-        return hex.length === 1 ? "0" + hex : hex
-      }
-
-      const rgbToHex = (r: number, g: number, b: number) => {
-        return "#" + intToHex(r) + intToHex(g) + intToHex(b)
-      }
-
-      const colorRgbHexPair = () => {
-        let r = Math.floor(Math.random() * 256)
-        let g = Math.floor(Math.random() * 256)
-        let b = Math.floor(Math.random() * 256)
-        let res0 = `rgba(${r}, ${g}, ${b})`
-        let res1 = rgbToHex(r, g, b).toUpperCase()
-        return [res0, res1]
-      }
-
-      const invertColorHex = (hex: string) => {
-        const color = hex.startsWith("#") ? hex.slice(1) : hex
-        const max = 255
-        const r = max - parseInt(color.substr(0, 2), 16)
-        const g = max - parseInt(color.substr(2, 2), 16)
-        const b = max - parseInt(color.substr(4, 2), 16)
-        const resColor = "#" + [r, g, b].map(c => c.toString(16).padStart(2, "0")).join("")
-        return resColor
-      }
-
-      const fontArray = [
-        "Arial",
-        "Helvetica",
-        "Times New Roman",
-        "Georgia",
-        "Courier New",
-        "Verdana",
-        "Tahoma",
-        "Trebuchet MS",
-        "Comic Sans MS",
-        "Impact",
-        "Palatino Linotype",
-        "Book Antiqua",
-        "Lucida Sans Unicode",
-        "Lucida Console",
-        "Garamond",
-        "MS Sans Serif",
-        "MS Serif",
-        "Lucida Sans",
-        "Lucida Handwriting",
-        "Copperplate",
-        "Optima",
-        "Constantia",
-        "Calisto MT",
-        "Cambria",
-        "Baskerville",
-        "Franklin Gothic Medium",
-        "Century Gothic",
-        "Arial Black",
-        "Verdana",
-        "Courier",
-        "Brush Script MT",
-        "Cursive",
-        "Fantasy",
-        "Monospace",
-        "Sans-serif",
-        "Serif",
-        "Helvetica Neue",
-        "Arial Narrow",
-        "Copperplate Gothic",
-        "Futura",
-        "Century Schoolbook",
-        "Courier",
-        "Apple Chancery",
-        "Bodoni",
-        "Rockwell",
-        "Gill Sans",
-        "Eurostile",
-        "Univers",
-        "ITC Avant Garde Gothic"
-      ];
-
-      const handleBtnColorChange = () => {
-
-        const buttons = document.querySelectorAll('.btn')
-        const resFont = fontArray[Math.floor((Math.random() * fontArray.length))]
-        const resColor = colorRgbHexPair()
-        const resInvertedColor = invertColorHex(resColor[1])
-        buttons.forEach(button => {
-          button.style.fontFamily = resFont
-          button.style.backgroundColor = resInvertedColor
-          button.addEventListener('mouseover', () => {
-            button.style.backgroundColor = resColor[0]
-          })
-          button.addEventListener('mouseout', () => {
-            button.style.backgroundColor = resInvertedColor
-          })
-        })
-      }
-
-      handleBtnColorChange()
-      setInterval(handleBtnColorChange, 5500)
-    </script>
   </body>
 </astro>
 
