@@ -9,8 +9,44 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<style> @import 'src/styles/styles.scss'; </style>
+	<style> @import './styles/styles.scss'; </style>
 	<body>
-		<h1>Astro</h1>
+		<div class="container"></div>
 	</body>
+	<script>
+		const path: string = 'https://catfact.ninja/fact'
+		const FetchData = async ( path: string ): Promise<string[]> => {
+
+			try {
+				const resp = await fetch( path )
+				const jsn = await resp.json()
+				return jsn
+			} catch (error: any) {
+				console.error("Error fetching data: ", error)
+				throw error
+			}
+		}
+		const stuffGotFromAPI = FetchData(path)
+		stuffGotFromAPI.then((stuff) => {
+			// console.log(stuff)
+			const cont = document.querySelector('.container')
+			const span = document.createElement('span')
+			const tempFact = localStorage.getItem('fact')
+			// const localFact = tempFact
+			const localFact = JSON.parse(tempFact)
+			console.log(typeof(localFact), localFact)
+			// = tempFact === undefined ? tempFact['fact'] : "No previous fact"
+			span.textContent = 
+				'Previously on `catfact.ninja`: \n\n  ' +
+				localFact + ' \n\n' + 
+				'From `catfact.ninja`: \n\n  ' + stuff['fact']
+			cont.appendChild(span)
+			// localStorage.setItem('fact', stuffGotFromAPI['fact']) // try local storage
+			// localStorage.setItem('fact', JSON.stringify(stuff)) // try local storage
+			// localStorage.setItem('fact', JSON.stringify(stuff))
+			localStorage.setItem('fact', stuff)
+			// console.log(typeof(stuff), stuff)
+		})
+	</script>
+	
 </html>

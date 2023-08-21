@@ -1,0 +1,22 @@
+$BG: #000000;
+$TEXTColor: #ffffff;
+$TEXTSize: 21px;
+$FONT: 'Courier New', Courier, monospace;
+
+body {
+  background-color: $BG;
+  color: $TEXTColor;
+  font-family: $FONT;
+  font-size: $TEXTSize;
+  white-space: pre-wrap;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  span {
+    margin: 3% 1% 0 3%;
+  }
+}
