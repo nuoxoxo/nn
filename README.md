@@ -25,9 +25,9 @@
 | b6      | Bootstrap               | `.container-fluid` _not working_       | :red_circle:
 | b7      | Gig                     | _todo : 21:13_  
 || [*io/gig*](https://nuoxoxo.github.io/gig) | 
-| b8      | Markdown Preview        | _bug : textarea div different height_  | :red_circle: 
-|| [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_ 
-| b9      | IPA                     | 
+| b8      | Markdown Preview        | _bug : textarea div different height_ 
+|| [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_ | :red_circle: 
+| b9      | IPA                     | _what : 1-oneline api reach-out_ 
 
 
 ![](https://i.imgur.com/2FVvwuZ.png)
