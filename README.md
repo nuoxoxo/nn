@@ -19,7 +19,7 @@
 | b3      | _IO_                    | _done : convert to Astro + Sass_ 
 || [*io*](https://nuoxoxo.github.io)
 ||                                  | _done : rainbow header_  
-||                                  | _todo : + sneak_                       | :yellow_circle:
+||                                  | _todo : + sneak_                       | 
 | b4      | Coffee                  | _init to Astro + Sass_                 | :green_circle:
 | b5      | _Nut_                   | _deployed_                             | :green_circle:
 || [*io/nut*](https://nuoxoxo.github.io/nut) 
@@ -28,8 +28,8 @@
 || [*io/gig*](https://nuoxoxo.github.io/gig) | 
 | b8      | Markdown Preview        | _bug : textarea div different height_ 
 || [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_ | :red_circle: 
-| b9      | IPA                     | _soul : 1-line api reach-out_          | :green_circle:
-|| [*io/snk*](https://nuoxoxo.github.io/snk) | _bug : joke always comes after_
+| b9      | IPA                     | _soul : 1-line api reach-out_ 
+|| [*io/snk*](https://nuoxoxo.github.io/snk) | _bug : joke always comes after_ | :yellow_circle:
 
 
 ![](https://i.imgur.com/2FVvwuZ.png)
