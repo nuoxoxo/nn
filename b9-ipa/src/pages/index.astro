@@ -15,11 +15,11 @@ import './styles/styles.scss' // otherwise deployment w/o css
 		<div class="container"></div>
 	</body>
 	<script>
-		const path: string = 'https://catfact.ninja/fact'
-		const FetchData = async ( path: string ): Promise<string[]> => {
+		
+		const FetchData = async ( url: string ): Promise<string[]> => {
 
 			try {
-				const resp = await fetch( path )
+				const resp = await fetch( url )
 				const jsn = await resp.json()
 				return jsn
 			} catch (error: any) {
@@ -27,8 +27,46 @@ import './styles/styles.scss' // otherwise deployment w/o css
 				throw error
 			}
 		}
-		const stuffGotFromAPI = FetchData(path)
-		stuffGotFromAPI.then((stuff) => {
+
+
+		//	set paths
+		const catPath: string = 'https://catfact.ninja/fact'
+		const jokePath: string = 'https://official-joke-api.appspot.com/random_joke'
+
+
+		//	read Api's
+		const catStuffFromAPI = FetchData( catPath )
+		const jokesFromAPI = FetchData( jokePath )
+		
+		
+
+
+		jokesFromAPI.then((stuff) => {
+
+			const cont = document.querySelector('.container')
+
+			// set up current joke
+			const currJokeL = document.createElement('span')
+			const currJokeRU = document.createElement('span')
+			const currJokeRD = document.createElement('span')
+
+
+			currJokeL.className = 'curr-joke-L'
+			currJokeL.textContent = 'Currently on `Joke.co`: \n'
+			currJokeRU.className = 'curr-joke-RU'
+			currJokeRU.textContent = stuff['setup']
+			currJokeRD.className = 'curr-joke-RD'
+			currJokeRD.textContent = stuff['punchline']
+
+
+			// append them all & manage storage
+			cont.appendChild(currJokeL)
+			cont.appendChild(currJokeRU)
+			cont.appendChild(currJokeRD)
+		})
+
+
+		catStuffFromAPI.then((stuff) => {
 
 			const cont = document.querySelector('.container')
 
@@ -39,12 +77,12 @@ import './styles/styles.scss' // otherwise deployment w/o css
 			const localOlderFact = tempOlderFact ? JSON.parse(tempOlderFact) : "No previous fact"
 
 
-			// set up local fact level -2
+			//	set up local fact level -2
 			const olderFactL = document.createElement('span')
 			const olderFactR = document.createElement('span')
 
 			olderFactL.className = 'older-fact-L'
-			olderFactL.textContent = 'Pre-previously on `catfact.ninja`: \n'
+			olderFactL.textContent = 'Pre-previous cat fact: \n'
 			olderFactR.className = 'older-fact-R'
 			olderFactR.textContent = localOlderFact.fact
 			// console.log(localOlderFact.oldFact)
@@ -55,29 +93,31 @@ import './styles/styles.scss' // otherwise deployment w/o css
 			const oldFactR = document.createElement('span')
 
 			oldFactL.className = 'old-fact-L'
-			oldFactL.textContent = 'Previously on `catfact.ninja`: \n'
+			oldFactL.textContent = 'Previous cat fact: \n'
 			oldFactR.className = 'old-fact-R'
 			oldFactR.textContent = localOldFact.fact
 			// console.log(localOldFact.oldFact)
 
 
-			// set up current fact 
+			// set up current stuff
 			const currFactL = document.createElement('span')
 			const currFactR = document.createElement('span')
 
+
 			currFactL.className = 'curr-fact-L'
-			currFactL.textContent = 'From `catfact.ninja`: \n'
+			currFactL.textContent = 'Currently on `CatFact.ninja`: \n'
 			currFactR.className = 'curr-fact-R'
 			currFactR.textContent = stuff['fact']
 
 
 			// append them all & manage storage
-			cont.appendChild(olderFactL)
-			cont.appendChild(olderFactR)
-			cont.appendChild(oldFactL)
-			cont.appendChild(oldFactR)
 			cont.appendChild(currFactL)
 			cont.appendChild(currFactR)
+			cont.appendChild(oldFactL)
+			cont.appendChild(oldFactR)
+			cont.appendChild(olderFactL)
+			cont.appendChild(olderFactR)
+
 
 			window.localStorage.setItem('olderFact', JSON.stringify(localOldFact))
 			window.localStorage.setItem('oldFact', JSON.stringify(stuff))
