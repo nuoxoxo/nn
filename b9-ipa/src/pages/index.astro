@@ -28,24 +28,67 @@
 		}
 		const stuffGotFromAPI = FetchData(path)
 		stuffGotFromAPI.then((stuff) => {
-			// console.log(stuff)
+
 			const cont = document.querySelector('.container')
-			const span = document.createElement('span')
-			const tempFact = localStorage.getItem('fact')
-			// const localFact = tempFact
-			const localFact = JSON.parse(tempFact)
-			console.log(typeof(localFact), localFact)
-			// = tempFact === undefined ? tempFact['fact'] : "No previous fact"
+
+			const tempOldFact = window.localStorage.getItem('oldFact')
+			const localOldFact = tempOldFact ? JSON.parse(tempOldFact) : "No previous fact"
+
+			const tempOlderFact = window.localStorage.getItem('olderFact')
+			const localOlderFact = tempOlderFact ? JSON.parse(tempOlderFact) : "No previous fact"
+
+
+			// set up local fact level -2
+			const olderFactL = document.createElement('span')
+			const olderFactR = document.createElement('span')
+
+			olderFactL.className = 'older-fact-L'
+			olderFactL.textContent = 'Pre-previously on `catfact.ninja`: \n'
+			olderFactR.className = 'older-fact-R'
+			olderFactR.textContent = localOlderFact.fact
+			// console.log(localOlderFact.oldFact)
+
+
+			// set up local fact level -1
+			const oldFactL = document.createElement('span')
+			const oldFactR = document.createElement('span')
+
+			oldFactL.className = 'old-fact-L'
+			oldFactL.textContent = 'Previously on `catfact.ninja`: \n'
+			oldFactR.className = 'old-fact-R'
+			oldFactR.textContent = localOldFact.fact
+			// console.log(localOldFact.oldFact)
+
+
+			// set up current fact 
+			const currFactL = document.createElement('span')
+			const currFactR = document.createElement('span')
+
+			currFactL.className = 'curr-fact-L'
+			currFactL.textContent = 'From `catfact.ninja`: \n'
+			currFactR.className = 'curr-fact-R'
+			currFactR.textContent = stuff['fact']
+
+
+			// append them all & manage storage
+			cont.appendChild(olderFactL)
+			cont.appendChild(olderFactR)
+			cont.appendChild(oldFactL)
+			cont.appendChild(oldFactR)
+			cont.appendChild(currFactL)
+			cont.appendChild(currFactR)
+
+			window.localStorage.setItem('olderFact', JSON.stringify(localOldFact))
+			window.localStorage.setItem('oldFact', JSON.stringify(stuff))
+
+			/*
 			span.textContent = 
 				'Previously on `catfact.ninja`: \n\n  ' +
-				localFact + ' \n\n' + 
+				localFact.fact + ' \n\n' + 
 				'From `catfact.ninja`: \n\n  ' + stuff['fact']
 			cont.appendChild(span)
-			// localStorage.setItem('fact', stuffGotFromAPI['fact']) // try local storage
-			// localStorage.setItem('fact', JSON.stringify(stuff)) // try local storage
-			// localStorage.setItem('fact', JSON.stringify(stuff))
-			localStorage.setItem('fact', stuff)
-			// console.log(typeof(stuff), stuff)
+			window.localStorage.setItem('fact', JSON.stringify(stuff))
+			*/
 		})
 	</script>
 	
