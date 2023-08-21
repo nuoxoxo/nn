@@ -1,0 +1,57 @@
+$BG: #000000;
+$TEXTColor: #ffffff;
+$TEXTSize: 21px;
+$FONT: 'Courier New', Courier, monospace;
+$COLOR-TEAL-DEER: #99E6B3;
+$COLOR-SQUASH: #F2AB15;
+$COLOR-VIOLET: #C687E5;
+
+@keyframes rainbow-rotate {
+  from {
+    filter: hue-rotate(0deg);
+  } to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@mixin body-general {
+  background-color: $BG;
+  color: $TEXTColor;
+  font-family: $FONT;
+  font-size: $TEXTSize;
+  white-space: pre-wrap;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin animation-rainbow-rotate {
+
+  animation: rainbow-rotate 42s;
+  animation-iteration-count: infinite;
+  // animation-direction: alternate;
+}
+
+body {
+  @include body-general
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  span {
+    margin: 3% 1% 0 3%;
+  }
+  .older-fact-R {
+    color: $COLOR-TEAL-DEER;
+  }
+  .old-fact-R {
+    color: $COLOR-VIOLET;
+  }
+  .curr-fact-R {
+    color: $COLOR-SQUASH;
+  }
+  .older-fact-R, .old-fact-R, .curr-fact-R {
+    margin-left: 6%;
+    @include animation-rainbow-rotate;
+  }
+}
