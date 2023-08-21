@@ -6,7 +6,7 @@
 | a2      | Hangman                 | _in progress_                          | :yellow_circle:
 | a3      | Idioms 
 | a4      | HSK-3 
-| a5      | _Coughing_              | _done : del. Route_                    | _backup_
+| a5      | Coughing                | _done : del. Route_                    | _backup_
 || [*io/coughing*](https://nuoxoxo.github.io/coughing/) | _done : remake_ 
 | a6      | React Hooks             | _useState . useRef_ 
 ||                                  | _fix : emoji height_ 
@@ -16,15 +16,15 @@
 | bO      | _io/gig - depr._        | _Function Component <--- Route_        | _backup_
 | b1      | Cat Album               | _fcc project clone + react_ 
 | b2      | Dad Jokes               |                                        | :green_circle:
-| b3      | _IO_                    | _done : convert to Astro + Sass_ 
+| b3      | IO                      | _done : convert to Astro + Sass_ 
 || [*io*](https://nuoxoxo.github.io)
 ||                                  | _done : rainbow header_  
 ||                                  | _todo : + sneak_                       | 
 | b4      | Coffee                  | _init to Astro + Sass_                 | :green_circle:
-| b5      | _Nut_                   | _deployed_                             | :green_circle:
+| b5      | Nut                     | _deployed_                             | :green_circle:
 || [*io/nut*](https://nuoxoxo.github.io/nut) 
 | b6      | Bootstrap               | `.container-fluid` _not working_       | :red_circle:
-| b7      | _Gig_                   | _todo : 21:13_  
+| b7      | Gig                     | _todo : 21:13_  
 || [*io/gig*](https://nuoxoxo.github.io/gig) | 
 | b8      | Markdown Preview        | _bug : textarea div different height_ 
 || [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_ | :red_circle: 
