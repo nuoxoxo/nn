@@ -2,10 +2,19 @@ $BG: #000000;
 $TEXTColor: #ffffff;
 $TEXTSize: 21px;
 $FONT: 'Courier New', Courier, monospace;
+
+$TransitionS: .2s;
+
 $COLOR-TEAL-DEER: #99E6B9;
 $COLOR-SQUASH: #F2AB15;
 $COLOR-VIOLET: #C687E5;
 $COLOR-JOKE: #ecf9b9;
+$COLOR-WATER-GREEN: #23aeba;
+$COLOR-CREAM-YELLO: #FFFDD0;
+
+$ButtonColor: $COLOR-CREAM-YELLO;
+$ButtonHoverColor: $COLOR-WATER-GREEN;
+$ButtonOutline: 2px;
 
 @keyframes rainbow-rotate {
   from {
@@ -20,9 +29,40 @@ $COLOR-JOKE: #ecf9b9;
   color: $TEXTColor;
   font-family: $FONT;
   font-size: $TEXTSize;
-  white-space: pre-wrap;
+  white-space:pre-line;
   display: flex;
   flex-direction: column;
+}
+
+body {
+  @include body-general
+}
+
+@mixin button-style {
+
+  color: $ButtonColor;
+  border: $ButtonOutline solid $ButtonColor;
+  border-radius: 12px;
+  font-size: $TEXTSize;
+  padding: 5px;
+  width: 77px;
+  background-color: transparent;
+  transition: background-color $TransitionS ease, color $TransitionS ease, border $TransitionS ease;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space:normal;
+
+  &:hover {
+    background-color: $ButtonColor;
+    color: $ButtonHoverColor;
+    border: $ButtonOutline solid $ButtonHoverColor;
+  }
+}
+
+.btn {
+  @include button-style;
 }
 
 @mixin animation-rainbow-rotate {
@@ -32,15 +72,15 @@ $COLOR-JOKE: #ecf9b9;
   // animation-direction: alternate;
 }
 
-body {
-  @include body-general
-}
-
 .container {
   display: flex;
   flex-direction: column;
   span {
     margin: 2% 1% 0 3%;
+  }
+  button {
+    align-self:flex-end;
+    margin: 2% 1% 2% 3%;
   }
   .older-fact-R {
     color: $COLOR-TEAL-DEER;
@@ -60,5 +100,14 @@ body {
   .older-fact-R, .old-fact-R, .curr-fact-R, .curr-joke-RU, .curr-joke-RD {
     margin-left: 6%;
     @include animation-rainbow-rotate;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  body {
+    font-size: calc($TEXTSize * .75);
+  }
+  .btn {
+    width: 42px;
   }
 }
