@@ -11,7 +11,6 @@ package-lock.json
 !*/public/index.html
 *ts/src/*.js
 *.eslintrc.cjs
-*.svg
 
 .vscode/
 
