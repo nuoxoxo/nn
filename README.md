@@ -24,7 +24,8 @@
 | b5      | Nut                     | _deployed_                             | :green_circle:
 || [*io/nut*](https://nuoxoxo.github.io/nut) 
 | b6      | Bootstrap               | `.container-fluid` _not working_       | :red_circle:
-| b7      | Gig                     | _todo : 21:13_  
+| b7      | Gig                     | _todo : 22:23_ 
+||                                  | _todo : 21:13_
 || [*io/gig*](https://nuoxoxo.github.io/gig) | 
 | b8      | Markdown Preview        | _bug : textarea div different height_ 
 || [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_ | :red_circle: 
