@@ -28,7 +28,7 @@
 || [*io/gig*](https://nuoxoxo.github.io/gig) | _todo : 21:13 - input_ 
 | b8      | Markdown Preview        | _bug : textarea div different height_ 
 || [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_ | :red_circle: 
-| b9      | IPA                     | _soul : 1-line api reach-out_ 
+| b9      | IPA                     | _what : 1-line api reach-out_ 
 || [*io/snk*](https://nuoxoxo.github.io/snk) | _bug : joke always comes after_ | :yellow_circle:
 
 
