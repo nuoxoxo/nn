@@ -23,7 +23,7 @@
 | b4      | Coffee                  | _init to Astro + Sass_                 | :green_circle:
 | b5      | Nut                     | _deployed_                             | :green_circle:
 || [*io/nut*](https://nuoxoxo.github.io/nut) 
-| b6      | Bootstrap               | `.container-fluid` _not working_       | :red_circle:
+| b6      | Bootstrap               | _bug : `.container-fluid`_       | :red_circle:
 | b7      | Gig                     | _todo : 22:23 - soln_ 
 || [*io/gig*](https://nuoxoxo.github.io/gig) | _todo : 22:12 - bfs path trace_ 
 | b8      | Markdown Preview        | _bug : textarea div different height_ 
