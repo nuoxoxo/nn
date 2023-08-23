@@ -17,8 +17,7 @@
 | b1      | Cat Album               | _fcc project clone + react_ 
 | b2      | Dad Jokes               |                                        | :green_circle:
 | b3      | IO                      | _done : convert to Astro + Sass_ 
-|| [*io*](https://nuoxoxo.github.io)| _done : rainbow header_  
-||                                  | _todo : + sneak_ 
+|| [*io*](https://nuoxoxo.github.io)| _done : rainbow header_ 
 | b4      | Coffee                  | _init to Astro + Sass_                 | :green_circle:
 | b5      | Nut                     | _deployed_                             | :green_circle:
 || [*io/nut*](https://nuoxoxo.github.io/nut) 
