@@ -28,7 +28,8 @@
 || [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_                   | :red_circle: 
 | b9      | IPA                     | _what : 1-line api reach-out_ 
 || [*io/snk*](https://nuoxoxo.github.io/snk) 
-
+| c0      | Dictée                  | _what : dithering_                     | :yellow_circle:
+| c1      | Snk                     | _what : api reach-out_                 | :yellow_circle:
 
 ![](https://i.imgur.com/2FVvwuZ.png)
 
