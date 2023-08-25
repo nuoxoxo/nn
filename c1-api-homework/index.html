@@ -9,35 +9,35 @@
 <body>
   <h1>Hello World</h1>
   <div id="cat"></div>
-  <script>
-
-    const PATH = 'https://catfact.ninja/fact'
-
-    const GET_DATA = async ( path ) => {
-      try {
-        const resp = await fetch( path )
-        const text = await resp.text()
-        const raws = text.trim().split('\n')
-        return raws
-      } catch (error) {
-        console.error("Error fetching data: ", error)
-        throw error
-      }
-    }
-
-    const SHOW_DATA = async () => {
-      const data = await GET_DATA( PATH )
-      const catDiv = document.getElementById('cat')
-
-      const catFactContent = JSON.parse(data).fact
-      const catFactlength = JSON.parse(data).length
-
-      catDiv.textContent = data
-      catDiv.textContent += '\n\n' + catFactContent
-      catDiv.textContent += '\n\n' + catFactlength
-    }
-
-    SHOW_DATA()
-  </script>
 </body>
+<script>
+
+  const PATH = 'https://catfact.ninja/fact'
+
+  const GET_DATA = async (path) => {
+    try {
+      const resp = await fetch(path)
+      const text = await resp.text()
+      const raws = text.trim().split('\n')
+      return raws
+    } catch (error) {
+      console.error("Error fetching data: ", error)
+      throw error
+    }
+  }
+
+  const SHOW_DATA = async () => {
+    const data = await GET_DATA(PATH)
+    const catDiv = document.getElementById('cat')
+
+    const catFactContent = JSON.parse(data).fact
+    const catFactlength = JSON.parse(data).length
+
+    catDiv.textContent = data
+    catDiv.textContent += '\n\n' + catFactContent
+    catDiv.textContent += '\n\n' + catFactlength
+  }
+
+  SHOW_DATA()
+</script>
 </html>
