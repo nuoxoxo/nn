@@ -7,7 +7,7 @@
 | a3      | Idioms 
 | a4      | HSK-3 
 | a5      | Coughing                | _done : del. Route_                    | _backup_
-|| [*io/coughing*](https://nuoxoxo.github.io/coughing/) | _todo : local storage_ 
+|| [*io/coughing*](https://nuoxoxo.github.io/coughing/) | _done : local storage_ | :green_circle:
 | a6      | React Hooks             | _useState . useRef_ 
 ||                                  | _fix : emoji height_ 
 | a7      | Weather                 | _fix : tsx <--- ts_                    | :yellow_circle:
