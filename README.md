@@ -22,7 +22,7 @@
 | b4      | Coffee                  | _init to Astro + Sass_                 | :green_circle:
 | b5      | Nut                     | _deployed_                             | :green_circle:
 || [*io/nut*](https://nuoxoxo.github.io/nut) 
-| b6      | Bootstrap               | _bug : `.container-fluid`_             | :red_circle:
+| b6      | Hw. - Bootstrap         | _bug : `.container-fluid`_             | :red_circle:
 | b7      | Gig                     | _todo : 22:12 - bfs path trace_        | :green_circle:
 || [*io/gig*](https://nuoxoxo.github.io/gig) 
 | b8      | Markdown Preview        | _bug : textarea div different height_ 
@@ -31,7 +31,7 @@
 || [*io/snk*](https://nuoxoxo.github.io/snk) 
 ||
 | cO      | Dictée                  | _what : dithering_                     | :yellow_circle:
-| c1      | Snk                     | _what : api reach-out_                 | :yellow_circle:
+| c1      | Hw. - API               | _what : api reach-out_                 | :yellow_circle:
 
 ![](https://i.imgur.com/2FVvwuZ.png)
 
