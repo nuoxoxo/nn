@@ -13,6 +13,7 @@
 | a7      | Weather                 | _fix : tsx <--- ts_                    | :yellow_circle:
 | a8      | Advent                  |                                        | :green_circle:
 | a9      | _io/gig - depr._        | _unrefreshable routes_                 | _backup_
+||
 | bO      | _io/gig - depr._        | _Function Component <--- Route_        | _backup_
 | b1      | Cat Album               | _fcc project clone + react_ 
 | b2      | Dad Jokes               |                                        | :green_circle:
@@ -28,6 +29,7 @@
 || [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_                   | :red_circle: 
 | b9      | IPA                     | _what : 1-line api reach-out_ 
 || [*io/snk*](https://nuoxoxo.github.io/snk) 
+||
 | cO      | Dictée                  | _what : dithering_                     | :yellow_circle:
 | c1      | Snk                     | _what : api reach-out_                 | :yellow_circle:
 
