@@ -3,6 +3,7 @@ $CREAM-YELLO: #FFFDD0;
 $CREAM-WHITE: #FAEED5;
 $TEAL-DEER: #99E6B3;
 $HOT-PINK: #EF7C8E;
+$DARK-WOODS: #99BBAA;
 
 $TEXT-COLOR: $CREAM-WHITE;
 $FONT: Courier;
@@ -79,27 +80,39 @@ h1, h2 {
 #click-me-nut {
   color: $TEAL-DEER;
   @include click-me;
-  font-family:'Courier New', monospace;
+  // font-family:monospace;
+  font-size: 18.5vh;
+}
+
+#click-me-ipa {
+  color: $DARK-WOODS;
+  @include click-me;
+  // font-family:monospace;
   font-size: 18.5vh;
 }
 
 @media only screen and (max-width: 768px) {
+
   #outer {
     margin: 0;
   }
+  #click-me-header {
+    font-size: 111px
+  }
   .click-me {
-    font-size: 155px;
-    font-family:monospace;
     font-weight: bold;
     white-space: pre-wrap;
   }
   #click-me-gig {
-    font-size: 15vh;
+    font-size: 99px;
+  }
+  #click-me-ipa {
+    font-size: 99px;
   }
   #click-me-nut {
-    font-size: 15vh;
+    font-size: 96px;
   }
   #click-me-coughing {
-    font-size: 9vh;
+    font-size:71px;
   }
 }

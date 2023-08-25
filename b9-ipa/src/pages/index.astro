@@ -1,136 +1,256 @@
 ---
-import './styles/styles.scss' // otherwise deployment w/o css
+import "./styles/styles.scss" // otherwise deployment w/o css
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<!-- <style> @import '/styles/styles.scss'; </style> -->
-	<body>
-		<div class="container"></div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <!-- <style> @import '/styles/styles.scss' </style> -->
+  <body>
+    <div class="container">
+      <button
+        class="btn"
+        onclick="window.location.href='http://nuoxoxo.github.io'"
+      >
+        &nbspio&nbsp
+      </button>
+    </div>
+  </body>
+  <script>
+    const FetchData = async (url) => {
+      try {
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+      } catch (error) {
+        console.error("Error fetching data: ", error)
+        throw error
+      }
+    }
+
+    const displayJoke = (jokeData) => {
+      const jokeContainer = document.querySelector(".container")
+
+      const currJokeL = document.createElement("span")
+
+      const setupElement = document.createElement("span")
+      currJokeL.className = "curr-joke-L"
+      currJokeL.textContent = "Currently on `Joke.co`: \n"
+      setupElement.className = "curr-joke-RU"
+      setupElement.textContent = jokeData.setup
+
+      const punchlineElement = document.createElement("span")
+      punchlineElement.className = "curr-joke-RD"
+      punchlineElement.textContent = jokeData.punchline
+
+      jokeContainer.appendChild(currJokeL)
+      jokeContainer.appendChild(setupElement)
+      jokeContainer.appendChild(punchlineElement)
+    }
+
+    const displayCatFact = (catFactData, localFacts) => {
+      console.log(localFacts)
+
+      const cont = document.querySelector(".container")
+
+      const olderFactL = document.createElement("span")
+      const olderFactR = document.createElement("span")
+
+      olderFactL.className = "older-fact-L"
+      olderFactL.textContent = "Pre-previous cat fact: \n"
+      olderFactR.className = "older-fact-R"
+      olderFactR.textContent = localFacts.olderFact
+      // console.log(localOlderFact.oldFact)
+
+      // set up local fact level -1
+      const oldFactL = document.createElement("span")
+      const oldFactR = document.createElement("span")
+
+      oldFactL.className = "old-fact-L"
+      oldFactL.textContent = "Previous cat fact: \n"
+      oldFactR.className = "old-fact-R"
+      oldFactR.textContent = localFacts.oldFact
+      // console.log(localOldFact.oldFact)
+
+      // set up current stuff
+      const currFactL = document.createElement("span")
+      const currFactR = document.createElement("span")
+
+      currFactL.className = "curr-fact-L"
+      currFactL.textContent = "Currently on `CatFact.ninja`: \n"
+      currFactR.className = "curr-fact-R"
+      currFactR.textContent = catFactData.fact
+
+      const toset = {
+        olderFact: localFacts["oldFact"],
+        oldFact: catFactData["fact"],
+      }
+
+      cont.appendChild(currFactL)
+      cont.appendChild(currFactR)
+      cont.appendChild(oldFactL)
+      cont.appendChild(oldFactR)
+      cont.appendChild(olderFactL)
+      cont.appendChild(olderFactR)
+
+      localStorage.setItem("fact", JSON.stringify(toset))
+    }
+
+    const createFactElement = (label, text) => {
+      const factElement = document.createElement("span")
+      factElement.className = "fact"
+      factElement.textContent = `${label} ${text}`
+      return factElement
+    }
+
+    ( async () => {
+      try {
+        const jokePath = "https://official-joke-api.appspot.com/random_joke"
+        const catPath = "https://catfact.ninja/fact"
+
+        const jokesFromAPI = await FetchData(jokePath)
+        const catStuffFromAPI = await FetchData(catPath)
+
+        const tempFact = window.localStorage.getItem("fact")
+
+        // console.log(JSON.parse(tempFact), JSON.parse(tempFact).oldFact)
+
+        const localOldFact =
+          tempFact && JSON.parse(tempFact).oldFact !== undefined
+            ? JSON.parse(tempFact).oldFact
+            : "No previous fact"
+        const localOlderFact =
+          tempFact && JSON.parse(tempFact).olderFact !== undefined
+            ? JSON.parse(tempFact).olderFact
+            : "No previous fact"
+
+        const localFacts = {
+          olderFact: localOlderFact,
+          oldFact: localOldFact,
+        }
+
+        displayJoke(jokesFromAPI)
+        displayCatFact(catStuffFromAPI, localFacts)
+      } catch (error) {
+        console.error("An error occurred: ", error)
+      }
+    })()
+  </script>
+
+  <!-- Old version 👇 -->
+
+	<!-- 
 	<script>
-		
-		const FetchData = async ( url: string ): Promise<string[]> => {
+    const FetchData = async (url: string): Promise<string[]> => {
+      try {
 
-			try {
-				const resp = await fetch( url )
-				const jsn = await resp.json()
-				return jsn
-			} catch (error: any) {
-				console.error("Error fetching data: ", error)
-				throw error
-			}
-		}
+				const resp = await fetch(url)
+        const jsn = await resp.json()
+        return jsn
+      } catch (error: any) {
+        console.error("Error fetching data: ", error)
+        throw error
+      }
+    }
 
+    //	set paths
+    const jokePath: string =
+      "https://official-joke-api.appspot.com/random_joke"
 
-		//	set paths
-		const catPath: string = 'https://catfact.ninja/fact'
-		const jokePath: string = 'https://official-joke-api.appspot.com/random_joke'
+		const catPath: string = 
+			"https://catfact.ninja/fact"
 
+    //	read Api's
+    const jokesFromAPI = FetchData(jokePath)
+    const catStuffFromAPI = FetchData(catPath)
 
-		//	read Api's
-		const catStuffFromAPI = FetchData( catPath )
-		const jokesFromAPI = FetchData( jokePath )
-		
-		
+    jokesFromAPI.then((stuff) => {
+      const cont = document.querySelector(".container")
 
+      // set up current joke
+      const currJokeL = document.createElement("span")
+      const currJokeRU = document.createElement("span")
+      const currJokeRD = document.createElement("span")
 
-		jokesFromAPI.then((stuff) => {
+      currJokeL.className = "curr-joke-L"
+      currJokeRU.className = "curr-joke-RU"
+      currJokeRD.className = "curr-joke-RD"
 
-			const cont = document.querySelector('.container')
+      currJokeRU.textContent = stuff["setup"]
+      currJokeRD.textContent = stuff["punchline"]
+      currJokeL.textContent = "Currently on `Joke.co`: \n"
 
-			// set up current joke
-			const currJokeL = document.createElement('span')
-			const currJokeRU = document.createElement('span')
-			const currJokeRD = document.createElement('span')
+      // append them all & manage storage
+      cont.appendChild(currJokeL)
+      cont.appendChild(currJokeRU)
+      cont.appendChild(currJokeRD)
+    })
 
+    catStuffFromAPI.then((stuff) => {
+      const cont = document.querySelector(".container")
 
-			currJokeL.className = 'curr-joke-L'
-			currJokeL.textContent = 'Currently on `Joke.co`: \n'
-			currJokeRU.className = 'curr-joke-RU'
-			currJokeRU.textContent = stuff['setup']
-			currJokeRD.className = 'curr-joke-RD'
-			currJokeRD.textContent = stuff['punchline']
+      const tempOldFact = window.localStorage.getItem("oldFact")
+      const localOldFact = tempOldFact
+        ? JSON.parse(tempOldFact)
+        : "No previous fact"
 
+      const tempOlderFact = window.localStorage.getItem("olderFact")
+      const localOlderFact = tempOlderFact
+        ? JSON.parse(tempOlderFact)
+        : "No previous fact"
 
-			// append them all & manage storage
-			cont.appendChild(currJokeL)
-			cont.appendChild(currJokeRU)
-			cont.appendChild(currJokeRD)
-		})
+      //	set up local fact level -2
+      const olderFactL = document.createElement("span")
+      const olderFactR = document.createElement("span")
 
+      olderFactL.className = "older-fact-L"
+      olderFactL.textContent = "Pre-previous cat fact: \n"
+      olderFactR.className = "older-fact-R"
+      olderFactR.textContent = localOlderFact.fact
+      // console.log(localOlderFact.oldFact)
 
-		catStuffFromAPI.then((stuff) => {
+      // set up local fact level -1
+      const oldFactL = document.createElement("span")
+      const oldFactR = document.createElement("span")
 
-			const cont = document.querySelector('.container')
+      oldFactL.className = "old-fact-L"
+      oldFactL.textContent = "Previous cat fact: \n"
+      oldFactR.className = "old-fact-R"
+      oldFactR.textContent = localOldFact.fact
+      // console.log(localOldFact.oldFact)
 
-			const tempOldFact = window.localStorage.getItem('oldFact')
-			const localOldFact = tempOldFact ? JSON.parse(tempOldFact) : "No previous fact"
+      // set up current stuff
+      const currFactL = document.createElement("span")
+      const currFactR = document.createElement("span")
 
-			const tempOlderFact = window.localStorage.getItem('olderFact')
-			const localOlderFact = tempOlderFact ? JSON.parse(tempOlderFact) : "No previous fact"
+      currFactL.className = "curr-fact-L"
+      currFactL.textContent = "Currently on `CatFact.ninja`: \n"
+      currFactR.className = "curr-fact-R"
+      currFactR.textContent = stuff["fact"]
 
+      // append them all & manage storage
+      cont.appendChild(currFactL)
+      cont.appendChild(currFactR)
+      cont.appendChild(oldFactL)
+      cont.appendChild(oldFactR)
+      cont.appendChild(olderFactL)
+      cont.appendChild(olderFactR)
 
-			//	set up local fact level -2
-			const olderFactL = document.createElement('span')
-			const olderFactR = document.createElement('span')
+      window.localStorage.setItem("olderFact", JSON.stringify(localOldFact))
+      window.localStorage.setItem("oldFact", JSON.stringify(stuff))
 
-			olderFactL.className = 'older-fact-L'
-			olderFactL.textContent = 'Pre-previous cat fact: \n'
-			olderFactR.className = 'older-fact-R'
-			olderFactR.textContent = localOlderFact.fact
-			// console.log(localOlderFact.oldFact)
-
-
-			// set up local fact level -1
-			const oldFactL = document.createElement('span')
-			const oldFactR = document.createElement('span')
-
-			oldFactL.className = 'old-fact-L'
-			oldFactL.textContent = 'Previous cat fact: \n'
-			oldFactR.className = 'old-fact-R'
-			oldFactR.textContent = localOldFact.fact
-			// console.log(localOldFact.oldFact)
-
-
-			// set up current stuff
-			const currFactL = document.createElement('span')
-			const currFactR = document.createElement('span')
-
-
-			currFactL.className = 'curr-fact-L'
-			currFactL.textContent = 'Currently on `CatFact.ninja`: \n'
-			currFactR.className = 'curr-fact-R'
-			currFactR.textContent = stuff['fact']
-
-
-			// append them all & manage storage
-			cont.appendChild(currFactL)
-			cont.appendChild(currFactR)
-			cont.appendChild(oldFactL)
-			cont.appendChild(oldFactR)
-			cont.appendChild(olderFactL)
-			cont.appendChild(olderFactR)
-
-
-			window.localStorage.setItem('olderFact', JSON.stringify(localOldFact))
-			window.localStorage.setItem('oldFact', JSON.stringify(stuff))
-
-			/*
-			span.textContent = 
-				'Previously on `catfact.ninja`: \n\n  ' +
-				localFact.fact + ' \n\n' + 
-				'From `catfact.ninja`: \n\n  ' + stuff['fact']
-			cont.appendChild(span)
-			window.localStorage.setItem('fact', JSON.stringify(stuff))
-			*/
-		})
-	</script>
-	
+			// span.textContent = 
+			// 	'Previously on `catfact.ninja`: \n\n  ' +
+			// 	localFact.fact + ' \n\n' + 
+			// 	'From `catfact.ninja`: \n\n  ' + stuff['fact']
+			// cont.appendChild(span)
+			// window.localStorage.setItem('fact', JSON.stringify(stuff))
+    })
+  </script>
+	-->
 </html>

@@ -1,0 +1,11 @@
+:root {
+  --bg-color: #000000;
+  --color: #ffffff;
+  --font-size: 21px;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--color);
+  font-size: var(--font-size);
+}
