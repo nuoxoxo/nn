@@ -23,7 +23,7 @@
 | b5      | Nut                     | _deployed_                             | :green_circle:
 || [*io/nut*](https://nuoxoxo.github.io/nut) 
 | b6      | _Bootstrap - hw._       | _bug : `.container-fluid`_             | :red_circle:
-| b7      | Gig                     | _todo : add labels_                    | :yellow_circle:
+| b7      | Gig                     | _dont : 20:03_ 
 || [*io/gig*](https://nuoxoxo.github.io/gig) 
 | b8      | Markdown Preview        | _bug : textarea div different height_ 
 || [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_                   | :red_circle: 
