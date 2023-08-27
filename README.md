@@ -23,8 +23,9 @@
 | b5      | Nut                     | _deployed_                             | :green_circle:
 || [*io/nut*](https://nuoxoxo.github.io/nut) 
 | b6      | _Bootstrap - hw._       | _bug : `.container-fluid`_             | :red_circle:
-| b7      | Gig                     | _done : 20:03_ 
+| b7      | Gig                     | _todo : doubclick on mobile_ 
 || [*io/gig*](https://nuoxoxo.github.io/gig) 
+|         |                         | _todo : 20:03_                         | :green_circle:
 |         |                         | _todo : 18:03_ 
 |         |                         | _todo : 21:05_ 
 |         |                         | _todo : 22:23_ 
