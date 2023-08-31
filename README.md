@@ -27,8 +27,8 @@
 || [*io/gig*](https://nuoxoxo.github.io/gig) 
 |         |                         | _todo : 18:03_ 
 |         |                         | _todo : 20:03_                         | :green_circle:
-|         |                         | _todo : 20:11_                         | :green_circle:
-|         |                         | _todo : 21:05_ 
+|         |                         | _todo : 20:11_ 
+|         |                         | _todo : 21:05_                         | :green_circle:
 |         |                         | _todo : 22:22_                         | :green_circle:
 |         |                         | _todo : 22:23_ 
 | b8      | Markdown Preview        | _bug : textarea div different height_ 
