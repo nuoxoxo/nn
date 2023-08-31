@@ -37,7 +37,9 @@
 | cO      | Dictée                  | _what : dithering_                     | :yellow_circle:
 | c1      | _API - hw._             | _what : api reach-out_                 | :yellow_circle:
 
+<!--
 ![](https://i.imgur.com/2FVvwuZ.png)
+-->
 
 ![](https://i.imgur.com/nIAzsy5.png)
 
