@@ -13,14 +13,17 @@ import "./styles/styles.scss" // otherwise deployment w/o css
   <!-- <style> @import '/styles/styles.scss' </style> -->
   <body>
     <div class="container">
-      <button
+      <!-- <button
         class="btn"
         onclick="window.location.href='http://nuoxoxo.github.io'"
       >
         &nbspio&nbsp
-      </button>
+      </button> -->
     </div>
   </body>
+
+  <!-- Way 1 👇 -->
+
   <script>
     const FetchData = async (url) => {
       try {
@@ -34,29 +37,31 @@ import "./styles/styles.scss" // otherwise deployment w/o css
     }
 
     const displayJoke = (jokeData) => {
-      const jokeContainer = document.querySelector(".container")
+
+      const container = document.querySelector(".container")
 
       const currJokeL = document.createElement("span")
-
       const setupElement = document.createElement("span")
+      const punchlineElement = document.createElement("span")
+
       currJokeL.className = "curr-joke-L"
       currJokeL.textContent = "Currently on `Joke.co`: \n"
       setupElement.className = "curr-joke-RU"
       setupElement.textContent = jokeData.setup
 
-      const punchlineElement = document.createElement("span")
       punchlineElement.className = "curr-joke-RD"
       punchlineElement.textContent = jokeData.punchline
 
-      jokeContainer.appendChild(currJokeL)
-      jokeContainer.appendChild(setupElement)
-      jokeContainer.appendChild(punchlineElement)
+      container.appendChild(currJokeL)
+      container.appendChild(setupElement)
+      container.appendChild(punchlineElement)
     }
 
     const displayCatFact = (catFactData, localFacts) => {
-      console.log(localFacts)
 
-      const cont = document.querySelector(".container")
+      // console.log(localFacts)
+
+      const container = document.querySelector(".container")
 
       const olderFactL = document.createElement("span")
       const olderFactR = document.createElement("span")
@@ -67,7 +72,6 @@ import "./styles/styles.scss" // otherwise deployment w/o css
       olderFactR.textContent = localFacts.olderFact
       // console.log(localOlderFact.oldFact)
 
-      // set up local fact level -1
       const oldFactL = document.createElement("span")
       const oldFactR = document.createElement("span")
 
@@ -91,12 +95,12 @@ import "./styles/styles.scss" // otherwise deployment w/o css
         oldFact: catFactData["fact"],
       }
 
-      cont.appendChild(currFactL)
-      cont.appendChild(currFactR)
-      cont.appendChild(oldFactL)
-      cont.appendChild(oldFactR)
-      cont.appendChild(olderFactL)
-      cont.appendChild(olderFactR)
+      container.appendChild(currFactL)
+      container.appendChild(currFactR)
+      container.appendChild(oldFactL)
+      container.appendChild(oldFactR)
+      container.appendChild(olderFactL)
+      container.appendChild(olderFactR)
 
       localStorage.setItem("fact", JSON.stringify(toset))
     }
@@ -136,16 +140,28 @@ import "./styles/styles.scss" // otherwise deployment w/o css
 
         displayJoke(jokesFromAPI)
         displayCatFact(catStuffFromAPI, localFacts)
+
+        const ctn = document.querySelector(".container")
+        const btn = document.createElement('button')
+        const btnName = document.createTextNode('\u00A0io\u00A0')
+        btn.className = 'btn'
+        btn.onclick = () => {
+          window.location.href = "http://nuoxoxo.github.io"
+        }
+        btn.appendChild(btnName)
+        ctn.appendChild(btn)
+
       } catch (error) {
         console.error("An error occurred: ", error)
       }
     })()
+
   </script>
 
-  <!-- Old version 👇 -->
+  <!-- Way 2 👇 -->
+  <!--
 
-	<!-- 
-	<script>
+  <script>
     const FetchData = async (url: string): Promise<string[]> => {
       try {
 
@@ -170,7 +186,7 @@ import "./styles/styles.scss" // otherwise deployment w/o css
     const catStuffFromAPI = FetchData(catPath)
 
     jokesFromAPI.then((stuff) => {
-      const cont = document.querySelector(".container")
+      const container = document.querySelector(".container")
 
       // set up current joke
       const currJokeL = document.createElement("span")
@@ -186,13 +202,13 @@ import "./styles/styles.scss" // otherwise deployment w/o css
       currJokeL.textContent = "Currently on `Joke.co`: \n"
 
       // append them all & manage storage
-      cont.appendChild(currJokeL)
-      cont.appendChild(currJokeRU)
-      cont.appendChild(currJokeRD)
+      container.appendChild(currJokeL)
+      container.appendChild(currJokeRU)
+      container.appendChild(currJokeRD)
     })
 
     catStuffFromAPI.then((stuff) => {
-      const cont = document.querySelector(".container")
+      const container = document.querySelector(".container")
 
       const tempOldFact = window.localStorage.getItem("oldFact")
       const localOldFact = tempOldFact
@@ -234,12 +250,12 @@ import "./styles/styles.scss" // otherwise deployment w/o css
       currFactR.textContent = stuff["fact"]
 
       // append them all & manage storage
-      cont.appendChild(currFactL)
-      cont.appendChild(currFactR)
-      cont.appendChild(oldFactL)
-      cont.appendChild(oldFactR)
-      cont.appendChild(olderFactL)
-      cont.appendChild(olderFactR)
+      container.appendChild(currFactL)
+      container.appendChild(currFactR)
+      container.appendChild(oldFactL)
+      container.appendChild(oldFactR)
+      container.appendChild(olderFactL)
+      container.appendChild(olderFactR)
 
       window.localStorage.setItem("olderFact", JSON.stringify(localOldFact))
       window.localStorage.setItem("oldFact", JSON.stringify(stuff))
@@ -248,9 +264,10 @@ import "./styles/styles.scss" // otherwise deployment w/o css
 			// 	'Previously on `catfact.ninja`: \n\n  ' +
 			// 	localFact.fact + ' \n\n' + 
 			// 	'From `catfact.ninja`: \n\n  ' + stuff['fact']
-			// cont.appendChild(span)
+			// container.appendChild(span)
 			// window.localStorage.setItem('fact', JSON.stringify(stuff))
     })
   </script>
-	-->
+  -->
+
 </html>
