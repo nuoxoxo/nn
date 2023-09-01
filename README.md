@@ -27,7 +27,7 @@
 || [*io/gig*](https://nuoxoxo.github.io/gig) 
 |         |                         | _todo : 18:03_ 
 |         |                         | _todo : 20:03_                         | :green_circle:
-|         |                         | _todo : 20:11_ 
+|         |                         | _todo : 20:11_                         | :yellow_circle:
 |         |                         | _todo : 21:05_                         | :green_circle:
 |         |                         | _todo : 22:22_                         | :green_circle:
 |         |                         | _todo : 22:23_ 
