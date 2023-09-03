@@ -35,11 +35,13 @@
 | b8      | Markdown Preview        | _bug : textarea div different height_ 
 || [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_                   | :red_circle: 
 | b9      | IPA                     | _what : 1-line api reach-out_ 
-|| [*io/snk*](https://nuoxoxo.github.io/snk) 
+|| [*io/snk*](https://nuoxoxo.github.io/snk) / [*io/ipa*](https://nuoxoxo.github.io/ipa) | _todo : save array to localstorage_
 ||
 | cO      | Dictée                  | _what : dithering_                     | :red_circle:
 | c1      | _API - hw._             | _what : api reach-out_                 | :green_circle:
-| c2      | _Ronway_                | _cough's conway on react_              | :red_circle:
+| c2      | Cronway                 | _cough's conway on react_              | :red_circle:
+| c3      | dmd                     | _guessing the day of the week_ 
+|         |                         | _done : First draft_                   | :yellow_circle:
 
 ![](https://i.imgur.com/2FVvwuZ.png)
 
