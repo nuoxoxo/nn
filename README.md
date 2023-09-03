@@ -38,8 +38,8 @@
 || [*io/snk*](https://nuoxoxo.github.io/snk) 
 ||
 | cO      | Dictée                  | _what : dithering_                     | :red_circle:
-| c1      | _API - hw._             | _what : api reach-out_ 
-| c2      | _Ronway_                | _cough's conway on react_ 
+| c1      | _API - hw._             | _what : api reach-out_                 | :green_circle:
+| c2      | _Ronway_                | _cough's conway on react_              | :red_circle:
 
 ![](https://i.imgur.com/2FVvwuZ.png)
 
