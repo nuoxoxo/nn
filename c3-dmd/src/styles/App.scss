@@ -1,7 +1,17 @@
 $GB: #000000;
 $TXT: #ffffff;
 
+@mixin FlexBody {
+  display: flex;
+  flex-direction: column
+}
+
+@mixin GridBody {
+  display: grid;
+}
+
 body {
   background-color: $GB;
   color: $TXT;
+  @include FlexBody(); 
 }
