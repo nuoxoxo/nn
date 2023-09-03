@@ -1,12 +1,29 @@
 $GB: #000000;
 $TXT: #ffffff;
+$TXT-SIZE: 42px;
+
+@mixin FlexBody {
+  display: flex;
+  flex-direction: column
+}
+
+@mixin GridBody {
+  display: grid;
+}
 
 body {
   background-color: $GB;
   color: $TXT;
+  font-size: $TXT-SIZE;
+  @include FlexBody(); 
 }
 
-#root {
-  display: grid;
-  place-items: center;
+input {
+  height: $TXT-SIZE;
+  font-size: calc($TXT-SIZE - 10px)
+}
+
+.GuessingDiv {
+  display: flex;
+
 }
