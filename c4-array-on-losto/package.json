@@ -1,5 +1,5 @@
 {
-  "name": "b9-ipa",
+  "name": "c4-array-saved-on-losto",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,10 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^2.10.12"
-  },
-  "devDependencies": {
-    "gh-pages": "^6.0.0",
+    "astro": "^3.0.7",
     "sass": "^1.66.1"
   }
 }

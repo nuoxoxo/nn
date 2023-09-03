@@ -1,0 +1,37 @@
+---
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<style>
+    @import './index.scss';
+  </style>
+	<body>
+		<div id="container" class="container">
+	</body>
+	<script>
+		const keyOnLocalStorage = 'c4array'
+		const stuffFromLocalStorage = localStorage.getItem(keyOnLocalStorage)
+		let arr:number[]
+		if (!stuffFromLocalStorage) {
+			arr = [1,2,3,4,5,6,7]
+		} else {
+			arr = JSON.parse(stuffFromLocalStorage)
+		}
+		arr.push(arr.shift())
+		localStorage.setItem(keyOnLocalStorage, JSON.stringify(arr))
+		const container =  document.querySelector("#container")
+		console.log(container) // TEST
+		arr.forEach( e => {
+			const item = document.createElement('span')
+			item.textContent = e
+			container.appendChild(item)
+		})
+	</script>
+</html>
