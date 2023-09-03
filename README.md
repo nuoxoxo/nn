@@ -25,6 +25,7 @@
 | b6      | _Bootstrap - hw._       | _bug : `.container-fluid`_             | :red_circle:
 | b7      | Gig                     | _todo : on doubclick_ 
 || [*io/gig*](https://nuoxoxo.github.io/gig) 
+|         |                         | _todo : add cough's conway_            | :yellow_circle:
 |         |                         | _todo : 18:03_ 
 |         |                         | _todo : 20:03_                         | :green_circle:
 |         |                         | _todo : 20:11_                         | :yellow_circle:
