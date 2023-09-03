@@ -37,9 +37,9 @@
 | b9      | IPA                     | _what : 1-line api reach-out_ 
 || [*io/snk*](https://nuoxoxo.github.io/snk) 
 ||
-| cO      | Dictée                  | _what : dithering_                     | :yellow_circle:
-| c1      | _API - hw._             | _what : api reach-out_                 | :yellow_circle:
-| c2      | _Conway_                | _what : cough's conway on react_       | 
+| cO      | Dictée                  | _what : dithering_                     | :red_circle:
+| c1      | _API - hw._             | _what : api reach-out_ 
+| c2      | _Ronway_                | _cough's conway on react_ 
 
 ![](https://i.imgur.com/2FVvwuZ.png)
 
