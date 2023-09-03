@@ -1,5 +1,6 @@
 $GB: #000000;
 $TXT: #ffffff;
+$TXT-SIZE: 42px;
 
 @mixin FlexBody {
   display: flex;
@@ -13,5 +14,16 @@ $TXT: #ffffff;
 body {
   background-color: $GB;
   color: $TXT;
+  font-size: $TXT-SIZE;
   @include FlexBody(); 
+}
+
+input {
+  height: $TXT-SIZE;
+  font-size: calc($TXT-SIZE - 10px)
+}
+
+.GuessingDiv {
+  display: flex;
+
 }

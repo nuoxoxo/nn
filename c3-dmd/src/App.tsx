@@ -9,6 +9,9 @@ const App = () => {
   const [GuessRes, setGuessRes] = useState<string>('');
 
   const EvaluateGuess = (val: number) => {
+    if (val === 7) {
+      val = 0
+    }
     if (val === RandomDateArray[0]) {
       setGuessRes('yes')
     } else {
@@ -36,7 +39,7 @@ const App = () => {
         { `${RandomDateArray[1]} ${RandomDateArray[2]}, ${RandomDateArray[3]}` }
       </h1>
       <div className='GuessingDiv'>
-        <label htmlFor='GuessBar'>Your Guess: </label>
+        <label htmlFor='GuessBar'>Your Guess:&nbsp;</label>
         <input id='GuessBar' type='number' onChange={handleOnChange}/>
       </div>
       <div>
