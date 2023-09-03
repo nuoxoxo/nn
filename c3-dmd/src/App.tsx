@@ -4,12 +4,12 @@ import { GetRandomDateString } from "./helpers/Helpers";
 
 const App = () => {
   const [RandomDateArray/*, setRandomDateString*/] = 
-    useState<[string, number, number]>(GetRandomDateString())
+    useState<[number, string, number, number]>(GetRandomDateString())
   const [GuessVal, setGuessVal] = useState</*number | */string>('');
   const [GuessRes, setGuessRes] = useState<string>('');
 
   const EvaluateGuess = (val: number) => {
-    if (val === RandomDateArray[2]) {
+    if (val === RandomDateArray[0]) {
       setGuessRes('yes')
     } else {
       setGuessRes('no')
@@ -33,7 +33,7 @@ const App = () => {
   return (
     <>
       <h1 className='QuestionDiv'>
-        { `${RandomDateArray[0]} ${RandomDateArray[1]}` }
+        { `${RandomDateArray[1]} ${RandomDateArray[2]}, ${RandomDateArray[3]}` }
       </h1>
       <div className='GuessingDiv'>
         <label htmlFor='GuessBar'>Your Guess: </label>
