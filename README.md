@@ -25,6 +25,7 @@
 | b6      | _Bootstrap - hw._       | _bug : `.container-fluid`_             | :red_circle:
 | b7      | Gig                     | _todo : on doubclick_ 
 || [*io/gig*](https://nuoxoxo.github.io/gig) 
+|         |                         | _todo : add conway_                    | :red_circle:
 |         |                         | _todo : 18:03_ 
 |         |                         | _todo : 20:03_                         | :green_circle:
 |         |                         | _todo : 20:11_                         | :yellow_circle:
@@ -36,8 +37,9 @@
 | b9      | IPA                     | _what : 1-line api reach-out_ 
 || [*io/snk*](https://nuoxoxo.github.io/snk) 
 ||
-| cO      | Dictée                  | _what : dithering_                     | :yellow_circle:
-| c1      | _API - hw._             | _what : api reach-out_                 | :yellow_circle:
+| cO      | Dictée                  | _what : dithering_                     | :red_circle:
+| c1      | _API - hw._             | _what : api reach-out_ 
+| c2      | _Ronway_                | _cough's conway on react_ 
 
 ![](https://i.imgur.com/2FVvwuZ.png)
 
