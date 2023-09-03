@@ -3,15 +3,12 @@ import './styles/App.scss'
 import { GetRandomDateString } from "./helpers/Helpers";
 
 const App = () => {
-
-
-
-  const [RandomDateString/*, setRandomDateString*/] = 
-    useState<string[]>(GetRandomDateString())
+  const [RandomDateArray/*, setRandomDateString*/] = 
+    useState<[string, number, number]>(GetRandomDateString())
 
   return (
     <>
-      <h1>{ RandomDateString.join(' ') }</h1>
+      <h1>{ RandomDateArray.join(' ') }</h1>
     </>
   )
 }
