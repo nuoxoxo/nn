@@ -22,7 +22,7 @@
 | b4      | Coffee                  | _init to Astro + Sass_                 | :green_circle:
 | b5      | Nut                     | _deployed_                             | :green_circle:
 || [*io/nut*](https://nuoxoxo.github.io/nut) 
-| b6      | _Bootstrap - hw._       | _bug : `.container-fluid`_             | :red_circle:
+| b6      | _Bootstrap hw._       | _bug : `.container-fluid`_             | :red_circle:
 | b7      | Gig                     | _todo : on doubclick_ 
 || [*io/gig*](https://nuoxoxo.github.io/gig) 
 | b8      | Markdown Preview        | _bug : textarea div different height_ 
@@ -31,7 +31,7 @@
 || [*io/snk*](https://nuoxoxo.github.io/snk) / [*io/ipa*](https://nuoxoxo.github.io/ipa) | _todo : save array to localstorage_ | :green_circle:
 ||
 | cO      | Dictée                  | _what : dithering_                     | :red_circle:
-| c1      | _API - hw._             | _what : api reach-out_                 | :green_circle:
+| c1      | _API hw._             | _what : api reach-out_                 | :green_circle:
 | c2      | Cronway                 | _cough's conway on react_              | :red_circle:
 | c3      | Dmd                     | _guessing weekday_ 
 |         |                         | _done : First draft_                   | :yellow_circle:
