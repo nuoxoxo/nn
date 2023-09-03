@@ -1,0 +1,12 @@
+$GB: #000000;
+$TXT: #ffffff;
+
+body {
+  background-color: $GB;
+  color: $TXT;
+}
+
+#root {
+  display: grid;
+  place-items: center;
+}
