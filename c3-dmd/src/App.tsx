@@ -1,11 +1,18 @@
+import { useState } from 'react'
 import './styles/App.scss'
+import { GetRandomDateString } from "./helpers/Helpers";
 
 const App = () => {
 
+
+
+  const [RandomDateString/*, setRandomDateString*/] = 
+    useState<string[]>(GetRandomDateString())
+
   return (
-    <div id='out'>
-      <div id='in'>hello world</div>
-    </div>
+    <>
+      <h1>{ RandomDateString.join(' ') }</h1>
+    </>
   )
 }
 
