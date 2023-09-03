@@ -1,6 +1,7 @@
 $BG: #000000;
 $TEXTColor: #ffffff;
 $TEXTSize: 21px;
+$TEXTSize2: 42px;
 $FONT: 'Courier New', Courier, monospace;
 
 $TransitionS: .2s;
@@ -42,10 +43,9 @@ body {
 
   color: $ButtonColor;
   border: $ButtonOutline solid $ButtonColor;
-  border-radius: 12px;
+  border-radius: 50%;
   font-size: $TEXTSize;
   padding: 5px;
-  width: 77px;
   background-color: transparent;
   transition: background-color $TransitionS ease, color $TransitionS ease, border $TransitionS ease;
   cursor: pointer;
@@ -80,6 +80,8 @@ body {
   }
   button {
     align-self:flex-end;
+    height: $TEXTSize2;
+    width: $TEXTSize2;
     margin: 2% 1% 2% 3%;
   }
   .older-fact-R {
@@ -107,7 +109,9 @@ body {
   body {
     font-size: calc($TEXTSize * .75);
   }
-  .btn {
-    width: 42px;
+  .container {
+    button {
+      align-self:center;
+    }
   }
 }

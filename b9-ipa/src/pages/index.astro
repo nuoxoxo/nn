@@ -69,7 +69,8 @@ import "./styles/styles.scss" // otherwise deployment w/o css
       olderFactL.className = "older-fact-L"
       olderFactL.textContent = "Pre-previous cat fact: \n"
       olderFactR.className = "older-fact-R"
-      olderFactR.textContent = localFacts.olderFact
+
+      olderFactR.textContent = localFacts[1]
       // console.log(localOlderFact.oldFact)
 
       const oldFactL = document.createElement("span")
@@ -78,7 +79,8 @@ import "./styles/styles.scss" // otherwise deployment w/o css
       oldFactL.className = "old-fact-L"
       oldFactL.textContent = "Previous cat fact: \n"
       oldFactR.className = "old-fact-R"
-      oldFactR.textContent = localFacts.oldFact
+
+      oldFactR.textContent = localFacts[0]
       // console.log(localOldFact.oldFact)
 
       // set up current stuff
@@ -90,10 +92,10 @@ import "./styles/styles.scss" // otherwise deployment w/o css
       currFactR.className = "curr-fact-R"
       currFactR.textContent = catFactData.fact
 
-      const toset = {
-        olderFact: localFacts["oldFact"],
-        oldFact: catFactData["fact"],
-      }
+      console.log(localFacts)
+      localFacts.pop()
+      localFacts.unshift(catFactData.fact)
+      console.log(localFacts)
 
       container.appendChild(currFactL)
       container.appendChild(currFactR)
@@ -102,7 +104,7 @@ import "./styles/styles.scss" // otherwise deployment w/o css
       container.appendChild(olderFactL)
       container.appendChild(olderFactR)
 
-      localStorage.setItem("fact", JSON.stringify(toset))
+      localStorage.setItem("fact", JSON.stringify(localFacts))
     }
 
     const createFactElement = (label, text) => {
@@ -120,10 +122,15 @@ import "./styles/styles.scss" // otherwise deployment w/o css
         const jokesFromAPI = await FetchData(jokePath)
         const catStuffFromAPI = await FetchData(catPath)
 
+        const tempFact = localStorage.getItem('fact')
+        console.log(tempFact)
+        let localFacts:string[]
+        JSON.parse(tempFact)
+          ? localFacts = JSON.parse(tempFact)
+          : localFacts = ["No previous fact", "No previous fact"]
+
+        /*
         const tempFact = window.localStorage.getItem("fact")
-
-        // console.log(JSON.parse(tempFact), JSON.parse(tempFact).oldFact)
-
         const localOldFact =
           tempFact && JSON.parse(tempFact).oldFact !== undefined
             ? JSON.parse(tempFact).oldFact
@@ -137,13 +144,15 @@ import "./styles/styles.scss" // otherwise deployment w/o css
           olderFact: localOlderFact,
           oldFact: localOldFact,
         }
+        */
 
-        displayJoke(jokesFromAPI)
         displayCatFact(catStuffFromAPI, localFacts)
+        displayJoke(jokesFromAPI)
 
         const ctn = document.querySelector(".container")
         const btn = document.createElement('button')
-        const btnName = document.createTextNode('\u00A0io\u00A0')
+        const btnName = document.createTextNode('\u0020')
+        // const btnName = document.createTextNode('&nbsp;')
         btn.className = 'btn'
         btn.onclick = () => {
           window.location.href = "http://nuoxoxo.github.io"
