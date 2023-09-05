@@ -1,6 +1,7 @@
 $GB: #000000;
 $TXT: #ffffff;
 $TXT-SIZE: 42px;
+$TXT-SIZE05: calc($TXT-SIZE / 2);
 
 @mixin FlexBody {
   display: flex;
@@ -21,5 +22,8 @@ body {
 #container {
   display: flex;
   flex-direction: column;
-  margin: calc($TXT-SIZE * 2)
+  margin: $TXT-SIZE;
+  // span {
+  //   white-space:pre;
+  // }
 }
