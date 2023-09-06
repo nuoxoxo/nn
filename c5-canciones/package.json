@@ -1,0 +1,16 @@
+{
+  "name": "c5-canciones",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^3.0.8",
+    "sass": "^1.66.1"
+  }
+}
