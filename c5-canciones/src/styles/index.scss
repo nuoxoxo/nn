@@ -1,7 +1,8 @@
 $GB: #000000;
 $TXT: #ffffff;
-$IMG-SIZE-ON-MEDIA-MOBILE: 150px;
-$IMG-SIZE-ON-MEDIA-HALFMAC: 300px;
+$IMG-SIZE-ON-MEDIA-MOBILE: 88px;
+$IMG-SIZE-ON-MEDIA-HALFMAC: 200px;
+$IMG-SIZE-ON-MEDIA-FULLMAC: 400px;
 $TXT-SIZE: 42px;
 $TXT-SIZEX05: calc($TXT-SIZE / 2);
 $TXT-SIZEX2: calc($TXT-SIZE * 2);
@@ -16,8 +17,8 @@ $SEC: 2s;
 }
 
 @mixin ButtonStyle {
-  width: $TXT-SIZEX3;
-  height: $TXT-SIZEX3;
+  width: $TXT-SIZEX2;
+  height: $TXT-SIZEX2;
   border-radius: 50%;
   cursor: pointer;
   border: none;
@@ -25,7 +26,7 @@ $SEC: 2s;
   background-color: random-rgb-color();
   &:hover {
     border: 2px solid random-rgb-color();
-    transition: border 0.3s ease-in-out;
+    transition: border 0.3s ease;
   }
 }
 
@@ -47,15 +48,22 @@ body {
   font-size: $TXT-SIZE;
   // @include GridBody();
   @include FlexBody(); 
+
 }
 
 #youtube-div {
-  img, iframe {
-    padding: 10px;
-  }
+  @include FlexBody();
+  margin-bottom: 10px;
+  // img, iframe {
+  //   margin: 8px;
+  // }
   img {
-    width: 400px;
+    width: $IMG-SIZE-ON-MEDIA-HALFMAC;
   }
+}
+
+#youtube-coverart {
+  align-self: center;
 }
 
 #youtube-iframe {
@@ -71,6 +79,9 @@ body {
 
 @media only screen and (max-width: 930px) {
   #youtube-div {
+    @include FlexBody();
+    // padding-top: $TXT-SIZEX05;
+    // margin-bottom: 10px;
     img {
       width: $IMG-SIZE-ON-MEDIA-HALFMAC;
     }
@@ -82,11 +93,13 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-  #youtube-div {
-    img {
-      width: $IMG-SIZE-ON-MEDIA-MOBILE;
-    }
+
+  body { transform: scale(0.88); transform-origin: center center; }
+
+  img {
+    width: $IMG-SIZE-ON-MEDIA-MOBILE;
   }
+
   #youtube-iframe {
     height: $IMG-SIZE-ON-MEDIA-MOBILE;
     width: $IMG-SIZE-ON-MEDIA-MOBILE;

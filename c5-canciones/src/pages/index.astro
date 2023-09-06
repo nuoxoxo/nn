@@ -5,7 +5,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="generator" content={Astro.generator} />
 		<title>¡La Canción!</title>
 	</head>
@@ -49,22 +49,32 @@
 
 		const coverart = document.createElement('img')
 		coverart.id = 'youtube-coverart'
-		coverart.src = 'https://i.imgur.com/' + SongART
+		coverart.src = 'https://i.imgur.com/' + SongART + '.jpg'
+		coverart.style =
+			'display: block;width:auto;height:302px;margin-bottom:21px;'
 
 		console.log(iframe.src, coverart.src)
 
 		YoutubeDiv.appendChild(coverart)
 		YoutubeDiv.appendChild(iframe)
 
-		RandomButton.addEventListener('click', () => {
+		RandomButton.addEventListener('click', (e) => {
+			e.preventDefault()
 			const SongToSet = document.getElementById('youtube-iframe') as HTMLDivElement
 			const CoverToSet = document.getElementById('youtube-coverart') as HTMLButtonElement
 			SongURL = SongKeys[Math.floor(Math.random() * SongKeys.length)]
 			SongART = Songs[SongURL]
 			SongToSet.src = 'https://www.youtube.com/embed/' + SongURL
-			CoverToSet.src = 'https://i.imgur.com/' + SongART
-
+			CoverToSet.src = 'https://i.imgur.com/' + SongART + '.jpg'
+			// RandomButton.style.backgroundColor = RandomRGBString()
 		})
+
+		function RandomRGBString() {
+			let R = Math.floor(Math.random() * 256)
+			let G = Math.floor(Math.random() * 256)
+			let B = Math.floor(Math.random() * 256)
+			return "rgb(" + R + ", " + G + ", " + B + ")"
+		}
 	</script>
 	<style>
 		@import '../styles/index.scss'
