@@ -16,45 +16,54 @@
 		<div id='youtube-div'>
     </div>
 		<button id='btn-random' class='btn'></button>
-		<script>
-			const YoutubeDiv = document.getElementById('youtube-div') as HTMLDivElement
-			const RandomButton = document.getElementById('btn-random') as HTMLButtonElement
-
-			const Songs = {
-				'https://www.youtube.com/embed/R6C8ybsrH14': 'https://i.imgur.com/1eBYJKo.jpg',
-				'https://www.youtube.com/embed/pCGE9BiEe_c': 'https://i.imgur.com/eIL1DbA.jpg'
-			}
-			const SongKeys = Object.keys(Songs)
-
-			let SongURL = SongKeys[Math.floor(Math.random() * SongKeys.length)]
-			let SongART = Songs[SongURL]
-
-			const iframe = document.createElement('iframe')
-			iframe.id = 'youtube-iframe'
-			iframe.src = SongURL
-			iframe.frameborder = '0'
-			iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-			iframe.allowfullscreen = true
-
-			const coverart = document.createElement('img')
-			coverart.id = 'youtube-coverart'
-			coverart.src = SongART
-
-			YoutubeDiv.appendChild(coverart)
-			YoutubeDiv.appendChild(iframe)
-
-
-			RandomButton.addEventListener('click', () => {
-				const SongToSet = document.getElementById('youtube-iframe') as HTMLDivElement
-				const CoverToSet = document.getElementById('youtube-coverart') as HTMLButtonElement
-				SongURL = SongKeys[Math.floor(Math.random() * SongKeys.length)]
-				SongART = Songs[SongURL]
-				SongToSet.src = SongURL
-				CoverToSet.src = SongART
-
-			})
-		</script>
 	</body>
+	<script>
+
+		const infileURL = 'https://raw.githubusercontent.com/nuoxoxo/in/main/cancions.in'
+		const FetchData = async (url) => {
+			try {
+				const response = await fetch(url)
+				const data = await response.json()
+				return data
+			} catch (error) {
+				console.error("Error fetching data: ", error)
+				throw error
+			}
+		}
+
+		const YoutubeDiv = document.getElementById('youtube-div') as HTMLDivElement
+		const RandomButton = document.getElementById('btn-random') as HTMLButtonElement
+
+		const Songs = await FetchData(infileURL)
+		const SongKeys = Object.keys(Songs)
+
+		let SongURL = SongKeys[Math.floor(Math.random() * SongKeys.length)]
+		let SongART = Songs[SongURL]
+
+		const iframe = document.createElement('iframe')
+		iframe.id = 'youtube-iframe'
+		iframe.src = SongURL
+		iframe.frameborder = '0'
+		iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+		iframe.allowfullscreen = true
+
+		const coverart = document.createElement('img')
+		coverart.id = 'youtube-coverart'
+		coverart.src = SongART
+
+		YoutubeDiv.appendChild(coverart)
+		YoutubeDiv.appendChild(iframe)
+
+		RandomButton.addEventListener('click', () => {
+			const SongToSet = document.getElementById('youtube-iframe') as HTMLDivElement
+			const CoverToSet = document.getElementById('youtube-coverart') as HTMLButtonElement
+			SongURL = SongKeys[Math.floor(Math.random() * SongKeys.length)]
+			SongART = Songs[SongURL]
+			SongToSet.src = SongURL
+			CoverToSet.src = SongART
+
+		})
+	</script>
 	<style>
 		@import '../styles/index.scss'
 	</style>

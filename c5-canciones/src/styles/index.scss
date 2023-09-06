@@ -1,6 +1,7 @@
 $GB: #000000;
 $TXT: #ffffff;
-$IMG-SIZE-ON-MEDIA: 200px;
+$IMG-SIZE-ON-MEDIA200: 200px;
+$IMG-SIZE-ON-MEDIA300: 300px;
 $TXT-SIZE: 42px;
 $TXT-SIZEX05: calc($TXT-SIZE / 2);
 $TXT-SIZEX2: calc($TXT-SIZE * 2);
@@ -52,16 +53,26 @@ body {
   @include ButtonStyle();
 }
 
+@media only screen and (max-width: 930px) {
+  #youtube-div {
+    img {
+      width: $IMG-SIZE-ON-MEDIA300;
+    }
+  }
+  #youtube-iframe {
+    height: $IMG-SIZE-ON-MEDIA300;
+    width: $IMG-SIZE-ON-MEDIA300;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   #youtube-div {
     img {
-      width: $IMG-SIZE-ON-MEDIA;
+      width: $IMG-SIZE-ON-MEDIA200;
     }
   }
-  
   #youtube-iframe {
-    height: $IMG-SIZE-ON-MEDIA;
-    width: $IMG-SIZE-ON-MEDIA;
+    height: $IMG-SIZE-ON-MEDIA200;
+    width: $IMG-SIZE-ON-MEDIA200;
   }
 }
