@@ -9,21 +9,53 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>¡La Canción!</title>
 	</head>
+	<body>
+		<!--
+		<h1>Astro</h1>
+		-->
+		<div id='youtube-div'>
+    </div>
+		<button id='btn-random' class='btn'></button>
+		<script>
+			const YoutubeDiv = document.getElementById('youtube-div') as HTMLDivElement
+			const RandomButton = document.getElementById('btn-random') as HTMLButtonElement
+
+			const Songs = {
+				'https://www.youtube.com/embed/R6C8ybsrH14': 'https://i.imgur.com/1eBYJKo.jpg',
+				'https://www.youtube.com/embed/pCGE9BiEe_c': 'https://i.imgur.com/eIL1DbA.jpg'
+			}
+			const SongKeys = Object.keys(Songs)
+
+			let SongURL = SongKeys[Math.floor(Math.random() * SongKeys.length)]
+			let SongART = Songs[SongURL]
+
+			const iframe = document.createElement('iframe')
+			iframe.id = 'youtube-iframe'
+			iframe.src = SongURL
+			iframe.frameborder = '0'
+			iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+			iframe.allowfullscreen = true
+
+			const coverart = document.createElement('img')
+			coverart.id = 'youtube-coverart'
+			coverart.src = SongART
+
+			YoutubeDiv.appendChild(coverart)
+			YoutubeDiv.appendChild(iframe)
+
+
+			RandomButton.addEventListener('click', () => {
+				const SongToSet = document.getElementById('youtube-iframe') as HTMLDivElement
+				const CoverToSet = document.getElementById('youtube-coverart') as HTMLButtonElement
+				SongURL = SongKeys[Math.floor(Math.random() * SongKeys.length)]
+				SongART = Songs[SongURL]
+				SongToSet.src = SongURL
+				CoverToSet.src = SongART
+
+			})
+		</script>
+	</body>
 	<style>
 		@import '../styles/index.scss'
 	</style>
-	<body>
-		<h1>Astro</h1>
-		<div class='youtube-div'>
-      <iframe 
-				width="560" 
-				height="315" 
-				src="https://www.youtube.com/embed/pCGE9BiEe_c" 
-				title="" 
-				frameborder="0" 
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-				allowfullscreen
-			></iframe>
-    </div>
-	</body>
 </html>
