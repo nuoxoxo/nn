@@ -13,8 +13,7 @@
 		<!--
 		<h1>Astro</h1>
 		-->
-		<div id='youtube-div'>
-    </div>
+		<div id='youtube-div'></div>
 		<button id='btn-random' class='btn'></button>
 	</body>
 	<script>
@@ -35,6 +34,7 @@
 		const RandomButton = document.getElementById('btn-random') as HTMLButtonElement
 
 		const Songs = await FetchData(infileURL)
+		// console.log(songs)
 		const SongKeys = Object.keys(Songs)
 
 		let SongURL = SongKeys[Math.floor(Math.random() * SongKeys.length)]
@@ -42,14 +42,16 @@
 
 		const iframe = document.createElement('iframe')
 		iframe.id = 'youtube-iframe'
-		iframe.src = SongURL
+		iframe.src = 'https://www.youtube.com/embed/' + SongURL
 		iframe.frameborder = '0'
 		iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
 		iframe.allowfullscreen = true
 
 		const coverart = document.createElement('img')
 		coverart.id = 'youtube-coverart'
-		coverart.src = SongART
+		coverart.src = 'https://i.imgur.com/' + SongART
+
+		console.log(iframe.src, coverart.src)
 
 		YoutubeDiv.appendChild(coverart)
 		YoutubeDiv.appendChild(iframe)
@@ -59,8 +61,8 @@
 			const CoverToSet = document.getElementById('youtube-coverart') as HTMLButtonElement
 			SongURL = SongKeys[Math.floor(Math.random() * SongKeys.length)]
 			SongART = Songs[SongURL]
-			SongToSet.src = SongURL
-			CoverToSet.src = SongART
+			SongToSet.src = 'https://www.youtube.com/embed/' + SongURL
+			CoverToSet.src = 'https://i.imgur.com/' + SongART
 
 		})
 	</script>
