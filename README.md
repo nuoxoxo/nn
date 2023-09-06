@@ -36,7 +36,7 @@
 | c3      | Dmd                     | _guessing weekday_ 
 |         |                         | _done : First draft_                   | :yellow_circle:
 | c4      | Arron Lostro            | _done_ 
-| c5      | Random Youtube Link     | _todo : Astro_                         | :yellow_circle: 
+| c5      | Songs on Youtube        | _what : to be written in Astro_        | :yellow_circle: 
 
 ![](https://i.imgur.com/2FVvwuZ.png)
 
