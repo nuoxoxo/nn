@@ -38,7 +38,7 @@
 | c4      | Arron Lostro            | _done_ 
 | c5      | Songs on Youtube        | _what : to be written in Astro_        | :green_circle:
 || [*io/jukebox*](https://nuoxoxo.github.io/jukebox) | _1st draft : works fine_ | :green_circle:
-||| _bug : only mobile has better viewport_ 
+||| _bug : only mobile has good viewport_ 
 
 ![](https://i.imgur.com/2FVvwuZ.png)
 
