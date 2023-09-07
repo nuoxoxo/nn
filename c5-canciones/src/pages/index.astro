@@ -4,9 +4,9 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<title>¡La Canción!</title>
 	</head>
 	<body>
@@ -14,11 +14,37 @@
 		<h1>Astro</h1>
 		-->
 		<div id='youtube-div'></div>
-		<button id='btn-random' class='btn'></button>
+		<div id='btn-div'>
+			<button id='btn-switch' class='btn' style='display:none'></button>
+			<button id='btn-random' class='btn'></button>
+		</div>
 	</body>
 	<script>
 
-		const infileURL = 'https://raw.githubusercontent.com/nuoxoxo/in/main/cancions.in'
+		const YoutubeDiv = document.getElementById('youtube-div') as HTMLDivElement
+		const RandomButton = document.getElementById('btn-random') as HTMLButtonElement
+		const SwitchButton = document.getElementById('btn-switch') as HTMLButtonElement
+
+		const InfileURLs = [
+			// 'https://raw.githubusercontent.com/nuoxoxo/in/main/canciones_edition_novelty.in',
+			'https://raw.githubusercontent.com/nuoxoxo/in/main/canciones.in',
+			'https://raw.githubusercontent.com/nuoxoxo/in/main/canciones_edition_jazz.in'
+		]
+
+		const choiceIndexInfileURLs = Math.floor(Math.random() * InfileURLs.length)
+		const stuffFromLocalStorage = localStorage.getItem('choiceURL')
+
+		//	To Use in Post Production
+		/*
+		let choice = stuffFromLocalStorage ? 
+			Number(stuffFromLocalStorage) : choiceIndexInfileURLs
+		*/
+
+		//	Test Used for Pre-Production
+		let choice = 0
+
+		let InfileURL:string = InfileURLs[choice]
+
 		const FetchData = async (url) => {
 			try {
 				const response = await fetch(url)
@@ -30,15 +56,13 @@
 			}
 		}
 
-		const YoutubeDiv = document.getElementById('youtube-div') as HTMLDivElement
-		const RandomButton = document.getElementById('btn-random') as HTMLButtonElement
+		let Songs = await FetchData(InfileURL)
 
-		const Songs = await FetchData(infileURL)
-		// console.log(songs)
-		const SongKeys = Object.keys(Songs)
+		let SongKeys = Object.keys(Songs)
+		let SongItem = Songs[SongKeys[Math.floor(Math.random() * SongKeys.length)]]
 
-		let SongURL = SongKeys[Math.floor(Math.random() * SongKeys.length)]
-		let SongART = Songs[SongURL]
+		let SongURL = SongItem['tube']
+		let SongART = SongItem['cover']
 
 		const iframe = document.createElement('iframe')
 		iframe.id = 'youtube-iframe'
@@ -51,30 +75,64 @@
 		coverart.id = 'youtube-coverart'
 		coverart.src = 'https://i.imgur.com/' + SongART + '.jpg'
 		coverart.style =
-			'display: block;width:auto;height:302px;margin-bottom:21px;'
-
-		console.log(iframe.src, coverart.src)
+			'display:block; width:auto; height:302px; margin-bottom:21px; '
 
 		YoutubeDiv.appendChild(coverart)
 		YoutubeDiv.appendChild(iframe)
 
+		localStorage.setItem('choiceURL', choice.toString())
+
 		RandomButton.addEventListener('click', (e) => {
+
 			e.preventDefault()
 			const SongToSet = document.getElementById('youtube-iframe') as HTMLDivElement
 			const CoverToSet = document.getElementById('youtube-coverart') as HTMLButtonElement
-			SongURL = SongKeys[Math.floor(Math.random() * SongKeys.length)]
-			SongART = Songs[SongURL]
+
+			SongItem = Songs[SongKeys[Math.floor(Math.random() * SongKeys.length)]]
+			SongURL = SongItem['tube']
+			SongART = SongItem['cover']
 			SongToSet.src = 'https://www.youtube.com/embed/' + SongURL
 			CoverToSet.src = 'https://i.imgur.com/' + SongART + '.jpg'
-			// RandomButton.style.backgroundColor = RandomRGBString()
+
 		})
 
+		// async const HandleSwitchButton = (e) => {
+		async function HandleSwitchButton (e) {
+
+			e.preventDefault()
+			const ChoiceNOW = InfileURLs.indexOf(InfileURL)
+			const ChoiceNEW = (ChoiceNOW + 1) % InfileURLs.length
+			InfileURL = InfileURLs[ChoiceNEW]
+
+			try {
+
+				const SongToSet = document.getElementById('youtube-iframe')
+				const CoverToSet = document.getElementById('youtube-coverart')
+
+				Songs = await FetchData(InfileURL)
+				SongKeys = Object.keys(Songs)
+				SongItem = Songs[SongKeys[Math.floor(Math.random() * SongKeys.length)]]
+				SongURL = SongItem['tube']
+				SongART = SongItem['cover']
+
+				SongToSet.src = 'https://www.youtube.com/embed/' + SongURL
+				CoverToSet.src = 'https://i.imgur.com/' + SongART + '.jpg'
+				localStorage.setItem('choiceURL', ChoiceNEW.toString())
+			} catch (error) {
+					console.error("Error handling switch button: ", error)
+			}
+		}
+
+		SwitchButton.addEventListener('click', HandleSwitchButton)
+
 		function RandomRGBString() {
+
 			let R = Math.floor(Math.random() * 256)
 			let G = Math.floor(Math.random() * 256)
 			let B = Math.floor(Math.random() * 256)
 			return "rgb(" + R + ", " + G + ", " + B + ")"
 		}
+
 	</script>
 	<style>
 		@import '../styles/index.scss'
