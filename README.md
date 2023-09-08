@@ -37,8 +37,9 @@
 |         |                         | _done : First draft_                   | :yellow_circle:
 | c4      | Arron Lostro            | _done_ 
 | c5      | Songs on Youtube        | _what : to be written in Astro_        | :green_circle:
-|| [*io/jukebox*](https://nuoxoxo.github.io/jukebox) | _1st draft : works fine_ | :green_circle:
+|| [*io/jukebox*](https://nuoxoxo.github.io/jukebox) | _1st draft : works fine_ 
 ||| _bug : only mobile has good viewport_ 
+||| _Uses 4 buttons_ | :green_circle: 
 
 ![](https://i.imgur.com/2FVvwuZ.png)
 
