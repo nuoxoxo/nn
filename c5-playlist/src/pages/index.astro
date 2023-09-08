@@ -34,10 +34,10 @@
     const choiceStringLS: string = localStorage.getItem("choiceURL")
 
     //	To Use in Post Production (1/2)
-    // let choice:number = choiceStringLS ? Number(choiceStringLS) : choiceMath
+    let choice:number = choiceStringLS ? Number(choiceStringLS) : choiceMath
 
     //	Test Used for Pre-Production (2/2)
-    let choice = 0
+    // let choice = 0
 
     let InfileURL: string = InfileURLs[choice]
 
@@ -104,8 +104,10 @@
         const CoverToSet = document.getElementById("youtube-coverart")
 
         Songs = await FetchData(InfileURL)
+
         SongKeys = Object.keys(Songs)
-        SongItem = Songs[SongKeys[Math.floor(Math.random() * SongKeys.length)]]
+        SongKey = SongKeys[Math.floor(Math.random() * SongKeys.length)]
+        SongItem = Songs[SongKey]
         SongURL = SongItem["tube"]
         SongART = SongItem["cover"]
 
