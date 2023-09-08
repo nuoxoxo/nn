@@ -5,13 +5,13 @@ $IMG-SIZE-ON-MEDIA-MOBILE: 88px;
 $IMG-SIZE-ON-MEDIA-HALFMAC: 200px;
 $IMG-SIZE-ON-MEDIA-FULLMAC: 400px;
 
-$TXT-SIZE: 42px;
+$TXT-SIZE: 12px;
 $TXT-SIZEX05: calc($TXT-SIZE / 2);
 $TXT-SIZEX2: calc($TXT-SIZE * 2);
 $TXT-SIZEX3: calc($TXT-SIZE * 3);
 
 $BTN-SIZE: 69px;
-$BTN-MARGIN: 11px;
+$BTN-MARGIN: 6px;
 
 $SEC: 2s;
 
@@ -31,7 +31,7 @@ $SEC: 2s;
   margin: $BTN-MARGIN;
   border: 3px solid random-rgb-color();
   // outline: none;
-  background-color: transparent;//random-rgb-color();
+  background-color: random-rgb-color();//transparent;
   &:hover {
     border: 5px solid random-rgb-color();
     transition: border 0.3s ease;
@@ -87,6 +87,10 @@ body {
 .btn {
   @include ButtonStyle();
 }
+
+// #btn-switch {
+//   display:none;
+// }
 
 @media only screen and (max-width: 930px) {
   #youtube-div {
