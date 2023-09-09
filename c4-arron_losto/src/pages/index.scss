@@ -1,0 +1,29 @@
+$GB: #000000;
+$TXT: #ffffff;
+$TXT-SIZE: 42px;
+$TXT-SIZE05: calc($TXT-SIZE / 2);
+
+@mixin FlexBody {
+  display: flex;
+  flex-direction: column
+}
+
+@mixin GridBody {
+  display: grid;
+}
+
+body {
+  background-color: $GB;
+  color: $TXT;
+  font-size: $TXT-SIZE;
+  @include FlexBody(); 
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  margin: $TXT-SIZE;
+  // span {
+  //   white-space:pre;
+  // }
+}
