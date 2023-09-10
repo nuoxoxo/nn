@@ -28,7 +28,7 @@
 | b8      | Markdown Preview        | _bug : textarea div different height_ 
 || [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_                   | :red_circle: 
 | b9      | IPA                     | _what : 1-line api reach-out_ 
-|| [*io/snk*](https://nuoxoxo.github.io/snk) / [*io/ipa*](https://nuoxoxo.github.io/ipa) | _todo : save array to localstorage_ | :green_circle:
+|| [*io/ipa*](https://nuoxoxo.github.io/ipa) | _todo : save array to localstorage_ | :green_circle:
 ||
 | cO      | Dictée                  | _what : dithering_                     | :red_circle:
 | c1      | _API hw._               | _what : api reach-out_                 | :green_circle:
