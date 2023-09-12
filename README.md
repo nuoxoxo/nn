@@ -33,7 +33,7 @@
 | cO      | Dictée                  | _what : dithering_                     | :red_circle:
 | c1      | _API hw._               | _what : api reach-out_                 | :green_circle:
 | c2      | Cronway                 | _conway on react_                      | :red_circle:
-| c3      | Dmd                     | _guessing weekday_ 
+| c3      | Doomsday                | _guessing weekday_ 
 |         |                         | _1st : input by typing_ 
 || [*io/dmd*](https://nuoxoxo.github.io/dmd)| _2nd : btns . nightmode . memo_ | :green_circle: 
 | c4      | Array on Losto          | _done_ 
