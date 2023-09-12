@@ -41,6 +41,8 @@
 || [*io/jukebox*](https://nuoxoxo.github.io/jukebox) | _1st draft : works fine_ 
 ||| _bug : only mobile has good viewport_ 
 ||| _Uses 4 buttons_ | :green_circle: 
+| c6      | Pokemon                 | _what : vanilla + astro_ 
+
 <!--
 | _^v_    | [*catcatcat*](https://qx-catcatcat.netlify.app) 
 -->
