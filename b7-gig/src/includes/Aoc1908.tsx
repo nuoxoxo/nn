@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { FetchData, /*LenNStrsFromLine, */ Deepcopy2DArray } from "../helpers/Helpers"
 
-const path = 
+const URL:string = 
   "https://raw.githubusercontent.com/nuoxoxo/advent-of-code/main/_inputs_/1908.0"
 
 const sparseChars:string[] = [':']
@@ -13,6 +13,9 @@ const roundChar:string = roundChars[Math.floor(Math.random() * roundChars.length
 const denseChars:string[] = ['▓']//, '@', '✲', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '✺', '✻', '✼', '✽', '✾', '✿', '❀']
 const denseChar:string = denseChars[Math.floor(Math.random() * denseChars.length)]
 
+const W:number = 25
+const T:number = 6
+
 var Aoc1908 = () => {
 
   const [lines, setLines] = useState<string[]>([])
@@ -23,7 +26,7 @@ var Aoc1908 = () => {
 
   const handleData = async () => {
     try {
-      const raws = await FetchData(path)
+      const raws = await FetchData(URL)
       setLines(raws)
     } catch (error: any) {
       console.error("Error fetching data: ", error)
@@ -44,10 +47,10 @@ var Aoc1908 = () => {
     let j:number
 
     i = -1
-    while (++i < 6) {
+    while (++i < T) {
       j = -1
       let temp: string[] = []
-      while (++j < 25) {
+      while (++j < W) {
         temp.push('2')
       }
       img.push(temp)
@@ -116,7 +119,7 @@ var Aoc1908 = () => {
           <div className="playground playground-1908">
             <div className="field res-field res-field-1908" >
               <span>--- 2019 Day 8: Space Image Format ---</span>
-              <span>Part 1: { p1 }</span>
+              <span>Part 1: { p1 ? p1 : '(empty)' }</span>
               <span>Part 2: </span>
               <span className='res-field-1908-image'>
                 { imgFinal.map(line => line.join('')).join('\n') }

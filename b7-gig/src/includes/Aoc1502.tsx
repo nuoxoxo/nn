@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
-const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/1502.in"
+const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/1502.in"
 
 var Aoc1501 = () => {
   const [lines, setLines] = useState<string[]>( [] )
@@ -10,7 +10,7 @@ var Aoc1501 = () => {
 
   const handleData = async () => {
     try {
-      const raws = await FetchData(path)
+      const raws = await FetchData(URL)
       setLines(raws)
     } catch (error: any) {
       console.error("Error fetching data: ", error)
@@ -55,8 +55,8 @@ var Aoc1501 = () => {
         <div className='playground'>
           <div className="field res-field">
             <span>--- 2015 Day 2: I Was Told There Would Be No Math ---</span>
-            <span>Part 1: {p1}</span>
-            <span>Part 2: {p2}</span>
+            <span>Part 1: {p1?p1:'(empty)'}</span>
+            <span>Part 2: {p2?p2:'(empty)'}</span>
           </div>
           <div className="field data-field">
             { lines

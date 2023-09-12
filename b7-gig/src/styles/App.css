@@ -1,80 +1,16 @@
-$TextSize-1: 42px;
-$TextSize-15: calc($TextSize-1 * 1.5);
-$TextSize-2: calc($TextSize-1 * 2);
-$TextSize-05: calc($TextSize-1 / 2);
-$TextSize-025: calc($TextSize-1 / 4);
-$TextSize-02: calc($TextSize-1 / 5);
-
-$WATER-GREEN: #23aeba;
-$CREAM-YELLO: #FFFDD0;
-$CREAM-WHITE: #FAEED5;
-$HOT-PINK: #EF7C8E;
-
-$ButtonColor: $CREAM-YELLO;
-// $ButtonHoverColor: $WATER-GREEN;
-$ButtonHoverColor: $HOT-PINK;
-$ButtonOutline: 2px;
-$ButtonSize: 16px;
-
-$TransitionS: .3s;
-
-$BGColor: #000000;
-$TextColor: #ffffff;
-
-//  Dad jokes
-$DadMarginL: 16%;
-$DadMarginR: 8%;
-$DadMarginV: 169px;
-
 @keyframes rainbow-rotate {
   from {
     filter: hue-rotate(0deg);
-  } to {
+  }
+  to {
     filter: hue-rotate(360deg);
   }
 }
-
-@mixin animation-rainbow-rotate {
-
-  // color: $CREAM-YELLO;
-  // color: $HOT-PINK;
-  color: $WATER-GREEN;
-  animation: rainbow-rotate 5s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-@mixin button-style {
-
-  color: $ButtonColor;
-  border: $ButtonOutline solid $ButtonColor;
-  border-radius: 12px;
-  font-size: $ButtonSize;
-  padding: 5px;
-  margin: 1px;
-  width: 66px;
-  // width: 77px;
-  background-color: transparent;
-  transition: background-color $TransitionS ease, color $TransitionS ease, border $TransitionS ease;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
-  &:hover {
-    // background-color: $ButtonColor;
-    // color: $ButtonHoverColor;
-    border: $ButtonOutline solid $ButtonHoverColor;
-  }
-}
-
 body {
-
-  font-size: $TextSize-05;
-  font-family: /*monospace, "Courier New",*/ "Lucida Console", Courier;
-  background-color: $BGColor;
-  color: $TextColor;
-
+  font-size: 21px;
+  font-family: "Lucida Console", Courier;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 #root {
@@ -86,8 +22,7 @@ body {
 }
 
 .nav {
-
-  margin: .4em;
+  margin: 0.4em;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -100,7 +35,7 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  font-size: $TextSize-05;
+  font-size: 21px;
 }
 
 .field {
@@ -108,36 +43,56 @@ body {
   padding-right: 6px;
   display: flex;
   flex-direction: column;
-  span {
-    margin: 0.3em
-  }
+}
+.field span {
+  margin: 0.3em;
 }
 
 .data-field {
-  font-size: $TextSize-05;
+  font-size: 21px;
   padding: 6px;
 }
 
 .gig-header {
   margin: 0;
-  font-size: $TextSize-1;
-  user-select: none;
-  @include animation-rainbow-rotate;
+  font-size: 42px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: #23aeba;
+  animation: rainbow-rotate 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 .btn {
-  @include button-style;
+  color: #FFFDD0;
+  border: 2px solid #FFFDD0;
+  border-radius: 12px;
+  font-size: 16px;
+  padding: 5px;
+  margin: 1px;
+  width: 77px;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+}
+.btn:hover {
+  border: 2px solid #EF7C8E;
 }
 
 .btn-io {
   border-radius: 50%;
-  width: calc($ButtonSize * 2);
-  height: calc($ButtonSize * 2);
-  background-color: $ButtonColor;
+  width: 32px;
+  height: 32px;
+  background-color: #FFFDD0;
 }
 
 .btn-current-route {
-  border: $ButtonOutline solid $ButtonHoverColor;
+  border: 2px solid #EF7C8E;
 }
 
 .playground-2212, .playground-2003, .playground-2223, .playground-2011 {
@@ -145,27 +100,22 @@ body {
   align-items: center;
 }
 
-// .playground-1802 {
-//   .field {
-//     flex: 1;
-//   }
-// }
-
 .dad-jokes-field {
-  font-size: $TextSize-1;
-  color: $CREAM-WHITE;
-  height:69vh;
-  user-select: none;
+  font-size: 42px;
+  color: #FAEED5;
+  height: 69vh;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   cursor: pointer;
-  margin-left: $DadMarginL;
-  margin-right: $DadMarginR;
-  margin-top: $DadMarginV;
+  margin-left: 16%;
+  margin-right: 8%;
+  margin-top: 169px;
 }
 
 .data-field-1802, .data-field-1803 {
   align-items: center;
-  // align-items:flex-end;
-} 
+}
 
 .data-field-2223 {
   font-size: 17px;
@@ -185,7 +135,7 @@ body {
 
 .data-field-2003 {
   flex-direction: row;
-  font-size: 15px
+  font-size: 15px;
 }
 
 .data-field-2222 {
@@ -195,7 +145,7 @@ body {
 
 .data-field-2021 {
   text-align: center;
-  font-size: 23px
+  font-size: 23px;
 }
 
 .data-field-2003-children {
@@ -213,15 +163,15 @@ body {
 
 .playground-1908 {
   padding-left: 12px;
-  padding-right: 12px
+  padding-right: 12px;
 }
 
 .playground-2212 {
   flex-direction: column;
 }
 
-.playground-2223 {
-  .playground {flex: 1;}
+.playground-2223 .playground {
+  flex: 1;
 }
 
 .res-field-1908-image {
@@ -229,36 +179,27 @@ body {
 }
 
 .data-field-single-line-string {
-
   padding-right: 80px;
   word-break: break-all;
 }
 
 .res-field-2210 {
-  font-size: $TextSize-05;
+  font-size: 21px;
   display: flex;
   flex-direction: column;
 }
 
 .res-field-2210-result {
-  font-size: $TextSize-05;
+  font-size: 21px;
   display: flex;
   flex-direction: column;
 }
 
 .res-field-2210-image {
-  font-size: $TextSize-05;
+  font-size: 21px;
   display: flex;
   flex-direction: column;
 }
-
-// .data-field-2210 {
-//   font-size: 33px
-// }
-
-// .data-field-1908 {
-//   font-size: $TextSize-1
-// }
 
 @media only screen and (max-width: 1010px) {
   .nav, .playground, .field {
@@ -289,9 +230,7 @@ body {
     font-size: 17px;
   }
 }
-
 @media only screen and (max-width: 910px) {
-
   .res-field-1908 {
     padding-left: 6px;
   }
@@ -300,92 +239,80 @@ body {
     word-break: break-all;
   }
 }
-
 @media only screen and (max-width: 768px) {
-
   .nav, .playground, .field {
     font-size: 8px;
   }
-
   .playground {
-    margin-top: .3em;
+    margin-top: 0.3em;
   }
-
   h2 {
-    font-size: $TextSize-05;
+    font-size: 21px;
   }
-
   .btn {
     font-size: 9px;
     width: 39px;
     padding: 2px;
-    border: 1px solid $ButtonColor;
-    &:hover {
-      border: 1px solid $ButtonHoverColor;
-    }
+    border: 1px solid #FFFDD0;
   }
-
+  .btn:hover {
+    border: 1px solid #EF7C8E;
+  }
   .btn-current-route {
-    border: 1px solid $ButtonHoverColor;
-    &:hover {
-      border: 1px solid $ButtonHoverColor;
-    }
+    border: 1px solid #EF7C8E;
   }
-
+  .btn-current-route:hover {
+    border: 1px solid #EF7C8E;
+  }
   .btn-io {
     border-radius: 50%;
-    width: calc($TextSize-05 - 3px);
-    height: calc($TextSize-05 - 3px);
-    background-color: $ButtonColor;
+    width: 18px;
+    height: 18px;
+    background-color: #FFFDD0;
   }
-
-  .data-field-2212 {font-size: 3px}
-  .data-field-2011 {font-size: 6px;}
+  .data-field-2212 {
+    font-size: 3px;
+  }
+  .data-field-2011 {
+    font-size: 6px;
+  }
   .res-field-2210-result {
     font-size: 9px;
   }
-
   .data-field-1501-santa {
     font-size: 10px;
   }
-
   .res-field-1608-image {
     font-size: 7px;
   }
-
-  .res-field-1908-image, 
+  .res-field-1908-image,
   .res-field-1608,
   .res-field-2210-image {
     font-size: 9px;
   }
-
   .playground-2212 {
     font-size: 1px;
   }
-
   .dad-jokes-field {
     font-size: 5vh;
     margin-top: 77px;
-    margin-left: calc($DadMarginL - 5px);
-    user-select: none;
+    margin-left: calc(16% - 5px);
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
   }
-
   .data-field-2223 {
     font-size: 7px;
   }
-
   .data-field-2222 {
     font-size: 3px;
   }
-
   .data-field-1803 {
     font-size: 7px;
   }
-
   .data-field-2003 {
     font-size: 5px;
   }
-
   .data-field-2003-children {
     padding-left: 1px;
     padding-right: 1px;

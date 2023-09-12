@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
-const path = 
-  "https://raw.githubusercontent.com/nuoxoxo/in/main/2210.in"
+const URL:string = 
+  "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2210.in"
 
 const denseChars:string[] = 
   ['@']//, '▓', '✲', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '✺', '✻', '✼', '✽', '✾', '✿', '❀']
@@ -19,7 +19,7 @@ var Aoc2210 = () => {
 
   const handleData = async () => {
     try {
-      const raws = await FetchData(path)
+      const raws = await FetchData(URL)
       const arr: number[] = []
       for (let raw of raws) {
         arr.push(0)
@@ -106,19 +106,19 @@ var Aoc2210 = () => {
     <>
       { lines ? (
         <div className="playground">
-          <div className="field res-field res-field-2210-image"
-          >
+          <div className="field res-field res-field-2210">
             <span>--- 2022 Day 10: Cathode-Ray Tube ---</span>
-            <span>Part 1: {p1}</span>
+            <span>Part 1: {p1?p1:'(empty)'}</span>
             <span>Part 2: </span>
-            <span>{ p2 ? [...p2].reverse().join('\n') : 'No data available.' }</span>
+            <span className="res-field-2210-image">{ p2 ? [...p2].reverse().join('\n') : 'No data available.' }</span>
           </div>
-          <div className="field data-field res-field-1908-image" >
+          <div className="field data-field data-field-2210" >
             { lines
               ? lines.length === 1
                 ? LenNStrsFromLine(lines[0], 16).join("\n")
                 : lines.join("\n")
-              : "No data available."}
+              : "No data available."
+            }
           </div>
         </div>
       ) : (
