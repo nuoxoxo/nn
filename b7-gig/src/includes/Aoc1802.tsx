@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
-const path = "https://raw.githubusercontent.com/nuoxoxo/in/main/1802.in"
+const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/1802.in"
 
+const special3 = "🟡"
 const special2 = "🔵"
-const special3 = "🟠"
 
 var Aoc1802 = () => {
   const [lines, setLines] = useState<string[]>([])
@@ -14,7 +14,7 @@ var Aoc1802 = () => {
 
   const handleData = async () => {
     try {
-      const raws = await FetchData(path)
+      const raws = await FetchData(URL)
       setLines(raws)
     } catch (error: any) {
       console.error("Error fetching data: ", error)
@@ -101,7 +101,8 @@ var Aoc1802 = () => {
   return (
     <>
       { lines ? (
-        <div className="playground">
+        <div className="playground playground-1802">
+
           <div className="field data-field">
             { lines
               ? lines.length === 1
@@ -109,11 +110,12 @@ var Aoc1802 = () => {
                 : lines.join("\n")
               : "No data available."}
           </div>
+
           <div className="field res-field">
             <span>--- 2018 Day 2: Inventory Management System ---</span>
-            <span>Part 1: {p1}</span>
-            <span>Part 2: {p2}</span>
-            <div className="field data-field">
+            <span>Part 1: {p1?p1:'(empty)'}</span>
+            <span>Part 2: {p2?p2:'(empty)'}</span>
+            <div className="field data-field data-field-1802">
               { lines
                 ? lines.length === 1
                   ? LenNStrsFromLine(lines23[0], 16).join("\n")
@@ -121,6 +123,7 @@ var Aoc1802 = () => {
                 : "No data available."}
             </div>
           </div>
+
         </div>
       ) : (
         <p>Loading data...</p>

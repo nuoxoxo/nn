@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { FetchData, LenNStrsFromLine } from '../helpers/Helpers'
 
-const path = 
-  'https://raw.githubusercontent.com/nuoxoxo/in/main/1501.in'
+const URL:string = 
+  'https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/1501.in'
 
 const santaArray: string[] = 
   ['🎅🏻', '🧑🏻‍🎄', '🤶🏻', '🦌', '🛷', '🎄', 
@@ -19,7 +19,7 @@ var Aoc1501 = () => {
 
   const handleData = async () => {
     try {
-      const raws = await FetchData(path)
+      const raws = await FetchData(URL)
       setLines(raws)
     } catch (error: any) {
       console.error('Error fetching data: ', error)
@@ -105,8 +105,7 @@ var Aoc1501 = () => {
     <>
       { lines ? (
         <div className='playground'>
-          <div className='field data-field data-field-1501-santa'
-          >
+          <div className='field data-field data-field-1501-santa'>
             { lines
               ? lines.length === 1
                 // lines[0]
@@ -114,16 +113,15 @@ var Aoc1501 = () => {
                 : lines.join('\n')
               : 'No data available.'}
           </div>
-          <div className='field data-field'
-          >
+          <div className='field data-field'>
             {upDown ? [...upDown].reverse().join('\n') : 'No data available.'}
           </div>
-          <div className='field res-field'
-          >
+          <div className='field res-field'>
             <span>--- 2015 Day 1: Not Quite Lisp ---</span>
-            <span>Part 1: {p1}</span>
-            <span>Part 2: {p2}</span>
-            <div className='field data-field data-field-1501-santa'>
+            <span>Part 1: {p1?p1:'(empty)'}</span>
+            <span>Part 2: {p2?p2:'(empty)'}</span>
+            {/* <div className='field data-field data-field-1501-santa'> */}
+            <div>
               {lines ? computeFloors().join('\n') : 'No data available.'}
             </div>
           </div>
