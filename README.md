@@ -35,7 +35,7 @@
 | c2      | Cronway                 | _cough's conway on react_              | :red_circle:
 | c3      | Dmd                     | _guessing weekday_ 
 |         |                         | _1st : input by typing_ 
-|| [*io/dmd*](https://nuoxoxo.github.io/dmd)| _2nd : + btns . nightmode . memo_ | :green_circle: 
+|| [*io/dmd*](https://nuoxoxo.github.io/dmd)| _2nd : btns . nightmode . memo_ | :green_circle: 
 | c4      | Array on Losto          | _done_ 
 | c5      | Playlist                | _what : to be written in Astro_ 
 || [*io/jukebox*](https://nuoxoxo.github.io/jukebox) | _1st draft : works fine_ 
