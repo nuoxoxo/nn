@@ -1,7 +1,7 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
 | c6      | Pokemon                 | _what : vanilla + astro_ 
-|| [*io/poke*](https://nuoxoxo.github.io/poke) | _1st draft : OK_            | :green_circle: 
+|| _io/poke - depr._                | _bug : key be netlify-func-handled_ 
 | c5      | Jukebox                 | _what : to be written in Astro_ 
 || [*io/jukebox*](https://nuoxoxo.github.io/jukebox) | _1st draft : works fine_ 
 ||| _bug : only mobile has good viewport_ 
