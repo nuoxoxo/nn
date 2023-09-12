@@ -1,0 +1,19 @@
+$H-FULL: 600px;
+$H-MOBILE: 500px;
+
+body {
+  background-color: black;
+  color: white;
+  display: grid;
+  place-items:center;
+}
+
+img {
+  height: $H-FULL;
+}
+
+@media only screen and (max-width: 768px) {
+  img {
+    height: $H-MOBILE;
+  }
+}
