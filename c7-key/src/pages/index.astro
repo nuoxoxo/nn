@@ -8,6 +8,7 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<title>&#123;μ&#125;</title>
 	</head>
 	<body>
 		<div id="key-logo-div"></div>
@@ -39,7 +40,7 @@
 		let BtnGenKey = document.getElementById('btn-generate-key') as HTMLButtonElement
 		// console.log(MusicKeys)
 
-		let KeyNames = Object.keys(MusicKeys).slice(0, 7)
+		let KeyNames = Object.keys(MusicKeys).slice(1, 7)
 		console.log(KeyNames)
 		let RandomKeyName = KeyNames[Math.floor(Math.random() * KeyNames.length)]
 		let RandomKeyItem = MusicKeys[RandomKeyName]
@@ -55,7 +56,7 @@
 		const LogoElement = document.createElement("img")
 		LogoElement.id = "key-logo-img"
 		LogoElement.src = "https://i.imgur.com/" + LogoURL + ".jpg"
-		LogoElement.style = "display:block;width:auto;height:420px;margin-bottom:21px;"
+		LogoElement.style = "display:block;width:auto;height:320px;margin-bottom:21px;"
 		KeyLogoDiv.appendChild(LogoElement)
 
 		BtnGenKey.addEventListener( 'click', (e) => {

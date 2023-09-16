@@ -1,5 +1,5 @@
 $H-FULL: 600px;
-$H-MOBILE: 500px;
+$H-MOBILE: 230px;
 
 $GB: #000000;
 $TXT: #ffffff;
@@ -9,7 +9,7 @@ $BTN-SIZE: 42px;
 $BTN-SIZE-05: calc($BTN-SIZE/2);
 $BTN-SIZE-x2: calc($BTN-SIZE*2);
 
-$BTN-SIZE-BIG: 101px;
+$BTN-SIZE-BIG: 142px;
 
 body {
   background-color: black;
@@ -20,6 +20,8 @@ body {
   user-select: none;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 img {
@@ -40,9 +42,6 @@ button {
   user-select: none;
   font-size: $TXT-SIZE-05;
   cursor:pointer;
-  &:hover {
-    background-color: salmon;
-  }
 }
 
 .btn-smalle-choice {
