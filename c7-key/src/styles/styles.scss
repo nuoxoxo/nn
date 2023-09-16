@@ -1,15 +1,15 @@
-$H-FULL: 600px;
+$H-FULL: 400px;
 $H-MOBILE: 230px;
 
 $GB: #000000;
 $TXT: #ffffff;
-$TXT-SIZE: 42px;
+$TXT-SIZE: 64px;
 $TXT-SIZE-05: calc($TXT-SIZE/2);
 $BTN-SIZE: 42px;
 $BTN-SIZE-05: calc($BTN-SIZE/2);
 $BTN-SIZE-x2: calc($BTN-SIZE*2);
 
-$BTN-SIZE-BIG: 142px;
+$BTN-SIZE-BIG: 132px;
 
 body {
   background-color: black;
@@ -29,11 +29,11 @@ img {
 }
 
 #key-logo-div {
-  margin-top: calc($TXT-SIZE - 10px);
+  margin-top: 10px;
 }
 
 button {
-  margin: 1px 7px 12px 7px;
+  margin-top: 20px;
   // margin-right: 10px;
   border-radius: 50%;
   width: $BTN-SIZE-BIG;
