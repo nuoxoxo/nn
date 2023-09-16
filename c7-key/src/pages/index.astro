@@ -8,12 +8,70 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<div id="key-logo-div"></div>
+		<div id="btn-selection">
+			<button class="btn-smalle-choice"></button>
+			<button class="btn-smalle-choice"></button>
+			<button class="btn-smalle-choice"></button>
+			<button class="btn-smalle-choice"></button>
+		</div>
+		<button id="btn-generate-key">↺</button>
 	</body>
 	<style>
 		@import "../styles/styles.scss"
 	</style>
+	<script>
+		const FetchData = async ( url ) => {
+      try {
+        const response = await fetch(url)
+        const data = await response.json()
+        return data
+      } catch (error) {
+        console.error("Error fetching data: ", error)
+        throw error
+      }
+    }
+		let MusicKeys = await FetchData('https://raw.githubusercontent.com/nuoxoxo/in/main/key_signatures.json' )
+
+		let KeyLogoDiv = document.getElementById("key-logo-div") as HTMLDivElement
+		let BtnGenKey = document.getElementById('btn-generate-key') as HTMLButtonElement
+		// console.log(MusicKeys)
+
+		let KeyNames = Object.keys(MusicKeys).slice(0, 7)
+		console.log(KeyNames)
+		let RandomKeyName = KeyNames[Math.floor(Math.random() * KeyNames.length)]
+		let RandomKeyItem = MusicKeys[RandomKeyName]
+
+		let [Major, Minor, LogoURL] = [
+			RandomKeyItem["major"], 
+			RandomKeyItem["minor"],
+			RandomKeyItem["logo"]
+		]
+
+		console.log(Major, Minor)
+
+		const LogoElement = document.createElement("img")
+		LogoElement.id = "key-logo-img"
+		LogoElement.src = "https://i.imgur.com/" + LogoURL + ".jpg"
+		LogoElement.style = "display:block;width:auto;height:420px;margin-bottom:21px;"
+		KeyLogoDiv.appendChild(LogoElement)
+
+		BtnGenKey.addEventListener( 'click', (e) => {
+			e.preventDefault()
+			RandomKeyName = KeyNames[Math.floor(Math.random() * KeyNames.length)]
+			RandomKeyItem = MusicKeys[RandomKeyName]
+
+			Major = RandomKeyItem["major"]
+			Minor = RandomKeyItem["minor"]
+			LogoURL = RandomKeyItem["logo"]
+
+			console.log(Major, Minor)
+
+			LogoElement.src = "https://i.imgur.com/" + LogoURL + ".jpg"
+
+		})
+
+	</script>
 </html>

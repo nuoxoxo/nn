@@ -1,16 +1,54 @@
 $H-FULL: 600px;
 $H-MOBILE: 500px;
 
+$GB: #000000;
+$TXT: #ffffff;
+$TXT-SIZE: 42px;
+$TXT-SIZE-05: calc($TXT-SIZE/2);
+$BTN-SIZE: 42px;
+$BTN-SIZE-05: calc($BTN-SIZE/2);
+$BTN-SIZE-x2: calc($BTN-SIZE*2);
+
+$BTN-SIZE-BIG: 101px;
+
 body {
   background-color: black;
   color: white;
   display: flex;
   justify-content:center;
   align-items: center;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
 }
 
 img {
   height: $H-FULL;
+}
+
+#key-logo-div {
+  margin-top: calc($TXT-SIZE - 10px);
+}
+
+button {
+  margin: 1px 7px 12px 7px;
+  // margin-right: 10px;
+  border-radius: 50%;
+  width: $BTN-SIZE-BIG;
+  height: $BTN-SIZE-BIG;
+  border: none;
+  user-select: none;
+  font-size: $TXT-SIZE-05;
+  cursor:pointer;
+  &:hover {
+    background-color: salmon;
+  }
+}
+
+.btn-smalle-choice {
+  width:$BTN-SIZE;
+  height:$BTN-SIZE;
+  display:none
 }
 
 @media only screen and (max-width: 768px) {
