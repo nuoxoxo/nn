@@ -1,5 +1,8 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
+| c7      | Key                      | _guessing key signatures_ 
+|         |                         | _1st : reset only_
+|         |                         | _2nd : + choices_
 | c6      | Pokemon                 | _what : vanilla + astro_ 
 || _io/poke - depr._                | _bug : key be netlify-func-handled_ 
 | c5      | Jukebox                 | _what : to be written in Astro_ 
@@ -7,7 +10,7 @@
 ||| _bug : only mobile has good viewport_ 
 ||| _Uses 4 buttons_ | :green_circle: 
 | c4      | Array on Los            | _done_ 
-| c3      | Doomsday                | _guessing weekday_ 
+| c3      | Dmd                     | _guessing weekday_ 
 |         |                         | _1st : input by typing_ 
 || [*io/dmd*](https://nuoxoxo.github.io/dmd)| _2nd : btns . nightmode . memo_| :green_circle: 
 | c2      | Cronway                 | _conway on react_                      | :red_circle:
