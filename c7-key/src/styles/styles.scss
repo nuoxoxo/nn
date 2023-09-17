@@ -1,58 +1,80 @@
-$H-FULL: 600px;
-$H-MOBILE: 500px;
+$H-FULL: 400px;
+$H-MOBILE: 230px;
 
 $GB: #000000;
 $TXT: #ffffff;
-$TXT-SIZE: 42px;
+$TXT-SIZE: 32px;
 $TXT-SIZE-05: calc($TXT-SIZE/2);
 $BTN-SIZE: 42px;
 $BTN-SIZE-05: calc($BTN-SIZE/2);
 $BTN-SIZE-x2: calc($BTN-SIZE*2);
 
-$BTN-SIZE-BIG: 101px;
+$BTN-SIZE-BIG: 132px;
 
 body {
   background-color: black;
   color: white;
   display: flex;
+  flex-direction: column;
   justify-content:center;
   align-items: center;
   user-select: none;
-  display: flex;
-  flex-direction: column;
-}
 
-img {
-  height: $H-FULL;
 }
 
 #key-logo-div {
-  margin-top: calc($TXT-SIZE - 10px);
+  // img {
+  //   display:block;
+  //   height: $H-MOBILE;
+  // }
+  // margin-top: calc($TXT-SIZE - 10px);
+  margin-top: 10px;
+  min-height: 300px;
 }
 
-button {
-  margin: 1px 7px 12px 7px;
+#btn-generate-key {
+  // margin-top: 8px;
   // margin-right: 10px;
   border-radius: 50%;
+  color:black;
   width: $BTN-SIZE-BIG;
   height: $BTN-SIZE-BIG;
   border: none;
   user-select: none;
   font-size: $TXT-SIZE-05;
   cursor:pointer;
-  &:hover {
-    background-color: salmon;
-  }
 }
 
-.btn-smalle-choice {
-  width:$BTN-SIZE;
-  height:$BTN-SIZE;
-  display:none
+.btn-selection-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: $BTN-SIZE-05;
+  height: $BTN-SIZE-05;
+}
+
+.btn-selection {
+
+  width:calc($BTN-SIZE-BIG - 36px);
+  height:calc($BTN-SIZE-BIG - 36px);
+  font-size: $TXT-SIZE-05;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 20px;
+  border-radius: 50%;
+  border: none;
+  user-select: none;
+  cursor:pointer;
+}
+
+.flex-1 {
+  flex: 1;
 }
 
 @media only screen and (max-width: 768px) {
-  img {
+  .key-logo-div {
     height: $H-MOBILE;
   }
 }
+
