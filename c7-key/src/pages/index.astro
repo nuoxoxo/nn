@@ -13,10 +13,6 @@
 	<body>
 		<div id="key-logo-div"></div>
 		<div id="btn-selection">
-			<button class="btn-smalle-choice"></button>
-			<button class="btn-smalle-choice"></button>
-			<button class="btn-smalle-choice"></button>
-			<button class="btn-smalle-choice"></button>
 		</div>
 		<button id="btn-generate-key">↺</button>
 	</body>
@@ -34,14 +30,14 @@
         throw error
       }
     }
-		let MusicKeys = await FetchData('https://raw.githubusercontent.com/nuoxoxo/in/main/key_signatures.json' )
 
+		let MusicKeys = await FetchData(
+			'https://raw.githubusercontent.com/nuoxoxo/in/main/key_signatures.json'
+		)
 		let KeyLogoDiv = document.getElementById("key-logo-div") as HTMLDivElement
 		let BtnGenKey = document.getElementById('btn-generate-key') as HTMLButtonElement
-		// console.log(MusicKeys)
 
 		let KeyNames = Object.keys(MusicKeys).slice(1, 7)
-		console.log(KeyNames)
 		let RandomKeyName = KeyNames[Math.floor(Math.random() * KeyNames.length)]
 		let RandomKeyItem = MusicKeys[RandomKeyName]
 
@@ -51,12 +47,9 @@
 			RandomKeyItem["logo"]
 		]
 
-		console.log(Major, Minor)
-
 		const LogoElement = document.createElement("img")
 		LogoElement.id = "key-logo-img"
 		LogoElement.src = "https://i.imgur.com/" + LogoURL + ".jpg"
-		// LogoElement.style = "display:block;width:auto;height:320px;margin-bottom:21px;"
 		KeyLogoDiv.appendChild(LogoElement)
 
 		BtnGenKey.addEventListener( 'click', (e) => {
