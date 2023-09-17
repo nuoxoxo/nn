@@ -12,9 +12,8 @@
 	</head>
 	<body>
 		<div id="key-logo-div"></div>
-		<div id="btn-selection">
-		</div>
-		<button id="btn-generate-key">↺</button>
+		<div id="btn-selection-div"></div>
+		<button id="btn-generate-key"> ↺ </button>
 	</body>
 	<style>
 		@import "../styles/styles.scss"
@@ -31,40 +30,119 @@
       }
     }
 
+		const ShuffleArray = arr => {
+			let i = -1
+			while (++i < arr.length - 1) {
+				const j = Math.floor(Math.random() * (i + 1))
+				const temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+			return arr
+		}
+
 		let MusicKeys = await FetchData(
 			'https://raw.githubusercontent.com/nuoxoxo/in/main/key_signatures.json'
 		)
 		let KeyLogoDiv = document.getElementById("key-logo-div") as HTMLDivElement
-		let BtnGenKey = document.getElementById('btn-generate-key') as HTMLButtonElement
+		let BtnReset = document.getElementById('btn-generate-key') as HTMLButtonElement
 
-		let KeyNames = Object.keys(MusicKeys).slice(1, 7)
-		let RandomKeyName = KeyNames[Math.floor(Math.random() * KeyNames.length)]
-		let RandomKeyItem = MusicKeys[RandomKeyName]
+		let KeyNames = Object.keys(MusicKeys).slice(0, 7)
+		let CurrentKeyName = KeyNames[Math.floor(Math.random() * KeyNames.length)]
+		let CurrentKeyItem = MusicKeys[CurrentKeyName]
 
 		let [Major, Minor, LogoURL] = [
-			RandomKeyItem["major"], 
-			RandomKeyItem["minor"],
-			RandomKeyItem["logo"]
+			CurrentKeyItem["major"], 
+			CurrentKeyItem["minor"],
+			CurrentKeyItem["logo"]
 		]
 
+		//	Create and append Logo image element
 		const LogoElement = document.createElement("img")
 		LogoElement.id = "key-logo-img"
 		LogoElement.src = "https://i.imgur.com/" + LogoURL + ".jpg"
+		LogoElement.style = 'height:300px'
 		KeyLogoDiv.appendChild(LogoElement)
 
-		BtnGenKey.addEventListener( 'click', (e) => {
+
+		//	Generate a pool of choices of size 4
+		let MajorMinoPairArray = [[Major, Minor]]
+		let TempNoCurrentKeyName = [... KeyNames]
+		TempNoCurrentKeyName.splice(TempNoCurrentKeyName.indexOf(CurrentKeyName), 1)
+		TempNoCurrentKeyName = ShuffleArray(TempNoCurrentKeyName).slice(0, 3)
+		for (let k of TempNoCurrentKeyName) {
+			let temp = [MusicKeys[k].major, MusicKeys[k].minor]
+			MajorMinoPairArray.push(temp)
+		}
+		MajorMinoPairArray = ShuffleArray(MajorMinoPairArray)
+
+		//	Generate 4-button set
+		let BtnSelectionDiv = document.getElementById("btn-selection-div") as HTMLDivElement
+		for (let pair of MajorMinoPairArray) {
+			let idx = Math.floor(Math.random() * 2)
+			let str = pair[idx]
+			let btn = document.createElement("button")
+			btn.innerText = str
+			btn.className = 'btn-selection'
+			btn.style = 
+				"width:70px;height:70px;border-radius:50%;font-size:13px;text-align:center;margin:5px;font-family:'Georgia';color:black;"
+			BtnSelectionDiv.appendChild(btn)
+		}
+
+		//	Handle onclick
+		let btns = document.querySelectorAll(".btn-selection") as HTMLButtonElement
+		btns.forEach((btn) => {
+			btn.addEventListener('click', (e) => {
+				e.preventDefault()
+				let res = btn.innerText === CurrentKeyItem.major || btn.innerText === CurrentKeyItem.minor
+				document.body.style.backgroundColor = res ? 'green' : 'red'
+				// console.log(res, btn.innerText, CurrentKeyItem.major, CurrentKeyItem.minor)
+			})
+		})
+
+
+		BtnReset.addEventListener( 'click', (e) => {
 			e.preventDefault()
-			RandomKeyName = KeyNames[Math.floor(Math.random() * KeyNames.length)]
-			RandomKeyItem = MusicKeys[RandomKeyName]
+			CurrentKeyName = KeyNames[Math.floor(Math.random() * KeyNames.length)]
+			CurrentKeyItem = MusicKeys[CurrentKeyName]
 
-			Major = RandomKeyItem["major"]
-			Minor = RandomKeyItem["minor"]
-			LogoURL = RandomKeyItem["logo"]
+			Major = CurrentKeyItem["major"]
+			Minor = CurrentKeyItem["minor"]
+			LogoURL = CurrentKeyItem["logo"]
 
-			console.log(Major, Minor)
+
 
 			LogoElement.src = "https://i.imgur.com/" + LogoURL + ".jpg"
+			document.body.style.background = 'black'
 
+			MajorMinoPairArray = [[Major, Minor]]
+			TempNoCurrentKeyName = [... KeyNames]
+			TempNoCurrentKeyName.splice(TempNoCurrentKeyName.indexOf(CurrentKeyName), 1)
+			TempNoCurrentKeyName = ShuffleArray(TempNoCurrentKeyName).slice(0, 3)
+			for (let k of TempNoCurrentKeyName) {
+				let temp = [MusicKeys[k].major, MusicKeys[k].minor]
+				MajorMinoPairArray.push(temp)
+			}
+			MajorMinoPairArray = ShuffleArray(MajorMinoPairArray)
+
+			//	Generate 4-button set
+			let i = 0
+			for (let pair of MajorMinoPairArray) {
+				let idx = Math.floor(Math.random() * 2)
+				let str = pair[idx]
+				btns[i].innerText = str
+				i++
+			}
+
+			//	Handle onclick
+			btns.forEach((btn) => {
+				btn.addEventListener('click', (e) => {
+					e.preventDefault()
+					let res = btn.innerText === CurrentKeyItem.major || btn.innerText === CurrentKeyItem.minor
+					document.body.style.backgroundColor = res ? 'green' : 'red'
+					// console.log(res, btn.innerText, CurrentKeyItem.major, CurrentKeyItem.minor)
+				})
+			})
 		})
 
 	</script>
