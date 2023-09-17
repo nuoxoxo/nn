@@ -1,7 +1,7 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
 | c7      | Key                      | _Guessing key signatures_ 
-|         |                         | _1st : reset only_
+|         |                         | _1st : one Reset button only_
 |         |                         | _2nd : + choices_
 | c6      | Pokemon                 | _what : vanilla + astro_ 
 || _io/poke - depr._                | _bug : key be netlify-func-handled_ 
