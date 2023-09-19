@@ -246,6 +246,18 @@ body {
   flex-direction: column;
 }
 
+.res-field-1810 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.res-field-1810-image {
+  font-size: 16px;
+  text-align: center;
+}
+
 .res-field-2210-image {
   font-size: $TextSize-05;
   display: flex;
@@ -299,6 +311,9 @@ body {
     padding-right: 6px;
     word-break: break-all;
   }
+  .res-field-1810-image {
+    font-size: 6px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -317,7 +332,7 @@ body {
 
   .btn {
     font-size: 9px;
-    width: 39px;
+    width: $TextSize-1;
     padding: 2px;
     border: 1px solid $ButtonColor;
     &:hover {
@@ -380,6 +395,10 @@ body {
 
   .data-field-1803 {
     font-size: 7px;
+  }
+
+  .res-field-1810-image {
+    font-size: 6px;
   }
 
   .data-field-2003 {
