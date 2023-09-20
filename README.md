@@ -1,6 +1,8 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
-| c7      | Key                      | _Guessing key signatures_ 
+| c8      | Fla                     | _Guessing flags_ 
+|         |                         | _what : to be written in Astro_ 
+| c7      | Key                     | _Guessing key signatures_ 
 |         |                         | _1st : one Reset button only_
 ||[*io/mu*](https://nuoxoxo.github.io/mu)| _2nd : + choices_
 | c6      | Pokemon                 | _what : vanilla + astro_ 
