@@ -1,7 +1,7 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
 | c8      | Fla                     | _Guessing flags_ 
-|         |                         | _what : to be written in Astro_ 
+||[*io/fla*](https://nuoxoxo.github.io/fla)
 | c7      | Key                     | _Guessing key signatures_ 
 |         |                         | _1st : one Reset button only_
 ||[*io/mu*](https://nuoxoxo.github.io/mu)| _2nd : + choices_
