@@ -1,0 +1,36 @@
+$BGC: black;
+$TXTC: white;
+$SIZE: 42px;
+$SIZE-05: calc($SIZE / 2);
+$FONT: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+body {
+  background-color: $BGC;
+  color: $TXTC;
+  font-family: $FONT;
+  font-size: $SIZE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  word-wrap: break-word;
+}
+
+span {
+  text-align: center
+}
+
+#flag-div {
+  width: 500px;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 33px;
+  }
+  #flag-div {
+    width: 300px;
+    margin-top: 42px;
+  }
+}

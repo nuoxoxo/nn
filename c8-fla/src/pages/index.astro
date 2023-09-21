@@ -1,0 +1,59 @@
+---
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>@ fla</title>
+  </head>
+	<style>
+		@import "../styles/styles.scss";
+	</style>
+  <body>
+		<div id="flag-div"></div>
+		<div id="answer-div"></div>
+  </body>
+	<script>
+		let Guessed: boolean = false
+		const FetchData = async (url) => {
+			try {
+				const response = await fetch(url)
+				const data = await response.json()
+				return data
+			} catch (error) {
+				console.error("error - ", error)
+				throw error
+			}
+		}
+
+		const Data = await FetchData('https://raw.githubusercontent.com/nuoxoxo/in/main/countries_and_flags.json')
+
+		const FlagElement = document.createElement('img')
+		let Choice = Data[Math.floor(Math.random() * Data.length)]
+		FlagElement.src = Choice.flag
+		document.querySelector('#flag-div').appendChild(FlagElement)
+
+		const NameElement = document.createElement('span')
+		NameElement.innerText = Choice.country
+		NameElement.style.display = Guessed ? 'flex' : 'none'
+		// NameElement.classList.add('no-show')
+		document.querySelector('#answer-div').appendChild(NameElement)
+
+		document.addEventListener('click', (e) => {
+			e.preventDefault()
+			if (Guessed) {
+				Choice = Data[Math.floor(Math.random() * Data.length)]
+				FlagElement.src = Choice.flag
+				document.querySelector('#answer-div').lastChild.innerText = Choice.country
+			}
+			Guessed = ! Guessed
+			// NameElement.classList.toggle('no-show')
+			NameElement.style.display = Guessed ? 'flex' : 'none'
+		})
+	</script>
+
+</html>
