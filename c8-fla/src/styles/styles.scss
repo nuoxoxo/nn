@@ -1,0 +1,22 @@
+$BGC: black;
+$TXTC: white;
+$TXT-SIZE: 42px;
+
+body {
+  background-color: $BGC;
+  color: $TXTC;
+  font-size: $TXT-SIZE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+#flag-div {
+  width: 500px;
+}
+
+.no-show {
+  display: none;
+}
