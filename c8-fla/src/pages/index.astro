@@ -36,9 +36,9 @@
 		NameElement.classList.add('no-show')
 		document.querySelector('#answer-div').appendChild(NameElement)
 		// document.getElementsByTagName('*').forEach(item => {
-		document.querySelector('#flag-div').addEventListener('click', (e) => {
+		// document.querySelector('#flag-div').addEventListener('click', (e) => {
+		document.addEventListener('click', (e) => {
 			e.preventDefault()
-			
 			if (Guessed) {
 				Choice = Data[Math.floor(Math.random() * Data.length)]
 				FlagElement.src = Choice.flag
