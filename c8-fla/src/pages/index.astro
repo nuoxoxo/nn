@@ -8,8 +8,11 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>@ fla</title>
   </head>
+	<style>
+		@import "../styles/styles.scss";
+	</style>
   <body>
 		<div id="flag-div"></div>
 		<div id="answer-div"></div>
@@ -26,17 +29,20 @@
 				throw error
 			}
 		}
+
 		const Data = await FetchData('https://raw.githubusercontent.com/nuoxoxo/in/main/countries_and_flags.json')
+
 		const FlagElement = document.createElement('img')
 		let Choice = Data[Math.floor(Math.random() * Data.length)]
 		FlagElement.src = Choice.flag
 		document.querySelector('#flag-div').appendChild(FlagElement)
+
 		const NameElement = document.createElement('span')
-		NameElement.innerText = Data[0].country
-		NameElement.classList.add('no-show')
+		NameElement.innerText = Choice.country
+		NameElement.style.display = Guessed ? 'flex' : 'none'
+		// NameElement.classList.add('no-show')
 		document.querySelector('#answer-div').appendChild(NameElement)
-		// document.getElementsByTagName('*').forEach(item => {
-		// document.querySelector('#flag-div').addEventListener('click', (e) => {
+
 		document.addEventListener('click', (e) => {
 			e.preventDefault()
 			if (Guessed) {
@@ -45,10 +51,9 @@
 				document.querySelector('#answer-div').lastChild.innerText = Choice.country
 			}
 			Guessed = ! Guessed
-			NameElement.classList.toggle('no-show')
+			// NameElement.classList.toggle('no-show')
+			NameElement.style.display = Guessed ? 'flex' : 'none'
 		})
 	</script>
-	<style>
-		@import "../styles/styles.scss";
-	</style>
+
 </html>
