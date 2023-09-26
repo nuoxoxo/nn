@@ -5,6 +5,7 @@
 |         |                         | _controller . provider_
 |         |                         | _dependency injection_
 |         |                         | _endpoints_
+||
 | c8      | Fla                     | _Guessing flags_ 
 ||[*io/galf*](https://nuoxoxo.github.io/galf)
 | c7      | Key                     | _Guessing key signatures_ 
