@@ -6,3 +6,7 @@ export class AuthService {
     console.log('test')
   }
 }
+
+//  todo
+  //  1. login
+  //  2. signup
