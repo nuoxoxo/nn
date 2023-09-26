@@ -2,9 +2,9 @@
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
 | c9      | Restful                 | _what : rest api w/ nestjs_ 
 |         |                         | _currently: Cannot GET /_
-|         |                         | _controller . provider_
-|         |                         | _dependency injection_
-|         |                         | _endpoints_
+|         |                         | _- controller . provider_
+|         |                         | _- dependency injection_
+|         |                         | _- endpoints_
 ||
 | c8      | Fla                     | _Guessing flags_ 
 ||[*io/galf*](https://nuoxoxo.github.io/galf)
