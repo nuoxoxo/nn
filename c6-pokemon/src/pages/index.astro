@@ -1,77 +1,76 @@
 ---
+
 ---
+
 <html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-	<meta name="viewport" content="width=device-width" />
-	<meta name="generator" content={Astro.generator} />
-	<title>Pokemon</title>
-</head>
-<body>
-	<img id='card_image_div' src="">
-</body>
-<script>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Pokemon</title>
+  </head>
+  <body>
+    <img id="card_image_div" src="" />
+  </body>
+  <script>
+    const Key = "./.env";
+    // console.log(filePath)
 
-	const Key = "./.env"
-	// console.log(filePath)
+    const GetCard = () => {
+      const temp = localStorage.getItem("pokemon-mmj-data");
+      // const CurrentIndex = localStorage.getItem('pokemon-mmj-current-index')
+      if (temp) {
+        SwitchCard(JSON.parse(temp));
+      } else {
+        fetch(Key)
+          .then((resp) => {
+            if (!resp.ok) {
+              throw new Error(`error - ${resp.status}`);
+            }
+            return resp.text();
+          })
+          .then((key) => {
+            const URL = "https://api.pokemontcg.io/v2/cards/";
+            fetch(URL, {
+              method: "GET",
+              headers: { "X-Api-Key": key },
+            })
+              .then((resp) => resp.json())
+              .then((Data) => {
+                localStorage.setItem("pokemon-mmj-data", JSON.stringify(Data));
+                // let IMG = document.getElementById('card_image_div')
+                // let index = Math.floor(Math.random() * Data.data.length)
+                // IMG.src = Data.data[index].images.large
+                SwitchCard(Data);
+              })
+              .catch((error) => {
+                console.error("error - ", error);
+              });
+          })
+          .catch((error) => {
+            console.error("error - ", error);
+          });
+      }
+    };
 
-	const GetCard = () => {
-		const temp = localStorage.getItem('pokemon-mmj-data')
-		// const CurrentIndex = localStorage.getItem('pokemon-mmj-current-index')
-		if (temp) {
-			SwitchCard(JSON.parse(temp))
-		} else {
-			fetch(Key)
-				.then((resp) => {
-					if (!resp.ok) {
-						throw new Error(`error - ${resp.status}`)
-					}
-					return resp.text()
-				})
-				.then((key) => {
-					const URL = "https://api.pokemontcg.io/v2/cards/"
-					fetch(
-						URL, {
-							method: "GET",
-							headers: { "X-Api-Key": key }
-						})
-						.then((resp) => resp.json())
-						.then((Data) => {
-							localStorage.setItem('pokemon-mmj-data', JSON.stringify(Data))
-							// let IMG = document.getElementById('card_image_div')
-							// let index = Math.floor(Math.random() * Data.data.length)
-							// IMG.src = Data.data[index].images.large
-							SwitchCard(Data)
-						})
-						.catch((error) => {
-							console.error("error - ", error)
-						})
-				})
-				.catch((error) => {
-					console.error("error - ", error)
-				})
-		}
-	}
+    const SwitchCard = (Data) => {
+      let IMG = document.getElementById("card_image_div");
+      let index = Math.floor(Math.random() * Data.data.length);
+      // if ( !IMG.src || IMG.src == '') { // won't work on Astro
+      if (!IMG.getAttribute("src") || IMG.getAttribute("src") === "") {
+        IMG.src = Data.data[index].images.large;
+      }
+      IMG.addEventListener("click", (e) => {
+        e.preventDefault();
+        index = Math.floor(Math.random() * Data.data.length);
+        IMG.src = Data.data[index].images.large;
+      });
+    };
 
-	const SwitchCard = (Data) => {
-		let IMG = document.getElementById('card_image_div')
-		let index = Math.floor(Math.random() * Data.data.length)
-		// if ( !IMG.src || IMG.src == '') { // won't work on Astro
-		if (!IMG.getAttribute('src') || IMG.getAttribute('src') === '') {
-			IMG.src = Data.data[index].images.large
-		}
-		IMG.addEventListener("click", (e) => {
-			e.preventDefault()
-			index = Math.floor(Math.random() * Data.data.length)
-			IMG.src = Data.data[index].images.large
-		})
-	}
-
-	window.onload = GetCard
-</script>
-<style>
-	@import "../styles/styles.scss"
-</style>
-
+    window.onload = GetCard;
+  </script>
+  <style>
+    @import "../styles/styles.scss";
+  </style>
 </html>

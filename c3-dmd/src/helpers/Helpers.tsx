@@ -1,5 +1,5 @@
 export const GetRandomDateString = (): [number, string, number, number] => {
-  const [L, R] = [new Date(2022, 0, 1), new Date(2023, 11, 31)]
+  const [L, R] = [new Date(2021, 0, 1), new Date(2023, 11, 31)]
   // .getTime : returns date's epoch time in milliseconds
   const EpochOffset = L.getTime() + Math.random() * (R.getTime() - L.getTime())
   const RandomTime = new Date(EpochOffset)
@@ -13,7 +13,7 @@ export const GetRandomDateString = (): [number, string, number, number] => {
   //   'Sunday', 'Monday', 'Tuesday', 
   //   'Wednesday', 'Thursday', 'Friday', 'Saturday'
   // ]
-  console.log(RandomTime)
+  // console.log(RandomTime)
 
   return [
     RandomTime.getDay(),
