@@ -8,3 +8,8 @@ export class AuthController{
     this.authService.test()
   }
 }
+
+//  todo : create 2 endpoints
+  //  1. login endpoint
+  //  2. signup endpoint
+  //  How? ---> using decorator
