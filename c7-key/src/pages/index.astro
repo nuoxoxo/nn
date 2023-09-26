@@ -47,7 +47,8 @@
 		let KeyLogoDiv = document.getElementById("key-logo-div") as HTMLDivElement
 		let BtnReset = document.getElementById('btn-generate-key') as HTMLButtonElement
 
-		let KeyNames = Object.keys(MusicKeys).slice(0, 7)
+		let KeyNamesComplete = Object.keys(MusicKeys)
+		let KeyNames = [... KeyNamesComplete].slice(0, 9)
 		let CurrentKeyName = KeyNames[Math.floor(Math.random() * KeyNames.length)]
 		let CurrentKeyItem = MusicKeys[CurrentKeyName]
 
@@ -67,7 +68,7 @@
 
 		//	Generate a pool of choices of size 4
 		let MajorMinoPairArray = [[Major, Minor]]
-		let TempNoCurrentKeyName = [... KeyNames]
+		let TempNoCurrentKeyName = [... KeyNamesComplete/*KeyNames*/]
 		TempNoCurrentKeyName.splice(TempNoCurrentKeyName.indexOf(CurrentKeyName), 1)
 		TempNoCurrentKeyName = ShuffleArray(TempNoCurrentKeyName).slice(0, 3)
 		for (let k of TempNoCurrentKeyName) {
@@ -75,6 +76,8 @@
 			MajorMinoPairArray.push(temp)
 		}
 		MajorMinoPairArray = ShuffleArray(MajorMinoPairArray)
+
+		console.log(TempNoCurrentKeyName)
 
 		//	Generate 4-button set
 		let BtnSelectionDiv = document.getElementById("btn-selection-div") as HTMLDivElement
@@ -84,8 +87,9 @@
 			let btn = document.createElement("button")
 			btn.innerText = str
 			btn.className = 'btn-selection'
+			btn.style.hover = "border-color: tomato;"
 			btn.style = 
-				"width:70px;height:70px;border-radius:50%;font-size:13px;text-align:center;margin:5px;font-family:'Georgia';color:black;"
+				"font-size:12px;border:none;width:77px;height:77px;border-radius:50%;text-align:center;margin:3px;font-family:'Georgia';color:black;"
 			BtnSelectionDiv.appendChild(btn)
 		}
 
@@ -116,7 +120,7 @@
 			document.body.style.background = 'black'
 
 			MajorMinoPairArray = [[Major, Minor]]
-			TempNoCurrentKeyName = [... KeyNames]
+			TempNoCurrentKeyName = [... KeyNamesComplete/*KeyNames*/]
 			TempNoCurrentKeyName.splice(TempNoCurrentKeyName.indexOf(CurrentKeyName), 1)
 			TempNoCurrentKeyName = ShuffleArray(TempNoCurrentKeyName).slice(0, 3)
 			for (let k of TempNoCurrentKeyName) {
