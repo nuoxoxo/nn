@@ -6,11 +6,13 @@ $BTN-SIZE: 42px;
 $BTN-SIZE-05: calc($BTN-SIZE/2);
 $BTN-SIZE-x2: calc($BTN-SIZE*2);
 
-$BTN-SIZE-BIG: 99px;
+$BTN-SIZE-BIG: 164px;
 
 @mixin FlexBody {
   display: flex;
-  flex-direction: column
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin GridBody {
@@ -22,6 +24,7 @@ body {
   color: $TXT;
   font-size: $TXT-SIZE;
   @include FlexBody(); 
+  user-select: none;
 }
 
 input {
@@ -39,6 +42,17 @@ input {
 
 .btn-group-div {
   margin-top: $BTN-SIZE-05;
+  display:flex;
+  flex-direction: column;
+  // flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+}
+
+.btn-subgroup-div {
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .label-text-guess-bar {
@@ -55,6 +69,10 @@ button {
   user-select: none;
   font-size: $TXT-SIZE-05;
   cursor:pointer;
+  &:hover {
+    background-color: cornsilk;
+    border: 3px solid salmon;
+  }
 }
 
 .switch {
@@ -111,8 +129,17 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
+.QuestionDiv {
+  text-align: center;
+}
+
 @media only screen and (max-width: 666px) {
   body{font-size: 21px;}
-  button{/*width: $BTN-SIZE; height:$BTN-SIZE; */font-size: $TXT-SIZE-05;}
-  h1{font-size: 1.9rem;}
+  button{width:101px; height:101px; font-size: $TXT-SIZE-05;}
+  h1 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-top:calc($TXT-SIZE + 11px);
+    margin-bottom:$TXT-SIZE;
+  }
 }

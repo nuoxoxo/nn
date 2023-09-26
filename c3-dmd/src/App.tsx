@@ -6,7 +6,8 @@ const App = () => {
   const [RandomDateArray, setRandomDateString] = 
     useState<[number, string, number, number]>(GetRandomDateString())
   const [GuessVal, setGuessVal] = useState</*number | */string>('')
-  const [GuessRes, setGuessRes] = useState<string>('')
+  // const [GuessRes, setGuessRes] = useState<string>('')
+  const [GuessRes, setGuessRes] = useState<boolean | null>(null)
 
 
   const temp = localStorage.getItem("LabelIsChecked");
@@ -15,17 +16,25 @@ const App = () => {
 
   const handleSetLabelIsChecked = () => {
     setLabelIsChecked(!LabelIsChecked)
-    console.log(LabelIsChecked)
+    // console.log(LabelIsChecked)
   }
   const EvaluateGuess = (val: number) => {
     if (val === 7) {
       val = 0
     }
-    if (val === RandomDateArray[0]) {
-      setGuessRes('🟢')
-    } else {
-      setGuessRes('🔴')
+    // console.log(val, RandomDateArray[0], val === RandomDateArray[0], GuessRes)
+    // if (val === RandomDateArray[0]) {
+    //   setGuessRes(true)
+    // } else {
+    //   setGuessRes(false)
+    // }
+    setGuessRes(val === RandomDateArray[0])
+    // console.log(val, RandomDateArray[0], val === RandomDateArray[0], GuessRes)
+    if (GuessRes != null) {
+      document.body.style.backgroundColor = GuessRes ? 'green' : 'red';
+      // console.log(document.body.style.backgroundColor, 'guess: ', GuessRes)
     }
+
   }
 
   /*
@@ -37,7 +46,7 @@ const App = () => {
   */
 
   const handleButtonClick = (n: number | string) => {
-    console.log(n)
+    // console.log(n)
     setGuessVal(
       n == '日' ? '7' : n.toString()
     )
@@ -57,7 +66,9 @@ const App = () => {
   const handleReset = () => {
     setRandomDateString(GetRandomDateString())
     setGuessVal('')
-    setGuessRes('')
+    setGuessRes( null )
+    document.body.style.backgroundColor = LabelIsChecked ? 'white' : 'black';
+    document.body.style.color = LabelIsChecked ? 'black' : 'white';
   }
 
   useEffect(() => {
@@ -66,12 +77,18 @@ const App = () => {
       EvaluateGuess(parseInt(GuessVal))
     }
 
-    //  Night mode
-    document.body.style.backgroundColor = LabelIsChecked ? 'white' : 'black';
-    document.body.style.color = LabelIsChecked ? 'black' : 'white';
+    //  Night mode switch
+    const temp_color = document.body.style.backgroundColor
+    // console.log(temp_color)
+    if ( !temp_color || temp_color == 'white' || temp_color == 'black') {
+      document.body.style.backgroundColor = LabelIsChecked ? 'white' : 'black';
+      document.body.style.color = LabelIsChecked ? 'black' : 'white';
+    }
+
+    
 
     localStorage.setItem("LabelIsChecked", JSON.stringify(LabelIsChecked))
-  }, [GuessVal, LabelIsChecked])
+  }, [GuessRes, GuessVal, LabelIsChecked])
   
 
   return (
@@ -80,19 +97,31 @@ const App = () => {
         { `${RandomDateArray[1]} ${RandomDateArray[2]}, ${RandomDateArray[3]}` }
       </h1>
       <div className='GuessingDiv'>
-        <label className='label-text-guess-bar' htmlFor='GuessBar'>Your Guess:</label>
+        {/* <label className='label-text-guess-bar' htmlFor='GuessBar'>Your Guess:</label> */}
         {/* <input id='GuessBar' type='number' onChange={handleOnEnterInput}/> */}
-        &nbsp;
-        <div> { GuessRes } </div>
+        {/* &nbsp; */}
+        {/* <div> { GuessRes } </div> */}
       </div>
       <div className='btn-group-div'>
-        {[1, 2, 3, 4, 5, 6, '日'].map((n) => (
-          <button key={ n } onClick={() => handleButtonClick(n)}>
-            {n}
-          </button>
-        ))}
-        <button onClick={ handleReset }>Reset</button>
-        <button onClick={ handleSetLabelIsChecked }>夜</button>
+        <div className='btn-subgroup-div'>
+          {[1, 2, 3].map((n) => (
+            <button key={ n } onClick={() => handleButtonClick(n)}>
+              {n}
+            </button>
+          ))}
+        </div>
+        <div className='btn-subgroup-div'>
+          {[4, 5, 6/*, '日'*/].map((n) => (
+            <button key={ n } onClick={() => handleButtonClick(n)}>
+              {n}
+            </button>
+          ))}
+        </div>
+        <div className='btn-subgroup-div'>
+          <button onClick={ handleSetLabelIsChecked }>夜</button>
+          <button onClick={ handleReset }>↺</button>
+          <button key={ '日' } onClick={() => handleButtonClick('日')}>日</button>
+        </div>
       </div>
       {/* <label className="switch">
         <input 
