@@ -1,7 +1,7 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
 | c9      | Restful                 | _what : rest api w/ nestjs_ 
-|         |                         | _currently: Cannot GET /_
+|         |                         | _progress: Cannot GET /_
 |         |                         | _- controller . provider_
 |         |                         | _- dependency injection_
 |         |                         | _- endpoints_
