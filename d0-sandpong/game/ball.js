@@ -5,15 +5,6 @@ class Ball {
         this.x = width / 2
         this.y = height / 2
 
-        // X Displacement should be faster than Y
-        // this.OriginalXspeed = 9 * Math.sin(random( -PI / 4, PI / 4) )
-        // this.Xspeed = this.OriginalXspeed 
-
-        // this.OriginalYspeed = 6 * Math.cos(random( -PI / 4, PI / 4) )
-        // this.Yspeed = this.OriginalYspeed
-
-        // this.speed = 9
-
         this.Xspeed = 0
         this.Yspeed = 0
         this.Xfactor = 7
@@ -21,13 +12,10 @@ class Ball {
         this.r = 12
         this.delta = 1.5
         this.Reset()
-        // console.log(this.Xspeed, this.Yspeed)
     }
 
 
     Update() {
-
-        // console.log(this.Xspeed, this.Yspeed)
 
         this.x += this.Xspeed // Displacement per time unit
         this.y += this.Yspeed
@@ -112,8 +100,8 @@ class Ball {
             this.x + this.r > p.x - p.w / 2 // checking : o--|-->
         ) {
 
-            // if (this.x >= p.x)
-            //     return
+            if (this.x >= p.x)
+                return
             let diff = this.y - (p.y - p.h / 2) // (?) always positive
             let rad = radians(60)
             let angle = map(diff, 0, p.h, -rad, rad)
@@ -121,11 +109,9 @@ class Ball {
             this.Yspeed = this.Xfactor * sin(angle)
 
             this.Xspeed *= -1
-            // console.log('before:', this.x)
 
             this.x = p.x - p.w / 2 - this.r // optional: make sure ball not stuck inside paddle
 
-            // console.log('after:', this.x)
 
             /*
             ----------------------------

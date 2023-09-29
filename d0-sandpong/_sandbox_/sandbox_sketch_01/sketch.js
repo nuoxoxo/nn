@@ -14,5 +14,6 @@ function setup() {
     strokeWeight(mouseX % 83)
     stroke(255, 204, 0)
     line(width / 2, height / 2, mouseX, mouseY)
+    // console.log('座標:', mouseX, mouseY)
     
   }

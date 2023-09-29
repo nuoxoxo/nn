@@ -12,7 +12,6 @@ class Paddle {
 
         this.deltaY = 0
         this.offset = this.h / 2 - random() * 3
-
     }
 
 
