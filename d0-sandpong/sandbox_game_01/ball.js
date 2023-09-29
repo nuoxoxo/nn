@@ -9,10 +9,10 @@ class Ball {
 
         // X Displacement should be faster than Y
         this.OriginalXspeed = 8 * Math.cos(random( -PI / 4, PI / 4) )
-        this.CurrentXspeed = this.OriginalXspeed 
+        this.Xspeed = this.OriginalXspeed 
 
         this.OriginalYspeed = 5 * Math.cos(random( -PI / 4, PI / 4) )
-        this.CurrentYspeed = this.OriginalYspeed 
+        this.Yspeed = this.OriginalYspeed 
         this.r = 12
         this.speed = 9
         this.delta = 1.5
@@ -21,8 +21,8 @@ class Ball {
 
     Update() {
 
-        this.x += this.CurrentXspeed // Displacement per time unit
-        this.y += this.CurrentYspeed
+        this.x += this.Xspeed // Displacement per time unit
+        this.y += this.Yspeed
     }
 
 
@@ -39,12 +39,12 @@ class Ball {
 
         this.x = width / 2
         this.y = height / 2        
-        this.CurrentXspeed = this.OriginalXspeed 
-        this.CurrentYspeed = this.OriginalYspeed 
+        this.Xspeed = this.OriginalXspeed 
+        this.Yspeed = this.OriginalYspeed 
 
         // Randomized direction at each serve
         if (random(1) < 0.5) {
-            this.CurrentXspeed *= -1
+            this.Xspeed *= -1
         }
     }
 
@@ -53,7 +53,7 @@ class Ball {
 
         if (this.y < 0 || this.y > height) { // touching either Ceil or Floor
 
-            this.CurrentYspeed *= -1 // vector Y mirrors Y-axis while X maintains
+            this.Yspeed *= -1 // vector Y mirrors Y-axis while X maintains
         }
 
         if (this.x - this.r > width) { // L wins once |---Dist---> -gt. WindowW 
@@ -81,7 +81,7 @@ class Ball {
             let diff = this.y - (p.y - p.h / 2)
             let rad = radians(45)
             let angle = map(diff, 0, p.h, -rad, rad)
-            this.CurrentXspeed *= -1
+            this.Xspeed *= -1
             this.x = p.x + p.w / 2 + this.r
         }
     }
@@ -98,7 +98,7 @@ class Ball {
             let diff = this.y - (p.y - p.h / 2) // (?) always positive
             let rad = radians(45)
             let angle = map(diff, 0, p.h, -rad, rad)
-            this.CurrentXspeed *= -1
+            this.Xspeed *= -1
             this.x = p.x - p.w / 2 - this.r // optional: make sure ball not stuck inside paddle
 
             /*

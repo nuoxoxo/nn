@@ -4,11 +4,11 @@ class Paddle {
 
         this.isleft = isLeft
 
-        this.x = isLeft ? this.w : width - this.w
-        this.y = height / 2
-
         this.w = 21
         this.h = 112
+
+        this.x = isLeft ? this.w : width - this.w
+        this.y = height / 2
 
         this.deltaY = 0
         this.offset = this.h / 2 - random() * 3

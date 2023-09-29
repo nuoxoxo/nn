@@ -7,26 +7,30 @@ class Ball {
 
         // X Displacement should be faster than Y
         // this.OriginalXspeed = 9 * Math.sin(random( -PI / 4, PI / 4) )
-        // this.CurrentXspeed = this.OriginalXspeed 
+        // this.Xspeed = this.OriginalXspeed 
 
         // this.OriginalYspeed = 6 * Math.cos(random( -PI / 4, PI / 4) )
-        // this.CurrentYspeed = this.OriginalYspeed
+        // this.Yspeed = this.OriginalYspeed
 
         // this.speed = 9
 
+        this.Xspeed = 0
+        this.Yspeed = 0
+        this.Xfactor = 7
+        this.Yfactor = 5
         this.r = 12
         this.delta = 1.5
         this.Reset()
-        console.log(this.CurrentXspeed, this.CurrentYspeed)
+        // console.log(this.Xspeed, this.Yspeed)
     }
 
 
     Update() {
 
-        // console.log(this.CurrentXspeed, this.CurrentYspeed)
+        // console.log(this.Xspeed, this.Yspeed)
 
-        this.x += this.CurrentXspeed // Displacement per time unit
-        this.y += this.CurrentYspeed
+        this.x += this.Xspeed // Displacement per time unit
+        this.y += this.Yspeed
     }
 
 
@@ -44,14 +48,12 @@ class Ball {
         this.x = width / 2
         this.y = height / 2
 
-        // this.CurrentXspeed *= Math.cos(angle)
-        // this.CurrentYspeed *= Math.sin(angle)
-        this.CurrentXspeed = this.OriginalXspeed
-        this.CurrentYspeed = this.OriginalYspeed
+        this.Xspeed = this.Xfactor * cos(angle)
+        this.Yspeed = this.Xfactor * sin(angle)
 
         // Randomized direction at each serve
         if (random(1) < 0.5) {
-            this.CurrentXspeed *= -1
+            this.Xspeed *= -1
         }
     }
 
@@ -60,7 +62,7 @@ class Ball {
 
         if (this.y < 0 || this.y > height) { // touching either Ceil or Floor
 
-            this.CurrentYspeed *= -1 // vector Y mirrors Y-axis while X maintains
+            this.Yspeed *= -1 // vector Y mirrors Y-axis while X maintains
 
             /*
             if (this.y > height) console.log('floor xD')
@@ -89,15 +91,15 @@ class Ball {
             this.y + this.r > p.y - p.h / 2 && // hits upper half of p
             this.x - this.r < p.x + p.w / 2 // checking : <--|--o
         ) {
-            // if (this.x <= p.x)
-            //     return
+            if (this.x <= p.x)
+                return
             let diff = this.y - (p.y - p.h / 2)
             let rad = radians(60)
             let angle = map(diff, 0, p.h, -rad, rad)
-            // this.CurrentXspeed = (this.speed * this.delta) * cos(angle)
-            // this.CurrentYspeed = (this.speed * this.delta) * sin(angle)
-            this.CurrentXspeed *= -1
-            this.x = p.x + p.w / 2 + this.r
+            this.Xspeed = this.Xfactor * cos(angle)
+            this.Yspeed = this.Xfactor * sin(angle)
+            // this.Xspeed *= -1
+            this.x = this.r + p.x + p.w / 2
         }
     }
 
@@ -115,12 +117,10 @@ class Ball {
             let diff = this.y - (p.y - p.h / 2) // (?) always positive
             let rad = radians(60)
             let angle = map(diff, 0, p.h, -rad, rad)
-            // let angle = map(diff, 0, p.h, radians(135), radians(225))
-            // this.CurrentXspeed = (this.speed * this.delta) * cos(angle)
-            // this.CurrentYspeed = (this.speed * this.delta) * sin(angle)
+            this.Xspeed = this.Xfactor * cos(angle)
+            this.Yspeed = this.Xfactor * sin(angle)
 
-            this.CurrentXspeed *= -1
-
+            this.Xspeed *= -1
             // console.log('before:', this.x)
 
             this.x = p.x - p.w / 2 - this.r // optional: make sure ball not stuck inside paddle
