@@ -1,11 +1,12 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
+| d0      | Pong Sandbox            | _todo : mapping paddle parts to rad_   | :yellow_circle:
+||
 | c9      | Restful                 | _what : rest api w/ nestjs_ 
 |         |                         | _progress: Cannot GET /_
 |         |                         | _- controller . provider_
 |         |                         | _- dependency injection_
 |         |                         | _- endpoints_
-||
 | c8      | Fla                     | _Guessing flags_ 
 ||[*io/galf*](https://nuoxoxo.github.io/galf)
 | c7      | Key                     | _Guessing key signatures_ 
