@@ -1,20 +1,18 @@
 class Paddle {
 
-    constructor(isLeft) {
+    constructor(isLeft/*:boolean*/) {
 
-        this.x = undefined
-        this.y = height / 2
-        this.w = 21
-        this.h = 112
-        this.deltaY = 0
-        this.offset = this.h / 2 - random() * 3
         this.isleft = isLeft
 
-        if (isLeft) {
-            this.x = this.w
-        } else {
-            this.x = width - this.w
-        }
+        this.x = isLeft ? this.w : width - this.w
+        this.y = height / 2
+
+        this.w = 21
+        this.h = 112
+
+        this.deltaY = 0
+        this.offset = this.h / 2 - random() * 3
+
     }
 
 
@@ -37,11 +35,9 @@ class Paddle {
 
     Show() {
 
-        fill(
-            this.isleft
+        fill(this.isleft
             ? 'rgba(0, 255, 0, 0.25)'
-            : 'rgba(100%, 0%, 100%, 0.5)'
-        )
+            : 'rgba(100%, 0%, 100%, 0.5)')
 
         rectMode(CENTER)
         rect(this.x, this.y, this.w, this.h)

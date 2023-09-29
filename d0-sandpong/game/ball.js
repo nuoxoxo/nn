@@ -2,19 +2,19 @@ class Ball {
 
     constructor() {
 
-        // Where it starts at : (x, _)
         this.x = width / 2
-        // Where it starts at : (_, y)
         this.y = height / 2
 
         // X Displacement should be faster than Y
-        this.OriginalXspeed = 9 * Math.sin(random( -PI / 4, PI / 4) )
-        this.CurrentXspeed = this.OriginalXspeed 
+        // this.OriginalXspeed = 9 * Math.sin(random( -PI / 4, PI / 4) )
+        // this.CurrentXspeed = this.OriginalXspeed 
 
-        this.OriginalYspeed = 6 * Math.cos(random( -PI / 4, PI / 4) )
-        this.CurrentYspeed = this.OriginalYspeed 
+        // this.OriginalYspeed = 6 * Math.cos(random( -PI / 4, PI / 4) )
+        // this.CurrentYspeed = this.OriginalYspeed
+
+        // this.speed = 9
+
         this.r = 12
-        this.speed = 9
         this.delta = 1.5
         this.Reset()
         console.log(this.CurrentXspeed, this.CurrentYspeed)
