@@ -1,6 +1,6 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
-| d0      | Pong Sandbox            | _todo : mapping paddle parts to rad_   | :yellow_circle:
+| dO      | Pong Sandbox            | _done : paddle segments mapped to rad_ 
 ||
 | c9      | Restful                 | _what : rest api w/ nestjs_ 
 |         |                         | _progress: Cannot GET /_
