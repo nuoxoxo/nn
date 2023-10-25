@@ -8,14 +8,22 @@ export class AuthController {
   constructor (private authService: AuthService)
   {}
 
-  @Post('signup') // request : POST /auth/signup
+  // request : POST /auth/signup
+  @Post('signup')
   signup ()
-  { return 'Signed up.'}
+  { return this.authService.signup() }
+  // { return { message: "@signup: Hello" } }
+  // { return 'Signed up.'}
 
-  @Post('signin') // request : POST /auth/signin 
+  // request : POST /auth/signin 
+  @Post('signin')
   signin ()
-  { return 'Signed in.' }
+  { return this.authService.signin() }
+  // { return { message: "@signin: Hello" } }
+  // { return 'Signed in.' }
 
+
+  // @Notes
   // if no private keyword:
   /*
   authService: AuthService
