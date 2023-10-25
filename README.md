@@ -1,6 +1,6 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
-| d1      | Restful                 | _what : rest api w/ nestjs_ 
+| d1      | Restful                 | _what : rest api w/ nestjs_            | :yellow_circle:
 |         |                         | _progress: Cannot GET /_
 |         |                         | _- controller . provider_
 |         |                         | _- dependency injection_
