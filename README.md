@@ -1,10 +1,6 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
-| d1      | Restful                 | _what : rest api w/ nestjs_            | :yellow_circle:
-|         |                         | _progress: Cannot GET /_
-|         |                         | _- controller . provider_
-|         |                         | _- dependency injection_
-|         |                         | _- endpoints_
+| d1      | Restful                 | _what : rest api w/ nestjs_            | :yellow_circle: 
 ||| :red_circle: need re-init
 | dO      | Pong Sandbox            | _done : paddle segments mapped to rad_ 
 ||
