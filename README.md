@@ -1,13 +1,15 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
-| dO      | Pong Sandbox            | _done : paddle segments mapped to rad_ 
-||
-| c9      | Restful                 | _what : rest api w/ nestjs_ 
+| d1      | Restful                 | _what : rest api w/ nestjs_ 
 |         |                         | _progress: Cannot GET /_
 |         |                         | _- controller . provider_
 |         |                         | _- dependency injection_
 |         |                         | _- endpoints_
-| c8      | Fla                     | _Guessing flags_ 
+||| :red_circle: need re-init
+| dO      | Pong Sandbox            | _done : paddle segments mapped to rad_ 
+||
+| c9      | Angular hello           | _what : hello world in angular_
+| c8      | Fla _[sic]_            | _Guessing flags_ 
 ||[*io/galf*](https://nuoxoxo.github.io/galf)
 | c7      | Key                     | _Guessing key signatures_ 
 |         |                         | _1st : one Reset button only_
