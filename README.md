@@ -15,7 +15,7 @@
 || [*io/jukebox*](https://nuoxoxo.github.io/jukebox) | _1st draft : works fine_ 
 ||| _bug : only mobile has good viewport_ 
 ||| _Uses 4 buttons_ | :green_circle: 
-| c4      | Array on Los            | _done_ 
+| c4      | Aron Lostor             | _done_ 
 | c3      | Dmd                     | _Guessing weekday_ 
 |         |                         | _1st : input by typing_ 
 || [*io/dmd*](https://nuoxoxo.github.io/dmd)| _2nd : btns . nightmode . memo_| :green_circle: 
