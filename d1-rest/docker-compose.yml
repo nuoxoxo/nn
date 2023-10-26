@@ -3,7 +3,7 @@ services:
   mydatabase:
     env_file:
       - .env
-    image: postgre:13
+    image: postgres:13
     ports:
       - ${DB_PORT}:${DB_PORT}
     environment:
