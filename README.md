@@ -1,11 +1,6 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
-| d1      | Restful                 | _what : rest api w/ nestjs_ 
-|         |                         | _progress: Cannot GET /_
-|         |                         | _- controller . provider_
-|         |                         | _- dependency injection_
-|         |                         | _- endpoints_
-||| :red_circle: need re-init
+| d1      | Restful                 | _what : rest api w/ nestjs_            | :yellow_circle: 
 | dO      | Pong Sandbox            | _done : paddle segments mapped to rad_ 
 ||
 | c9      | Angular hello           | _what : hello world in angular_
@@ -20,7 +15,7 @@
 || [*io/jukebox*](https://nuoxoxo.github.io/jukebox) | _1st draft : works fine_ 
 ||| _bug : only mobile has good viewport_ 
 ||| _Uses 4 buttons_ | :green_circle: 
-| c4      | Array on Los            | _done_ 
+| c4      | Aron Lostor             | _done_ 
 | c3      | Dmd                     | _Guessing weekday_ 
 |         |                         | _1st : input by typing_ 
 || [*io/dmd*](https://nuoxoxo.github.io/dmd)| _2nd : btns . nightmode . memo_| :green_circle: 
