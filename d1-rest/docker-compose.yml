@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  mydatabase:
+    image: postgre:13
+    port:
+      ${DB_PORT}:${DB_PORT}
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    networks:
+      - rest
+networks:
+  rest
