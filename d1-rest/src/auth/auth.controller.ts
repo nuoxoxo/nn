@@ -1,5 +1,6 @@
-import { Body, Controller, Post, Req } from "@nestjs/common";
+import { Body, Controller, Post } from "@nestjs/common";
 import { AuthService } from "./auth.service";
+import { AuthDto } from "./dto";
 
 @Controller ('auth')
 // 'auth' is the "global prefix route" WTM.
@@ -11,10 +12,12 @@ export class AuthController {
   // request : POST /auth/signup
   @Post('signup')
   signup (
-    @Body () dto: any
+    @Body () dto: /*any*/AuthDto
     // @Draft
     // @Req() req: Request
   ) {
+
+
 
     console.log( dto ) // 1. raw
     console.log({ dto: dto }) // 2. same as 3.
