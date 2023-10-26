@@ -12,6 +12,7 @@ export class AuthController {
   @Post('signup')
   signup ()
   { return this.authService.signup() }
+  // @Draft
   // { return { message: "@signup: Hello" } }
   // { return 'Signed up.'}
 
@@ -19,6 +20,7 @@ export class AuthController {
   @Post('signin')
   signin ()
   { return this.authService.signin() }
+  // @Draft
   // { return { message: "@signin: Hello" } }
   // { return 'Signed in.' }
 
