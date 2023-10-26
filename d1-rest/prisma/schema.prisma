@@ -33,5 +33,5 @@ model Bookmark {
 
   title       String
   description String?
-  link        Striing
+  link        String
 }
