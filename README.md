@@ -1,6 +1,6 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
-| d1      | Restful                 | _what : rest api w/ nestjs_            | :yellow_circle: 
+| d1      | Restful                 | _what : nestjs api sandbox_            | :yellow_circle: 
 | dO      | Pong Sandbox            | _done : paddle segments mapped to rad_ 
 ||
 | c9      | Angular hello           | _what : hello world in angular_
