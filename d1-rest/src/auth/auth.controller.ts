@@ -12,17 +12,22 @@ export class AuthController {
   // request : POST /auth/signup
   @Post('signup')
   signup (
-    @Body () dto: /*any*/AuthDto
+    @Body('mail') mail:string,
+    @Body('pass') pass: string,
+
+    //Draft
+    // @Body () dto: /*any*/AuthDto
     // @Draft
     // @Req() req: Request
   ) {
-
-
-
-    console.log( dto ) // 1. raw
-    console.log({ dto: dto }) // 2. same as 3.
-    console.log({ dto, }) // 3. shorthand
-
+    console.log({
+      mail, typeOfEmail: typeof mail,
+      pass, typeOfPass: typeof pass
+    })
+    // @DRaft
+    // console.log( dto ) // 1. raw
+    // console.log({ dto: dto }) // 2. same as 3.
+    // console.log({ dto, }) // 3. shorthand
     // @Draft
     // console.log(req.headers, req.body)
     return this.authService.signup()
