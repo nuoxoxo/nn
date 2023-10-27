@@ -31,17 +31,30 @@ docker logs $_Container_ID
 ```
 Live
 ```c
+nest g module auth
+nest g module user
 npm start dev // Go live
-
 // Use postman once live
 ```
 Nestjs
-```c
+```
 npm i -g @nestjs/cli
 nest new restful
-nest g module auth
-nest g module user
+
+- del. app.controller.* . app.service.ts
+- cleanup : app.module.ts
 ```
+```coffee
+// app.module.ts
+import { Module } from '@nestjs/common';
+
+@Module({
+  imports: [],
+})
+
+export class AppModule {}
+```
+
 Angular snippet
 ```c
 npm install -g @angular/cli
