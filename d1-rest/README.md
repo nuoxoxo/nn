@@ -31,11 +31,16 @@ docker logs $_Container_ID
 ```
 Live
 ```c
+npm start dev // Go live
+
+// Use postman once live
+```
+Nestjs
+```c
+npm i -g @nestjs/cli
 nest new restful
 nest g module auth
 nest g module user
-npm start dev // Go live
-// Use postman once live
 ```
 Angular snippet
 ```c
