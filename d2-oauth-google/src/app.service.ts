@@ -14,6 +14,8 @@ export class AppService {
       messgage: 'user info from ggl',
       user: req.user
     }
-  } 
+  }
+
+  hello () { return 'Hello' }
 
 }
