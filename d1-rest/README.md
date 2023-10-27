@@ -4,9 +4,11 @@ Controllers
 Providers
 >  can be injected as a dependency.
 
-timestamp : 54m:pipe ~~52m:dto~~ ~~23m~~
+Timestamp 
+> 54m:pipe ~~52m:dto~~ ~~23m~~
 
-# CM
+---
+
 Get prisma-cli and prima client
 ```c
 npm i prisma
