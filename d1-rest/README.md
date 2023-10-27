@@ -1,13 +1,28 @@
+<details><summary>gloss</summary>
+&#8301;
+
+bootstrap function
+> a function to start and init a NestJs app, not strictly but often used \
+> NestFactory.create
+> - creates an instance of the Nest app 
+> - sets up an Express server
+
+
+
 Controllers 
 > ... are responsible for handling incoming requests and returning responses to the client.
 
 Providers
 >  can be injected as a dependency.
 
+</details>
+
 Timestamp 
 > 54m:pipe ~~52m:dto~~ ~~23m~~
 
----
+
+<details><summary>carto</summary>
+&#8301;
 
 Get prisma-cli and prima client
 ```c
@@ -35,7 +50,7 @@ Live
 ```c
 nest g module auth
 nest g module user
-npm start dev // Go live
+npm run start:dev // Go live
 // Use postman once live
 ```
 Nestjs
@@ -64,3 +79,6 @@ ng new hello_world
 ng generate component hello
 ng serve // Go live
 ```
+
+</details>
+
