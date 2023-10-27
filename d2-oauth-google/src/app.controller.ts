@@ -13,7 +13,7 @@ export class AppController {
   // }
 
   @Get()
-  @UseGuards(  )
+  @UseGuards( AuthGuard('google') /*Possible BUG*/ )
   async googleAuth ( @Req() req) {
 
   }
