@@ -1,13 +1,15 @@
 <details><summary>gloss</summary>
 &#8301;
 
+Pipes
+> process data before it reaches the route handler \
+> commonly used to sanitize / validate incoming data
+
 bootstrap function
 > a function to start and init a NestJs app, not strictly but often used \
 > NestFactory.create
 > - creates an instance of the Nest app 
 > - sets up an Express server
-
-
 
 Controllers 
 > ... are responsible for handling incoming requests and returning responses to the client.
@@ -18,7 +20,7 @@ Providers
 </details>
 
 Timestamp 
-> 54m:{pipe} ~~52m:{dto}~~ ~~23m~~
+> 58m:{pipe} ~~52m:{dto}~~ ~~23m~~
 
 
 <details><summary>carto</summary>
