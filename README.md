@@ -1,5 +1,6 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
+| d2      | OAuth w/ Google | _what : oauth tryout_                          | 
 | d1      | Restful                 | _what : nestjs api sandbox_            | :yellow_circle: 
 | dO      | Pong Sandbox            | _done : paddle segments mapped to rad_ 
 ||
