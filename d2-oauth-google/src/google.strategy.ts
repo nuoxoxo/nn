@@ -15,7 +15,7 @@ export class GoogleStrategy extends PassportStrategy (
       clientID : process.env.GOOGLE_CLIENT_ID,
       clientSecret : process.env.GOOGLE_CLIENT_SECRET,
       callbackURL : 'http://localhost:3333/auth/google/callback',
-      scope : ['email', 'profile']
+      scope : [ 'profile', 'email' ]
     });
   }
 
@@ -35,6 +35,8 @@ export class GoogleStrategy extends PassportStrategy (
       picture: photos[0].value,
       accessToken
     } 
+
+    console.log( profile['_json']['picture'] )
 
     done ( null, user )
   }
