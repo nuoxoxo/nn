@@ -1,11 +1,11 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
-| d2      | OAuth w/ Google | _what : oauth tryout_                          | 
+| d2      | Google OAuth            | _what : oauth tryout_                          | 
 | d1      | Restful                 | _what : nestjs api sandbox_            | :yellow_circle: 
 | dO      | Pong Sandbox            | _done : paddle segments mapped to rad_ 
 ||
 | c9      | Angular hello           | _what : hello world in angular_
-| c8      | Fla _[sic]_            | _Guessing flags_ 
+| c8      | Fla _[sic]_             | _Guessing flags_ 
 ||[*io/galf*](https://nuoxoxo.github.io/galf)
 | c7      | Key                     | _Guessing key signatures_ 
 |         |                         | _1st : one Reset button only_
