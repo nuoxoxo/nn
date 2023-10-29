@@ -7,9 +7,17 @@ import { PassportStrategy } from "@nestjs/passport";
 // Use 42
 import { Strategy, VerifyCallback } from 'passport-42' 
 
+// Use google
+/*
 @Injectable()
 export class GoogleStrategy extends PassportStrategy (
-  Strategy, 'google' 
+  Strategy, 'google'
+*/
+
+// Use 42
+@Injectable()
+export class FortytwoStrategy extends PassportStrategy (
+    Strategy, 'fortytwo' 
 ) {
 
   constructor () {
@@ -17,7 +25,8 @@ export class GoogleStrategy extends PassportStrategy (
       clientID : process.env.GOOGLE_CLIENT_ID,
       clientSecret : process.env.GOOGLE_CLIENT_SECRET,
       callbackURL : process.env.GOOGLE_CALLBACK_URL,
-      scope : [ 'profile', 'email' ]
+      // scope : [ 'profile', 'email' ]
+      scope: ['public'], // for 42
     });
   }
 

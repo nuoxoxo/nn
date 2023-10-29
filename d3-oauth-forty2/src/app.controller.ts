@@ -12,16 +12,32 @@ export class AppController {
   //   return this.appService.getHello();
   // }
 
+  // Use google
+  /*
   @Get()
-  @UseGuards( AuthGuard('google') /*Possible BUG*/ )
-  async googleAuth ( @Req() req) {
+  @UseGuards( AuthGuard('google'))
+  async googleAuth ( @Req() req) {}
+  */
 
-  }
+  // Use 42
 
+  @Get()
+  @UseGuards( AuthGuard('fortytwo'))
+  async fortytwoAuth ( @Req() req) {}
+
+  // Use google
+  /*
   @Get('auth/google/callback')
   @UseGuards(AuthGuard('google'))
   googleAuthRedirect( @Req() req ) {
     return this.appService.googleLogin( req )
   }
+  */
 
+  // Use 42
+  @Get('auth/42/callback')
+  @UseGuards(AuthGuard('fortytwo'))
+  fortytwoAuthRedirect( @Req() req ) {
+    return this.appService.fortytwoLogin( req )
+  }
 }
