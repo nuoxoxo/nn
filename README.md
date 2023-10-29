@@ -1,6 +1,8 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
-| d2      | Google OAuth            | _what : oauth tryout_                          | 
+| d3      | 42 OAuth                | `npm i @nestjs/passport dotenv passport passport-42` 
+| d2      | Google OAuth            | _what : oauth tryout_ 
+||| `npm i @nestjs/passport dotenv passport passport-google-oauth20` 
 | d1      | Restful                 | _what : nestjs api sandbox_            | :yellow_circle: 
 | dO      | Pong Sandbox            | _done : paddle segments mapped to rad_ 
 ||
