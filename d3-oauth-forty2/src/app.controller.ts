@@ -22,7 +22,7 @@ export class AppController {
   // Use 42
 
   @Get()
-  @UseGuards( AuthGuard('fortytwo'))
+  @UseGuards( AuthGuard('42'/*'fortytwo'*/))
   async fortytwoAuth ( @Req() req) {}
 
   // Use google
@@ -36,7 +36,7 @@ export class AppController {
 
   // Use 42
   @Get('auth/42/callback')
-  @UseGuards(AuthGuard('fortytwo'))
+  @UseGuards(AuthGuard('42'/*'fortytwo'*/))
   fortytwoAuthRedirect( @Req() req ) {
     return this.appService.fortytwoLogin( req )
   }

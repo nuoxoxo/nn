@@ -17,7 +17,7 @@ export class GoogleStrategy extends PassportStrategy (
 // Use 42
 @Injectable()
 export class FortytwoStrategy extends PassportStrategy (
-    Strategy, 'fortytwo' 
+    Strategy, '42'//'fortytwo' 
 ) {
 
   constructor () {
