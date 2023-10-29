@@ -1,9 +1,11 @@
 import { Injectable } from "@nestjs/common";
 import { PassportStrategy } from "@nestjs/passport"; 
-import { Strategy, VerifyCallback } from 'passport-google-oauth20'
 
-// import { config } /*as dotenv*/ from 'dotenv';
-// config()
+// Use google
+// import { Strategy, VerifyCallback } from 'passport-google-oauth20'
+
+// Use 42
+import { Strategy, VerifyCallback } from 'passport-42' 
 
 @Injectable()
 export class GoogleStrategy extends PassportStrategy (
