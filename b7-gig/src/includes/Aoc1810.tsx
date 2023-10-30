@@ -1,18 +1,20 @@
 import { useState, useEffect } from "react"
-import {
-  FetchData,
-  // LenNStrsFromLine,
-  // Deepcopy2DArray,
-} from "../helpers/Helpers"
+import { FetchData } from "../helpers/Helpers"
+
+const suffixes = ['alt', '0']
+const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
 
 const URL: string =
-  "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/1810.0"
+  "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/1810." + choice
+
+// console.log(choice, URL)
 
 var Aoc1810 = () => {
+
   const [lines, setLines] = useState<string[]>([])
   const [images, setImages] = useState<string[][]>([])
 
-  const chrs: string[] = ['▓', '▒', '#' /*, '○'*/]//, 'x', '✲', '✳', '✵', '✶', '✻', '✼']
+  const chrs: string[] = ['█', '▓', '▒', '#' /*, '○'*/]//, 'x', '✲', '✳', '✵', '✶', '✻', '✼']
   const chr: string = chrs[Math.floor(Math.random() * chrs.length)]
 
   const sps: string[] = ['.'/*, ' '*/]//, 'x', '✲', '✳', '✵', '✶', '✻', '✼']
@@ -29,6 +31,7 @@ var Aoc1810 = () => {
   }
 
   const Solver = () => {
+
     let res:string[][] = []
     let A: number[][] = []
     for (let line of lines) {
@@ -39,7 +42,8 @@ var Aoc1810 = () => {
     console.log(A)
 
     let i = -1
-    while (++i < 10600) { // range is hand picked
+    while (++i < 10700) { // range is hand picked
+
       let hix: number = Math.max(...A.map(([n, , ,]) => n))
       let lox: number = Math.min(...A.map(([n, , ,]) => n))
       let hiy: number = Math.max(...A.map(([, n, ,]) => n))
@@ -47,7 +51,7 @@ var Aoc1810 = () => {
       let offset = 100
 
       if (lox + offset > hix && loy + offset > hiy) {
-        let temp:string[] = [' --- ' + i.toString() + ' --- ']
+        let temp:string[] = ['\n --- Step no. ' + i.toString() + ' --- \n']
         // console.log(i)
 
         let r = loy - 1
@@ -97,7 +101,7 @@ var Aoc1810 = () => {
               {/* <span>Part 1: {p1 ? p1 : "(empty)"} </span> */}
               {/* <span>Part 2: {p2 ? p2 : "(empty)"} </span> */}
               <div className='res-field-1810-image'>
-                {images ? images.map(line => line.join('\n')).join('\n\n') : "No data available."}
+                {images ? images.map(line => line.join('\n')).join('\n') : "No data available."}
               </div>
             </div>
           </div>

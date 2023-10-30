@@ -1,22 +1,20 @@
 import { useState, useEffect } from "react"
 import { FetchData, LenNStrsFromLine } from "../helpers/Helpers"
 
-const [sp1, sp2] = [' ', '']
-
-const suffixes = ['in', 'alt']
-const choice = suffixes[Math.floor(Math.random() * suffixes.length)]
+const choice:string = 'alt'
 const URL:string = "https://raw.githubusercontent.com/nuoxoxo/in/main/aoc/2212." + choice
 
-const symbolArr = ["○", '▓', '▒', '#']
-const symbol = symbolArr[Math.floor(Math.random() * symbolArr.length)] 
-const denseSymbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
+const symbolArr = ["○", '✲', '✳', '✵', '✶', '✻', '✼']
+const symbol = symbolArr[Math.floor(Math.random() * symbolArr.length)]
+const denseSymbol = 'x'//symbolArr[Math.floor(Math.random() * symbolArr.length)]
 const density:number = 170
 
-var Aoc2212 = () => {
-
+var Aoc2212Alt = () => {
   const [lines, setLines] = useState<string[]>([])
+
   const [p1, setP1] = useState<number>(0)
   const [p1Grid, setP1Grid] = useState<string[]>([])
+
   const [p2, setP2] = useState<number>(0)
   const [p2Grid, setP2Grid] = useState<string[]>([])
   const [P2Path, setP2Path] = useState<string[]>([])
@@ -37,7 +35,6 @@ var Aoc2212 = () => {
     er: number,
     ec: number
   ) => {
-
     let [R, C]: number[] = [lines.length, lines[0].length]
     const D: [number, number][] = [
       [-1, 0],
@@ -79,7 +76,7 @@ var Aoc2212 = () => {
     while (++i < mp.length) {
       let j: number = -1
       while (++j < mp[i].length) {
-        if (mp[i][j] > (choice == 'in' ? 170 : 242)) {
+        if (mp[i][j] > 242) {
           tempGrid[i][j] = symbol
         }
       }
@@ -99,7 +96,6 @@ var Aoc2212 = () => {
     er: number,
     ec: number
   ) => {
-
     let res: number = 1e9
     let [R, C]: number[] = [lines.length, lines[0].length]
     const D: [number, number][] = [
@@ -123,7 +119,7 @@ var Aoc2212 = () => {
       Array(C).fill(" ")
     )
     let tempPath: string[][] = Array.from({ length: R }, () =>
-      Array(C).fill(".")
+      Array(C).fill("✼")
     )
     let dq: number[][] = [[er, ec]]
     let [r, c]: number[] = [-1, -1]
@@ -243,40 +239,40 @@ var Aoc2212 = () => {
       {lines ? (
         <>
         {/* <div className='playground playground-2212'> */}
-          <div className="field res-field res-field-2212">
-            <span>--- 2022 Day 12: Hill Climbing Algorithm ---</span>
+          <div className="field res-field">
+            <span>--- 2022 Day 12: Hill Climbing Algorithm Alt. ---</span>
             <span>Part 1: {p1}</span>
             <span>Part 2: {p2}</span>
           </div>
-          <div className={`playground playground-2212${choice === 'alt' ? '-alt' : ''}`}>
+          <div className="playground playground-2212-alt">
 
-            <div className={`field data-field-2212${choice === 'alt' ? '-alt' : ''}`}>
+            <div className="field data-field data-field-2212-alt">
               {/* { p2Grid ? p2Grid.join('\n') : "No data available." } */}
               { p2Grid
-                ? p2Grid.map((line) => line.split("").join(choice === 'alt' ? sp2 : sp1)).join("\n")
+                ? p2Grid.map((line) => line.split("").join("  ")).join("\n")
                 : "No data available."}
             </div>
 
-            <div className={`field data-field-2212${choice === 'alt' ? '-alt' : ''}`}>
+            <div className="field data-field data-field-2212-alt">
               {/* { p1Grid ? p1Grid.join("\n") : "No data available." } */}
               { p1Grid
-                ? p1Grid.map((line) => line.split("").join(choice === 'alt' ? sp2 : sp1)).join("\n")
+                ? p1Grid.map((line) => line.split("").join("  ")).join("\n")
                 : "No data available."}
             </div>
 
-            <div className={`field data-field-2212${choice === 'alt' ? '-alt' : ''}`}>
+            <div className="field data-field data-field-2212-alt">
               {/* { p2Grid ? p2Grid.join('\n') : "No data available." } */}
               { P2Path
-                ? P2Path.map((line) => line.split("").join(choice === 'alt' ? sp2 : sp1)).join("\n")
+                ? P2Path.map((line) => line.split("").join("  ")).join("\n")
                 : "No data available."}
             </div>
 
-            <div className={`field data-field-2212${choice === 'alt' ? '-alt' : ''}`}>
+            <div className="field data-field data-field-2212-alt">
               {lines
                 ? lines.length === 1
                   ? LenNStrsFromLine(lines[0], 16).join("\n")
                   : // : lines.join("\n")
-                    lines.map((line) => line.split("").join(choice === 'alt' ? sp2 : sp1)).join("\n")
+                    lines.map((line) => line.split("").join("  ")).join("\n")
                 : "No data available."}
             </div>
           </div>
@@ -289,4 +285,4 @@ var Aoc2212 = () => {
   )
 }
 
-export default Aoc2212
+export default Aoc2212Alt
