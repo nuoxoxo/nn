@@ -38,17 +38,16 @@ export class FortytwoStrategy extends PassportStrategy (
     done: VerifyCallback
   ) : Promise<any> {
 
-    const { name, emails, photos } = profile
+    const { name, emails, _json } = profile
     const user = {
       email : emails[0].value,
       firstName : name.givenName,
       lastName : name.familyName,
-      picture: photos[0].value,
+      picture: _json.image.link,
       accessToken
-    } 
-
-    console.log( profile['_json']['picture'] )
+    }
 
     done ( null, user )
+
   }
 }
