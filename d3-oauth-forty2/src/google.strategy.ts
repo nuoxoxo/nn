@@ -1,13 +1,23 @@
 import { Injectable } from "@nestjs/common";
 import { PassportStrategy } from "@nestjs/passport"; 
-import { Strategy, VerifyCallback } from 'passport-google-oauth20'
 
-// import { config } /*as dotenv*/ from 'dotenv';
-// config()
+// Use google
+// import { Strategy, VerifyCallback } from 'passport-google-oauth20'
 
+// Use 42
+import { Strategy, VerifyCallback } from 'passport-42' 
+
+// Use google
+/*
 @Injectable()
 export class GoogleStrategy extends PassportStrategy (
-  Strategy, 'google' 
+  Strategy, 'google'
+*/
+
+// Use 42
+@Injectable()
+export class FortytwoStrategy extends PassportStrategy (
+    Strategy, '42'//'fortytwo' 
 ) {
 
   constructor () {
@@ -15,7 +25,8 @@ export class GoogleStrategy extends PassportStrategy (
       clientID : process.env.GOOGLE_CLIENT_ID,
       clientSecret : process.env.GOOGLE_CLIENT_SECRET,
       callbackURL : process.env.GOOGLE_CALLBACK_URL,
-      scope : [ 'profile', 'email' ]
+      // scope : [ 'profile', 'email' ]
+      scope: ['public'], // for 42
     });
   }
 
