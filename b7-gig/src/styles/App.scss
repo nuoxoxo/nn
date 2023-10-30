@@ -6,8 +6,8 @@ $TextSize-025: calc($TextSize-1 / 4);
 $TextSize-02: calc($TextSize-1 / 5);
 
 $WATER-GREEN: #23aeba;
-$CREAM-YELLO: #FFFDD0;
-$CREAM-WHITE: #FAEED5;
+$CREAM-YELLO: #FFFDD7;
+$CREAM-WHITE: #FAEED7;
 $HOT-PINK: #EF7C8E;
 
 $ButtonColor: $CREAM-YELLO;
@@ -175,6 +175,15 @@ body {
   font-family: monospace;
   font-size: 10px;
   align-items: center;
+  margin-bottom: 11px;
+}
+
+.data-field-2212-alt {
+  font-family: monospace;
+  font-size: 6px;
+  align-items: center;
+  color:$CREAM-YELLO;
+  margin-bottom: 11px;
 }
 
 .data-field-2011 {
@@ -191,6 +200,8 @@ body {
 .data-field-2222 {
   font-family: monospace;
   font-size: 9px;
+  color:$CREAM-YELLO;
+  @include animation-rainbow-rotate;
 }
 
 .data-field-2021 {
@@ -218,6 +229,13 @@ body {
 
 .playground-2212 {
   flex-direction: column;
+  color:$CREAM-YELLO;
+  @include animation-rainbow-rotate;
+}
+.playground-2212-alt {
+  flex-direction: column;
+  color:$CREAM-YELLO;
+  @include animation-rainbow-rotate;
 }
 
 .playground-2223 {
@@ -240,8 +258,14 @@ body {
   flex-direction: column;
 }
 
-.res-field-2210-result {
-  font-size: $TextSize-05;
+/*
+.res-field-2212 {
+  justify-content: center;
+  align-items: center;
+}
+*/
+
+.res-field-2210 {
   display: flex;
   flex-direction: column;
 }
@@ -262,6 +286,24 @@ body {
   font-size: $TextSize-05;
   display: flex;
   flex-direction: column;
+}
+
+.res-field-1818 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-field-1813 {
+  font-size: 10px;
+  @include animation-rainbow-rotate;
+}
+
+.data-field-1818 {
+  font-size: 16px;
+  color:$WATER-GREEN;
+  @include animation-rainbow-rotate;
 }
 
 // .data-field-2210 {
@@ -291,6 +333,11 @@ body {
   .data-field-2212 {
     font-size: 7px;
   }
+  .data-field-2212-alt {
+    font-size: 4px;
+    // color:$CREAM-YELLO;
+    color: yellow;
+  }
   .data-field-2011 {
     font-size: 10px;
   }
@@ -299,6 +346,16 @@ body {
   }
   .res-field-2210-result {
     font-size: 17px;
+  }
+  .data-field-1813 {
+    font-size: 8px;
+  }
+  .data-field-1818 {
+    font-size: $TextSize-025;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -354,7 +411,17 @@ body {
     background-color: $ButtonColor;
   }
 
-  .data-field-2212 {font-size: 3px}
+  .data-field-2212 {
+  
+    font-size: 3px
+  }
+  
+  .data-field-2212-alt {
+  
+    font-size: 2px;
+    // font-weight:bolder;
+  }
+  
   .data-field-2011 {font-size: 6px;}
   .res-field-2210-result {
     font-size: 9px;
@@ -378,6 +445,10 @@ body {
     font-size: 1px;
   }
 
+  .playground-2212-alt {
+    font-size: 1px;
+  }
+
   .dad-jokes-field {
     font-size: 5vh;
     margin-top: 77px;
@@ -397,6 +468,10 @@ body {
     font-size: 7px;
   }
 
+  .data-field-1818 {
+    font-size: 5px
+  }
+
   .res-field-1810-image {
     font-size: 6px;
   }
@@ -408,5 +483,9 @@ body {
   .data-field-2003-children {
     padding-left: 1px;
     padding-right: 1px;
+  }
+
+  .data-field-1813 {
+    font-size: 3px;
   }
 }
