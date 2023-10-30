@@ -29,7 +29,7 @@
 | b9      | IPA                     | _what : 1-line api reach-out_ 
 || [*io/ipa*](https://nuoxoxo.github.io/ipa) | _todo : save array to localstorage_ | :green_circle:
 | b8      | Markdown Preview        | _bug : textarea div different height_ 
-|| [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_                   | :red_circle: 
+|| [*io/mdp*](https://nuoxoxo.github.io/mdp) :red_circle: | _to remake_ 
 | b7      | Gig                     | _todo : on doubclick_ 
 || [*io/gig*](https://nuoxoxo.github.io/gig) 
 | b6      | _Bootstrap hw._         | _bug : `.container-fluid`_             | :red_circle:
