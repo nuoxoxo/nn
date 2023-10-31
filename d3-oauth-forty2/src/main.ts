@@ -7,6 +7,6 @@ async function bootstrap() {
   dotenv.config() // load env vars from .env
 
   const app = await NestFactory.create(AppModule);
-  await app.listen(4242);
+  await app.listen(10086);
 }
 bootstrap();
