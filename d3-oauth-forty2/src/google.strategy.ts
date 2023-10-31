@@ -47,6 +47,8 @@ export class FortytwoStrategy extends PassportStrategy (
       accessToken
     }
 
+    console.log( profile['_json']['image']['link'] )
+
     done ( null, user )
 
   }

@@ -36,8 +36,6 @@ export class GoogleStrategy extends PassportStrategy (
       accessToken
     } 
 
-    console.log( profile['_json']['picture'] )
-
     done ( null, user )
   }
 }
