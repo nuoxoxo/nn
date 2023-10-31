@@ -2,7 +2,7 @@ Timestamp
 > 58m:{pipe} ~~52m:{dto}~~ ~~23m~~
 
 
-<//details><summary>gloss</summary>
+<details><summary>gloss</summary>
 &#8301;
 
 Pipes
@@ -21,11 +21,11 @@ Controllers
 Providers
 >  can be injected as a dependency.
 
-<//details>
+</details>
 
 
 
-<//details><summary>carto</summary>
+<details><summary>carto</summary>
 &#8301;
 
 Get prisma-cli and prima client
@@ -84,5 +84,5 @@ ng generate component hello
 ng serve // Go live
 ```
 
-<//details>
+</details>
 
