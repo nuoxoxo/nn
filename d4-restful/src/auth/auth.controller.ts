@@ -2,7 +2,47 @@ import { Body, Controller, ParseIntPipe, Post } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { AuthDto } from "./dto";
 
-@Controller ('auth')
+@Controller ('auth') // see noteS - bottom
+export class AuthController {
+
+  constructor (private authService: AuthService) {}
+  /*
+  Constructor takes an instance of AuthService class as a param/
+  The AuthService class should have been decorated as `Injectable`
+  */
+
+  @Post('signup') // see notes
+  signup (
+    @Body() // see notes
+    dto: AuthDto
+  ) {
+    console.log("from AuthCtrl.signup ::", {dto})
+    return this.authService.signup(dto) // added dto sas param . timestamp : 1:01:50
+  }
+  /*
+  ` @Post('signup') `
+  marks the signup method to handle HTTP POST requests to the '/auth' route.
+  It specifies the '/auth/signup' path for this specific route
+
+  A client (usually a web browser or an app) sends
+  a POST request to a server.
+  */
+  /*
+  ` @Body() `
+  a decorator that instructs NestJS to parse the request body 
+  and bind it to the parameter 'dto' of type 'AuthDto'
+  */
+
+
+  @Post('signin')
+  signin (
+    @Body()
+    dto: AuthDto
+  ) {
+    console.log("from AuthCtrl.signin ::", {dto})
+    return this.authService.signin()
+  }
+}
 /*
 'auth' is the "global prefix route"
 
@@ -12,42 +52,3 @@ with a base route path of 'auth' (a "global prefix route").
 
 It sets the base path for all the routes defined within this controller 
 */
-export class AuthController {
-
-
-  constructor (private authService: AuthService) {}
-  /*
-  Constructor takes an instance of AuthService class as a param/
-  The AuthService class should have been decorated as `Injectable`
-  */
-
-
-  /*
-  ` @Post('signup') `
-  marks the signup method to handle HTTP POST requests to the '/auth' route.
-  It specifies the '/auth/signup' path for this specific route
-  */
-  @Post('signup')
-  signup (
-    @Body()
-    dto: AuthDto
-    /*
-    ` @Body() `
-    a decorator that instructs NestJS to parse the request body 
-    and bind it to the parameter 'dto' of type 'AuthDto'
-    */
-  ) {
-    console.log("from signup ::", {dto})
-    return this.authService.signup()
-  }
-
-
-  @Post('signin')
-  signin (
-    @Body()
-    dto: AuthDto
-  ) {
-    console.log("from signin ::", {dto})
-    return this.authService.signin()
-  }
-}
