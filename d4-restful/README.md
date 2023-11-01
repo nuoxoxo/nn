@@ -1,5 +1,5 @@
 Timestamp 
-> 1h13 - todo : signin logic \
+> 1h14 - todo : signin logic \
 > ~~1h02 - todo : signup logic w/ argon~~ \
 > ~~1h01m30 - whitelist and (dto: AuthDto) as param for signup~~ \
 > ~~58m - pipe~~ \
