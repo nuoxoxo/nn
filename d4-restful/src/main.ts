@@ -2,16 +2,19 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-
   /*
-  app.enableCors({
-    origin: '*', // 'http:// _ .org'
-    methods: 'GET,CREATE,READ,HEAD,UPDATE,PUT,PATCH,POST,DELETE',
-    credentials: true, // (ie. cookies etc.)
-  })
+  Entry point for a NestJS application.
   */
 
-  await app.listen(7777);
+  const app = await NestFactory.create(AppModule);
+
+  await app.listen(10086);
+  /*
+  start listening for incoming HTTP requests on port 10086
+  */
+
+  console.log(AppModule)
+
 }
+
 bootstrap();
