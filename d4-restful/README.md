@@ -1,4 +1,6 @@
-Timestamp 
+<details><summary>timestamp</summary>
+&#8301;
+
 > 1h14 - todo : signin logic \
 > ~~1h02 - todo : signup logic w/ argon~~ \
 > ~~1h01m30 - whitelist and (dto: AuthDto) as param for signup~~ \
@@ -6,6 +8,7 @@ Timestamp
 > ~~52m - dto~~ \
 > ~~23m~~
 
+</details>
 
 <details><summary>gloss</summary>
 &#8301;
@@ -29,19 +32,25 @@ Providers
 </details>
 
 
-
+<!--
 <details><summary>carto</summary>
 &#8301;
+-->
 
-Launch w/o `/migrations` folder
-```c
+### Launch server w/ empty "_./prisma/migrations/_"
+```sh
 $ docker compose up mydatabase -d
+
 $ npx prisma migrate dev
 $ npx prisma studio
+
 $ npm run start:dev
+
+$ curl -X POST -d "mail=_._._&pass=_._._" http://localhost:_._._/auth/signup
+$ curl -X POST -d "mail=_._._&pass=_._._" http://localhost:_._._/auth/signin
 ```
 
-Bugfix : double bug - `prisma db push` . 
+### Bugfix x2
 ```c
 // sync database with current Prisma schema
 $ npx prisma db push
@@ -50,7 +59,7 @@ $ npx prisma db push
 ---> use `process.env._` in /prisma.service.ts
 ```
 
-Get prisma-cli and prima client
+### Get prisma-cli and prima client
 ```c
 npm i prisma
 npm i @prisma/client
@@ -63,7 +72,7 @@ npx prisma migrate dev
 nest g module prisma
 nest g service prisma // --no-spec
 ```
-Get docker running
+### Get docker running
 ```c
 docker ps
 docker -v
@@ -72,14 +81,14 @@ docker compose up mydatabase -d
 	// mydatabase : name defined in yaml
 docker logs $_Container_ID
 ```
-Live
+### Live
 ```c
 nest g module auth
 nest g module user
 npm run start:dev // Go live
 // Use postman once live
 ```
-Nestjs
+### Nestjs
 ```
 npm i -g @nestjs/cli
 nest new restful
@@ -98,7 +107,7 @@ import { Module } from '@nestjs/common';
 export class AppModule {}
 ```
 
-Angular snippet
+### Angular snippet
 ```c
 npm install -g @angular/cli
 ng new hello_world
@@ -106,5 +115,7 @@ ng generate component hello
 ng serve // Go live
 ```
 
+<!--
 </details>
+-->
 
