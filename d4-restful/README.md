@@ -1,5 +1,6 @@
 Timestamp 
-> 1h01m30 - whitelist and (dto: AuthDto) as param for signup \
+> 1h02 - todo : argon
+> ~~1h01m30 - whitelist and (dto: AuthDto) as param for signup~~ \
 > ~~58m - pipe~~ \
 > ~~52m - dto~~ \
 > ~~23m~~
