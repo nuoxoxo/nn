@@ -1,6 +1,8 @@
 Timestamp 
-> 1h01m30:{todo auth.ctrl after whitelist} \
-> ~~58m:{pipe}~~ ~~52m:{dto}~~ ~~23m~~
+> 1h01m30 - whitelist and (dto: AuthDto) as param for signup \
+> ~~58m - pipe~~ \
+> ~~52m - dto~~ \
+> ~~23m~~
 
 
 <details><summary>gloss</summary>
