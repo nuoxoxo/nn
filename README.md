@@ -1,10 +1,10 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
 | d4      | Restful                 | _what : cont. from d4_ 
-| d3      | 42 OAuth                | `@nestjs/passport dotenv passport passport-42` | 🟢 
+| d3      | 42 OAuth                | `@nestjs/passport dotenv passport passport-42` | on browser
 | d2      | Google OAuth            | _what : oauth tryout_ 
-||| `@nestjs/passport dotenv passport passport-google-oauth20` | 🟢 
-| d1      | Rest                    | _what : nestjs tryout_ 
+||| `@nestjs/passport dotenv passport passport-google-oauth20` | on browser 
+| d1      | Rest                    | _what : nestjs tryout_  | postman/insomnia
 ||| _stat : suspended_ | :red_circle: 
 | dO      | Pong Sandbox            | _done : paddle segments mapped to rad_ 
 ||
