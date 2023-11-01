@@ -12,7 +12,6 @@ export class AuthService {
     // async : because Prisma is called asynchronously
     console.log("from AuthService.signup ::", {dto})
 
-    //  stamp : 1:03 - first time signup logic 
     //  generate hash of the password
     const hash: string = await argon.hash( dto.pass )
 
@@ -23,9 +22,9 @@ export class AuthService {
         hash,
       },
     })
+
     //  return saved user
-    return user
-    // return { message: "@signup service: Hello" }
+    return { user, message: "@signup service: Hello" }
   }
 
   signin (){
