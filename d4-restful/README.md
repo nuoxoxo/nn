@@ -38,11 +38,14 @@ Providers
 -->
 
 Launch server w/ empty `prisma/migrations`
-```c
+```sh
 $ docker compose up mydatabase -d
+
 $ npx prisma migrate dev
 $ npx prisma studio
+
 $ npm run start:dev
+
 $ curl -X POST -d "mail=_._._&pass=_._._" http://localhost:_._._/auth/signup
 $ curl -X POST -d "mail=_._._&pass=_._._" http://localhost:_._._/auth/signin
 ```
