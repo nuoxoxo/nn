@@ -26,10 +26,13 @@ export class AuthController {
   ` @Post('signup') `
   marks the signup method to handle HTTP POST requests to the '/auth' route.
   It specifies the '/auth/signup' path for this specific route
+
+  A client (usually a web browser or an app) sends
+  a POST request to a server.
   */
   @Post('signup')
   signup (
-    @Body()
+    @Body() 
     dto: AuthDto
     /*
     ` @Body() `
@@ -37,17 +40,17 @@ export class AuthController {
     and bind it to the parameter 'dto' of type 'AuthDto'
     */
   ) {
-    console.log("from signup ::", {dto})
-    return this.authService.signup()
+    console.log("from AuthCtrl.signup ::", {dto})
+    return this.authService.signup(dto) // added dto sas param . timestamp : 1:01:50
   }
 
 
   @Post('signin')
   signin (
-    @Body()
-    dto: AuthDto
+    // @Body()
+    // dto: AuthDto
   ) {
-    console.log("from signin ::", {dto})
+    console.log("from AuthCtrl.signin ::", {})
     return this.authService.signin()
   }
 }
