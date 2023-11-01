@@ -8,7 +8,14 @@ import { AuthService } from "./auth.service";
 
   // imports: [PrismaModule], // no import once @Global in prisma.mod 
   controllers: [AuthController],
+  /*
+  Controllers handle incoming HTTP requests and define the route handlers
+  */
+
   providers: [AuthService],
+  /*
+  Providers handle business logic, services, and data access
+  */
 
 })
 
