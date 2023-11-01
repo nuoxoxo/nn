@@ -36,7 +36,7 @@ export class AuthService {
         // error code P2002 represents `unique validation failure` (prisma)
           throw new ForbiddenException(
             'Credential taken', 
-            'Lol' // 2nd arg is "error": "Forbidden" by default
+            'Lol double dealer here' // 2nd arg is "error": "Forbidden" by default
           )
           // ForbiddenException - NestJS built-in exception for 403
       }
@@ -44,16 +44,37 @@ export class AuthService {
     }
   }
 
-  signin (){
+  async signin (dto: AuthDto) {
 
     // find user by mail, bc. mail is unique 
-    //  throw excp on !exist
+    const user = await this.prisma.user.findUnique({
+      where: {
+        mail: dto.mail,
+      },
+    })
+
+    // throw excp if mail !exist
+    if ( ! user) {
+      throw new ForbiddenException(
+        'Credential not found',
+        'Orz no user found' // 2nd arg is "error": "Forbidden" by default
+      )
+    }
 
     // eval the pass
-    //  throw excp on incorrect pass
+    const pwdMatch = await argon.verify(user.hash, dto.pass)
 
-    // return user 
+    // throw excp on incorrect pass
+    if ( ! pwdMatch) {
+      throw new ForbiddenException(
+        'Credential incorrect',
+        'Omg you got that wrong' // 2nd arg is "error": "Forbidden" by default
+      )
+    }
 
-    return { message: "@signin service: Hello" }
+    // send back the user 
+    delete user.hash
+
+    return { user, message: "@signin service: Hello" }
   }
 }
