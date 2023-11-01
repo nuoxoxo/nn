@@ -8,7 +8,7 @@
 ||| _run : start dev + browser_     | 🟢 
 | d1      | Rest                    | _what : nestjs tryout_ 
 ||| _stat : suspended_              | 🔴  
-||| _load : use postman / insomnia_  | 🟢 
+||| _run : use postman / insomnia_  | 🟢 
 | dO      | Pong Sandbox            | _done : paddle segments mapped to rad_ 
 ||
 | c9      | Angular hello           | _what : hello world in angular_
