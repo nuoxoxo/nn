@@ -9,7 +9,14 @@ async function bootstrap() {
 
   const app = await NestFactory.create(AppModule);
 
-  app.useGlobalPipes( new ValidationPipe () )
+  app.useGlobalPipes(
+    new ValidationPipe ({
+      whitelist: true
+      /*
+      whitelist will filter properties that do not have any decorators
+      */
+    })
+  )
 
   await app.listen(10086);
   /*
