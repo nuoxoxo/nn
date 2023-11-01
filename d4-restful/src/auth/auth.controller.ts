@@ -36,10 +36,10 @@ export class AuthController {
 
   @Post('signin')
   signin (
-    // @Body()
-    // dto: AuthDto
+    @Body()
+    dto: AuthDto
   ) {
-    console.log("from AuthCtrl.signin ::", {})
+    console.log("from AuthCtrl.signin ::", {dto})
     return this.authService.signin()
   }
 }

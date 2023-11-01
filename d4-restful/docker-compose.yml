@@ -5,13 +5,14 @@ services:
       - .env
     image: postgres:13
     ports:
-      - ${DB_PORT}:5432
+      - "5432:5432"
+      # - ${DB_PORT}:5432
       # 5432 seems default
     environment:
       POSTGRES_USER: ${DB_USERNAME}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
     networks:
-      - rest
+      - restful
 networks:
-  rest:
+  restful:
