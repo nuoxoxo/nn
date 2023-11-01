@@ -12,10 +12,10 @@ export class AuthDto {
 
   @IsEmail()
   @IsNotEmpty()
-  /*
-  nothing happens unless `app.useGlobalPipes` is added in main.ts
-  */
   mail: string;
+  /*
+  Both pipes will NOT run unless `app.useGlobalPipes` is set in main.ts
+  */
 
   @IsString()
   @IsNotEmpty()
