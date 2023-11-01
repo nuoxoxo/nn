@@ -1,4 +1,6 @@
-Timestamp 
+<details><summary>timestamp</summary>
+&#8301;
+
 > 1h14 - todo : signin logic \
 > ~~1h02 - todo : signup logic w/ argon~~ \
 > ~~1h01m30 - whitelist and (dto: AuthDto) as param for signup~~ \
@@ -6,6 +8,7 @@ Timestamp
 > ~~52m - dto~~ \
 > ~~23m~~
 
+</details>
 
 <details><summary>gloss</summary>
 &#8301;
@@ -29,16 +32,19 @@ Providers
 </details>
 
 
-
+<!--
 <details><summary>carto</summary>
 &#8301;
+-->
 
-Launch w/o `/migrations` folder
+Launch server w/ empty `prisma/migrations`
 ```c
 $ docker compose up mydatabase -d
 $ npx prisma migrate dev
 $ npx prisma studio
 $ npm run start:dev
+$ curl -X POST -d "mail=_._._&pass=_._._" http://localhost:_._._/auth/signup
+$ curl -X POST -d "mail=_._._&pass=_._._" http://localhost:_._._/auth/signin
 ```
 
 Bugfix : double bug - `prisma db push` . 
@@ -106,5 +112,7 @@ ng generate component hello
 ng serve // Go live
 ```
 
+<!--
 </details>
+-->
 
