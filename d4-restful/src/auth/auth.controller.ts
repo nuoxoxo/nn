@@ -40,7 +40,7 @@ export class AuthController {
     dto: AuthDto
   ) {
     console.log("from AuthCtrl.signin ::", {dto})
-    return this.authService.signin()
+    return this.authService.signin(dto)
   }
 }
 /*
