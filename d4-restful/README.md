@@ -32,6 +32,15 @@ Providers
 <details><summary>carto</summary>
 &#8301;
 
+Bugfix : double bug - `prisma db push` . 
+```c
+// sync database with current Prisma schema
+$ npx prisma db push
+
+// fix .env varibles reading
+---> use `process.env._` in /prisma.service.ts
+```
+
 Get prisma-cli and prima client
 ```c
 npm i prisma
