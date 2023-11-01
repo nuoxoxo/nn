@@ -33,6 +33,14 @@ Providers
 <details><summary>carto</summary>
 &#8301;
 
+Launch w/o `/migrations` folder
+```c
+$ docker compose up mydatabase -d
+$ npx prisma migrate dev
+$ npx prisma studio
+$ npm run start:dev
+```
+
 Bugfix : double bug - `prisma db push` . 
 ```c
 // sync database with current Prisma schema
