@@ -45,6 +45,15 @@ export class AuthService {
   }
 
   signin (){
+
+    // find user by mail, bc. mail is unique 
+    //  throw excp on !exist
+
+    // eval the pass
+    //  throw excp on incorrect pass
+
+    // return user 
+
     return { message: "@signin service: Hello" }
   }
 }
