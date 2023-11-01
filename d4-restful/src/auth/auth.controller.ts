@@ -37,7 +37,7 @@ export class AuthController {
     and bind it to the parameter 'dto' of type 'AuthDto'
     */
   ) {
-    console.log("from signup ::", dto)
+    console.log("from signup ::", {dto})
     return this.authService.signup()
   }
 
@@ -47,7 +47,7 @@ export class AuthController {
     @Body()
     dto: AuthDto
   ) {
-    console.log("from signin ::", dto)
+    console.log("from signin ::", {dto})
     return this.authService.signin()
   }
 }
