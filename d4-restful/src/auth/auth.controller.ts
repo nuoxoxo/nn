@@ -2,18 +2,8 @@ import { Body, Controller, ParseIntPipe, Post } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { AuthDto } from "./dto";
 
-@Controller ('auth')
-/*
-'auth' is the "global prefix route"
-
-` @Controller ('auth') `
-marks the AuthController class as a controller 
-with a base route path of 'auth' (a "global prefix route").
-
-It sets the base path for all the routes defined within this controller 
-*/
+@Controller ('auth') // see noteS - bottom
 export class AuthController {
-
 
   constructor (private authService: AuthService) {}
   /*
@@ -21,7 +11,14 @@ export class AuthController {
   The AuthService class should have been decorated as `Injectable`
   */
 
-
+  @Post('signup') // see notes
+  signup (
+    @Body() // see notes
+    dto: AuthDto
+  ) {
+    console.log("from AuthCtrl.signup ::", {dto})
+    return this.authService.signup(dto) // added dto sas param . timestamp : 1:01:50
+  }
   /*
   ` @Post('signup') `
   marks the signup method to handle HTTP POST requests to the '/auth' route.
@@ -30,19 +27,11 @@ export class AuthController {
   A client (usually a web browser or an app) sends
   a POST request to a server.
   */
-  @Post('signup')
-  signup (
-    @Body() 
-    dto: AuthDto
-    /*
-    ` @Body() `
-    a decorator that instructs NestJS to parse the request body 
-    and bind it to the parameter 'dto' of type 'AuthDto'
-    */
-  ) {
-    console.log("from AuthCtrl.signup ::", {dto})
-    return this.authService.signup(dto) // added dto sas param . timestamp : 1:01:50
-  }
+  /*
+  ` @Body() `
+  a decorator that instructs NestJS to parse the request body 
+  and bind it to the parameter 'dto' of type 'AuthDto'
+  */
 
 
   @Post('signin')
@@ -54,3 +43,12 @@ export class AuthController {
     return this.authService.signin()
   }
 }
+/*
+'auth' is the "global prefix route"
+
+` @Controller ('auth') `
+marks the AuthController class as a controller 
+with a base route path of 'auth' (a "global prefix route").
+
+It sets the base path for all the routes defined within this controller 
+*/
