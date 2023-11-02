@@ -1,6 +1,6 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
-| d5      | Jwt                     | _what : cont. from d4 . todo : Jwt_ 
+| d6      | Jwt                     | _what : cont. from d4 . todo : Jwt_ 
 | d4      | Restful                 | _what : cont. from d1_ 
 ||| _stat : suspended_  
 | d3      | 42 OAuth                | `@nestjs/passport dotenv passport passport-42` 
