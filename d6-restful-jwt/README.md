@@ -1,10 +1,10 @@
 # Run
 
-__Start server__
+__Server__
 ```
 $ npm run go
 ```
-__Try it out__
+__Tryout__
 ```
 $ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signin
 $ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signup
