@@ -9,7 +9,7 @@
     "db:dev:rm": "docker compose rm mydatabase -sfv",
     "db:dev:up": "docker compose up mydatabase -d",
     "db:dev:restart": "npm run db:dev:rm && npm run db:dev:up && sleep 2 && npx prisma migrate deploy",
-    "db:dev:run": "npm i && npm run db:dev:rm && npm run db:dev:up && sleep 1 && npx prisma generate && npx prisma migrate deploy && npx prisma db push && npm run start:dev",
+    "go": "npm i && npm run db:dev:rm && npm run db:dev:up && sleep 1 && npx prisma generate && npx prisma migrate deploy && npx prisma db push && npm run start:dev",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",

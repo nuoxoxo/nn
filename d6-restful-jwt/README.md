@@ -1,14 +1,3 @@
-# Run
-```
-- server - 
-$ npm run go
-
-- curl -
-$ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signin
-$ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signup
-```
-
-# Notes
 <details><summary>timestamp</summary>
 &#8301;
 
