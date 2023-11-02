@@ -4,7 +4,8 @@
 $ npm run go
 
 - curl -
-$ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/sign{in/up} 
+$ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signin
+$ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signup
 ```
 
 # Notes
