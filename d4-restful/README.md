@@ -1,7 +1,20 @@
+# Run
+
+__Server__
+```
+$ npm run go
+```
+__Try it out__
+```
+$ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signin
+$ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signup
+```
+
+# Notes
 <details><summary>timestamp</summary>
 &#8301;
 
-> 1h24 - todo : jwt \
+> 1h24 - todo : _user only needs to log in once in a while_ \
 > ~~1h14 - todo : signin logic~~ \
 > ~~1h02 - todo : signup logic w/ argon~~ \
 > ~~1h01m30 - whitelist and (dto: AuthDto) as param for signup~~ \
