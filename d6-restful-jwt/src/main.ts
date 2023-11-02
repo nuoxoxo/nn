@@ -24,6 +24,7 @@ async function bootstrap() {
 
   /*
   listening on env-defined port for incoming HTTP requests 
+  2 ways to use environment variables
   */
 
   // use dotenv - way 1/2
@@ -31,6 +32,16 @@ async function bootstrap() {
 
   // use nestjs/config - way 2/2
   // await app.listen(app.get(ConfigService).get('LISTEN_PORT'))
+
+  // dotenv & nestjs/confi - print em out
+  console.log('process.env   -',
+    process.env.LISTEN_PORT,
+    typeof process.env.LISTEN_PORT
+  )
+  console.log('nestjs/config -', 
+    app.get(ConfigService).get('LISTEN_PORT'),
+    typeof app.get(ConfigService).get('LISTEN_PORT')
+  )
 
   console.log(AppModule, typeof AppModule)
 

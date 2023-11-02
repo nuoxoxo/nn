@@ -9,10 +9,10 @@ export class PrismaService extends PrismaClient {
     super ({
       datasources: {
         db: {
-          // use nestjs/config
+          // use nestjs/config - way 1/2
           url: config.get('DATABASE_URL')
 
-          // use dotenv
+          // use dotenv - way 2/2
           // url: process.env.DATABASE_URL
 
         },
