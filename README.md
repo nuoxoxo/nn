@@ -1,7 +1,7 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
 | d6      | `empty`                 | _idle_ 
-| d5      | `empty`                 | _idle_ 
+| d5      | `empty`                 | _idle . what : could as well be badcamp_ 
 | d4      | Restful                 | _what : cont. from d1_ 
 ||| _curr : use dotenv or nestjs/config . todo - passport_  
 | d3      | 42 OAuth                | `@nestjs/passport passport passport-42` 
