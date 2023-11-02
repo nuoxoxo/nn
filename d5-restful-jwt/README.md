@@ -1,3 +1,6 @@
+# Run
+`$ npm run db:dev:go`
+
 <details><summary>timestamp</summary>
 &#8301;
 
