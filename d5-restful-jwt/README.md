@@ -1,6 +1,7 @@
 # Run
 `$ npm run db:dev:go`
 
+# Notes
 <details><summary>timestamp</summary>
 &#8301;
 
