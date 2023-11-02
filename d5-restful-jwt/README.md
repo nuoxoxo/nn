@@ -1,5 +1,7 @@
 # Run
-`$ npm run db:dev:go`
+```
+$ npm run db:dev:go
+```
 
 # Notes
 <details><summary>timestamp</summary>
