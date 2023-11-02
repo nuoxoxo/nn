@@ -1,6 +1,6 @@
 # Run
 ```
-$ npm run db:dev:go
+$ npm run go
 ```
 
 # Notes
