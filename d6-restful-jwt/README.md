@@ -1,9 +1,11 @@
 # Run
-```
-- server - 
-$ npm run go
 
-- curl -
+__server__
+```
+$ npm run go
+```
+__curl__
+```
 $ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signin
 $ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signup
 ```
