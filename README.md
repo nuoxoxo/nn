@@ -2,14 +2,14 @@
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
 | d5      | Jwt                     | _what : cont. from d4 . todo : Jwt_ 
 | d4      | Restful                 | _what : cont. from d1_ 
-||| _stat : suspended_              | 🟡   
+||| _stat : suspended_  
 | d3      | 42 OAuth                | `@nestjs/passport dotenv passport passport-42` 
 ||| _load : start dev + browser_    | 🟢 
 | d2      | Google OAuth            | _what : oauth tryout_ 
 ||| `@nestjs/passport dotenv passport passport-google-oauth20`
 ||| _run : start dev + browser_     | 🟢 
 | d1      | Rest                    | _what : nestjs tryout_ 
-||| _stat : suspended_              | 🟡   
+||| _stat : suspended_              | 
 ||| _run : use postman / insomnia_  | 🟢 
 | dO      | Pong Sandbox            | _done : paddle segments mapped to rad_ 
 ||
