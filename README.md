@@ -1,13 +1,13 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
-| d6      | Jwt                     | _what : cont. from d4 . todo : Jwt_ 
+| d6      | `empty`                 | _idle_ 
 | d5      | `empty`                 | _idle_ 
 | d4      | Restful                 | _what : cont. from d1_ 
-||| _stat : suspended_  
-| d3      | 42 OAuth                | `@nestjs/passport dotenv passport passport-42` 
+||| _curr : use dotenv or nestjs/config . todo - passport_  
+| d3      | 42 OAuth                | `@nestjs/passport passport passport-42` 
 ||| _load : start dev + browser_    | 🟢 
 | d2      | Google OAuth            | _what : oauth tryout_ 
-||| `@nestjs/passport dotenv passport passport-google-oauth20`
+||| `@nestjs/passport passport passport-google-oauth20`
 ||| _run : start dev + browser_     | 🟢 
 | d1      | Rest                    | _what : nestjs tryout_ 
 ||| _stat : suspended_              | 
