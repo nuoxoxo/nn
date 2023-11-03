@@ -14,7 +14,7 @@ $ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/
 <details><summary>timestamp</summary>
 &#8301;
 
-> 1h49 - todo : intercept the token
+> [1h49](https://www.youtube.com/watch?v=GHTA143_b-s&t=6540s) - todo : intercept the token / Bearer strategy \
 > 1h42 - jwt in auth.module & auth.service \
 > 1h39 - todo : jwt installed \
 > 1h24 - install passport . jwt \
