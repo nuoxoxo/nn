@@ -42,6 +42,9 @@ async function bootstrap() {
     app.get(ConfigService).get('LISTEN_PORT'),
     typeof app.get(ConfigService).get('LISTEN_PORT')
   )
+  console.log('JWT_SECRET    -',
+    process.env.JWT_SECRET
+  )
 
   console.log(AppModule, typeof AppModule)
 
