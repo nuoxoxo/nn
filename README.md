@@ -2,6 +2,7 @@
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
 | d6      |                         | _idle_
 | d5      | `empty`                 | _todo : could as well be badcamp_ 
+||| _help : [bandcamp](https://get.bandcamp.help/hc/en-us/articles/360013561254-How-do-I-create-a-Bandcamp-embedded-player)_
 | d4      | Restful                 | _what : cont. from d1_ 
 ||| _curr : use dotenv or nestjs/config . todo - passport_  
 | d3      | 42 OAuth                | `@nestjs/passport passport passport-42` 
