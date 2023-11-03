@@ -14,10 +14,10 @@ $ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/
 <details><summary>timestamp</summary>
 &#8301;
 
-> [1h49](https://www.youtube.com/watch?v=GHTA143_b-s&t=6540s) - todo : intercept the token / Bearer strategy \
-> 1h42 - jwt in auth.module & auth.service \
-> 1h39 - todo : jwt installed \
-> 1h24 - install passport . jwt \
+> [1h49](https://youtu.be/GHTA143_b-s&t=6540) - todo : intercept the token / Bearer strategy \
+> [1h42](https://youtu.be/GHTA143_b-s&t=6125) - jwt in auth.module & auth.service \
+> [1h39](https://youtu.be/GHTA143_b-s&t=5940) - todo : jwt installed \
+> [1h24](https://youtu.be/GHTA143_b-s?t=5040) - install passport . jwt \
 > 1h14 - todo : signin logic \
 > 1h02 - todo : signup logic w/ argon \
 > 1h01m30 - whitelist and (dto: AuthDto) as param for signup \
