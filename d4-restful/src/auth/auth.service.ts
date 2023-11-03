@@ -4,6 +4,8 @@ import { AuthDto } from "./dto";
 import * as argon from 'argon2'
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import { JwtService } from "@nestjs/jwt";
+// import { ConfigService } from "@nestjs/config";
+import * as dotenv from 'dotenv'
 
 @Injectable (/*{}*/)
 export class AuthService {
@@ -11,11 +13,19 @@ export class AuthService {
   constructor (
     private prisma : PrismaService,
     private jwt : JwtService,
-  ) {}
+    // private config: ConfigService
+  ) {
+    dotenv.config()
+  }
+
+
+  //////////////////////////////////////////
+  //               signup                 //
+  //////////////////////////////////////////
 
   async signup (dto: AuthDto) {
     // async : because Prisma is called asynchronously
-    console.log("from AuthService.signup ::", {dto})
+    console.log("AuthService.signup ::", {dto})
 
     //  generate hash of the password
     const hash: string = await argon.hash( dto.pass )
@@ -31,8 +41,19 @@ export class AuthService {
 
       delete  user.hash
 
+
       //  return saved user
-      return { user, message: "@signup service: Hello" }
+
+      //  way 1
+      return this.signtoken(user.id, user.mail)
+
+      //  way 2 - print more stuff
+      // const token: string = await this.signtoken(user.id, user.mail)
+      // return {
+      //   user,
+      //   message: "@signup service: Hello",
+      //   access_token: token,
+      // }
     } catch ( err ) {
 
       if (err instanceof PrismaClientKnownRequestError) {
@@ -48,7 +69,13 @@ export class AuthService {
     }
   }
 
+  //////////////////////////////////////////
+  //               signin                 //
+  //////////////////////////////////////////
+
   async signin (dto: AuthDto) {
+
+    console.log("AuthService.signin ::", {dto})
 
     // find user by mail, bc. mail is unique 
     const user = await this.prisma.user.findUnique({
@@ -79,6 +106,38 @@ export class AuthService {
     // send back the user 
     delete user.hash
 
-    return { user, message: "@signin service: Hello" }
+    //  way 1
+    return this.signtoken(user.id, user.mail)
+
+    //  way 2 - print more interesting stuff
+    // return {
+    //   user,
+    //   message: "@signin service: Hello",
+    //   access_token: token,
+    // }
   }
+
+  //////////////////////////////////////////
+  //              signtoken               //
+  //////////////////////////////////////////
+
+  async signtoken (
+    uid: number,
+    mail: string
+  ) : Promise<{access_token: string}> {
+    const payload = {
+      sub: uid,
+      mail
+    }
+
+    const token = await this.jwt.signAsync(payload,{
+      expiresIn: '5m',
+      secret: process.env.JWT_SECRET,
+      // secret: this.config.get('JWT_SECRET')
+    })
+
+    return { access_token: token }
+
+  }
+
 }

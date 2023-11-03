@@ -11,3 +11,5 @@ POSTGRES_DB=
 # See the documentation for all the connection string options: https://pris.ly/d/connection-strings
 
 DATABASE_URL="postgresql://${DB_USERNAME}:${DB_PASSWORD}@localhost:${DB_PORT}/${POSTGRES_DB}?schema=public"
+
+JWT_SECRET=
