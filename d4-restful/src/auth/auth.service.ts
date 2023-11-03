@@ -44,16 +44,19 @@ export class AuthService {
 
       //  return saved user
 
-      //  way 1
-      return this.signtoken(user.id, user.mail)
+      const token_data: Promise<{access_token: string}> = this.signtoken(user.id, user.mail);
 
-      //  way 2 - print more stuff
-      // const token: string = await this.signtoken(user.id, user.mail)
-      // return {
-      //   user,
-      //   message: "@signup service: Hello",
-      //   access_token: token,
-      // }
+      //  way 1
+      // return (await token_data).access_token
+
+      console.log(`AuthService.signin ::\n- token -\n${(await token_data).access_token}`)
+
+      //  way 2 - print more interesting stuff
+      return {
+        user,
+        message: "@signin service: signed up",
+        access_token: (await token_data).access_token
+      }
     } catch ( err ) {
 
       if (err instanceof PrismaClientKnownRequestError) {
@@ -106,15 +109,19 @@ export class AuthService {
     // send back the user 
     delete user.hash
 
+    const token_data: Promise<{access_token: string}> = this.signtoken(user.id, user.mail);
+
     //  way 1
-    return this.signtoken(user.id, user.mail)
+    // return (await token_data).access_token
+
+    console.log(`AuthService.signin ::\n- token -\n${(await token_data).access_token}`)
 
     //  way 2 - print more interesting stuff
-    // return {
-    //   user,
-    //   message: "@signin service: Hello",
-    //   access_token: token,
-    // }
+    return {
+      user,
+      message: "@signin service: signed in",
+      access_token: (await token_data).access_token
+    }
   }
 
   //////////////////////////////////////////
