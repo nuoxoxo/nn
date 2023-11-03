@@ -14,16 +14,13 @@ $ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/
 <details><summary>timestamp</summary>
 &#8301;
 
-> 1h49 - todo : intercept the token
-> 1h42 - jwt in auth.module & auth.service \
-> 1h39 - todo : jwt installed \
-> 1h24 - install passport . jwt \
-> 1h14 - todo : signin logic \
-> 1h02 - todo : signup logic w/ argon \
-> 1h01m30 - whitelist and (dto: AuthDto) as param for signup \
-> 58m - pipe \
-> 52m - dto \
-> 23m~~
+> 1h24 - todo : _user only needs to log in once in a while_ \
+> ~~1h14 - todo : signin logic~~ \
+> ~~1h02 - todo : signup logic w/ argon~~ \
+> ~~1h01m30 - whitelist and (dto: AuthDto) as param for signup~~ \
+> ~~58m - pipe~~ \
+> ~~52m - dto~~ \
+> ~~23m~~
 
 </details>
 

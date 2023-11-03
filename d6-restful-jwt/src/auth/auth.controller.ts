@@ -16,7 +16,7 @@ export class AuthController {
     @Body() // see notes
     dto: AuthDto
   ) {
-    console.log("AuthCtrl.signup ::", {dto})
+    console.log("from AuthCtrl.signup ::", {dto})
     return this.authService.signup(dto) // added dto sas param . timestamp : 1:01:50
   }
   /*
@@ -39,7 +39,7 @@ export class AuthController {
     @Body()
     dto: AuthDto
   ) {
-    console.log("AuthCtrl.signin ::", {dto})
+    console.log("from AuthCtrl.signin ::", {dto})
     return this.authService.signin(dto)
   }
 }
