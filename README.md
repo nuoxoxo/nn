@@ -3,10 +3,10 @@
 - d4 - write how to run
 - d5 - todo docker . prisma
 
-| Job     | Desc.                   | Status                                 | Run            |
+| Ref.    | Job                     | Desc.                                  | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
 | d6      |                         | _idle_
-| d5      | Jwt                     | _jwts singalong_                | :green_circle:
+| d5      | Jwt                     | _jwts singalong_                       | :green_circle:
 ||| _todo : prisma . docker_ 
 ||| _init : listen 10086_  
 | d4      | Restful                 | _what : cont. from d1_                 | :yellow_circle: 
