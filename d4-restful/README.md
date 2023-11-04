@@ -2,6 +2,8 @@
 
 __Server__
 ```
+$ (from insmn.) GET /users/{i|me|mine|myself}
+$ (from insmn.) POST /auth/sign{in|up}
 $ npm run go
 ```
 __Try it out__
