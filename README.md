@@ -43,7 +43,7 @@
 ||
 | b9      | IPA                     | _1-line api reach-out_ 
 || [*io/ipa*](https://nuoxoxo.github.io/ipa) | _todo : save array to localstorage_ | :green_circle:
-| b8      | ~~&nbsp;Markdown Preview&nbsp;~~ | _bug : textarea div different height_  | :red_circle: 
+| b8      | ~~&nbsp;MD Preview&nbsp;~~ | _bug : textarea div different height_ | :red_circle: 
 || [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_ 
 | b7      | Gig                     | _todo : on doubclick_ 
 || [*io/gig*](https://nuoxoxo.github.io/gig) 
