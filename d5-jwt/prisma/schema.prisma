@@ -18,4 +18,6 @@ model User {
   mail      String
   hash      String
   hashedRT  String? // refresh token hashed
+
+  @@map("users")
 }
