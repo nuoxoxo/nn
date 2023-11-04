@@ -20,4 +20,9 @@ export class UserController {
     return 'i me mine'
   }
 
+  // GET /users/mine
+  @Get('mine')
+  get_mine () {
+    return 'i am mine'
+  }
 }
