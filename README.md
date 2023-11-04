@@ -7,7 +7,7 @@
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
 | d6      |                         | _idle_
 | d5      | Jwt                     | _jwts singalong_                | :green_circle:
-||| _todo : todo prisma . docker_ 
+||| _todo : prisma . docker_ 
 ||| _init : listen 10086_  
 | d4      | Restful                 | _what : cont. from d1_                 | :yellow_circle: 
 ||| _curr : use dotenv or nestjs/config . todo - passport_  
