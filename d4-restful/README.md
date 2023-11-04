@@ -54,7 +54,17 @@ Providers
 &#8301;
 -->
 
+### Setting up Jwt Strat
+```sh
+$ nest g controller user --no-spec
+```
+
 ### Launch server w/ empty "_./prisma/migrations/_"
+_Updated way_
+```sh
+$ npm run go
+```
+OR
 ```sh
 $ docker compose up mydatabase -d
 
