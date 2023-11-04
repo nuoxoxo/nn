@@ -37,14 +37,14 @@
 | c3      | Dmd                     | _Guessing weekday_ 
 |         |                         | _1st : input by typing_ 
 || [*io/dmd*](https://nuoxoxo.github.io/dmd)| _2nd : btns . nightmode . memo_| :green_circle: 
-| c2      | Cronway                 | _conway on react_                      | :red_circle:
+| c2      | ~~&nbsp;Cronway&nbsp;~~ | _conway on react_                      | :red_circle:
 | c1      | _API hw._               | _api reach-out_                        | :green_circle:
-| cO      | Dictée                  | _todo : dithering_                     | :red_circle:
+| cO      | ~~&nbsp;Dictée&nbsp;~~  | _todo : dithering_                     | :red_circle:
 ||
 | b9      | IPA                     | _1-line api reach-out_ 
 || [*io/ipa*](https://nuoxoxo.github.io/ipa) | _todo : save array to localstorage_ | :green_circle:
-| b8      | Markdown Preview        | _bug : textarea div different height_ 
-|| [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_                   | :red_circle: 
+| b8      | ~~&nbsp;Markdown Preview&nbsp;~~ | _bug : textarea div different height_  | :red_circle: 
+|| [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_ 
 | b7      | Gig                     | _todo : on doubclick_ 
 || [*io/gig*](https://nuoxoxo.github.io/gig) 
 | b6      | _Bootstrap hw._         | _bug : `.container-fluid`_             | :red_circle:
