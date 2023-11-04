@@ -16,8 +16,9 @@ $ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/
 <details><summary>timestamp</summary>
 &#8301;
 
-> [1h57](https://youtu.be/GHTA143_b-s&t=7020) - GET /users/mine
-> [1h55](https://youtu.be/GHTA143_b-s&t=6900) - generated ('users') controller . setting up endpoint GET \
+> [2h01](https://youtu.be/GHTA143_b-s&t=7260) - todo : setup Bearer \
+> [1h57](https://youtu.be/GHTA143_b-s&t=7020) - protect endpoint w. guard \
+> [1h55](https://youtu.be/GHTA143_b-s&t=6900) - generated ('users') controller . GET /users/myself \
 > [1h49](https://youtu.be/GHTA143_b-s&t=6540) - todo : intercept the token / Bearer strategy \
 > [1h42](https://youtu.be/GHTA143_b-s&t=6125) - jwt in auth.module & auth.service \
 > [1h39](https://youtu.be/GHTA143_b-s&t=5940) - todo : jwt installed \
