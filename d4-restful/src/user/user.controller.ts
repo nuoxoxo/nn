@@ -17,7 +17,7 @@ export class UserController {
   // GET /users/myself
   @Get('myself')
   get_myself () {
-    return 'hello, self'
+    return 'i me mine'
   }
 
 }
