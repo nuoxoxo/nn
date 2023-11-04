@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  mydatabase:
+    env_file:
+      - .env
+    image: postgres:13
+    ports:
+      - ${DB_PORT}:5432
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
