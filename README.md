@@ -12,7 +12,7 @@
 | d4      | Restful                 | _what : cont. from d1_                 | :yellow_circle: 
 ||| _curr : use dotenv or nestjs/config . todo - passport_  
 | d3      | 42 OAuth                | `@nestjs/passport passport passport-42` 
-||| _load : start dev + browser_    | 🟢 
+||| _run : start dev + browser_    | 🟢 
 | d2      | Google OAuth            | _oauth tryout_ 
 ||| `@nestjs/passport passport passport-google-oauth20`
 ||| _run : start dev + browser_     | 🟢 
