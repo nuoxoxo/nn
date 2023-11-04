@@ -1,6 +1,6 @@
 Partial history
 ```c
-:28 - Auth module
+:28 - Auth module - todo : @Body() dto: AuthDto in auth.ctrl
 
 $ nest g controller auth --no-spec
 $ nest g service auth --no-spec
