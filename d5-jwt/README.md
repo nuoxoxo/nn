@@ -1,6 +1,6 @@
 Partial history
 ```c
-
+$ nest g module auth 
 
 -- end config database --
 $ npx prisma db push
