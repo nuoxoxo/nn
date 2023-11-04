@@ -1,6 +1,6 @@
 Partial history
 ```c
-:23 - Auth mod
+:28 - Auth module
 
 $ nest g controller auth --no-spec
 $ nest g service auth --no-spec
