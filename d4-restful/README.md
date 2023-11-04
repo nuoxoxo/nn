@@ -16,6 +16,7 @@ $ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/
 <details><summary>timestamp</summary>
 &#8301;
 
+> [2h01](https://youtu.be/GHTA143_b-s&t=7260) - todo : setup Bearer \
 > [1h57](https://youtu.be/GHTA143_b-s&t=7020) - protect endpoint w. guard \
 > [1h55](https://youtu.be/GHTA143_b-s&t=6900) - generated ('users') controller . GET /users/myself \
 > [1h49](https://youtu.be/GHTA143_b-s&t=6540) - todo : intercept the token / Bearer strategy \
