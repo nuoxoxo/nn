@@ -1,8 +1,10 @@
 Partial history
 ```c
+$ nest g controller auth --no-spec
 $ nest g service prisma --no-spec
 $ nest g module prisma 
 $ nest g module auth 
+$ npm i dotenv
 -- module : auth . prisma --
 
 -- end config database --
