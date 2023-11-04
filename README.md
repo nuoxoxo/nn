@@ -16,7 +16,7 @@
 | d2      | Google OAuth            | _oauth tryout_ 
 ||| `@nestjs/passport passport passport-google-oauth20`
 ||| _run : start dev + browser_     | 🟢 
-| d1      | Rest                    | _nestjs tryout_ 
+| d1      | ~~Rest~~                | _nestjs tryout_ 
 ||| _stat : suspended_              | 
 ||| _access using postman / insomnia_  | 🟢 
 | dO      | Pong Sandbox            | _done : paddle segments mapped to rad_ 
