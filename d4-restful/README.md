@@ -2,6 +2,8 @@
 
 __Server__
 ```
+$ (from insmn.) GET /users/{i|me|mine|myself}
+$ (from insmn.) POST /auth/sign{in|up}
 $ npm run go
 ```
 __Try it out__
@@ -14,10 +16,13 @@ $ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/
 <details><summary>timestamp</summary>
 &#8301;
 
-> 1h49 - todo : intercept the token
-> 1h42 - jwt in auth.module & auth.service \
-> 1h39 - todo : jwt installed \
-> 1h24 - install passport . jwt \
+> [2h01](https://youtu.be/GHTA143_b-s&t=7260) - todo : setup Bearer \
+> [1h57](https://youtu.be/GHTA143_b-s&t=7020) - protect endpoint w. guard \
+> [1h55](https://youtu.be/GHTA143_b-s&t=6900) - generated ('users') controller . GET /users/myself \
+> [1h49](https://youtu.be/GHTA143_b-s&t=6540) - todo : intercept the token / Bearer strategy \
+> [1h42](https://youtu.be/GHTA143_b-s&t=6125) - jwt in auth.module & auth.service \
+> [1h39](https://youtu.be/GHTA143_b-s&t=5940) - todo : jwt installed \
+> [1h24](https://youtu.be/GHTA143_b-s?t=5040) - install passport . jwt \
 > 1h14 - todo : signin logic \
 > 1h02 - todo : signup logic w/ argon \
 > 1h01m30 - whitelist and (dto: AuthDto) as param for signup \
@@ -54,7 +59,17 @@ Providers
 &#8301;
 -->
 
+### Setting up Jwt Strat
+```sh
+$ nest g controller user --no-spec
+```
+
 ### Launch server w/ empty "_./prisma/migrations/_"
+_Updated way_
+```sh
+$ npm run go
+```
+OR
 ```sh
 $ docker compose up mydatabase -d
 

@@ -1,18 +1,24 @@
-| Job     | Desc.                   | Status                                 | Run            |
+## todo
+- Auth - check auth-ggl . auth-42 w/ clear usage
+- d4 - write how to run
+- d5 - todo docker . prisma
+
+| Ref.    | Job                     | Desc.                                  | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
 | d6      |                         | _idle_
-| d5      | `empty`                 | _todo : could as well be badcamp_ 
-||| _help : [bandcamp](https://get.bandcamp.help/hc/en-us/articles/360013561254-How-do-I-create-a-Bandcamp-embedded-player)_
-| d4      | Restful                 | _what : cont. from d1_ 
+| d5      | Jwt                     | _access / refresh_                       | :green_circle:
+||| _todo : prisma . docker_ 
+||| _init : listen 10086_  
+| d4      | Restful                 | _what : cont. from d1_                 | :yellow_circle: 
 ||| _curr : use dotenv or nestjs/config . todo - passport_  
 | d3      | 42 OAuth                | `@nestjs/passport passport passport-42` 
-||| _load : start dev + browser_    | 🟢 
-| d2      | Google OAuth            | _what : oauth tryout_ 
+||| _run : start dev + browser_    | 🟢 
+| d2      | Google OAuth            | _oauth tryout_ 
 ||| `@nestjs/passport passport passport-google-oauth20`
 ||| _run : start dev + browser_     | 🟢 
-| d1      | Rest                    | _what : nestjs tryout_ 
+| d1      | ~~&nbsp;Rest&nbsp;~~    | _nestjs tryout_ 
 ||| _stat : suspended_              | 
-||| _run : use postman / insomnia_  | 🟢 
+||| _access using postman / insomnia_  | 🟢 
 | dO      | Pong Sandbox            | _done : paddle segments mapped to rad_ 
 ||
 | c9      | Angular hello           | _what : hello world in angular_
@@ -32,10 +38,10 @@
 |         |                         | _1st : input by typing_ 
 || [*io/dmd*](https://nuoxoxo.github.io/dmd)| _2nd : btns . nightmode . memo_| :green_circle: 
 | c2      | Cronway                 | _conway on react_                      | :red_circle:
-| c1      | _API hw._               | _what : api reach-out_                 | :green_circle:
-| cO      | Dictée                  | _what : dithering_                     | :red_circle:
+| c1      | _API hw._               | _api reach-out_                        | :green_circle:
+| cO      | Dictée                  | _todo : dithering_                     | :red_circle:
 ||
-| b9      | IPA                     | _what : 1-line api reach-out_ 
+| b9      | IPA                     | _1-line api reach-out_ 
 || [*io/ipa*](https://nuoxoxo.github.io/ipa) | _todo : save array to localstorage_ | :green_circle:
 | b8      | Markdown Preview        | _bug : textarea div different height_ 
 || [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_                   | :red_circle: 
