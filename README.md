@@ -18,7 +18,7 @@
 ||| _run : start dev + browser_     | 🟢 
 | d1      | Rest                    | _nestjs tryout_ 
 ||| _stat : suspended_              | 
-||| _run : use postman / insomnia_  | 🟢 
+||| _run on postman / insomnia_  | 🟢 
 | dO      | Pong Sandbox            | _done : paddle segments mapped to rad_ 
 ||
 | c9      | Angular hello           | _what : hello world in angular_
