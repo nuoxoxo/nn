@@ -9,7 +9,7 @@
 | d5      | Jwt                     | _access / refresh_                       | :green_circle:
 ||| _todo : prisma . docker_ 
 ||| _init : listen 10086_  
-| d4      | Restful                 | _what : cont. from d1_                 | :yellow_circle: 
+| d4      | Rest                    | _what : cont. from d1_                 | :yellow_circle: 
 ||| _curr : use dotenv or nestjs/config . todo - passport_  
 | d3      | 42 OAuth                | `@nestjs/passport passport passport-42` 
 ||| _run : start dev + browser_    | 🟢 
