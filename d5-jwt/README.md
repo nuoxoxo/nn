@@ -1,5 +1,7 @@
 Partial history
 ```c
+$ npx prisma db push
+$ npx prisma migrate dev --create-only
 * generate a migration and apply it to the database
 $ docker compose up
 * create docker compose and .env
