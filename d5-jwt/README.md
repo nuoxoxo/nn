@@ -8,7 +8,7 @@ $ nest g service prisma --no-spec
 $ nest g module prisma 
 $ nest g module auth 
 $ npm i dotenv
--- module : auth . prisma --
+-- setup auth . prisma --
 
 -- end config database --
 $ npx prisma db push
