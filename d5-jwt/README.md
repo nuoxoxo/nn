@@ -1,7 +1,8 @@
 Partial history
 ```c
-$ nest g module auth 
+$ nest g service prisma --no-spec
 $ nest g module prisma 
+$ nest g module auth 
 -- module : auth . prisma --
 
 -- end config database --
