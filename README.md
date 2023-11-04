@@ -5,9 +5,10 @@
 | Job     | Desc.                   | Status                                 | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
 | d6      |                         | _idle_
-| d5      | `empty`                 | _todo : could as well be badcamp_ 
-||| _help : [bandcamp](https://get.bandcamp.help/hc/en-us/articles/360013561254-How-do-I-create-a-Bandcamp-embedded-player)_
-| d4      | Restful                 | _what : cont. from d1_ 
+| d5      | Jwt                     | _what : jwts singalong_                | :green_circle:
+||| _todo : todo prisma . docker_ 
+||| _init : listen 10086_  
+| d4      | Restful                 | _what : cont. from d1_                 | :yellow_circle: 
 ||| _curr : use dotenv or nestjs/config . todo - passport_  
 | d3      | 42 OAuth                | `@nestjs/passport passport passport-42` 
 ||| _load : start dev + browser_    | 🟢 
