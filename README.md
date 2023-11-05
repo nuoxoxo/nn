@@ -2,6 +2,7 @@
 - Auth - check auth-ggl . auth-42 w/ clear usage
 - d4 - write how to run
 - d5 - todo docker . prisma
+- jwt [debugger](https://jwt.io) 
 
 | Ref.    | Job                     | Desc.                                  | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
