@@ -13,29 +13,33 @@ export class AuthService {
     private prisma: PrismaService,
     private jwtservice: JwtService
   ) {
-    // dotenv.config() 
+    // dotenv.config()
   }
 
-  async sign_tokens = (
+  sign_tokens = async (
     uid: number,
     mail: string
-  ) => {
+  ) : Promise<Token> => {
     const [at, rt] = await Promise.all([
       this.jwtservice.signAsync({
         sub: uid,
         mail
       }, {
-        secret: process.env.ACCESS_TOKEN_SECRET,
-        expiresIn: 60 * 15 // seconds
+        secret: 'something',//process.env.JWT_ACCESS_TOKEN_SECRET,
+        expiresIn: 60 * 10 // seconds
       }),
       this.jwtservice.signAsync({
         sub: uid,
         mail
       }, {
-        secret: process.env.REFRESH_TOKEN_SECRET,
-        expiresIn: 60 * 15
+        secret: 'something',//process.env.JWT_REFRESH_TOKEN_SECRET,
+        expiresIn: 60 * 20
       })
     ])
+    return {
+      access_token: at,
+      refresh_token: rt,
+    }
   }
 
   //////////////////////////////////////////
@@ -50,7 +54,12 @@ export class AuthService {
         hash
       }
     })
-    return {dto, newcomer}
+    const tokens = this.sign_tokens(
+      newcomer.id,
+      newcomer.hash
+    )
+    return tokens
+    // return {dto, newcomer} // i still want it to return more stuff
   }
 
 
