@@ -16,6 +16,53 @@ export class AuthService {
     // dotenv.config()
   }
 
+  //////////////////////////////////////////
+  //               Signup                 //
+  //////////////////////////////////////////
+  async local_signup(dto: AuthDto) : Promise<Token> {
+    console.log("/local/signup route reached :", {dto})
+    const hash: string = await argon.hash(dto.pass)
+    const newcomer = await this.prisma.user.create({
+      data: {
+        mail: dto.mail,
+        hash
+      }
+    })
+    const tokens = await this.sign_tokens(newcomer.id, newcomer.hash)
+    await this.update_refresh_token(newcomer.id, tokens.refresh_token)
+    return tokens
+    // return {dto, newcomer} // i still want it to return more stuff
+  }
+
+  //////////////////////////////////////////
+  //               Signin                 //
+  //////////////////////////////////////////
+  local_signin() {
+    console.log("/local/signin route reached :")
+  }
+
+
+  //////////////////////////////////////////
+  //              refresh                 //
+  //////////////////////////////////////////
+  refresh() {
+    console.log("/refresh route reached :")
+  }
+
+
+  //////////////////////////////////////////
+  //              Logout                  //
+  //////////////////////////////////////////
+  logout() {
+    console.log("/logout route reached :")
+  }
+
+
+  //////////////////////////////////////////
+  // Utility                              //
+  //    sign_tokens                       //
+  //    update_refresh_token              //
+  //////////////////////////////////////////
   sign_tokens = async (
     uid: number,
     mail: string
@@ -42,47 +89,14 @@ export class AuthService {
     }
   }
 
-  //////////////////////////////////////////
-  //               Signup                 //
-  //////////////////////////////////////////
-  async local_signup(dto: AuthDto) : Promise<Token> {
-    console.log("/local/signup route reached :", {dto})
-    const hash: string = await argon.hash(dto.pass)
-    const newcomer = await this.prisma.user.create({
-      data: {
-        mail: dto.mail,
-        hash
-      }
+  async update_refresh_token (
+    uid: number,
+    refresh_token: string
+  ) {
+    const hash = await argon.hash( refresh_token )
+    await this.prisma.user.update({
+      where: {id: uid},
+      data: {hashedRT: hash}
     })
-    const tokens = this.sign_tokens(
-      newcomer.id,
-      newcomer.hash
-    )
-    return tokens
-    // return {dto, newcomer} // i still want it to return more stuff
-  }
-
-
-  //////////////////////////////////////////
-  //               Signin                 //
-  //////////////////////////////////////////
-  local_signin() {
-    console.log("/local/signin route reached :")
-  }
-
-
-  //////////////////////////////////////////
-  //              refresh                 //
-  //////////////////////////////////////////
-  refresh() {
-    console.log("/refresh route reached :")
-  }
-
-
-  //////////////////////////////////////////
-  //              Logout                  //
-  //////////////////////////////////////////
-  logout() {
-    console.log("/logout route reached :")
   }
 }
