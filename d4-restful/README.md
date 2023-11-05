@@ -1,10 +1,13 @@
 # Run
 
 __Server__
-```
+```j
 $ (from insmn.) GET /users/{i|me|mine|myself}
 $ (from insmn.) POST /auth/sign{in|up}
-$ npm run go
+
+$ npm run go	/// will leave migrations untouched
+* OR
+$ npm run gone	/// will delete database
 ```
 __Try it out__
 ```
