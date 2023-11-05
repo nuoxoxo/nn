@@ -2,6 +2,18 @@ Partial history
 ```c
 :28 - Auth module - todo : @Body() dto: AuthDto in auth.ctrl
 
+-- Jwt --
+$ npm i --save-dev @nestjs/passport passport @nestjs/jwt passport-jwt @types/passport-jwt
+*
++    "@nestjs/jwt"
++    "@nestjs/passport"
++    "@types/passport-jwt"
++    "passport"
++    "passport-jwt"
+*
+-- Jwt --
+
+-- end setup auth . prisma --
 $ npm i class-validator class-transformer 
 $ nest g controller auth --no-spec
 $ nest g service auth --no-spec
