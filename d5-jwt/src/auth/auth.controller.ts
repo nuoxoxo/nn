@@ -16,7 +16,7 @@ export class AuthController {
   constructor ( private authService: AuthService ) {}
 
   @Post('/local/signup')
-  local_signup (
+  async local_signup (
     @Body()
     dto: AuthDto
   ) { this.authService.local_signup(dto) }
