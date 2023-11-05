@@ -20,7 +20,7 @@ export class AuthService {
   //               Signup                 //
   //////////////////////////////////////////
   async local_signup(dto: AuthDto) : Promise<Token> {
-    console.log("local/signup route reached :", {dto})
+    console.log("ROUTE auth/local/signup :", {dto})
     // step : checker if user exists
     const usermatch = await this.prisma.user.findUnique({where: {mail: dto.mail}})
     if (usermatch) throw new ForbiddenException /*nestjs built-in 403*/ (
@@ -37,7 +37,7 @@ export class AuthService {
     // step : if all ok, upd. refresh token
     const tokens = await this.sign_tokens(newcomer.id, newcomer.hash)
     await this.update_refresh_token(newcomer.id, tokens.refresh_token)
-    console.log("local/signin route reached :", {tokens})
+    console.log("ROUTE auth/local/signin :", {tokens})
     return tokens
   }
 
@@ -45,7 +45,7 @@ export class AuthService {
   //               Signin                 //
   //////////////////////////////////////////
   async local_signin(dto: AuthDto) : Promise<Token> {
-    console.log("local/signin route reached :", {dto})
+    console.log("ROUTE auth/local/signin :", {dto})
     // step : checker if user exists
     const usermatch = await this.prisma.user.findUnique({where: {mail: dto.mail}})
     if (!usermatch) throw new ForbiddenException /*403*/ (
@@ -59,7 +59,7 @@ export class AuthService {
     // step : if all ok, upd. refresh token
     const tokens = await this.sign_tokens(usermatch.id, usermatch.hash)
     await this.update_refresh_token(usermatch.id, tokens.refresh_token)
-    console.log("local/signin route reached :", {tokens})
+    console.log("ROUTE auth/local/signin :", {tokens})
     return tokens
   }
 
@@ -68,7 +68,7 @@ export class AuthService {
   //              refresh                 //
   //////////////////////////////////////////
   refresh() {
-    console.log("refresh route reached :")
+    console.log("ROUTE auth/refresh :")
   }
 
 
@@ -76,7 +76,7 @@ export class AuthService {
   //              Logout                  //
   //////////////////////////////////////////
   logout() {
-    console.log("logout route reached :")
+    console.log("ROUTE auth/logout :")
   }
 
 
