@@ -5,7 +5,6 @@ import * as argon from 'argon2'
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import { JwtService } from "@nestjs/jwt";
 // import { ConfigService } from "@nestjs/config";
-import * as dotenv from 'dotenv'
 
 @Injectable (/*{}*/)
 export class AuthService {
@@ -14,9 +13,7 @@ export class AuthService {
     private prisma : PrismaService,
     private jwt : JwtService,
     // private config: ConfigService
-  ) {
-    dotenv.config()
-  }
+  ) {}
 
 
   //////////////////////////////////////////
