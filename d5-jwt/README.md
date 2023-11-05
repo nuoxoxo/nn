@@ -1,7 +1,8 @@
 Partial history
-```c
-:28 - Auth module - todo : @Body() dto: AuthDto in auth.ctrl
-
+```
+:38 - Auth module - todo : @Body() dto: AuthDto in auth.ctrl
+```
+```j
 -- Jwt --
 $ npm i --save-dev @nestjs/passport passport @nestjs/jwt passport-jwt @types/passport-jwt
 *
