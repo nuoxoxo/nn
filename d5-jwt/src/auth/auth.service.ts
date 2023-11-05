@@ -25,14 +25,14 @@ export class AuthService {
         sub: uid,
         mail
       }, {
-        secret: 'something',//process.env.JWT_ACCESS_TOKEN_SECRET,
+        secret: process.env.JWT_ACCESS_TOKEN_SECRET,
         expiresIn: 60 * 10 // seconds
       }),
       this.jwtservice.signAsync({
         sub: uid,
         mail
       }, {
-        secret: 'something',//process.env.JWT_REFRESH_TOKEN_SECRET,
+        secret: process.env.JWT_REFRESH_TOKEN_SECRET,
         expiresIn: 60 * 20
       })
     ])
