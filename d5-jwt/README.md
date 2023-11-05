@@ -2,6 +2,7 @@ Partial history
 ```c
 :28 - Auth module - todo : @Body() dto: AuthDto in auth.ctrl
 
+$ npm i class-validator class-transformer 
 $ nest g controller auth --no-spec
 $ nest g service auth --no-spec
 $ nest g service prisma --no-spec
