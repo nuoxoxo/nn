@@ -1,6 +1,6 @@
 Partial history
 ```
-:57 - sigin
+1:01 - sigin
 ```
 ```j
 -- Jwt --
