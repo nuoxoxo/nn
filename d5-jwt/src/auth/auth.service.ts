@@ -9,6 +9,7 @@ export class AuthService {
 
   constructor ( private prisma: PrismaService ) {}
 
+
   //////////////////////////////////////////
   //               Signup                 //
   //////////////////////////////////////////
@@ -24,6 +25,7 @@ export class AuthService {
     return {dto, newcomer}
   }
 
+
   //////////////////////////////////////////
   //               Signin                 //
   //////////////////////////////////////////
@@ -31,12 +33,14 @@ export class AuthService {
     console.log("/local/signin route reached :")
   }
 
+
   //////////////////////////////////////////
   //              refresh                 //
   //////////////////////////////////////////
   refresh() {
     console.log("/refresh route reached :")
   }
+
 
   //////////////////////////////////////////
   //              Logout                  //
