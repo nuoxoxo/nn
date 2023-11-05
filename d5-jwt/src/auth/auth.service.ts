@@ -37,8 +37,10 @@ export class AuthService {
   //////////////////////////////////////////
   //               Signin                 //
   //////////////////////////////////////////
-  local_signin() {
+  async local_signin(dto: AuthDto) : Promise<Token> {
     console.log("/local/signin route reached :")
+    /// make tokens
+    return tokens
   }
 
 

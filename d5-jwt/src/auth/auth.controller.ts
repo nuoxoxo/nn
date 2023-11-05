@@ -20,15 +20,14 @@ export class AuthController {
   //               signup                 //
   //////////////////////////////////////////
   @Post('/local/signup')
-  async local_signup (
-    @Body()
-    dto: AuthDto
-  ) : Promise<Token> {
+  async local_signup (@Body() dto: AuthDto) : Promise<Token> {
     return this.authService.local_signup(dto)
   }
 
   @Post('/local/signin')
-  local_signin () { this.authService.local_signin() }
+  async local_signin (@Body() dto: AuthDto) : Promise<Token> {
+    return this.authService.local_signup(dto)
+  }
 
   @Post('/refresh')
   refresh () { this.authService.refresh() }
