@@ -15,7 +15,7 @@ model User {
   id        Int       @id @default( autoincrement() )
   createdAt DateTime  @default( now() )
   updatedAt DateTime  @updatedAt
-  mail      String
+  mail      String    @unique
   hash      String
   hashedRT  String? // refresh token hashed
 
