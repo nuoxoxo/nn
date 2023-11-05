@@ -9,10 +9,7 @@ export class AuthService {
   constructor ( private prisma: PrismaService ) {}
 
   async local_signup(dto: AuthDto) {
-
-    
     console.log("local/signup route reached :", {dto})
-
     const hash: string = await argon.hash(dto.pass)
     const new_user = this.prisma.user.create({
       data: {
