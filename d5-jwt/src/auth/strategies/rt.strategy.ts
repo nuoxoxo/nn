@@ -14,9 +14,13 @@ export class RtStrategy extends PassportStrategy ( Strategy, 'Jwt-refresh') {
   }
 
   validate (
-    res: Request,
+    req: Request,
     payload: any
   ) {
-    return payload
+    const rt = req.get('authorization')
+                  .replace('Bearer', '')
+                  .trim()
+    const res = {... payload, rt}
+    return res
   }
 }
