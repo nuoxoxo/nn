@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { ForbiddenException, Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { AuthDto } from './dto'
 // import * as dotenv from 'dotenv'
@@ -20,7 +20,13 @@ export class AuthService {
   //               Signup                 //
   //////////////////////////////////////////
   async local_signup(dto: AuthDto) : Promise<Token> {
-    console.log("/local/signup route reached :", {dto})
+    console.log("local/signup route reached :", {dto})
+    // step : checker if user exists
+    const usermatch = await this.prisma.user.findUnique({where: {mail: dto.mail}})
+    if (usermatch) throw new ForbiddenException /*nestjs built-in 403*/ (
+      'User exists', 'double dealer' // 2nd arg is "error", which is "Forbidden" by default
+    )
+    // step : register new user
     const hash: string = await argon.hash(dto.pass)
     const newcomer = await this.prisma.user.create({
       data: {
@@ -28,18 +34,32 @@ export class AuthService {
         hash
       }
     })
+    // step : if all ok, upd. refresh token
     const tokens = await this.sign_tokens(newcomer.id, newcomer.hash)
     await this.update_refresh_token(newcomer.id, tokens.refresh_token)
+    console.log("local/signin route reached :", {tokens})
     return tokens
-    // return {dto, newcomer} // i still want it to return more stuff
   }
 
   //////////////////////////////////////////
   //               Signin                 //
   //////////////////////////////////////////
   async local_signin(dto: AuthDto) : Promise<Token> {
-    console.log("/local/signin route reached :")
-    /// make tokens
+    console.log("local/signin route reached :", {dto})
+    // step : checker if user exists
+    const usermatch = await this.prisma.user.findUnique({where: {mail: dto.mail}})
+    if (!usermatch) throw new ForbiddenException /*403*/ (
+      'No such user', 'Access Denied Orz'
+    )
+    // step : if user ok, check password
+    const passmatch = await argon.verify(usermatch.hash, dto.pass)
+    if (!passmatch) throw new ForbiddenException (
+      'Wrong password', 'Do better next time'
+    )
+    // step : if all ok, upd. refresh token
+    const tokens = await this.sign_tokens(usermatch.id, usermatch.hash)
+    await this.update_refresh_token(usermatch.id, tokens.refresh_token)
+    console.log("local/signin route reached :", {tokens})
     return tokens
   }
 
@@ -48,7 +68,7 @@ export class AuthService {
   //              refresh                 //
   //////////////////////////////////////////
   refresh() {
-    console.log("/refresh route reached :")
+    console.log("refresh route reached :")
   }
 
 
@@ -56,7 +76,7 @@ export class AuthService {
   //              Logout                  //
   //////////////////////////////////////////
   logout() {
-    console.log("/logout route reached :")
+    console.log("logout route reached :")
   }
 
 

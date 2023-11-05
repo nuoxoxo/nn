@@ -26,14 +26,14 @@ export class AuthController {
 
   @Post('/local/signin')
   async local_signin (@Body() dto: AuthDto) : Promise<Token> {
-    return this.authService.local_signup(dto)
+    return this.authService.local_signin(dto)
   }
 
   @Post('/refresh')
-  refresh () { this.authService.refresh() }
+  refresh () { return this.authService.refresh() }
 
   @Post('/logout')
-  logout () { this.authService.logout() }
+  logout () { return this.authService.logout() }
 
 
 
