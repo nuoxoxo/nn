@@ -1,6 +1,6 @@
 Partial history
 ```
-:38 - Auth module - todo : @Body() dto: AuthDto in auth.ctrl
+1:01 - sigin
 ```
 ```j
 -- Jwt --
