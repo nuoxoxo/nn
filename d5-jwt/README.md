@@ -1,8 +1,9 @@
 Run
 ```j
+TERM 3 $ npx prisma studio
 - (goto postman / insomnia)
-$ npm start:dev
-$ docker compose up
+TERM 2 $ npm start:dev
+TERM 1 $ docker compose up
 ↑
 * this way up
 ```
