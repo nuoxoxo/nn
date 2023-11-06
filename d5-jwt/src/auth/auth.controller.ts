@@ -30,7 +30,7 @@ export class AuthController {
     return this.authService.local_signin(dto)
   }
 
-  @UseGuards(AuthGuard('Jwt-Refresh'/*'jwt'*/)) // BUG - 'Jwt-Refresh' to guard ?
+  @UseGuards(AuthGuard('Jwt-Refresh'/*'jwt'*/)) // BUG: 'Jwt-Refresh' to guard ?
   @Post('/refresh')
   @HttpCode (HttpStatus.OK) // 200
   // way 2 : use DTO instead of Express Request . can i do this?

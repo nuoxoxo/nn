@@ -41,7 +41,7 @@ export class AuthService {
 
     const tokens = await this.get_tokens(newcomer.id, newcomer.hash)
     await this.set_refresh_token(newcomer.id, tokens.refresh_token)
-    console.log("auth/local/signup - signed up:", {tokens})
+    console.log("auth/local/signup @success :", {tokens})
     return tokens
   }
 
@@ -69,7 +69,7 @@ export class AuthService {
 
     const tokens = await this.get_tokens(usermatch.id, usermatch.hash)
     await this.set_refresh_token(usermatch.id, tokens.refresh_token)
-    console.log("auth/local/signin - signed in :", {tokens})
+    console.log("auth/local/signin @success :", {tokens})
     return tokens
   }
 
@@ -98,7 +98,7 @@ export class AuthService {
 
     const tokens = await this.get_tokens(usermatch.id, usermatch.mail)
     await this.set_refresh_token(usermatch.id, tokens.refresh_token)
-    console.log("auth/refresh - refresh success", {tokens})
+    console.log("auth/refresh @success", {tokens})
     return tokens
   }
 

@@ -42,7 +42,7 @@ export class RtStrategy extends PassportStrategy ( Strategy, 'Jwt-Refresh') {
     // BUG FIX : `refresh_token` is a class property, should not be misidentified
 
     const res = {... payload, /*rt*/refresh_token}
-    console.log('Refresh token strat validate payload :', payload)
+    console.log('rt.strategy.ts @validate :', {payload})
     return res
   }
 }

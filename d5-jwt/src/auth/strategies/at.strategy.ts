@@ -21,7 +21,7 @@ export class AtStrategy extends PassportStrategy ( Strategy, 'Jwt') {
 
   // validate (payload: any) {
   validate (payload: JwtAccessTokenStrategyPayload) {
-    console.log('Access token strat validate payload :', payload)
+    console.log('at.strategy.ts @validate :', {payload})
     return payload
   }
 }
