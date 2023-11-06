@@ -5,7 +5,7 @@ $ npx prisma studio ... TERM 3
 
 - (goto postman / insomnia)
 * strat tryout :
-*** add Headers > Authorization > "Beare " copy-paste "access-token"
+** add Headers > Authorization > "Beare " copy-paste "access-token"
 
 (TERM 2)
 $ npm start:dev 
