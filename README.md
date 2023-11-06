@@ -1,8 +1,10 @@
 todo
 - [Jwt](https://jwt.io) debugger
 - Auth - check auth-ggl . auth-42 w/ clear usage
+
 d4
 - re-write how-to 
+
 d5
 - signin : todo . should be simple
 - signup : done . todo - use try...catch
