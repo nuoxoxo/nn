@@ -1,6 +1,6 @@
 Run
 ```j
-* (goto postman / insomnia)
+- (goto postman / insomnia)
 $ npm start:dev
 $ docker compose up
 ↑
