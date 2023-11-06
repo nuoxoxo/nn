@@ -16,9 +16,6 @@ export class AuthController {
 
   constructor ( private authService: AuthService ) {}
 
-  //////////////////////////////////////////
-  //               signup                 //
-  //////////////////////////////////////////
   @Post('/local/signup')
   async local_signup (@Body() dto: AuthDto) : Promise<Token> {
     return this.authService.local_signup(dto)
@@ -33,8 +30,8 @@ export class AuthController {
   refresh () { return this.authService.refresh() }
 
   @Post('/logout')
-  logout (uid: number) { return this.authService.logout( uid ) }
-
-
+  logout (uid: number) : Promise<void> {
+    return this.authService.logout( uid )
+  }
 
 }

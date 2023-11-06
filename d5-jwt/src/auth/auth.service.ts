@@ -22,7 +22,7 @@ export class AuthService {
     // step : checker if user exists
     const usermatch = await this.prisma.user.findUnique({where: {mail: dto.mail}})
     if (usermatch) throw new ForbiddenException /*nestjs 403*/ (
-      'User exists', 'double dealer'
+      'User exists', 'doppelgänger'
     )
     // step : register new user
     const hash: string = await argon.hash(dto.pass)
@@ -73,7 +73,7 @@ export class AuthService {
   //////////////////////////////////////////
   //              Logout                  //
   //////////////////////////////////////////
-  logout = async (uid:number) => {
+  logout = async (uid:number) : Promise<void> => {
 
     console.log("auth/logout :", {uid})
   
