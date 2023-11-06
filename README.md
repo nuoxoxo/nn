@@ -9,9 +9,9 @@ todo
 ||| _todo : try..catch for both sign fn_ 
 | d4      | Rest                    | _what : cont. from d1_                 | :yellow_circle: 
 ||| _curr : use dotenv or nestjs/config . todo - passport_  
-| d3      | 42 OAuth                | `@nestjs/passport passport passport-42` 
-||| _run : start dev + browser_    | 🟢 
-| d2      | Google OAuth            | _oauth tryout_ 
+| d3      | 42 OA                   | `@nestjs/passport passport passport-42` 
+||| _run : start dev + browser_     | 🟢 
+| d2      | Google OA               | _oauth tryout_ 
 ||| `@nestjs/passport passport passport-google-oauth20`
 ||| _run : start dev + browser_     | 🟢 
 | d1      | ~~&nbsp;Rest&nbsp;~~    | _nestjs tryout_ 
