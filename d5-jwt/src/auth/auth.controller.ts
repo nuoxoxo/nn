@@ -9,11 +9,11 @@ import { Request } from 'express'
 export class AuthController {
 
   /*
-  4 routes:
+  4 routes: (all under /auth)
     - local/signup
     - local/signin
-    - auth/refresh
-    - auth/logout
+    - refresh
+    - logout
   */
 
   constructor ( private authService: AuthService ) {}
@@ -30,9 +30,13 @@ export class AuthController {
     return this.authService.local_signin(dto)
   }
 
+  @UseGuards(AuthGuard('Jwt'/*'jwt'*/)) // BUG - 'Jwt-Refresh' to guard ?
   @Post('/refresh')
   @HttpCode (HttpStatus.OK) // 200
-  refresh () { return this.authService.refresh() }
+  refresh (@Req() req: Request) {
+    const [uid, rtk] = [req.user['sub'], req.user['refresh_token']]
+    return this.authService.refresh(uid, rtk)
+  }
 
   @UseGuards(AuthGuard('Jwt'/*'jwt'*/))
   @Post('/logout')
