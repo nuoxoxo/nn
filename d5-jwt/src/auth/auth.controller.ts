@@ -1,7 +1,9 @@
-import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
+import { Body, Controller, HttpCode, HttpStatus, Post, Req, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthDto } from './dto';
 import { Token } from './types';
+import { AuthGuard } from '@nestjs/passport';
+import { Request } from 'express'
 
 @Controller('auth')
 export class AuthController {
@@ -32,9 +34,11 @@ export class AuthController {
   @HttpCode (HttpStatus.OK) // 200
   refresh () { return this.authService.refresh() }
 
+  @UseGuards(AuthGuard('Jwt'/*'jwt'*/))
   @Post('/logout')
   @HttpCode (HttpStatus.OK) // 200
-  logout (uid: number) : Promise<void> {
+  logout (@Req() req: Request) : Promise<void> {
+    const uid = req.user['sub']
     return this.authService.logout( uid )
   }
 
