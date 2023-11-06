@@ -4,9 +4,10 @@ todo
 
 | Ref.    | Job                     | Desc.                                  | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
-| d7      | Fetch                   | _what : go for and then bring back_ 
-| d6      |                         | _idle_
-| d5      | Jwt                     | _access / refresh_                       | :green_circle:
+| d8      | _idle_ 
+| d7      | Getter                  | _what : use .env_ 
+| d6      | Jwt 2                   | _todo : learn decorators_ 
+| d5      | Jwt                     | _access / refresh_                     | :green_circle:
 ||| _todo : try..catch for both sign fn_ 
 ||| _BUG : users table bug at startup_
 | d4      | Rest                    | _what : cont. from d1_                 | :yellow_circle: 
