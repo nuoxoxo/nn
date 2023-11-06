@@ -1,6 +1,6 @@
 Run
 ```j
-(TERM 3)
+(TERM)
 $ npx prisma studio ... TERM 3
 
 - (goto postman / insomnia)
