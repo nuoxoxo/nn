@@ -65,7 +65,7 @@ export class AuthService {
   //////////////////////////////////////////
   //              refresh                 //
   //////////////////////////////////////////
-  refresh() {
+  refresh(uid: number, rtk: string) {
     console.log("auth/refresh :")
   }
 
