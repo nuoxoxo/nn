@@ -1,3 +1,18 @@
+Run
+```j
+(TERM)
+$ npx prisma studio ... TERM 3
+
+- (goto postman / insomnia)
+
+(TERM 2)
+$ npm start:dev 
+
+(TERM 1)
+$ docker compose up 
+↑
+* this way up
+```
 Partial history
 ```
 1:01 - sigin
