@@ -1,5 +1,5 @@
 ```
-1:17 - todo : make custom Guard and learn User decorator
+1:17 - todo : custom Guard and User decorator
 ```
 Run
 ```j
