@@ -1,13 +1,23 @@
 import { PassportStrategy } from "@nestjs/passport";
 import { Request } from "express";
 import { ExtractJwt, Strategy } from "passport-jwt";
+import { JwtAccessTokenStrategyPayload } from '.'
 
-type JwtRefreshTokenStrategyPayload = { // TODO
+// BUG Found
+/*
+type JwtRefreshTokenStrategyPayload = {
   sub: number,
   mail: string,
   iat: number,
-  exp: number
-} // TODO
+  exp: number,
+  /// BUG :: missing field `refresh_token`
+}
+*/
+
+// BUG FIXED
+export type JwtRefreshTokenStrategyPayload = JwtAccessTokenStrategyPayload & {
+  refresh_token: string
+}
 
 // @Injectable
 export class RtStrategy extends PassportStrategy ( Strategy, 'Jwt-Refresh') {
@@ -25,10 +35,13 @@ export class RtStrategy extends PassportStrategy ( Strategy, 'Jwt-Refresh') {
     // payload: any
     payload: JwtRefreshTokenStrategyPayload
   ) {
-    const rt = req.get('authorization')
+    const /*rt*/refresh_token = req.get('authorization')
                   .replace('Bearer', '')
                   .trim()
-    const res = {... payload, rt}
+
+    // BUG FIX : `refresh_token` is a class property, should not be misidentified
+
+    const res = {... payload, /*rt*/refresh_token}
     console.log('Refresh token strat validate payload :', payload)
     return res
   }
