@@ -4,6 +4,7 @@ todo
 
 | Ref.    | Job                     | Desc.                                  | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
+| d7      | Fetch                   | _what : go for and then bring back_ 
 | d6      |                         | _idle_
 | d5      | Jwt                     | _access / refresh_                       | :green_circle:
 ||| _todo : try..catch for both sign fn_ 
