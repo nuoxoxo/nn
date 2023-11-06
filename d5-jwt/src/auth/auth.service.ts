@@ -1,7 +1,6 @@
 import { ForbiddenException, Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { AuthDto } from './dto'
-// import * as dotenv from 'dotenv'
 import * as argon from 'argon2'
 import { Token } from './types';
 import { JwtService } from '@nestjs/jwt';
@@ -13,18 +12,17 @@ export class AuthService {
     private prisma: PrismaService,
     private jwtservice: JwtService
   ) {
-    // dotenv.config()
   }
 
   //////////////////////////////////////////
   //               Signup                 //
   //////////////////////////////////////////
-  async local_signup(dto: AuthDto) : Promise<Token> {
+  local_signup = async (dto: AuthDto) : Promise<Token> => {
     console.log("auth/local/signup :", {dto})
     // step : checker if user exists
     const usermatch = await this.prisma.user.findUnique({where: {mail: dto.mail}})
-    if (usermatch) throw new ForbiddenException /*nestjs built-in 403*/ (
-      'User exists', 'double dealer' // 2nd arg is "error", which is "Forbidden" by default
+    if (usermatch) throw new ForbiddenException /*nestjs 403*/ (
+      'User exists', 'double dealer'
     )
     // step : register new user
     const hash: string = await argon.hash(dto.pass)
@@ -34,9 +32,9 @@ export class AuthService {
         hash
       }
     })
-    // step : if all ok, upd. refresh token
-    const tokens = await this.sign_tokens(newcomer.id, newcomer.hash)
-    await this.update_refresh_token(newcomer.id, tokens.refresh_token)
+    // step : if all ok, upd. set refresh token
+    const tokens = await this.get_tokens(newcomer.id, newcomer.hash)
+    await this.set_refresh_token(newcomer.id, tokens.refresh_token)
     console.log("auth/local/signup :", {tokens})
     return tokens
   }
@@ -44,7 +42,7 @@ export class AuthService {
   //////////////////////////////////////////
   //               Signin                 //
   //////////////////////////////////////////
-  async local_signin(dto: AuthDto) : Promise<Token> {
+  local_signin = async (dto: AuthDto) : Promise<Token> => {
     console.log("auth/local/signin :", {dto})
     // step : checker if user exists
     const usermatch = await this.prisma.user.findUnique({where: {mail: dto.mail}})
@@ -57,8 +55,8 @@ export class AuthService {
       'Wrong password', 'Do better next time'
     )
     // step : if all ok, upd. refresh token
-    const tokens = await this.sign_tokens(usermatch.id, usermatch.hash)
-    await this.update_refresh_token(usermatch.id, tokens.refresh_token)
+    const tokens = await this.get_tokens(usermatch.id, usermatch.hash)
+    await this.set_refresh_token(usermatch.id, tokens.refresh_token)
     console.log("auth/local/signin :", {tokens})
     return tokens
   }
@@ -82,10 +80,10 @@ export class AuthService {
 
   //////////////////////////////////////////
   // Utility                              //
-  //    sign_tokens                       //
-  //    update_refresh_token              //
+  //    get_tokens                        //
+  //    set_refresh_token                 //
   //////////////////////////////////////////
-  sign_tokens = async (
+  get_tokens = async (
     uid: number,
     mail: string
   ) : Promise<Token> => {
@@ -111,10 +109,10 @@ export class AuthService {
     }
   }
 
-  async update_refresh_token (
+  set_refresh_token = async (
     uid: number,
     refresh_token: string
-  ) {
+  ) => {
     const hash = await argon.hash( refresh_token )
     await this.prisma.user.update({
       where: {id: uid},
