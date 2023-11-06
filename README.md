@@ -8,8 +8,8 @@ todo
 | d7      | Getter                  | _what : use .env_ 
 | d6      | Jwt 2                   | _todo : learn decorators_ 
 | d5      | Jwt                     | _access / refresh_                     | :green_circle:
-||| _todo : try..catch for both sign fn_ 
-||| _BUG : users table bug at startup_
+||| - _todo : try..catch for both sign fn_ 
+||| - _BUG : users table bug at startup_
 | d4      | Rest                    | _what : cont. from d1_                 | :yellow_circle: 
 ||| _curr : use dotenv or nestjs/config . todo - passport_  
 | d3      | 42 OA                   | `@nestjs/passport passport passport-42` 
