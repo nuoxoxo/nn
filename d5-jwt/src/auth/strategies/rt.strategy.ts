@@ -10,7 +10,7 @@ type JwtRefreshTokenStrategyPayload = { // TODO
 } // TODO
 
 // @Injectable
-export class RtStrategy extends PassportStrategy ( Strategy, 'Jwt-refresh') {
+export class RtStrategy extends PassportStrategy ( Strategy, 'Jwt-Refresh') {
   constructor () {
     super({
       // 1st field : how we get this token

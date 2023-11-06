@@ -19,12 +19,16 @@ export class AuthService {
   //////////////////////////////////////////
   local_signup = async (dto: AuthDto) : Promise<Token> => {
     console.log("auth/local/signup :", {dto})
+
     // step : checker if user exists
+
     const usermatch = await this.prisma.user.findUnique({where: {mail: dto.mail}})
     if (usermatch) throw new ForbiddenException /*nestjs 403*/ (
       'User exists', 'doppelgänger'
     )
+
     // step : register new user
+
     const hash: string = await argon.hash(dto.pass)
     const newcomer = await this.prisma.user.create({
       data: {
@@ -32,10 +36,12 @@ export class AuthService {
         hash
       }
     })
+
     // step : if all ok, upd. set refresh token
+
     const tokens = await this.get_tokens(newcomer.id, newcomer.hash)
     await this.set_refresh_token(newcomer.id, tokens.refresh_token)
-    console.log("auth/local/signup :", {tokens})
+    console.log("auth/local/signup - signed up:", {tokens})
     return tokens
   }
 
@@ -44,20 +50,26 @@ export class AuthService {
   //////////////////////////////////////////
   local_signin = async (dto: AuthDto) : Promise<Token> => {
     console.log("auth/local/signin :", {dto})
+
     // step : checker if user exists
+
     const usermatch = await this.prisma.user.findUnique({where: {mail: dto.mail}})
     if (!usermatch) throw new ForbiddenException /*403*/ (
       'No such user', 'Access Denied Orz'
     )
+
     // step : if user ok, check password
+
     const passmatch = await argon.verify(usermatch.hash, dto.pass)
     if (!passmatch) throw new ForbiddenException (
       'Wrong password', 'Do better next time'
     )
+
     // step : if all ok, upd. refresh token
+
     const tokens = await this.get_tokens(usermatch.id, usermatch.hash)
     await this.set_refresh_token(usermatch.id, tokens.refresh_token)
-    console.log("auth/local/signin :", {tokens})
+    console.log("auth/local/signin - signed in :", {tokens})
     return tokens
   }
 
@@ -65,23 +77,43 @@ export class AuthService {
   //////////////////////////////////////////
   //              refresh                 //
   //////////////////////////////////////////
-  refresh(uid: number, rtk: string) {
-    console.log("auth/refresh :")
+  async refresh(uid: number, rtk: string) {
+    console.log("auth/refresh :", {uid, rtk})
+
+    // step : if user matches, compare refresh token 
+
+    const usermatch = await this.prisma.user.findUnique({where: {id: uid}})
+    if (!usermatch) throw new ForbiddenException (
+      'No such user', 'Access Denied Orz'
+    )
+
+    // step : if user matches, compare refresh token 
+
+    const refresh_token_match = await argon.verify(usermatch.hashedRT, rtk)
+    if (!refresh_token_match) throw new ForbiddenException (
+      'RT comparison failed', 'Access Denied Orz'
+    )
+
+    // step : if all ok, upd. refresh token
+
+    const tokens = await this.get_tokens(usermatch.id, usermatch.mail)
+    await this.set_refresh_token(usermatch.id, tokens.refresh_token)
+    console.log("auth/refresh - refresh success", {tokens})
+    return tokens
   }
 
 
   //////////////////////////////////////////
   //              Logout                  //
   //////////////////////////////////////////
-  logout = async (uid:number) : Promise<void> => {
-
+  logout = async (uid:number) : Promise<boolean> => {
     console.log("auth/logout :", {uid})
-  
     // step : set null iff token not null (need insight)
     await this.prisma.user.updateMany({
       where: {id: uid, hashedRT: { not: null }},
       data: { hashedRT: null }
     })
+    return true
   }
 
 
