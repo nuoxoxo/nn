@@ -1,3 +1,6 @@
+```
+1:12 - todo refresh(){} under auth/service 
+```
 Run
 ```j
 (TERM)
@@ -16,9 +19,6 @@ $ docker compose up
 * this way up
 ```
 Partial history
-```
-1:01 - sigin
-```
 ```j
 -- Jwt --
 $ npm i --save-dev @nestjs/passport passport @nestjs/jwt passport-jwt @types/passport-jwt
