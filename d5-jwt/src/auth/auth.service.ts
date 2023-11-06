@@ -73,8 +73,15 @@ export class AuthService {
   //////////////////////////////////////////
   //              Logout                  //
   //////////////////////////////////////////
-  logout() {
-    console.log("auth/logout :")
+  logout = async (uid:number) => {
+
+    console.log("auth/logout :", {uid})
+  
+    // step : set null iff token not null (need insight)
+    await this.prisma.user.updateMany({
+      where: {id: uid, hashedRT: { not: null }},
+      data: { hashedRT: null }
+    })
   }
 
 

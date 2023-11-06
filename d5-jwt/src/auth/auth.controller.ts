@@ -33,7 +33,7 @@ export class AuthController {
   refresh () { return this.authService.refresh() }
 
   @Post('/logout')
-  logout () { return this.authService.logout() }
+  logout (uid: number) { return this.authService.logout( uid ) }
 
 
 
