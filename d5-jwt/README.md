@@ -1,3 +1,11 @@
+Run
+```j
+* (goto postman / insomnia)
+$ npm start:dev
+$ docker compose up
+↑
+* this way up
+```
 Partial history
 ```
 1:01 - sigin
