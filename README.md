@@ -1,18 +1,12 @@
 todo
 - [Jwt](https://jwt.io) debugger
 - Auth - check auth-ggl . auth-42 w/ clear usage
-- d4
-  - re-write how-to 
-- d5
-  - signin : todo . should be simple
-  - signup : done . todo - use try...catch
 
 | Ref.    | Job                     | Desc.                                  | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
 | d6      |                         | _idle_
 | d5      | Jwt                     | _access / refresh_                       | :green_circle:
-||| _todo : prisma . docker_ 
-||| _init : listen 10086_  
+||| _todo : try..catch for both sign fn_ 
 | d4      | Rest                    | _what : cont. from d1_                 | :yellow_circle: 
 ||| _curr : use dotenv or nestjs/config . todo - passport_  
 | d3      | 42 OAuth                | `@nestjs/passport passport passport-42` 
