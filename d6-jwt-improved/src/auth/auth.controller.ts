@@ -4,6 +4,7 @@ import { AuthDto, /*let's try this*//*RefreshTokenDto*/ } from './dto';
 import { Token } from './types';
 import { AuthGuard } from '@nestjs/passport';
 import { Request } from 'express'
+import { ATGuard, RTGuard } from 'src/common/guards';
 
 @Controller('auth')
 export class AuthController {
@@ -30,7 +31,8 @@ export class AuthController {
     return this.authService.local_signin(dto)
   }
 
-  @UseGuards(AuthGuard('Jwt-Refresh'/*'jwt'*/)) // BUG: 'Jwt-Refresh' to guard ?
+  // @UseGuards(AuthGuard('Jwt-Refresh'/*'jwt'*/)) // BUG: 'Jwt-Refresh' to guard ?
+  @UseGuards( RTGuard )
   @Post('/refresh')
   @HttpCode (HttpStatus.OK) // 200
   // way 2 : use DTO instead of Express Request . can i do this?
@@ -44,7 +46,8 @@ export class AuthController {
     return this.authService.refresh(uid, rtk)
   }
 
-  @UseGuards(AuthGuard('Jwt'/*'jwt'*/))
+  // @UseGuards(AuthGuard('Jwt'/*'jwt'*/))
+  @UseGuards( ATGuard )
   @Post('/logout')
   @HttpCode (HttpStatus.OK) // 200
   logout (@Req() req: Request) : Promise<boolean> {
