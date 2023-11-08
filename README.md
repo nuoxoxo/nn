@@ -9,7 +9,7 @@ todo
 | d6      | Jwt 2                   | _what : custom decor . global ATGuard_ 
 | d5      | Jwt                     | _access / refresh_                     | :green_circle:
 ||| - _todo : try..catch for both sign fn_ 
-||| - _bugfix : ~~users table bug at startup~~ Use go script_
+||| - _bugfix : ~~users table bug at startup~~ Run go script_
 | d4      | Rest                    | _what : cont. from d1_                 | :yellow_circle: 
 ||| _curr : use dotenv or nestjs/config . todo - passport_  
 | d3      | 42 OA                   | `@nestjs/passport passport passport-42` 
