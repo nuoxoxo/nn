@@ -1,14 +1,10 @@
-todo
-- [Jwt](https://jwt.io) debugger
-- Auth - check auth-ggl . auth-42 w/ clear usage
-
 | Ref.    | Job                     | Desc.                                  | Run            |
 | :-----: | :---------------------- | :------------------------------------- | :------------: |
 | d8      | _idle_ 
 | d7      | Getter                  | _what : use .env_ 
 | d6      | Jwt 2                   | _what : custom decor . global ATGuard_ 
 | d5      | Jwt                     | _access / refresh_                     | :green_circle:
-||| - _todo : try..catch for both sign fn_ 
+||| - _debugger : [Jwt](https://jwt.io)_ 
 ||| - _bugfix : ~~users table bug at startup~~ Run go script_
 | d4      | Rest                    | _what : cont. from d1_                 | :yellow_circle: 
 ||| _curr : use dotenv or nestjs/config . todo - passport_  
