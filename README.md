@@ -1,73 +1,73 @@
-| Ref.    | Job                     | Desc.                                  | Run            |
-| :-----: | :---------------------- | :------------------------------------- | :------------: |
+| Ref.    | Job                        | Desc.                                  | Run            |
+| :-----: | :------------------------- | :------------------------------------- | :------------: |
 | d8      | _idle_ 
-| d7      | Getter                  | _what : use .env_ 
-| d6      | Jwt 2                   | _what : custom decor . global ATGuard_ 
-| d5      | Jwt                     | _access / refresh_                     | :green_circle:
-||| - _debugger : [Jwt](https://jwt.io)_ 
-||| - _bugfix : ~~users table bug at startup~~ Run go script_
-| d4      | Rest                    | _what : cont. from d1_                 | :yellow_circle: 
-||| _curr : use dotenv or nestjs/config . todo - passport_  
-| d3      | 42 OA                   | `@nestjs/passport passport passport-42` 
-||| _run : start dev + browser_     | 🟢 
-| d2      | Google OA               | _oauth tryout_ 
-||| `@nestjs/passport passport passport-google-oauth20`
-||| _run : start dev + browser_     | 🟢 
-| d1      | ~~&nbsp;Rest&nbsp;~~    | _nestjs tryout_ 
-||| _stat : suspended_              | 
-||| _access using postman / insomnia_  | 🟢 
-| dO      | Pong Sandbox            | _done : paddle segments mapped to rad_ 
+| d7      | Getter                     | _what : use .env_ 
+| d6      | Jwt 2                      | _what : custom decor . global ATGuard_ 
+| d5      | Jwt                        | _access / refresh_                     | :green_circle:
+|         |                            | - _debugger : [Jwt](https://jwt.io)_ 
+|         |                            | - _bugfix : ~~users table bug at startup~~ Run go script_
+| d4      | Rest                       | _what : cont. from d1_                 | :yellow_circle: 
+|         |                            | _curr : use dotenv or nestjs/config . todo - passport_  
+| d3      | 42 OA                      | `@nestjs/passport passport passport-42` 
+|         |                            | _run : start dev + browser_            | 🟢 
+| d2      | Google OA                  | _oauth tryout_ 
+|         |                            | `@nestjs/passport passport passport-google-oauth20`
+|         |                            | _run : start dev + browser_           | 🟢 
+| d1      | ~~&nbsp;Rest&nbsp;~~       | _nestjs tryout_ 
+|         |                            | _stat : suspended_                 | 
+|         |                            | _access using postman / insomnia_  | 🟢 
+| dO      | Pong Sandbox               | _done : paddle segments mapped to rad_ 
 ||
-| c9      | Angular hello           | _what : hello world in angular_
-| c8      | Fla _[sic]_             | _Guessing flags_ 
-||[*io/galf*](https://nuoxoxo.github.io/galf)
-| c7      | Key                     | _Guessing key signatures_ 
-|         |                         | _1st : one Reset button only_
-||[*io/mu*](https://nuoxoxo.github.io/mu)| _2nd : + choices_
-| c6      | Pokemon                 | _what : vanilla + astro_ 
-|| _io/poke - depr._                | _bug : netlify fn to handle key_ 
-| c5      | Jukebox                 | _what : to be written in Astro_ 
-|| [*io/jukebox*](https://nuoxoxo.github.io/jukebox) | _1st draft : works fine_ 
-||| _bug : only mobile has good viewport_ 
-||| _Uses 4 buttons_ | :green_circle: 
-| c4      | Aron Lostor             | _done_ 
-| c3      | Dmd                     | _Guessing weekday_ 
-|         |                         | _1st : input by typing_ 
-|| [*io/dmd*](https://nuoxoxo.github.io/dmd)| _2nd : btns . nightmode . memo_| :green_circle: 
-| c2      | ~~&nbsp;Cronway&nbsp;~~ | _conway on react_                      | :red_circle:
-| c1      | _API hw._               | _api reach-out_                        | :green_circle:
-| cO      | ~~&nbsp;Dictée&nbsp;~~  | _todo : dithering_                     | :red_circle:
+| c9      | Angular hello              | _what : hello world in angular_
+| c8      | Fla _[sic]_                | _Guessing flags_ 
+|         | [*io/galf*](https://nuoxoxo.github.io/galf)
+| c7      | Key                        | _Guessing key signatures_ 
+|         |                            | _1st : one Reset button only_
+|         | [*io/mu*](https://nuoxoxo.github.io/mu)| _2nd : + choices_
+| c6      | Pokemon                    | _what : vanilla + astro_ 
+|         | _io/poke - depr._                   | _bug : netlify fn to handle key_ 
+| c5      | Jukebox                    | _what : to be written in Astro_ 
+|         | [*io/jukebox*](https://nuoxoxo.github.io/jukebox) | _1st draft : works fine_ 
+|         |                            | _bug : only mobile has good viewport_ 
+|         |                            | _Uses 4 buttons_ | :green_circle: 
+| c4      | Aron Lostor                | _done_ 
+| c3      | Dmd                        | _Guessing weekday_ 
+|         |                            | _1st : input by typing_ 
+|         | [*io/dmd*](https://nuoxoxo.github.io/dmd)| _2nd : btns . nightmode . memo_| :green_circle: 
+| c2      | ~~&nbsp;Cronway&nbsp;~~    | _conway on react_                      | :red_circle:
+| c1      | _API hw._                  | _api reach-out_                        | :green_circle:
+| cO      | ~~&nbsp;Dictée&nbsp;~~     | _todo : dithering_                     | :red_circle:
 ||
-| b9      | IPA                     | _1-line api reach-out_ 
+| b9      | IPA                        | _1-line api reach-out_ 
 || [*io/ipa*](https://nuoxoxo.github.io/ipa) | _todo : save array to localstorage_ | :green_circle:
 | b8      | ~~&nbsp;MD Preview&nbsp;~~ | _bug : textarea div different height_ | :red_circle: 
 || [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_ 
-| b7      | Gig                     | _todo : on doubclick_ 
+| b7      | Gig                        | _todo : on doubclick_ 
 || [*io/gig*](https://nuoxoxo.github.io/gig) 
-| b6      | _Bootstrap hw._         | _bug : `.container-fluid`_             | :red_circle:
-| b5      | Nut                     | _deployed_                             | :green_circle:
+| b6      | _Bootstrap hw._            | _bug : `.container-fluid`_             | :red_circle:
+| b5      | Nut                        | _deployed_                             | :green_circle:
 || [*io/nut*](https://nuoxoxo.github.io/nut) 
-| b4      | Coffee                  | _init to Astro + Sass_                 | :green_circle:
-| b3      | IO                      | _done : convert to Astro + Sass_ 
-|| [*io*](https://nuoxoxo.github.io)| _done : rainbow header_ 
-| b2      | Dad Jokes               |                                        | :green_circle:
-| b1      | Cat Album               | _fcc project clone + react_ 
-| bO      | _io/gig - depr._        | _Function Component <--- Route_ 
+| b4      | Coffee                     | _init to Astro + Sass_                 | :green_circle:
+| b3      | IO                         | _done : convert to Astro + Sass_ 
+|| [*io*](https://nuoxoxo.github.io)   | _done : rainbow header_ 
+| b2      | Dad Jokes                  |                                        | :green_circle:
+| b1      | Cat Album                  | _fcc project clone + react_ 
+| bO      | _io/gig - depr._           | _Function Component <--- Route_ 
 ||
-| a9      | _io/gig - depr._        | _unrefreshable routes_ 
+| a9      | _io/gig - depr._           | _unrefreshable routes_ 
 ||
-| a8      | Advent                  |                                        | :green_circle:
-| a7      | Weather                 | _fix : tsx <--- ts_                    | :yellow_circle:
-| a6      | React Hooks             | _useState . useRef_ 
-||                                  | _fix : emoji height_ 
-| a5      | Coughing                | _done : del. Route_ 
+| a8      | Advent                     |                                        | :green_circle:
+| a7      | Weather                    | _fix : tsx <--- ts_                    | :yellow_circle:
+| a6      | React Hooks                | _useState . useRef_ 
+||                                     | _fix : emoji height_ 
+| a5      | Coughing                   | _done : del. Route_ 
 || [*io/coughing*](https://nuoxoxo.github.io/coughing/) | _done : local storage_ | :green_circle:
 | a4      | HSK-3 
 | a3      | Idioms 
-| a2      | Hangman                 | _in progress_                          | :yellow_circle:
-|         | Todolist                | _use components_ 
-| a1      | Todolist                | (vite) 
-| aO      | Todolist                | _bug : EACCES_                         | :yellow_circle: 
+| a2      | Hangman                    | _in progress_                          | :yellow_circle:
+|         | Todolist                   | _use components_ 
+| a1      | Todolist                   | (vite) 
+| aO      | Todolist                   | _bug : EACCES_                         | :yellow_circle: 
 
 ![](https://i.imgur.com/2FVvwuZ.png)
 
