@@ -83,7 +83,7 @@ export class AuthService {
     // step : if user matches, compare refresh token 
 
     const usermatch = await this.prisma.user.findUnique({where: {id: uid}})
-    if (!usermatch) throw new ForbiddenException (
+    if (!usermatch || !usermatch.hashedRT) throw new ForbiddenException (
       'No such user', 'Access Denied Orz'
     )
 
