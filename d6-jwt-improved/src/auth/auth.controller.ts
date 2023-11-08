@@ -1,10 +1,8 @@
 import { Body, Controller, HttpCode, HttpStatus, Post, Req, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { AuthDto, /*let's try this*//*RefreshTokenDto*/ } from './dto';
+import { AuthDto } from './dto';
 import { Token } from './types';
-// import { AuthGuard } from '@nestjs/passport';
-// import { Request } from 'express'
-import {/*ATGuard,*/ RTGuard} from 'src/common/guards';
+import { RTGuard } from 'src/common/guards';
 import {
   Get_current_user_id, 
   Get_current_user, 
