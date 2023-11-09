@@ -1,20 +1,3 @@
-# Run
-
-__Server__
-```
-$ npm run go
-```
-__Try it out__
-```
-$ curl http://localhost:10086/
-$ curl http://localhost:10086/2   
-$ curl -X POST http://localhost:10086/   
-$ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signin
-$ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signup
-```
-OR \
-Use Postman / Insomnia
-
 # Notes
 <details><summary>timestamp</summary>
 &#8301;
@@ -49,6 +32,23 @@ Providers
 >  can be injected as a dependency.
 
 </details>
+
+# Run
+
+__Server__
+```
+$ npm run go
+```
+__Try it out__
+```
+$ curl http://localhost:10086/
+$ curl http://localhost:10086/2   
+$ curl -X POST http://localhost:10086/   
+$ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signin
+$ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signup
+```
+OR \
+Use Postman / Insomnia
 
 
 <!--
