@@ -2,7 +2,7 @@
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | d8      | _backendsandbox_           | _submodule_
 | d7      | Getter                     | _what : use .env_ 
-| d6      | Jwt 2                      | _what : custom decor . global ATGuard_ 
+| d6      | Jwt improv                 | _what : custom decor . global ATGuard_ 
 | d5      | Jwt                        | _access / refresh_                     | :green_circle:
 |         |                            | - _debugger : [Jwt](https://jwt.io)_ 
 |         |                            | - _bugfix : ~~users table bug at startup~~ Run go script_
