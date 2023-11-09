@@ -9,7 +9,7 @@ __Try it out__
 $ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signin
 $ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signup
 ```
-OR
+OR \
 Use Postman / Insomnia
 
 # Notes
