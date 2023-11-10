@@ -3,6 +3,8 @@
 $ install express
 $ install -g nodemon
 $ nodemon
+
+// nodemon has no background support
 ```
 # SETUP
 Go to `https://expressjs.com/en/starter/hello-world.html`
