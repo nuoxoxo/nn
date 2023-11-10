@@ -2,7 +2,9 @@
 ```q
 $ install express
 $ install -g nodemon
+$ nodemon
 ```
+# SETUP
 Go to `https://expressjs.com/en/starter/hello-world.html`
 ```rs
 const express = require('express')
