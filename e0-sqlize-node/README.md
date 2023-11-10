@@ -7,8 +7,8 @@ $ nodemon
 // nodemon has no background support
 ```
 # SETUP
-Go to `https://expressjs.com/en/starter/hello-world.html`
-```rs
+express - go to `https://expressjs.com/en/starter/hello-world.html`
+```ts
 const express = require('express')
 const app = express()
 const port = 3000
@@ -20,4 +20,9 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
   console.log(`listening on port ${port}`)
 })
+```
+database - sequalize & pg
+```q
+$ npm i sequelize sequelize-cli
+$ npm i pg pg-hstore
 ```
