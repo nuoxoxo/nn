@@ -25,4 +25,5 @@ database - sequalize & pg
 ```q
 $ npm i sequelize sequelize-cli
 $ npm i pg pg-hstore
+$ npx sequelize-cli init
 ```
