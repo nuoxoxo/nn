@@ -23,15 +23,17 @@ const port = PORT
 app.get('/', (req, res) => {
   let keys = Object.keys(req)
   console.log(keys, `${keys.length} items`)
-  res.send('Hello World!')
+  res.send(
+    '<br /><img src="https://static.npmjs.com/attachments/ck3uwed1cmso79y74pjugy10f-gak-2x.png"></img>'
+  )
 })
 
 app.get('/world', (req, res) => {
-  res.send('<h1>Hello!<h1>')
+  res.send("<h1>Hello!</h1><br /><img src=' https://avatars.githubusercontent.com/u/6078720?s=200&v=4'>")
 })
 
 app.get('/hello', (req, res) => {
-  res.send('<h1>World!<h1>')
+  res.send("<h1>World!</h1><br /><img src='https://avatars.githubusercontent.com/u/22247014?s=200&v=4'>")
 })
 
 app.listen(port, () => {
