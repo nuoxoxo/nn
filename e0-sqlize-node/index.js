@@ -21,9 +21,19 @@ const app = express()
 const port = PORT
 
 app.get('/', (req, res) => {
+  let keys = Object.keys(req)
+  console.log(keys, `${keys.length} items`)
   res.send('Hello World!')
 })
 
+app.get('/world', (req, res) => {
+  res.send('<h1>Hello!<h1>')
+})
+
+app.get('/hello', (req, res) => {
+  res.send('<h1>World!<h1>')
+})
+
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`listening on port ${port}`)
 })
