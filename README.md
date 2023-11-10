@@ -1,5 +1,7 @@
 | Ref.    | Job                        | Desc.                                  | Run            |
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
+| eO      | Sqlize node                | _what : express . nodemon . swagger_
+||
 | d9      | Rest                       | _todo_
 | d8      | _backendsandbox_           | _submodule_
 | d7      | Getter                     | _what : use .env_ 
