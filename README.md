@@ -1,22 +1,22 @@
 | Ref.    | Job                        | Desc.                                  | Run            |
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| eO      | Sqlize node                | _what : express . nodemon . swagger_
+| eO      | Sqlize node                | _what : express . nodemon . swagger_   | :yellow_circle:
 ||
-| d9      | Rest                       | _todo_
+| d9      | Restful                    | _picked back up_                       | :yellow_circle:
 | d8      | _backendsandbox_           | _submodule_
 | d7      | Getter                     | _what : use .env_ 
 | d6      | Jwt improved               | _what : custom decor . global ATGuard_ 
 | d5      | Jwt                        | _access / refresh_                     | :green_circle:
 |         |                            | - _debugger : [Jwt](https://jwt.io)_ 
 |         |                            | - _bugfix : ~~users table bug at startup~~ Run go script_
-| d4      | Rest                       | _what : cont. from d1_                 | :yellow_circle: 
+| d4      | Restful                    | _what : cont. from d1_                 | :red_circle: 
 |         |                            | _curr : suspended_ 
 |         |                            | _todo : write some notes_  
 | d3      | 42 OA                      | `@nestjs/passport passport passport-42` 
 |         |                            | _run : start dev + browser_            | 🟢 
 | d2      | Google OA                  | _oauth tryout_ 
 |         |                            | `@nestjs/passport passport passport-google-oauth20`
-|         |                            | _run : start dev + browser_           | 🟢 
+|         |                            | _run : start dev + browser_            | 🟢 
 | d1      | ~~&nbsp;Rest&nbsp;~~       | _nestjs tryout_ 
 |         |                            | _stat : suspended_                 | 
 |         |                            | _access using postman / insomnia_  | 🟢 
