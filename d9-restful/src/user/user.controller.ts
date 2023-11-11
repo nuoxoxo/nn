@@ -14,14 +14,17 @@ export class UserController {
   )
   @Get('myself')
   get_me (@Req() req: Request) {
-    console.log({user: req['user']}, "@ user.ctrl.Get/myself\n")
-    return "I am the center<br><img src='https://upload.wikimedia.org/wikipedia/commons/2/2d/Dados_4_a_20_caras_trans.png'>"
+    console.log('user.ctrl.Get/myself ::')
+    console.log({user: req['user']})
+    return req['user']
+    // return req.user // doesn't work don't know why
+    // return 'I am the center'
   }
 
   // UnGuarded
   @Get('me')
   get_myself () {
-    return "i am mine"
+    return "i am mine<br><img src='https://upload.wikimedia.org/wikipedia/commons/2/2d/Dados_4_a_20_caras_trans.png'>"
   }
 
   // UnGuarded

@@ -8,7 +8,9 @@ export class JwtStrategy extends PassportStrategy (
   Strategy,
   'Jwt', // will be identified by the AuthGuard 
 ) {
-  constructor(prisma: PrismaService) {
+  constructor(
+    private prisma: PrismaService
+  ) {
     super({
       jwtFromRequest:
         ExtractJwt.fromAuthHeaderAsBearerToken(),
@@ -18,10 +20,21 @@ export class JwtStrategy extends PassportStrategy (
 
   // TODO : validate func should be handmade
 
-  validate(payload: any) {
-    console.log({payload}, '@ jwt.strat.validate')
+  // validate(payload: any) {
+  async validate(
+    payload: {
+      sub: number,
+      mail: string
+    }
+  ) {
+    console.log('jwt.strat.validate ::')
+    console.log({payload})
     console.log('whatever passed here will be set as value of the user key of the request object (at user.ctrl)\n')
-    return payload
+
+    const user = await this.prisma.user.findUnique({where: {id: payload.sub}})
+
+    delete user.hash
+    return user
   }
 
 }
