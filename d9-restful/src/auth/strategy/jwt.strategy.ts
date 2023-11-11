@@ -18,7 +18,9 @@ export class JwtStrategy extends PassportStrategy (
   // TODO : validate func should be handmade
 
   validate(payload: any) {
-    console.log({payload}, 'from jwt.strat.validate')
+    console.log({payload}, '@ jwt.strat.validate')
+    console.log('whatever passed here will be set as value of the user key of the request object (at user.ctrl)\n')
+    return payload
   }
 
 }
