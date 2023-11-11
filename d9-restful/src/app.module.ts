@@ -16,8 +16,6 @@ import { AppController } from './app.controller';
       isGlobal: true
     })
   ],
-  controllers: [
-    AppController
-  ]
+  controllers: [AppController],
 })
 export class AppModule {}
