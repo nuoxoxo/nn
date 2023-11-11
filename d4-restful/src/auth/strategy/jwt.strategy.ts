@@ -14,4 +14,11 @@ export class JwtStrategy extends PassportStrategy (
       secretOrKey: process.env.JWT_SECRET
     });
   }
+
+  // TODO : validate func should be handmade
+
+  validate(payload: any) {
+    console.log(payload, 'from jwt.strat.validate')
+  }
+
 }

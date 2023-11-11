@@ -13,13 +13,13 @@ export class UserController {
   @UseGuards ( // route will be guarded by this strategy set
     AuthGuard('Jwt'),
   )
-  @Get('me')
+  @Get('myself')
   get_me () {
-    return 'user info'
+    return 'I am the center'
   }
 
   // GET /users/myself . UnGuarded
-  @Get('myself')
+  @Get('me')
   get_myself () {
     return 'i me mine'
   }
