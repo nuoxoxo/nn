@@ -10,7 +10,8 @@
 |         |                            | - _debugger : [Jwt](https://jwt.io)_ 
 |         |                            | - _bugfix : ~~users table bug at startup~~ Run go script_
 | d4      | Rest                       | _what : cont. from d1_                 | :yellow_circle: 
-|         |                            | _curr : use dotenv or nestjs/config . todo - passport_  
+|         |                            | _curr : suspended_ 
+|         |                            | _todo : write some notes_  
 | d3      | 42 OA                      | `@nestjs/passport passport passport-42` 
 |         |                            | _run : start dev + browser_            | 🟢 
 | d2      | Google OA                  | _oauth tryout_ 
