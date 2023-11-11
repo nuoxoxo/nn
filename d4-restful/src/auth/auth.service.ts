@@ -22,7 +22,7 @@ export class AuthService {
 
   async signup (dto: AuthDto) {
     // async : because Prisma is called asynchronously
-    console.log("AuthService.signup ::", {dto})
+    console.log("auth.service.signup ::", {dto})
 
     //  generate hash of the password
     const hash: string = await argon.hash( dto.pass )
@@ -46,7 +46,7 @@ export class AuthService {
       //  way 1
       // return (await token_data).access_token
 
-      console.log(`AuthService.signin ::\n- token -\n${(await token_data).access_token}`)
+      console.log(`auth.service.signin ::\n>>> token <<<\n${(await token_data).access_token}\n`)
 
       //  way 2 - print more interesting stuff
       return {
@@ -75,7 +75,7 @@ export class AuthService {
 
   async signin (dto: AuthDto) {
 
-    console.log("AuthService.signin ::", {dto})
+    console.log("auth.service.signin ::", {dto})
 
     // find user by mail, bc. mail is unique 
     const user = await this.prisma.user.findUnique({
@@ -111,7 +111,7 @@ export class AuthService {
     //  way 1
     // return (await token_data).access_token
 
-    console.log(`AuthService.signin ::\n- token -\n${(await token_data).access_token}`)
+    console.log(`auth.service.signin ::\n>>> token <<<\n${(await token_data).access_token}\n`)
 
     //  way 2 - print more interesting stuff
     return {
