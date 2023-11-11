@@ -1,13 +1,14 @@
 import { Injectable } from "@nestjs/common";
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from "passport-jwt";
+import { PrismaService } from "src/prisma/prisma.service";
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy (
   Strategy,
   'Jwt', // will be identified by the AuthGuard 
 ) {
-  constructor() {
+  constructor(prisma: PrismaService) {
     super({
       jwtFromRequest:
         ExtractJwt.fromAuthHeaderAsBearerToken(),
