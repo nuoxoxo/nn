@@ -18,7 +18,7 @@ $ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/
 # Notes
 <details><summary>timestamp</summary>
 &#8301;
-
+> [2h09](https://youtu.be/GHTA143_b-s&t=7770) - todo : replace `req` by something else \
 > [2h01](https://youtu.be/GHTA143_b-s&t=7260) - todo : setup Bearer \
 > [1h57](https://youtu.be/GHTA143_b-s&t=7020) - protect endpoint w. guard \
 > [1h55](https://youtu.be/GHTA143_b-s&t=6900) - generated ('users') controller . GET /users/myself \
