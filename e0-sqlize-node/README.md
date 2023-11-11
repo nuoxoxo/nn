@@ -1,7 +1,5 @@
 # RUN 
 ```q
-$ install express
-$ install -g nodemon
 $ nodemon
 
 // nodemon has no run-in-background support
@@ -23,6 +21,8 @@ app.listen(port, () => {
 ```
 database - sequalize & pg
 ```q
+$ install express
+$ install -g nodemon
 $ npm i sequelize sequelize-cli
 $ npm i pg pg-hstore
 $ npx sequelize-cli init
