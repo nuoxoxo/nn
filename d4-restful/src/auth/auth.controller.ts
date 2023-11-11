@@ -12,10 +12,7 @@ export class AuthController {
   */
 
   @Post('signup') // see notes
-  signup (
-    @Body() // see notes
-    dto: AuthDto
-  ) {
+  signup (@Body() dto: AuthDto) {
     console.log("AuthCtrl.signup ::", {dto})
     return this.authService.signup(dto) // added dto sas param . timestamp : 1:01:50
   }
@@ -35,9 +32,7 @@ export class AuthController {
 
 
   @Post('signin')
-  signin (
-    @Body()
-    dto: AuthDto
+  signin (@Body() dto: AuthDto
   ) {
     console.log("AuthCtrl.signin ::", {dto})
     return this.authService.signin(dto)
