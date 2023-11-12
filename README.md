@@ -3,7 +3,9 @@
 | eO      | Sqlize node                | _what : express . nodemon . swagger_   | :yellow_circle:
 ||
 | d9      | Restful                    | _picked back up_                       | :yellow_circle:
-| d8      | _backendsandbox_           | _submodule_
+| d8      | _backendsandbox_           | _submodule_ 
+||| _- OAuth (Google, 42)_
+||| _- Docker Prisma Jwt_
 | d7      | Getter                     | _what : use .env_ 
 | d6      | Jwt improved               | _what : custom decor . global ATGuard_ 
 | d5      | Jwt                        | _access / refresh_                     | :green_circle:
