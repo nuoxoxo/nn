@@ -22,7 +22,7 @@ app.listen(port, () => {
   console.log(`listening on port ${port}`)
 })
 ```
-database - sequalize & pg
+Install sequalize, pg, etc.
 ```q
 $ install express
 $ install -g nodemon
