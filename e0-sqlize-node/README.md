@@ -5,7 +5,7 @@ $ nodemon
 // nodemon has no run-in-background support
 ```
 # SETUP
-Express template - go to `https://expressjs.com/en/starter/hello-world.html`
+Express template - `https://expressjs.com/en/starter/hello-world.html`
 ```ts
 const express = require('express')
 const app = express()
