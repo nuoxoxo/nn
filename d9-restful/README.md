@@ -1,7 +1,7 @@
 # Run
 
 __Server__
-```j
+```
 $ (from insmn.) GET /users/{i|me|mine|myself}
 $ (from insmn.) POST /auth/sign{in|up}
 
