@@ -29,10 +29,13 @@ app.listen(port, () => {
 })
 ```
 Install sequalize, pg, etc.
-```q
+```j
 $ install express
 $ install -g nodemon
 $ npm i sequelize sequelize-cli
 $ npm i pg pg-hstore
 $ npx sequelize-cli init
+
+* FIRST MIGRATION *
+$ npx sequelize-cli model:generate --name Badges --attributes name:string,desc:string,publ:boolean,year:number
 ```
