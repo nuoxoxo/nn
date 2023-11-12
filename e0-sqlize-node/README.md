@@ -1,3 +1,9 @@
+<details><summary></summary>
+
+0:21 --- 1st migration
+
+</details>
+
 # RUN 
 ```q
 $ nodemon
