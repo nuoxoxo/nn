@@ -5,7 +5,10 @@ $ nodemon
 // nodemon has no run-in-background support
 ```
 # SETUP
-express - go to `https://expressjs.com/en/starter/hello-world.html`
+Express template:
+
+`https://expressjs.com/en/starter/hello-world.html`
+
 ```ts
 const express = require('express')
 const app = express()
@@ -19,7 +22,7 @@ app.listen(port, () => {
   console.log(`listening on port ${port}`)
 })
 ```
-database - sequalize & pg
+Install sequalize, pg, etc.
 ```q
 $ install express
 $ install -g nodemon
