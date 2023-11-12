@@ -36,6 +36,6 @@ $ npm i sequelize sequelize-cli
 $ npm i pg pg-hstore
 $ npx sequelize-cli init
 
-* FIRST MIGRATION *
+*** FIRST MIGRATION *** 
 $ npx sequelize-cli model:generate --name Badges --attributes name:string,desc:string,publ:boolean,year:number
 ```
