@@ -1,5 +1,7 @@
 ```
 $ brew install nginx
 $ cd ~
-$ cd /usr/local/etc/nginx 
+$ cd /usr/local/etc/nginx
+$ nginx
+$ nginx -s stop
 ```
