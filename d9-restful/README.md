@@ -17,6 +17,13 @@
 
 </details>
 
+# Test
+
+w/ Jest & Pactum
+```
+$ npm run test:e2e
+```
+
 # Run
 
 __Server__
