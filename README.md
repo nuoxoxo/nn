@@ -5,7 +5,7 @@
 | eO      | Sqlize node                | _Abandonned_   | :red_circle:
 ||
 | d9      | Restful                    | _picking up from *d4*_                 | :yellow_circle:
-||| _no refresh token_
+||| _- No refresh token_
 | d8      | Backend                    | _submodule_ 
 ||| _- OAuth (Google, 42)_
 ||| _- Docker Prisma Jwt_
