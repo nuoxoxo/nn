@@ -22,7 +22,7 @@ $ npm init -y
 $ npm install express
 ($ node express)
 ```
-```
+```js
 const express = require('express')
 const app = express()
 require('dotenv').config()
@@ -36,25 +36,27 @@ app.listen(port, () => {
     console.log(`listening on ${port}...`)
 })
 ```
-```
-# fetching the minified node image on apline linux
+```dockerfile
+# get a minified node image on apline linux
 FROM node:slim
 
-# declaring env
 ENV PORT=${E_ONE_PORT}
-
-# setting up the work directory
 WORKDIR /_whatevernameshouldwork_
-
-# copying all the files in our project
 COPY . .
-
-# installing dependencies
 RUN npm install
 
-# starting our application
+# start the app
 CMD [ "node", "index" ]
 
-# exposing server port
+# server port exposed
 EXPOSE ${PORT}
+```
+```j
+*** Build docker image ***
+$ docker build . -t super_server_image
+
+*** Run containers based on the image ***
+$ docker run -p 7777:10086 -d super_server_container
+$ docker run -p 8888:10086 -d super_server_container
+$ docker run -p 9999:10086 -d super_server_container
 ```
