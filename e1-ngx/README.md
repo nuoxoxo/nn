@@ -1,20 +1,16 @@
-## SETUP
+## SETUP - Basic Nginx 🟢
 ```
 $ brew install nginx
 ```
 ## RUN
-```
+```diff
 $ cd ~
 $ cd /usr/local/etc/nginx
-$ nginx
+$ nginx -c /___path___/nginx.conf 
 $ nginx -s stop
 $ nginx -s reload
 ```
-or
-```
-$ nginx -c /___path___/nginx.conf 
-```
-## SETUP - express sub-project
+## SETUP - Docker + Express 🔵 
 ```
 $ cd _server_
 $ npm init
@@ -51,6 +47,7 @@ CMD [ "node", "index" ]
 # server port exposed
 EXPOSE ${PORT}
 ```
+### RUN
 ```j
 *** Build docker image ***
 $ docker build . -t voila_server
@@ -59,4 +56,15 @@ $ docker build . -t voila_server
 $ docker run -p 7777:10086 -d voila_server
 $ docker run -p 8888:10086 -d voila_server
 $ docker run -p 9999:10086 -d voila_server
+
+*** Visit ***
+http://localhost:_Each_Port_is_a_Server_Like_Everyone_of_us_is_a_Star_
+```
+```
+$ cd /usr/local/etc/nginx
+$ nginx -c /___path___/nginx.conf
+
+*** In case unstoppable ***
+$ ps -ef | grep nginx
+$ kill -9 PID
 ```
