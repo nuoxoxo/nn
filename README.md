@@ -3,7 +3,7 @@
 | eO      | Sqlize node                | _what : express . nodemon . swagger_   | :yellow_circle:
 ||
 | d9      | Restful                    | _picked back up_                       | :yellow_circle:
-| d8      | _backendsandbox_           | _submodule_ 
+| d8      | backend                    | _submodule_ 
 ||| _- OAuth (Google, 42)_
 ||| _- Docker Prisma Jwt_
 | d7      | Getter                     | _what : use .env_ 
@@ -22,7 +22,7 @@
 | d1      | ~~&nbsp;Rest&nbsp;~~       | _nestjs tryout_ 
 |         |                            | _stat : suspended_                 | 
 |         |                            | _access using postman / insomnia_  | 🟢 
-| dO      | Pong Sandbox               | _done : paddle segments mapped to rad_ 
+| dO      | Pong                       | _done : paddle segments mapped to rad_ 
 ||
 | c9      | Angular hello              | _what : hello world in angular_
 | c8      | Fla _[sic]_                | _Guessing flags_ 
