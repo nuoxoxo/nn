@@ -16,7 +16,7 @@ $ cd _server_
 $ npm init
 $ npm init -y
 $ npm install express
-($ node express)
+$ node index
 ```
 ```js
 const express = require('express')
