@@ -2,8 +2,8 @@ Custom decorators: [docs.nestjs](https://docs.nestjs.com/custom-decorators)
 
 Timestamp <details><summary></summary>
 
-> [2h13](https://youtu.be/GHTA143_b-s&t=8020) - Custom Decorators \
-> [2h09](https://youtu.be/GHTA143_b-s&t=7770) - Custom Guard \
+> [2h13](https://youtu.be/GHTA143_b-s&t=8020) - Custom _Decorators_ \
+> [2h09](https://youtu.be/GHTA143_b-s&t=7770) - Custom _Guard_ \
 > [2h01](https://youtu.be/GHTA143_b-s&t=7260) - Bearer token \
 > [1h57](https://youtu.be/GHTA143_b-s&t=7020) - Guard: protect endpoint w/ guards \
 > [1h55](https://youtu.be/GHTA143_b-s&t=6900) - 'users' controller generated . added GET /users/myself \
