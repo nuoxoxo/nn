@@ -1,6 +1,7 @@
 | Ref.    | Job                        | Desc.                                  | Run            |
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| e1      | NGINX                      | _what : docker . nginx.conf_           | 🟢 
+| e1      | NGINX                      | _what : docker . nginx.conf_ 
+||| _- Weird homebrew bug_
 | eO      | Sqlize node                | _what : express . nodemon . swagger_   | :yellow_circle:
 ||
 | d9      | Restful                    | _picked back up_                       | :yellow_circle:
