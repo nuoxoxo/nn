@@ -41,14 +41,14 @@ describe('app e2e', () => {
 # Run
 
 __Server__
-```
+```j
 $ GET /users/{i|me|mine|myself}
-*** Abve : "/myself" route uses GET - but w/ a Bearer token for access ***
+*** "/myself" route uses GET - but w/ a Bearer token for access ***
 
-*** Blow : "/signup" "/signin" routes require mail and pass sent w/ POST ***
 $ POST /auth/sign{in|up}
+*** "/signup" "/signin" routes require mail and pass sent w/ POST ***
 ```
-```
+```j
 $ npm run go	/// will leave migrations untouched
 *** or *** 
 $ npm run gone	/// will delete database
