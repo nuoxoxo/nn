@@ -1,5 +1,6 @@
 import { Controller, Get, Req, UseGuards } from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
+// import { AuthGuard } from '@nestjs/passport';
+import { JwtGuard } from 'src/auth/guard';
 
 @Controller('users')
 export class UserController {
@@ -9,9 +10,8 @@ export class UserController {
   @Get()
   */
 
-  @UseGuards ( // route will be guarded by this strategy set
-    AuthGuard('Jwt'),
-  )
+  // @UseGuards (AuthGuard('Jwt')) // Now using a custom guard) : below
+  @UseGuards(JwtGuard)
   @Get('myself')
   get_me (@Req() req: Request) {
     console.log('user.ctrl.Get/myself ::')
