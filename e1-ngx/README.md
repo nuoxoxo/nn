@@ -63,13 +63,17 @@ http://localhost:_Each_Port_is_a_Server_Like_Everyone_of_us_is_a_Star_
 ```
 $ cd /usr/local/etc/nginx
 $ nginx -c /___path___/nginx.conf
+```
 OR
+```
 $ cd /usr/local/Cellar/nginx/1.25.3
 $ nginx -c /___path___/nginx.conf
-
+```
+```j
 *** In case unstoppable ***
 $ ps -ef | grep nginx
 $ kill -9 PID
 
 *** Stop all containers ***
+$ docker stop $(docker ps -aq)  
 ```
