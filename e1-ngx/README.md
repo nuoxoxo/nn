@@ -10,6 +10,7 @@ $ nginx
 $ nginx -s stop
 $ nginx -s reload
 ```
+or
 ```
 $ nginx -c /___path___/nginx.conf 
 ```
