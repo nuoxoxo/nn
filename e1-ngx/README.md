@@ -53,10 +53,10 @@ EXPOSE ${PORT}
 ```
 ```j
 *** Build docker image ***
-$ docker build . -t super_server_image
+$ docker build . -t voila_server
 
 *** Run containers based on the image ***
-$ docker run -p 7777:10086 -d super_server_container
-$ docker run -p 8888:10086 -d super_server_container
-$ docker run -p 9999:10086 -d super_server_container
+$ docker run -p 7777:10086 -d voila_server
+$ docker run -p 8888:10086 -d voila_server
+$ docker run -p 9999:10086 -d voila_server
 ```
