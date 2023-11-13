@@ -1,21 +1,3 @@
-# Run
-
-__Server__
-```
-$ (from insmn.) GET /users/{i|me|mine|myself}
-$ (from insmn.) POST /auth/sign{in|up}
-
-$ npm run go	/// will leave migrations untouched
-* OR
-$ npm run gone	/// will delete database
-```
-__Try it out__
-```
-$ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signin
-$ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signup
-```
-
-# Notes
 <details><summary>timestamp</summary>
 
 > [2h09](https://youtu.be/GHTA143_b-s&t=7770) - todo : replace `req` by something else \
@@ -34,6 +16,46 @@ $ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/
 > 23m~~
 
 </details>
+
+# Test
+_do_
+```
+$ npm run test:e2e
+```
+_after setting up app.e2e-spec_
+```ts
+// *** app.e2e ***
+
+describe('app e2e', () => {
+
+  beforeAll(async () => {
+    const module_ref = await Test.createTestingModule({
+      imports: [AppModule],
+    }).compile()
+  })
+  it.todo('hello test')
+})
+```
+
+
+# Run
+
+__Server__
+```
+$ (from insmn.) GET /users/{i|me|mine|myself}
+$ (from insmn.) POST /auth/sign{in|up}
+
+$ npm run go	/// will leave migrations untouched
+* OR
+$ npm run gone	/// will delete database
+```
+__Try it out__
+```
+$ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signin
+$ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/signup
+```
+
+# Notes
 
 <details><summary>gloss</summary>
 &#8301;
