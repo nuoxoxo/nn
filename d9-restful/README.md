@@ -1,4 +1,6 @@
-<details><summary>timestamp</summary>
+Custom decorators: [docs.nestjs](https://docs.nestjs.com/custom-decorators)
+
+Timestamp <details><summary></summary>
 
 > [2h09](https://youtu.be/GHTA143_b-s&t=7770) - todo : replace `req` by something else \
 > [2h01](https://youtu.be/GHTA143_b-s&t=7260) - todo : setup Bearer \
@@ -13,10 +15,10 @@
 > 1h01m30 - whitelist and (dto: AuthDto) as param for signup \
 > 58m - pipe \
 > 52m - dto \
-> 23m~~
+> 23m 
 </details>
 
-- Custom decorators: [docs.nestjs](https://docs.nestjs.com/custom-decorators)
+
 
 # Test
 _do_
