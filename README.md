@@ -1,5 +1,6 @@
 | Ref.    | Job                        | Desc.                                  | Run            |
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
+| e1      | Nginx sandbox              | _what : docker . nginx.conf_   | :yellow_circle:
 | eO      | Sqlize node                | _what : express . nodemon . swagger_   | :yellow_circle:
 ||
 | d9      | Restful                    | _picked back up_                       | :yellow_circle:
