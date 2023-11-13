@@ -18,11 +18,25 @@
 </details>
 
 # Test
-
-w/ Jest & Pactum
+_do_
 ```
 $ npm run test:e2e
 ```
+_after_
+```ts
+// *** app.e2e ***
+
+describe('app e2e', () => {
+
+  beforeAll(async () => {
+    const module_ref = await Test.createTestingModule({
+      imports: [AppModule],
+    }).compile()
+  })
+  it.todo('hello test')
+})
+```
+
 
 # Run
 
