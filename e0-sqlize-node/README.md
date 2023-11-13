@@ -38,6 +38,9 @@ $ npx sequelize-cli init
 
 *** FIRST MIGRATION *** 
 $ npx sequelize-cli model:generate --name Badges --attributes name:string,desc:string,publ:boolean,year:number
+
+$ brew services start postgresql
+$ psql
 ```
 
 # &#8203;
