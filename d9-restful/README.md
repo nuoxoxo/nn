@@ -2,6 +2,7 @@ Custom decorators: [docs.nestjs](https://docs.nestjs.com/custom-decorators)
 
 Timestamp <details><summary></summary>
 
+> [2h27](https://youtu.be/GHTA143_b-s&t=8760) - sigin now return 200 rather than 201 \
 > [2h17](https://youtu.be/GHTA143_b-s&t=8220) - + PATCH endpoint \
 > [2h13](https://youtu.be/GHTA143_b-s&t=8020) - Custom _Decorators_ \
 > [2h09](https://youtu.be/GHTA143_b-s&t=7770) - Custom _Guard_ \
