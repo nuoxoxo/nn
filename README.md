@@ -4,7 +4,8 @@
 ||| _- Weird homebrew bug_
 | eO      | Sqlize node                | _Abandonned_   | :red_circle:
 ||
-| d9      | Restful                    | _picked back up_                       | :yellow_circle:
+| d9      | Restful                    | _picking up from *d4*_                 | :yellow_circle:
+||| _no refresh token_
 | d8      | Backend                    | _submodule_ 
 ||| _- OAuth (Google, 42)_
 ||| _- Docker Prisma Jwt_
