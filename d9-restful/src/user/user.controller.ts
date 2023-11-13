@@ -4,6 +4,7 @@ import { GetUserDCR } from 'src/auth/decorators/getuser.decorator';
 import { JwtGuard } from 'src/auth/guard';
 // import { AuthGuard } from '@nestjs/passport'; // no longer used
 
+@UseGuards(JwtGuard)
 @Controller('users')
 export class UserController {
 
@@ -13,7 +14,6 @@ export class UserController {
   */
 
   // @UseGuards (AuthGuard('Jwt')) // Now using a custom guard) : JwtGuard
-  @UseGuards(JwtGuard)
   @Get('myself')
   // get_me (@Req() req: Request) // Now using a custom decorator : GetUserDCR
   get_me (@GetUserDCR() user: User ){
@@ -30,13 +30,11 @@ export class UserController {
     */
   }
 
-  // UnGuarded
   @Get('me')
   get_myself () {
     return "i am mine<br><img src='https://upload.wikimedia.org/wikipedia/commons/2/2d/Dados_4_a_20_caras_trans.png'>"
   }
 
-  // UnGuarded
   @Get('mine')
   get_mine () {
     return "i am mine"
