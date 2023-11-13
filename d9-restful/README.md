@@ -22,7 +22,7 @@ _do_
 ```
 $ npm run test:e2e
 ```
-_after_
+_after setting up app.e2e-spec_
 ```ts
 // *** app.e2e ***
 
