@@ -1,16 +1,12 @@
-<details><summary></summary>
+# Abandoned
 
-0:21 --- 1st migration
-
-</details>
-
-# RUN 
+### ~~RUN~~ 
 ```q
 $ nodemon
 
 // nodemon has no run-in-background support
 ```
-# SETUP
+### ~~SETUP~~
 Express template:
 
 `https://expressjs.com/en/starter/hello-world.html`
