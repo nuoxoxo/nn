@@ -1,21 +1,25 @@
-<details><summary>timestamp</summary>
+Custom decorators: [docs.nestjs](https://docs.nestjs.com/custom-decorators)
 
-> [2h09](https://youtu.be/GHTA143_b-s&t=7770) - todo : replace `req` by something else \
-> [2h01](https://youtu.be/GHTA143_b-s&t=7260) - todo : setup Bearer \
-> [1h57](https://youtu.be/GHTA143_b-s&t=7020) - protect endpoint w. guard \
-> [1h55](https://youtu.be/GHTA143_b-s&t=6900) - generated ('users') controller . GET /users/myself \
-> [1h49](https://youtu.be/GHTA143_b-s&t=6540) - todo : intercept the token / Bearer strategy \
+Timestamp <details><summary></summary>
+
+> [2h13](https://youtu.be/GHTA143_b-s&t=8020) - Custom _Decorators_ \
+> [2h09](https://youtu.be/GHTA143_b-s&t=7770) - Custom _Guard_ \
+> [2h01](https://youtu.be/GHTA143_b-s&t=7260) - Bearer token \
+> [1h57](https://youtu.be/GHTA143_b-s&t=7020) - Guard: protect endpoint w/ guards \
+> [1h55](https://youtu.be/GHTA143_b-s&t=6900) - 'users' controller generated . added GET /users/myself \
+> [1h49](https://youtu.be/GHTA143_b-s&t=6540) - Intercept the token: Bearer strategy \
 > [1h42](https://youtu.be/GHTA143_b-s&t=6125) - jwt in auth.module & auth.service \
-> [1h39](https://youtu.be/GHTA143_b-s&t=5940) - todo : jwt installed \
-> [1h24](https://youtu.be/GHTA143_b-s?t=5040) - install passport . jwt \
+> [1h39](https://youtu.be/GHTA143_b-s&t=5940) - jwt installed \
+> [1h24](https://youtu.be/GHTA143_b-s?t=5040) - install passport \
 > 1h14 - todo : signin logic \
 > 1h02 - todo : signup logic w/ argon \
 > 1h01m30 - whitelist and (dto: AuthDto) as param for signup \
 > 58m - pipe \
 > 52m - dto \
-> 23m~~
-
+> 23m 
 </details>
+
+
 
 # Test
 _do_
@@ -41,12 +45,16 @@ describe('app e2e', () => {
 # Run
 
 __Server__
-```
-$ (from insmn.) GET /users/{i|me|mine|myself}
-$ (from insmn.) POST /auth/sign{in|up}
+```j
+$ GET /users/{i|me|mine|myself}
+*** "/myself" route uses GET - but w/ a Bearer token for access ***
 
+$ POST /auth/sign{in|up}
+*** "/signup" "/signin" routes require mail and pass sent w/ POST ***
+```
+```j
 $ npm run go	/// will leave migrations untouched
-* OR
+*** or *** 
 $ npm run gone	/// will delete database
 ```
 __Try it out__
