@@ -11,6 +11,10 @@ export class AuthController {
   The AuthService class should have been decorated as `Injectable`
   */
 
+  //////////////////////////////////////////
+  //             auth/signup              //
+  //////////////////////////////////////////
+
   @Post('signup') // see notes
   signup (@Body() dto: AuthDto) {
     console.log("auth.ctrl.signup ::", {dto})
@@ -30,6 +34,9 @@ export class AuthController {
   and bind it to the parameter 'dto' of type 'AuthDto'
   */
 
+  //////////////////////////////////////////
+  //             auth/signin              //
+  //////////////////////////////////////////
 
   @Post('signin')
   signin (@Body() dto: AuthDto

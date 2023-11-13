@@ -13,27 +13,38 @@ export class UserController {
   @Get()
   */
 
-  // @UseGuards (AuthGuard('Jwt')) // Now using a custom guard) : JwtGuard
+  //////////////////////////////////////////
+  //             users/myself             //
+  //////////////////////////////////////////
+
+  // Before using a custom guard) : JwtGuard
+  /* @UseGuards (AuthGuard('Jwt')) */
   @Get('myself')
-  // get_me (@Req() req: Request) // Now using a custom decorator : GetUserDCR
+  // Before using a custom decorator : GetUserDCR
+  /* get_me (@Req() req: Request) */
   get_me (@GetUserDCR() user: User ){
-
     console.log('user.ctrl.Get/myself ::')
-
-    // added @GetUserDCR custom decorator
-    return user
-
     // before adding custom decorator : GetUserDCR
     /*
     console.log({user: req['user']})
     return req['user']
     */
+    // added @GetUserDCR custom decorator
+    return user
   }
+
+  //////////////////////////////////////////
+  //               users/me               //
+  //////////////////////////////////////////
 
   @Get('me')
   get_myself () {
     return "i am mine<br><img src='https://upload.wikimedia.org/wikipedia/commons/2/2d/Dados_4_a_20_caras_trans.png'>"
   }
+
+  //////////////////////////////////////////
+  //              users/mine              //
+  //////////////////////////////////////////
 
   @Get('mine')
   get_mine () {
