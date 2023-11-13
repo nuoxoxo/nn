@@ -82,6 +82,7 @@ Providers
 
 </details>
 
+[custom-decorators](https://docs.nestjs.com/custom-decorators)
 
 <!--
 <details><summary>carto</summary>
