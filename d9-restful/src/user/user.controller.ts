@@ -1,4 +1,4 @@
-import { Controller, Get, Patch, /*Req,*/ UseGuards } from '@nestjs/common';
+import { Controller, Get, HttpCode, HttpStatus, Patch, /*Req,*/ UseGuards } from '@nestjs/common';
 import { User } from '@prisma/client';
 import { GetUserDCR } from 'src/auth/decorators/getuser.decorator';
 import { JwtGuard } from 'src/auth/guard';
@@ -37,9 +37,10 @@ export class UserController {
   //               users/me               //
   //////////////////////////////////////////
 
+  @HttpCode(HttpStatus.I_AM_A_TEAPOT)
   @Get('me')
   get_myself () {
-    return "i am mine<br><img src='https://upload.wikimedia.org/wikipedia/commons/2/2d/Dados_4_a_20_caras_trans.png'>"
+    return "<img src='https://i.imgur.com/FgB52xe.jpg'><br>i am mine"
   }
 
   //////////////////////////////////////////
@@ -48,21 +49,22 @@ export class UserController {
 
   @Get('mine')
   get_mine () {
-    return "i am mine"
+    return "<img src='https://i.imgur.com/2YsOTfy.jpg'><br>i me mine"
   }
 
   //////////////////////////////////////////
-  //              users/hash              //
+  //              users/mail              //
   //////////////////////////////////////////
 
-  // @Get('hash')
-  // get_hash (
-  //   @GetUserDCR() user: User,
-  //   @GetUserDCR('')
-  // ) {
-
-  //   return "i am mine"
-  // }
+  @HttpCode(HttpStatus.FOUND) // 302 Found to replace 200 Ok
+  @Get('mail')
+  get_hash (
+    @GetUserDCR() user: User,
+    @GetUserDCR('mail') mail: string
+  ) {
+    console.log('user.ctrl.Get/mine ::', {mail})
+    return "<img src='https://i.imgur.com/fBf6iUi.jpg'/>"
+  }
 
   @Patch()
   edit_user() {
