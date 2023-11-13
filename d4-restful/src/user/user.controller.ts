@@ -30,6 +30,6 @@ export class UserController {
   // UnGuarded
   @Get('mine')
   get_mine () {
-    return "i am mine"
+    return "i me mine"
   }
 }
