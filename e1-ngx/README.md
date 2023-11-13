@@ -63,6 +63,9 @@ http://localhost:_Each_Port_is_a_Server_Like_Everyone_of_us_is_a_Star_
 ```
 $ cd /usr/local/etc/nginx
 $ nginx -c /___path___/nginx.conf
+OR
+$ cd /usr/local/Cellar/nginx/1.25.3
+$ nginx -c /___path___/nginx.conf
 
 *** In case unstoppable ***
 $ ps -ef | grep nginx
