@@ -14,8 +14,9 @@
 > 58m - pipe \
 > 52m - dto \
 > 23m~~
-
 </details>
+
+- Custom decorators: [docs.nestjs](https://docs.nestjs.com/custom-decorators)
 
 # Test
 _do_
@@ -82,7 +83,6 @@ Providers
 
 </details>
 
-[custom-decorators](https://docs.nestjs.com/custom-decorators)
 
 <!--
 <details><summary>carto</summary>
