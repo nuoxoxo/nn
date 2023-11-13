@@ -5,7 +5,7 @@ FROM node:slim
 ENV PORT=${E_ONE_PORT}
 
 # Setting up the work directory
-WORKDIR /express-docker
+WORKDIR /_whatevernameshouldwork_
 
 # Copying all the files in our project
 COPY . .
