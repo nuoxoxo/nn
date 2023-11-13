@@ -1,6 +1,8 @@
 import { Controller, Get, Req, UseGuards } from '@nestjs/common';
-// import { AuthGuard } from '@nestjs/passport';
+import { User } from '@prisma/client';
+import { GetUserDCR } from 'src/auth/decorators/getuser.decorator';
 import { JwtGuard } from 'src/auth/guard';
+// import { AuthGuard } from '@nestjs/passport'; // no longer used
 
 @Controller('users')
 export class UserController {
@@ -10,15 +12,22 @@ export class UserController {
   @Get()
   */
 
-  // @UseGuards (AuthGuard('Jwt')) // Now using a custom guard) : below
+  // @UseGuards (AuthGuard('Jwt')) // Now using a custom guard) : JwtGuard
   @UseGuards(JwtGuard)
   @Get('myself')
-  get_me (@Req() req: Request) {
+  // get_me (@Req() req: Request) // Now using a custom decorator : GetUserDCR
+  get_me (@GetUserDCR() user: User ){
+
     console.log('user.ctrl.Get/myself ::')
+
+    // added @GetUserDCR custom decorator
+    return user
+
+    // before adding custom decorator : GetUserDCR
+    /*
     console.log({user: req['user']})
     return req['user']
-    // return req.user // doesn't work don't know why
-    // return 'I am the center'
+    */
   }
 
   // UnGuarded
