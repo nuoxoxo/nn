@@ -1,4 +1,4 @@
-import { Controller, Get, Req, UseGuards } from '@nestjs/common';
+import { Controller, Get, Patch, /*Req,*/ UseGuards } from '@nestjs/common';
 import { User } from '@prisma/client';
 import { GetUserDCR } from 'src/auth/decorators/getuser.decorator';
 import { JwtGuard } from 'src/auth/guard';
@@ -23,7 +23,7 @@ export class UserController {
   // Before using a custom decorator : GetUserDCR
   /* get_me (@Req() req: Request) */
   get_me (@GetUserDCR() user: User ){
-    console.log('user.ctrl.Get/myself ::')
+    console.log('user.ctrl.Get/myself ::', {user})
     // before adding custom decorator : GetUserDCR
     /*
     console.log({user: req['user']})
@@ -49,5 +49,23 @@ export class UserController {
   @Get('mine')
   get_mine () {
     return "i am mine"
+  }
+
+  //////////////////////////////////////////
+  //              users/hash              //
+  //////////////////////////////////////////
+
+  // @Get('hash')
+  // get_hash (
+  //   @GetUserDCR() user: User,
+  //   @GetUserDCR('')
+  // ) {
+
+  //   return "i am mine"
+  // }
+
+  @Patch()
+  edit_user() {
+    // empty
   }
 }

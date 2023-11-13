@@ -29,7 +29,7 @@ export class JwtStrategy extends PassportStrategy (
   ) {
     console.log('jwt.strat.validate ::')
     console.log({payload})
-    console.log('whatever passed here will be set as value of the user key of the request object (at user.ctrl)\n')
+    console.log('whatever passed here will be appended to the user key of the request object (at user.ctrl)\n')
 
     const user = await this.prisma.user.findUnique({where: {id: payload.sub}})
 
