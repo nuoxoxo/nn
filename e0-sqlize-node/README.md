@@ -43,5 +43,3 @@ $ brew services start postgresql
 $ psql
 ```
 
-# &#8203;
-![](https://camo.githubusercontent.com/4d5df0044a6c76f36e66fbe854420c1ad68800076836b392682bb12d4ce6a9bd/68747470733a2f2f692e696d6775722e636f6d2f363251414b4b692e706e67)
