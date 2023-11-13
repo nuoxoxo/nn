@@ -3,7 +3,7 @@
 | eO      | Sqlize node                | _what : express . nodemon . swagger_   | :yellow_circle:
 ||
 | d9      | Restful                    | _picked back up_                       | :yellow_circle:
-| d8      | backend                    | _submodule_ 
+| d8      | Backend                    | _submodule_ 
 ||| _- OAuth (Google, 42)_
 ||| _- Docker Prisma Jwt_
 | d7      | Getter                     | _what : use .env_ 
