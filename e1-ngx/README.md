@@ -67,4 +67,6 @@ $ nginx -c /___path___/nginx.conf
 *** In case unstoppable ***
 $ ps -ef | grep nginx
 $ kill -9 PID
+
+*** Stop all containers ***
 ```
