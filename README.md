@@ -2,7 +2,7 @@
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | e1      | NGINX                      | _what : docker . nginx.conf_ 
 ||| _- Weird homebrew bug_
-| eO      | Sqlize node                | _Abandonned_   | :red_circle:
+| eO      | Sqlize node                | _\*Abandonned\*_   | :red_circle:
 ||
 | d9      | Restful                    | _picking up from *d4*_                 | :yellow_circle:
 ||| _- No refresh token_
