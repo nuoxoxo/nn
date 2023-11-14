@@ -6,7 +6,7 @@
 ||| _- Somehow nginx does weird stuff_
 ||
 | d9      | Restful                    | _picking up from *d4*_                 | :yellow_circle:
-||| _- No refresh token_
+||| _- curr : jest e2e-spec_
 | d8      | Backender                  | _submodule_ 
 ||| _- OAuth (Google, 42)_
 ||| _- Docker Prisma Jwt_
