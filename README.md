@@ -18,13 +18,13 @@
 | d4      | Restful                    | _what : cont. from d1_ 
 |         |                            | _\*Suspended\*_  
 | d3      | 42 OA                      | `@nestjs/passport passport passport-42` 
-|         |                            | _run : start dev + browser_            | 🟢 
+|         |                            | _- run : start dev + browser_            | 🟢 
 | d2      | Google OA                  | _oauth tryout_ 
 |         |                            | `@nestjs/passport passport passport-google-oauth20`
-|         |                            | _run : start dev + browser_            | 🟢 
+|         |                            | _- run : start dev + browser_            | 🟢 
 | d1      | ~~&nbsp;Rest&nbsp;~~       | _nestjs tryout_ 
 |         |                            | _\*Suspended\*_   
-|         |                            | _access using postman / insomnia_      | 🟢 
+|         |                            | _- access using postman / insomnia_      | 🟢 
 | dO      | Pong                       | _done : paddle segments mapped to rad_ 
 ||
 | c9      | Angular hello              | _what : hello world in angular_
