@@ -6,7 +6,7 @@
 ||
 | d9      | Restful                    | _picking up from *d4*_                 | :yellow_circle:
 ||| _- No refresh token_
-| d8      | Backend                    | _submodule_ 
+| d8      | Backender                  | _submodule_ 
 ||| _- OAuth (Google, 42)_
 ||| _- Docker Prisma Jwt_
 | d7      | Getter                     | _what : use .env_ 
