@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import * as dotenv from 'dotenv';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 
 async function bootstrap() {
   /*
@@ -26,6 +27,16 @@ async function bootstrap() {
   listening on env-defined port for incoming HTTP requests 
   2 ways to use environment variables
   */
+
+  // using Swagger
+  const swgr_doc_config = new DocumentBuilder()
+    .setTitle('Documentation Tryout')
+    .setDescription('nuoxoxo restful document')
+    .setVersion('1.0.0.8.6')
+    .build()
+  const swgr_doc = SwaggerModule.createDocument(app, swgr_doc_config)
+  SwaggerModule.setup('api', app, swgr_doc)
+  // using Swagger // 
 
   // use dotenv - way 1/2
   await app.listen(process.env.LISTEN_PORT)
