@@ -78,10 +78,8 @@
 | a1      | Todolist                   | (vite) 
 | aO      | Todolist                   | _bug : EACCES_                         | :yellow_circle: 
 
-![](https://i.imgur.com/2FVvwuZ.png)
-
-![](https://i.imgur.com/nIAzsy5.png)
-
+![](https://i.imgur.com/2FVvwuZ.png) \
+![](https://i.imgur.com/nIAzsy5.png) \
 ![](https://i.imgur.com/Qj9s1El.png)
 <!--![](https://i.imgur.com/JdAHyEc.png)--->
 
@@ -89,6 +87,6 @@
 ![](https://i.imgur.com/xhiA86y.png)
 -->
 
-![](https://i.imgur.com/Vi97P6T.jpg)
-
-![](https://i.imgur.com/FB0IhV0.png)
+![](https://i.imgur.com/Vi97P6T.jpg) \
+![](https://i.imgur.com/PhO7Dg8.png) \
+![](https://i.imgur.com/FB0IhV0.png) 
