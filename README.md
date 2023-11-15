@@ -1,7 +1,7 @@
 | Ref.    | Job                        | Desc.                                  | Run            |
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | e1      | NGINX                      | _what : docker . nginx.conf_ 
-||| _- Weird homebrew [bug](e1-ngx/README.md)
+||| _- Weird homebrew [bug](e1-ngx/README.md)_
 | eO      | Sqlize                     | _\*Abandonned\*_   | :red_circle:
 ||| _- Somehow nginx does weird stuff_
 ||
