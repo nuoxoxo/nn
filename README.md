@@ -7,7 +7,7 @@
 ||
 | d9      | Restful                    | _picking up from *d4*_                 | :yellow_circle:
 ||| _- curr : jest e2e-spec_
-| d8      | Backender                  | _submodule_ 
+| d8      | Backender                  | _submodule [link](https://github.com/nuoxoxo/backender)_ 
 ||| _- (File Under) OAuth (Google, 42)_
 ||| _- (File Under) Docker Prisma Jwt_
 | d7      | Getter                     | _what : use .env_ 
