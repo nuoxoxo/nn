@@ -8,8 +8,8 @@
 | d9      | Restful                    | _picking up from *d4*_                 | :yellow_circle:
 ||| _- curr : jest e2e-spec_
 | d8      | Backender                  | _submodule_ 
-||| _- OAuth (Google, 42)_
-||| _- Docker Prisma Jwt_
+||| _- (File Under) OAuth (Google, 42)_
+||| _- (File Under) Docker Prisma Jwt_
 | d7      | Getter                     | _what : use .env_ 
 | d6      | Jwt improved               | _what : custom decor . global ATGuard_ 
 | d5      | Jwt                        | _access / refresh_                     | :green_circle:
