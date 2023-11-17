@@ -1,12 +1,62 @@
+Custom decorators: [docs.nestjs](https://docs.nestjs.com/custom-decorators)
+
+Timestamp <details><summary></summary>
+
+> [2h29](https://youtu.be/GHTA143_b-s&t=8940) - e2e testing . pactum
+> [2h17](https://youtu.be/GHTA143_b-s&t=8220) - sigin now return 200 rather than 201 \
+> [2h13](https://youtu.be/GHTA143_b-s&t=8020) - Custom _Decorators_ \
+> [2h09](https://youtu.be/GHTA143_b-s&t=7770) - Custom _Guard_ \
+> [2h01](https://youtu.be/GHTA143_b-s&t=7260) - Bearer token \
+> [1h57](https://youtu.be/GHTA143_b-s&t=7020) - Guard: protect endpoint w/ guards \
+> [1h55](https://youtu.be/GHTA143_b-s&t=6900) - 'users' controller generated . added GET /users/myself \
+> [1h49](https://youtu.be/GHTA143_b-s&t=6540) - Intercept the token: Bearer strategy \
+> [1h42](https://youtu.be/GHTA143_b-s&t=6125) - jwt in auth.module & auth.service \
+> [1h39](https://youtu.be/GHTA143_b-s&t=5940) - jwt installed \
+> [1h24](https://youtu.be/GHTA143_b-s?t=5040) - install passport \
+> 1h14 - todo : signin logic \
+> 1h02 - todo : signup logic w/ argon \
+> 1h01m30 - whitelist and (dto: AuthDto) as param for signup \
+> 58m - pipe \
+> 52m - dto \
+> 23m 
+</details>
+
+
+
+# Test
+_do_
+```
+$ npm run test:e2e
+```
+_after setting up app.e2e-spec_
+```ts
+// *** app.e2e ***
+
+describe('app e2e', () => {
+
+  beforeAll(async () => {
+    const module_ref = await Test.createTestingModule({
+      imports: [AppModule],
+    }).compile()
+  })
+  it.todo('hello test')
+})
+```
+
+
 # Run
 
 __Server__
-```
-$ (from insmn.) GET /users/{i|me|mine|myself}
-$ (from insmn.) POST /auth/sign{in|up}
+```j
+$ GET /users/{i|me|mine|myself}
+*** "/myself" route uses GET - but w/ a Bearer token for access ***
 
+$ POST /auth/sign{in|up}
+*** "/signup" "/signin" routes require mail and pass sent w/ POST ***
+```
+```j
 $ npm run go	/// will leave migrations untouched
-* OR
+*** or *** 
 $ npm run gone	/// will delete database
 ```
 __Try it out__
@@ -16,24 +66,6 @@ $ curl -X POST -d "mail=abc@xyz.org&pass=abc123xyz" http://localhost:10086/auth/
 ```
 
 # Notes
-<details><summary>timestamp</summary>
-
-> [2h09](https://youtu.be/GHTA143_b-s&t=7770) - todo : replace `req` by something else \
-> [2h01](https://youtu.be/GHTA143_b-s&t=7260) - todo : setup Bearer \
-> [1h57](https://youtu.be/GHTA143_b-s&t=7020) - protect endpoint w. guard \
-> [1h55](https://youtu.be/GHTA143_b-s&t=6900) - generated ('users') controller . GET /users/myself \
-> [1h49](https://youtu.be/GHTA143_b-s&t=6540) - todo : intercept the token / Bearer strategy \
-> [1h42](https://youtu.be/GHTA143_b-s&t=6125) - jwt in auth.module & auth.service \
-> [1h39](https://youtu.be/GHTA143_b-s&t=5940) - todo : jwt installed \
-> [1h24](https://youtu.be/GHTA143_b-s?t=5040) - install passport . jwt \
-> 1h14 - todo : signin logic \
-> 1h02 - todo : signup logic w/ argon \
-> 1h01m30 - whitelist and (dto: AuthDto) as param for signup \
-> 58m - pipe \
-> 52m - dto \
-> 23m~~
-
-</details>
 
 <details><summary>gloss</summary>
 &#8301;

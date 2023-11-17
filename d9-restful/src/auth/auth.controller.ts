@@ -1,4 +1,4 @@
-import { Body, Controller, ParseIntPipe, Post } from "@nestjs/common";
+import { Body, Controller, HttpCode, HttpStatus, ParseIntPipe, Post } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { AuthDto } from "./dto";
 
@@ -10,6 +10,10 @@ export class AuthController {
   Constructor takes an instance of AuthService class as a param/
   The AuthService class should have been decorated as `Injectable`
   */
+
+  //////////////////////////////////////////
+  //             auth/signup              //
+  //////////////////////////////////////////
 
   @Post('signup') // see notes
   signup (@Body() dto: AuthDto) {
@@ -30,7 +34,11 @@ export class AuthController {
   and bind it to the parameter 'dto' of type 'AuthDto'
   */
 
+  //////////////////////////////////////////
+  //             auth/signin              //
+  //////////////////////////////////////////
 
+  @HttpCode(HttpStatus.OK)
   @Post('signin')
   signin (@Body() dto: AuthDto
   ) {

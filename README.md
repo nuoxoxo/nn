@@ -1,29 +1,30 @@
 | Ref.    | Job                        | Desc.                                  | Run            |
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| e1      | NGINX                      | _what : docker . nginx.conf_ 
-||| _- Weird homebrew bug_
-| eO      | Sqlize node                | _Abandonned_   | :red_circle:
+| e1      | NGINX                      | _what : docker . nginx.conf_           | :yellow_circle:
+||| _- Weird [bug](e1-ngx/README.md) from homebrew_
+| eO      | Sqlize                     | _\*Abandonned\*_                       | :yellow_circle:
+||| _- nginx does weird stuff_
 ||
-| d9      | Restful                    | _picked back up_                       | :yellow_circle:
-| d8      | Backend                    | _submodule_ 
-||| _- OAuth (Google, 42)_
-||| _- Docker Prisma Jwt_
+| d9      | Restful                    | _picking up from *d4*_                 | :yellow_circle:
+||| _- curr : jest e2e-spec_
+| d8      | Backender                  | _submodule [link](https://github.com/nuoxoxo/backender)_ 
+||| _- (File Under) OAuth (Google, 42)_
+||| _- (File Under) Docker Prisma Jwt_
 | d7      | Getter                     | _what : use .env_ 
 | d6      | Jwt improved               | _what : custom decor . global ATGuard_ 
 | d5      | Jwt                        | _access / refresh_                     | :green_circle:
 |         |                            | - _debugger : [Jwt](https://jwt.io)_ 
 |         |                            | - _bugfix : ~~users table bug at startup~~ Run go script_
-| d4      | Restful                    | _what : cont. from d1_                 | :red_circle: 
-|         |                            | _curr : suspended_ 
-|         |                            | _todo : write some notes_  
+| d4      | Restful                    | _what : cont. from d1_ 
+|         |                            | _\*Suspended\*_  
 | d3      | 42 OA                      | `@nestjs/passport passport passport-42` 
-|         |                            | _run : start dev + browser_            | 🟢 
+|         |                            | _- run : start dev + browser_            | 🟢 
 | d2      | Google OA                  | _oauth tryout_ 
 |         |                            | `@nestjs/passport passport passport-google-oauth20`
-|         |                            | _run : start dev + browser_            | 🟢 
+|         |                            | _- run : start dev + browser_            | 🟢 
 | d1      | ~~&nbsp;Rest&nbsp;~~       | _nestjs tryout_ 
-|         |                            | _stat : suspended_                 | 
-|         |                            | _access using postman / insomnia_  | 🟢 
+|         |                            | _\*Suspended\*_   
+|         |                            | _- access using postman / insomnia_      | 🟢 
 | dO      | Pong                       | _done : paddle segments mapped to rad_ 
 ||
 | c9      | Angular hello              | _what : hello world in angular_
@@ -77,10 +78,8 @@
 | a1      | Todolist                   | (vite) 
 | aO      | Todolist                   | _bug : EACCES_                         | :yellow_circle: 
 
-![](https://i.imgur.com/2FVvwuZ.png)
-
-![](https://i.imgur.com/nIAzsy5.png)
-
+![](https://i.imgur.com/2FVvwuZ.png) \
+![](https://i.imgur.com/nIAzsy5.png) \
 ![](https://i.imgur.com/Qj9s1El.png)
 <!--![](https://i.imgur.com/JdAHyEc.png)--->
 
@@ -88,6 +87,6 @@
 ![](https://i.imgur.com/xhiA86y.png)
 -->
 
-![](https://i.imgur.com/Vi97P6T.jpg)
-
-![](https://i.imgur.com/FB0IhV0.png)
+![](https://i.imgur.com/Vi97P6T.jpg) \
+![](https://i.imgur.com/PhO7Dg8.png) \
+![](https://i.imgur.com/FB0IhV0.png) 

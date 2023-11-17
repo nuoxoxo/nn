@@ -1,3 +1,3 @@
-[submodule "d8-backendsandbox"]
-	path = d8-backendsandbox
-	url = https://github.com/nuoxoxo/backendsandbox.git
+[submodule "d8-backender"]
+	path = d8-backender
+	url = https://github.com/nuoxoxo/backender.git
