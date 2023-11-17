@@ -1,4 +1,5 @@
 import { WebSocketGateway } from "@nestjs/websockets";
 
 @WebSocketGateway()
-export class myGateway {}
+export class myGateway {
+}
