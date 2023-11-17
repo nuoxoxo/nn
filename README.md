@@ -2,8 +2,7 @@
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | e1      | NGINX                      | _what : docker . nginx.conf_           | :yellow_circle:
 ||| _- Weird [bug](e1-ngx/README.md) from homebrew_
-| eO      | Sqlize                     | _\*Abandonned\*_                       | :yellow_circle:
-||| _- nginx does weird stuff_
+| eO      | wsg                        | _what : websocket gateway_ 
 ||
 | d9      | Restful                    | _picking up from *d4*_                 | :yellow_circle:
 ||| _- curr : jest e2e-spec_
@@ -77,6 +76,10 @@
 |         | Todolist                   | _use components_ 
 | a1      | Todolist                   | (vite) 
 | aO      | Todolist                   | _bug : EACCES_                         | :yellow_circle: 
+<!---
+| eO      | Sqlize                     | _\*Abandonned\*_                       | :yellow_circle:
+||| _- nginx does weird stuff_
+--->
 
 ![](https://i.imgur.com/2FVvwuZ.png) \
 ![](https://i.imgur.com/nIAzsy5.png) \
