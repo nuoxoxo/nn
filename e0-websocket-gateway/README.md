@@ -1,4 +1,4 @@
-# Create a Websocket Gateway Server
+# Create a WebSocket Gateway Server
 Doc: [Gateways | NestJS](https://docs.nestjs.com/websockets/gateways)
 
 # Story Mode
