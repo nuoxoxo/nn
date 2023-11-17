@@ -2,7 +2,7 @@
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | e1      | NGINX                      | _what : docker . nginx.conf_           | :yellow_circle:
 ||| _- Weird [bug](e1-ngx/README.md) from homebrew_
-| eO      | wsg                        | _what : websocket gateway_ 
+| eO      | Watergate                  | _what : websocket gateway_ 
 ||
 | d9      | Restful                    | _picking up from *d4*_                 | :yellow_circle:
 ||| _- curr : jest e2e-spec_
