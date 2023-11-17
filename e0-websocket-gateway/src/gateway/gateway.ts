@@ -2,8 +2,8 @@ import { MessageBody, SubscribeMessage, WebSocketGateway } from "@nestjs/websock
 
 @WebSocketGateway()
 export class myGateway {
-  @SubscribeMessage('newMsg')
+  @SubscribeMessage('newMessagePattern') // param is "chosen pattern to be fulfilled"
   onNewMsg (@MessageBody () payload: any) {
-    console.log(payload)
+    console.log( payload )
   }
 }
