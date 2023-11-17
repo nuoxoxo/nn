@@ -58,7 +58,7 @@ $ docker run -p 8888:10086 -d voila_server
 $ docker run -p 9999:10086 -d voila_server
 
 *** Visit ***
-http://localhost:_Each_Port_is_a_Server_Like_Everyone_of_us_is_a_Star_
+http://localhost:_Each_Port_is_a_Server_
 ```
 ```
 $ cd /usr/local/etc/nginx
