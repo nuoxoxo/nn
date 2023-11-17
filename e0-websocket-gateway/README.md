@@ -1,7 +1,7 @@
 # Create a WebSocket Gateway Server
 Doc: [Gateways | NestJS](https://docs.nestjs.com/websockets/gateways)
 
-# Story Mode
+### Story Mode
 
 ```
 ↑ [recv]: listen on 'route_two' in [Events]
