@@ -1,12 +1,17 @@
 import { OnModuleInit } from "@nestjs/common";
-import { MessageBody, SubscribeMessage, WebSocketGateway, WebSocketServer } from "@nestjs/websockets";
 import { Server } from "socket.io";
+import {
+  MessageBody,
+  SubscribeMessage,
+  WebSocketGateway,
+  WebSocketServer 
+} from "@nestjs/websockets";
 
 @WebSocketGateway()
 export class myGateway implements OnModuleInit {
 
   @WebSocketServer()
-  server: Server;
+  server: Server
 
   private connCount: number = 0
   private disconnCount: number = 0
