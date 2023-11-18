@@ -11,27 +11,20 @@ export class SocketClient {
   }
 
   onModuleInit () {
-
-    // Originally defined here
-    /*
-     this.sockCli.on('connect', () => {console.log('(client) connected to gateway')})
-    this.sockCli.on('Major Tom', (payload) => {console.log(payload)})
-    */
-
-    // Updated version: defined as priavte function
     this.registerConsumerEvents()
-
   }
 
   private registerConsumerEvents () {
-
+    // on connection
     // Emitter.on<ev>(ev:'connect|connection', listener:() => void)
     this.sockCli.on(
-      'connect',
+      'connection',
       () => {
         console.log('(client) connected to gateway')
       }
     )
+
+    // on 'Major tom'
     // Emitter.on<ev>(ev:'connect|connection', listener:(...args) => void)
     this.sockCli.on(
       'Major Tom',
