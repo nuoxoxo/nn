@@ -18,7 +18,7 @@ export class SocketClient {
       }
     )
 
-    this.sockCli.on('route_two', (payload) => {console.log(payload)})
+    this.sockCli.on('Major Tom', (payload) => {console.log(payload)})
   }
 
 }
