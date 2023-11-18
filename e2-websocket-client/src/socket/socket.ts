@@ -12,8 +12,9 @@ export class SocketClient {
 
   onModuleInit () {
     this.sockCli.on(
-      'connect', () => {
-        console.log('connected to gateway')
+      'connect',
+      () => {
+        console.log('connected to gateway:')//, gateway.id)
       }
     )
   }
