@@ -16,6 +16,12 @@ export class myGateway implements OnModuleInit {
   private connCount: number = 0
   // private disconnCount: number = 0
 
+  private replyArray: string[] = [
+    'Hello', 'Good morning', 'Buon giorno', 'Ohayo', 'Buenas dias', 'Where are you going', 'Thank you, God', 'You woke up',
+    'My life is now about to have some meaning',
+    'I fix you breakfast'
+  ]
+
   onModuleInit() {
     this.server.on( // StrictEventEmitter.on<ev>(ev: 'conn', listener: (sock) => void) /// proto
       'connect', // @param ev: "connection|connect"
@@ -55,7 +61,7 @@ export class myGateway implements OnModuleInit {
     console.log( payload )
     this.server.emit(
       'Major Tom',
-      `hello! (replying to \"${payload}\")`
+      `${this.replyArray[Math.floor(Math.random() * this.replyArray.length)]}! (original text: \"${payload}\")`
     )
   }
 }
