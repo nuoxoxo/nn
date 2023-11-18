@@ -11,9 +11,9 @@ $ nest new e0-websocket-gateway
 ### Story Mode
 
 ```
-↑ [recv]: listen on 'route_two' in [Events]
+↑ [recv]: listen on 'Major Tom' in [Events]
 ↑ 
-↑ [send]: send to 'route_one' (pattern to be fulfilled)
+↑ [send]: send to 'Ground Control' (pattern to be fulfilled)
 ↑ [send]: fill in [Message] 
 ↑ 
 ↑ Connect ➜ http://localhost:10086
