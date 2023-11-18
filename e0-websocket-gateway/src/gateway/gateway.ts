@@ -21,12 +21,12 @@ export class myGateway implements OnModuleInit {
       'connection', // @param ev: "connection"
       (sock) => { // @param listener: callback func
         console.log('Server', sock.id, 'connected', `(${this.connCount++})`)
-        sock.on(
+        sock.on( // StrictEventEmitter.on<ev>(ev: 'conn', listener: (sock, dscp?) => void)
           'disconnect', // @param ev: "connection"
-          (reason, desc) => { // @param listener: callback func
+          (reason, dscp) => { // @param listener: callback func
             console.log(
               'Server', sock.id, 'disconnected', 
-              `(reason: ${reason}, desc: ${desc})`
+              `(reason: ${reason}, dscp: ${dscp})`
             )
           }
         )
