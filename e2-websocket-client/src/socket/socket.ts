@@ -15,8 +15,15 @@ export class SocketClient {
   }
 
   private registerConsumerEvents () {
-    // on connection
-    // Emitter.on<ev>(ev:'connect|connection', listener:() => void)
+    this.sockCli.emit(
+      'Ground Control', // Whatever the gateway is subscribe to
+      {
+        msg: 'o(^.^o)(o^.^)o',
+      } // will trigger gateway onNewMsg() to emit a Major Tom event
+    )
+
+    // on connection 
+    // Emitter.on<e>(e:'connect|connection', listener:() => void)
     this.sockCli.on(
       'connection',
       () => {
@@ -24,14 +31,16 @@ export class SocketClient {
       }
     )
 
-    // on 'Major tom'
-    // Emitter.on<ev>(ev:'connect|connection', listener:(...args) => void)
+    // on 'Major Tom'
+    // Emitter.on<e>(e:'connect|connection', listener:(...args) => void)
     this.sockCli.on(
       'Major Tom',
       (payload) => {
-        console.log(payload)
+        console.log(`Major Tom: ${payload}`)
       }
     )
+
+
   }
 
 }
