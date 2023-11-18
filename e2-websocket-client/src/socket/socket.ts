@@ -11,11 +11,14 @@ export class SocketClient {
   }
 
   onModuleInit () {
-    this.sockCli.on(
+    this.sockCli.on( // Emitter.on<ev>(ev:'conn', listener:() => void)
       'connect',
       () => {
-        console.log('connected to gateway:')//, gateway.id)
+        console.log('connected to gateway:')
       }
     )
+
+    this.sockCli.on('route_two', (payload) => {console.log(payload)})
   }
+
 }
