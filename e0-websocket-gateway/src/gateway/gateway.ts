@@ -19,7 +19,8 @@ export class myGateway implements OnModuleInit {
   private replyArray: string[] = [
     'Hello', 'Good morning', 'Buon giorno', 'Ohayo', 'Buenas dias', 'Where are you going', 'Thank you, God', 'You woke up',
     'My life is now about to have some meaning', 'Rubber Soul',
-    'I fix you breakfast', 'Sgt. Pepper\'s Lonely Hearts Club Band', 
+    'I fix you breakfast', 'Sgt. Pepper\'s Lonely Hearts Club Band',
+    'Magical Mystery Tour'
   ]
 
   onModuleInit() {
