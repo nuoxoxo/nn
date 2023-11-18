@@ -9,7 +9,7 @@ $ nest new e2-websocket-client
 ```
 
 ### Story Mode
-```sc
+```ts
 // src/socket/socket.ts
 
 import { Injectable } from "@nestjs/common";
@@ -35,7 +35,7 @@ export class SocketClient {
   }
 }
 ```
-```ts
+```sc
 // src/socket/socket.module.ts
 
 import { Module } from "@nestjs/common";
