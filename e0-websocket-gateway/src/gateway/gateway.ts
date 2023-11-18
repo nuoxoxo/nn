@@ -33,7 +33,7 @@ export class myGateway implements OnModuleInit {
 
   @SubscribeMessage('Ground Control') // param: a pattern to be fulfilled
   onNewMsg (@MessageBody () payload: any) {
-    console.log( payload )
+    console.log(`Ground Control: ${payload}` )
     this.server.emit(
       'Major Tom',
       `${this.replyArray[Math.floor(Math.random() * this.replyArray.length)]}! (original text: \"${payload}\")`
