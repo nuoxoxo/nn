@@ -4,19 +4,11 @@ Doc: [Gateways | NestJS](https://docs.nestjs.com/websockets/gateways)
 *
 ↓
 $ npm run start:dev
-$ npm i --save @nestjs/websockets @nestjs/platform-socket.io
+$ npm install socket.io-client
 $ nest new e2-websocket-client
 ```
 
 ### Story Mode
-
-```
-↑ 
-↑
-*** Test: sending request on Postman ***
-```
-- Postman: ✅ 
-- Insomnia: No Socket IO [support](https://github.com/Kong/insomnia/issues/5884) 
 ```sc
 // src/socket/socket.ts
 
@@ -39,10 +31,8 @@ export class SocketClient {
         console.log('connected to gateway:')
       }
     )
-
     this.sockCli.on('Major Tom', (payload) => {console.log(payload)})
   }
-
 }
 ```
 ```ts
@@ -56,7 +46,6 @@ import { SocketClient } from "./socket";
 })
 
 export class SocketModule {}
-
 ```
 
 
