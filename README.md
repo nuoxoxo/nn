@@ -1,7 +1,7 @@
 | Ref.    | Job                        | Desc.                                  | Run            |
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | e2      | Socket                     | _**WebSocket** Socket_              | :green_circle: 
-||| _work : intercept server's reply to postman_ | :green_circle: 
+||| _work : intercept 10086's reply to postman_ | :green_circle: 
 ||| _- Test using Postman_ 
 | e1      | NGINX                      | _what : docker . nginx.conf_           | :yellow_circle: 
 ||| _- Weird [bug](e1-ngx/README.md) from homebrew_
