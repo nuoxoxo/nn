@@ -1,8 +1,10 @@
 | Ref.    | Job                        | Desc.                                  | Run            |
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| e1      | NGINX                      | _what : docker . nginx.conf_           | :yellow_circle:
+| e2      | WebSocket: Socket          | _what : intercept server's reply to postamn_ | :green_circle: 
+||| _- Test using Postman_ 
+| e1      | NGINX                      | _what : docker . nginx.conf_           | :yellow_circle: 
 ||| _- Weird [bug](e1-ngx/README.md) from homebrew_
-| eO      | Gateway                    | _what : websocket gateway_             | 🟢 
+| eO      | WebSocket: Gateway         | _what : websocket gateway_             | :green_circle: 
 ||| _- Test using Postman (see instr.)_ 
 ||
 | d9      | Restful                    | _picking up from *d4*_                 | :yellow_circle:
@@ -18,13 +20,13 @@
 | d4      | Restful                    | _what : cont. from d1_ 
 |         |                            | _\*Suspended\*_  
 | d3      | 42 OA                      | `@nestjs/passport passport passport-42` 
-|         |                            | _- run : start dev + browser_            | 🟢 
+|         |                            | _- run : start dev + browser_            | :green_circle: 
 | d2      | Google OA                  | _oauth tryout_ 
 |         |                            | `@nestjs/passport passport passport-google-oauth20`
-|         |                            | _- run : start dev + browser_            | 🟢 
+|         |                            | _- run : start dev + browser_            | :green_circle: 
 | d1      | ~~&nbsp;Rest&nbsp;~~       | _nestjs tryout_ 
 |         |                            | _\*Suspended\*_   
-|         |                            | _- access using postman / insomnia_      | 🟢 
+|         |                            | _- access using postman / insomnia_      | :green_circle: 
 | dO      | Pong                       | _done : paddle segments mapped to rad_ 
 ||
 | c9      | Angular hello              | _what : hello world in angular_
