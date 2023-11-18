@@ -5,7 +5,7 @@ Doc: [Gateways | NestJS](https://docs.nestjs.com/websockets/gateways)
 ↓
 $ npm run start:dev
 $ npm install socket.io-client
-$ nest new e2-websocket-client
+$ nest new websocket-client
 ```
 
 ### Story Mode
