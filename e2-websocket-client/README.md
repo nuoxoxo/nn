@@ -1,3 +1,5 @@
+![](https://postman.com/_aether-assets/illustrations/dark/illustration-connect-to-server.svg)
+
 # Make a client
 Doc: [Gateways | NestJS](https://docs.nestjs.com/websockets/gateways)
 ```
@@ -47,5 +49,4 @@ import { SocketClient } from "./socket";
 
 export class SocketModule {}
 ```
-
 
