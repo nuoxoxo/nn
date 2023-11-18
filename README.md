@@ -1,11 +1,11 @@
 | Ref.    | Job                        | Desc.                                  | Run            |
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| e2      | Socket                     | _**WebSocket** Socket_              | :green_circle: 
+| e2      | Socket                     | _**WebSocket (2/3)** Socket_              | :green_circle: 
 ||| _work : intercept 10086's reply to postman_ | :green_circle: 
 ||| _- Test using Postman_ 
 | e1      | NGINX                      | _what : docker . nginx.conf_           | :yellow_circle: 
 ||| _- Weird [bug](e1-ngx/README.md) from homebrew_
-| eO      | Gateway                    | _**WebSocket** Gateway_             | :green_circle: 
+| eO      | Gateway                    | _**WebSocket (1/3)** Gateway_             | :green_circle: 
 ||| _- Test using Postman (see instr.)_ 
 ||
 | d9      | Restful                    | _picking up from *d4*_                 | :yellow_circle:
