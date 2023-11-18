@@ -50,11 +50,11 @@ export class myGateway implements OnModuleInit {
     console.log(signal, 'disconnected')
   }
 
-  @SubscribeMessage('route_one') // param: a pattern to be fulfilled
+  @SubscribeMessage('Ground Control') // param: a pattern to be fulfilled
   onNewMsg (@MessageBody () payload: any) {
     console.log( payload )
     this.server.emit(
-      'route_two',
+      'Major Tom',
       `hello! (replying to \"${payload}\")`
     )
   }
