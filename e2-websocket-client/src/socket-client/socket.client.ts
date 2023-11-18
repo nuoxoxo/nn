@@ -10,4 +10,11 @@ export class SocketClient {
     this.sockCli = io('http://localhost:10086')
   }
 
+  onModuleInit () {
+    this.sockCli.on(
+      'connect', () => {
+        console.log('connected to gateway')
+      }
+    )
+  }
 }
