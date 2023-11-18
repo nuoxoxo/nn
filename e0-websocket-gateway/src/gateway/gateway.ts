@@ -49,7 +49,7 @@ export class myGateway implements OnModuleInit {
           'disconnect', // @param ev: "disconnect"
           (reason, dscp) => { // @param listener: callback func
             console.log(
-              'Server', sock.id, 'disconnected', 
+              `Server ${sock.id} disconnected`, '\n',
               `(reason: ${reason}, dscp: ${dscp})`
             )
           }
