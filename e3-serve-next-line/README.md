@@ -7,6 +7,8 @@ $ make
 $ nc localhost 8080 
 ```
 
+<!---
+
 # Todo
 Consider using
 ```j
@@ -75,3 +77,5 @@ bool create_socket()
     return true;
 }
 ```
+
+--->
