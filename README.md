@@ -9,7 +9,7 @@
 ||| _- Test using Postman (see instr.)_ 
 ||
 | d9      | Restful                    | _picking up from *d4*_                 | :yellow_circle:
-||| _- curr : jest e2e-spec_
+||| _- todo : jest e2e-spec_
 | d8      | Backender                  | _submodule [link](https://github.com/nuoxoxo/backender)_ 
 ||| _- (File Under) OAuth (Google, 42)_
 ||| _- (File Under) Docker Prisma Jwt_
