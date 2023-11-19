@@ -1,12 +1,13 @@
 #include "iostream"
 #include "cstring"
 #include "unistd.h"
-//#include "sys/socket.h" // close . select
 #include "netinet/in.h"
+#include <arpa/inet.h> // inet_addr
 #include "vector"
 
 #define MAX 77777
 #define BUFFSIZE 77777
+#define LOCALHOST "127.0.0.1" // 2130706433
 
 int sock, conn, top, rune; 
 int num = 0;
@@ -36,7 +37,7 @@ int main(int ac, char **v) {
         drop("Dropped");
     memset( & servaddr, 0, sizeof(servaddr));
     servaddr.sin_family = AF_INET;
-    servaddr.sin_addr.s_addr = htonl(2130706433); // 127.0.0.1
+    servaddr.sin_addr.s_addr = inet_addr(LOCALHOST);
     servaddr.sin_port = htons(atoi(v[1]));
     if (bind(sock, (const struct sockaddr * ) & servaddr, sizeof(servaddr)) == -1)
         drop("Dropped");
