@@ -1,8 +1,6 @@
 # Run
 ```sh
 $ make
-```
-```sh
 $ nc localhost 8080 (2x)
 ```
 
