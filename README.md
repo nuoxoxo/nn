@@ -1,11 +1,11 @@
 | Ref.    | Job                        | Desc.                                  | Run            |
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| e3      | *servenextline*            | _what : an exam set turned useful_     | test ok
-| e2      | Socket                     | _**WebSocket (2/3)** Socket_              | :green_circle: 
+| e3      | SNL                        | _what : C++ exam set turned useful_    | test ok
+| e2      | Socket                     | _**WebSocket (2/3)** Socket_           | :green_circle: 
 ||| _- Test using Postman_ 
 | e1      | NGINX                      | _what : docker . nginx.conf_           | :yellow_circle: 
 ||| _- Weird [bug](e1-ngx/README.md) from homebrew_
-| eO      | Gateway                    | _**WebSocket (1/3)** Gateway_             | :green_circle: 
+| eO      | Gateway                    | _**WebSocket (1/3)** Gateway_          | :green_circle: 
 ||| _- Test using Postman (see instr.)_ 
 ||
 | d9      | Restful                    | _picking up from *d4*_                 | :yellow_circle:
@@ -15,7 +15,7 @@
 ||| _- (File Under) Docker Prisma Jwt_
 | d7      | Getter                     | _what : use .env_ 
 | d6      | Jwt improved               | _what : custom decor . global ATGuard_ 
-| d5      | Jwt                        | _access / refresh_                     | :green_circle:
+| d5      | Jwt                        | _access / refresh_                      | :green_circle:
 |         |                            | - _debugger : [Jwt](https://jwt.io)_ 
 |         |                            | - _bugfix : ~~users table bug at startup~~ Run go script_
 | d4      | Restful                    | _what : cont. from d1_ 
