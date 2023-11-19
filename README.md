@@ -1,5 +1,6 @@
 | Ref.    | Job                        | Desc.                                  | Run            |
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
+| e3      | Serve next line            | _what : an exam set turned useful_     | test ok
 | e2      | Socket                     | _**WebSocket (2/3)** Socket_              | :green_circle: 
 ||| _- Test using Postman_ 
 | e1      | NGINX                      | _what : docker . nginx.conf_           | :yellow_circle: 
