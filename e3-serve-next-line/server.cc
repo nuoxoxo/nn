@@ -19,7 +19,7 @@ struct sockaddr_in servaddr, cli;
 socklen_t   len = sizeof(cli);
 fd_set  AA, RR, WW;
 
-std::vector<std::string> msgs( MAX );
+std::vector<std::string> inbox( MAX );
 std::vector<int> uuid( MAX );
 
 char    buff[BUFFSIZE + 1];
@@ -61,22 +61,22 @@ int main(int ac, char **v) {
                     drop("Dropped");
                 top = std::max(top, conn);
                 uuid[conn] = num++;
-                msgs[conn] = "";
+                inbox[conn] = "";
                 speak(conn, "server: client " + std::to_string(uuid[conn]) + " just arrived\n");
                 FD_SET(conn, & AA);
             } else if ((rune = recv(fd, buff, BUFFSIZE, 0)) < 1) {
                 speak(fd, "server: client " + std::to_string(uuid[fd]) + " just left\n");
                 close(fd);
-                msgs[fd] = "";
+                inbox[fd] = "";
                 FD_CLR(fd, & AA);
                 break;
             }
             buff[rune] = 0;
-            msgs[fd] += buff;
+            inbox[fd] += buff;
             std::string s;
-            get_next_line(msgs[fd], s);
+            get_next_line(inbox[fd], s);
             speak(fd, "client " + std::to_string(uuid[fd]) + ": " + s);
-            /* for (std::string s; get_next_line(msgs[fd], s);)
+            /* for (std::string s; get_next_line(inbox[fd], s);)
                 speak(fd, "client " + std::to_string(uuid[fd]) + ": " + s); */
         }
     }
