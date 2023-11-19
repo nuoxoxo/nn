@@ -1,9 +1,9 @@
 #include "iostream"
+#include "vector"
 #include "cstring"
 #include "unistd.h"
 #include "netinet/in.h"
-#include <arpa/inet.h> // inet_addr
-#include "vector"
+#include "arpa/inet.h" // inet_addr
 
 #define MAX 77777
 #define BUFFSIZE 77777
@@ -29,7 +29,8 @@ int get_next_line(std::string & buf, std::string & msg);
 void speak(int, const std::string &);
 void drop(const std::string &);
 
-int main(int ac, char **v) {
+int main(int ac, char **v)
+{
 
     if (ac ^ 2) {
         std::cerr << "Wrong number of arguments" << std::endl;
