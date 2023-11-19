@@ -9,8 +9,10 @@
 #define BUFFSIZE 77777
 #define LOCALHOST "127.0.0.1" // 2130706433
 
-int sock, conn, top, rune; 
+int sock, conn, top; 
 int num = 0;
+
+ssize_t rune;
 
 struct sockaddr_in servaddr, cli;
 
