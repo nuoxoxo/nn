@@ -64,3 +64,14 @@ bool bind_and_listen(int port)
     return true;
 }
 ```
+```j
+bool create_socket()
+{
+    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) == -1)
+    {
+        drop("Dropped at sock");
+        return false;
+    }
+    return true;
+}
+```
