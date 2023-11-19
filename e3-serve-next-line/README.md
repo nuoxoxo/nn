@@ -43,3 +43,24 @@ void handle_consumer_input(int fd)
     }
 }
 ```
+```j
+bool bind_and_listen(int port)
+{
+    memset( & servaddr, 0, sizeof(servaddr));
+    servaddr.sin_family = AF_INET;
+    servaddr.sin_addr.s_addr = inet_addr(LOCALHOST);
+    servaddr.sin_port = htons(port);
+
+    if (bind(sock, (const struct sockaddr *) & servaddr, sizeof(servaddr)) == -1)
+    {
+        drop("Dropped at bind");
+        return false;
+    }
+    else if (listen(sock, 10) == -1)
+    {
+        drop("Dropped at listen");
+        return false;
+    }
+    return true;
+}
+```
