@@ -1,7 +1,7 @@
 # Run
 ```sh
 $ make
-$ nc nchamber-nseat port (2x)
+$ nc -C "nchamber-nseat" port (2x)
 ```
 
 <!---
