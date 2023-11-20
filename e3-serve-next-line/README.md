@@ -1,7 +1,7 @@
 # Run
 ```sh
 $ make
-$ nc localhost 8080 (2x)
+$ nc nchamber-nseat port (2x)
 ```
 
 <!---
