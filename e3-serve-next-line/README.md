@@ -1,5 +1,5 @@
 # Run
-```sh
+```
 $ make
 $ nc -C "nchamber-nseat" port (2x)
 ```
