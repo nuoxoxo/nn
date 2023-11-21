@@ -1,7 +1,6 @@
 cc			= c++
 cflags		= -Werror -Wextra -Wall
-#src			= server.cc
-src			= new_server.cc
+src			= server.cc
 name		= a.out
 port		= 7777
 
