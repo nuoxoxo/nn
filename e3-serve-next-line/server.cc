@@ -40,7 +40,8 @@ int main(int ac, char **v)
         drop("Dropped");
     memset( & servaddr, 0, sizeof(servaddr));
     servaddr.sin_family = AF_INET;
-    servaddr.sin_addr.s_addr = inet_addr(LOCALHOST);
+    // servaddr.sin_addr.s_addr = inet_addr(LOCALHOST);
+    servaddr.sin_addr.s_addr = htonl( INADDR_ANY );
     servaddr.sin_port = htons(atoi(v[1]));
     if (bind(sock, (const struct sockaddr * ) & servaddr, sizeof(servaddr)) == -1)
         drop("Dropped");
