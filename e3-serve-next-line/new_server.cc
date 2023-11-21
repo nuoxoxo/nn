@@ -93,7 +93,8 @@ void    bind_and_listen(int port)
 
     memset( & servaddr, 0, sizeof(servaddr));
     servaddr.sin_family = AF_INET;
-    servaddr.sin_addr.s_addr = inet_addr( LOCALHOST );
+    // servaddr.sin_addr.s_addr = inet_addr( LOCALHOST );
+    servaddr.sin_addr.s_addr = htonl( INADDR_ANY ); // wildcard add. 0.0.0.0
     servaddr.sin_port = htons(port);
     if (bind(sock, (const struct sockaddr *) & servaddr, sizeof(servaddr)) == -1)
     {
