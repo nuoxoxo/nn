@@ -9,6 +9,15 @@
 #define BUFFSIZE 77777
 #define LOCALHOST "127.0.0.1" // 2130706433
 
+std::vector<std::string> NATO = {
+    "Alfa", "Bravo", "Charlie", "Delta", "Echo",
+    "Foxtrot", "Golf", "Hotel", "India", "Juliett",
+    "Kilo", "Lima", "Mike", "November", "Oscar",
+    "Papa", "Quebec", "Romeo", "Sierra", "Tango",
+    "Uniform", "Victor", "Whiskey", "X-ray", "Yankee",
+    "Zulu"
+};
+
 int     sock, conn, top; 
 int     num = 0;
 
@@ -93,7 +102,6 @@ void    bind_and_listen(int port)
 
     memset( & servaddr, 0, sizeof(servaddr));
     servaddr.sin_family = AF_INET;
-    // servaddr.sin_addr.s_addr = inet_addr( LOCALHOST );
     servaddr.sin_addr.s_addr = htonl( INADDR_ANY ); // wildcard add. 0.0.0.0
     servaddr.sin_port = htons(port);
     if (bind(sock, (const struct sockaddr *) & servaddr, sizeof(servaddr)) == -1)
@@ -109,7 +117,7 @@ void    bind_and_listen(int port)
         }
     }
     std::cout << "on port " << port << "\n";
-    std::cout << "listening\n";
+    std::cout << "listening \n\n";
 }
 
 void    handle_consumer_input(int fd)
@@ -117,7 +125,8 @@ void    handle_consumer_input(int fd)
 
     if ((rune = recv(fd, buff, BUFFSIZE, 0)) < 1)
     {
-        speak(fd, "server: client " + std::to_string(uuid[fd]) + " just left\n");
+        speak(fd, NATO[uuid[fd] % (int) NATO.size()] + " just left the chat\n");
+        std::cout << NATO[uuid[fd] % (int) NATO.size()] + " just left chat\n";
         close(fd);
         inbox[fd] = "";
         FD_CLR(fd, & AA);
@@ -130,7 +139,7 @@ void    handle_consumer_input(int fd)
         inbox[fd] += buff;
         while (get_next_line(inbox[fd], s))
         {
-            speak(fd, "client " + std::to_string(uuid[fd]) + ": " + s);
+            speak(fd, NATO[uuid[fd]] + ": " + s);
         }
     }
 }
@@ -145,7 +154,8 @@ void handle_incoming_conn(void)
     top = std::max(top, conn);
     uuid[conn] = num++;
     inbox[conn] = "";
-    speak(conn, "server: client " + std::to_string(uuid[conn]) + " just arrived\n");
+    speak(conn, NATO[(uuid[conn])] + " just joined the chat\n");
+    std::cout << NATO[uuid[conn] % (int) NATO.size()] + " just joined the chat\n";
     FD_SET(conn, & AA);
 }
 
