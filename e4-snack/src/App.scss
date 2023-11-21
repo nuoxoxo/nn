@@ -1,0 +1,22 @@
+body {
+  background-color: #000;
+  color: #444;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  margin: 10% 21px 0 21px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: antiquewhite;
+  filter: grayscale(4);
+	filter: drop-shadow(10px 10px 100px green) invert(10%);
+	transition: 1s;
+  font-size: 100px;
+  text-decoration: none;
+  text-align: center;
+}
