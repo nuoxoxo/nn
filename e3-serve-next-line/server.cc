@@ -100,10 +100,16 @@ void    bind_and_listen(int port)
     {
         drop("Dropped at bind");
     }
-    else if (listen(sock, 10) == -1)
+    else
     {
-        drop("Dropped at listen");
+        std::cout << "bind ok \n";
+        if (listen(sock, 10) == -1)
+        {
+            drop("Dropped at listen");
+        }
     }
+    std::cout << "on port " << port << "\n";
+    std::cout << "listening\n";
 }
 
 void    handle_consumer_input(int fd)
