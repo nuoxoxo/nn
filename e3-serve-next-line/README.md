@@ -1,7 +1,11 @@
 # Run
 ```
 $ make
-$ nc -C "nchamber-nseat" port (2x)
+$ nc -v localhost PORT 
+```
+```
+$ nc -v "nchamber-nseat" PORT 
+* on another post
 ```
 
 <!---
