@@ -1,4 +1,4 @@
-cc			= c++
+cc			= c++ -std=c++17
 cflags		= -Werror -Wextra -Wall
 src			= server.cc
 name		= a.out
@@ -7,8 +7,8 @@ port		= 7777
 all			: $(name)
 
 $(name)		: $(src)
-			$(cc) $(cflags) $^ -o $@
-			./$(name) $(port)
+			@ $(cc) $(cflags) $^ -o $@
+			@ ./$(name) $(port)
 
 clean		:
 			rm -f $(name)
