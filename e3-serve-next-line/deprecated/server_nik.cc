@@ -155,7 +155,8 @@ void handle_incoming_conn(void)
         drop("Dropped");
     }
 
-    std::string announcement = "My name is " + NATO[uuid[conn]] + '\n';
+    // trying announcement
+    // std::string announcement = "My name is " + NATO[uuid[conn]] + '\n';
 
     top = std::max(top, conn);
     uuid[conn] = num++;
