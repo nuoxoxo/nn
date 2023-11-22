@@ -1,6 +1,6 @@
 | Ref.    | Job                        | Desc.                                  | Run            |
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| e4      | Snack                      | _what : bar! (a notistack vite demo)_ 
+| e4      | Snack                      | _what : bar! (a notistack vite demo) ---> deployment_  | [⚙️](https://nuoxoxo.github.io/snk)
 | e3      | SNL                        | _what : C++ exam set turned useful_ 
 | e2      | Socket                     | _**WebSocket (2/3)** Socket_           | :green_circle: 
 ||| _- curr : test ok using Postman_ 
