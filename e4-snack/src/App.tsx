@@ -20,8 +20,7 @@ const SixChocolate = () => {
           horizontal: "left"
         },
       },
-      
-    )}>🍫</button>
+    )}>🍬</button>
   )
 }
 
@@ -39,8 +38,7 @@ const OneChocolate = () => {
           horizontal: "right"
         },
       },
-      
-    )}>🍫</button>
+    )}>🍭</button>
   )
 }
 
@@ -58,8 +56,7 @@ const NoChocolate = () => {
           horizontal: "right"
         },
       },
-      
-    )}>🍫</button>
+    )}>🐂</button>
   )
 }
 
@@ -75,6 +72,8 @@ function App() {
         {/* TRICK:  */}
         {/* Wrap each btn otherwise the last maxSnack will dictate */}
 
+        <br />
+
         <SnackbarProvider maxSnack={6}>
         <SixChocolate />
         </SnackbarProvider>
@@ -84,6 +83,8 @@ function App() {
         <SnackbarProvider maxSnack={1}>
         <OneChocolate />
         </SnackbarProvider>
+
+        <br />
 
         <SnackbarProvider maxSnack={9}>
         <NoChocolate />
