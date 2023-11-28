@@ -28,7 +28,7 @@
 |         |                            | _- run : start dev + browser_            | :green_circle: 
 | d1      | ~~&nbsp;Rest&nbsp;~~       | _nestjs tryout_ 
 |         |                            | _\*Suspended\*_   
-|         |                            | _- access using postman / insomnia_      | :green_circle: 
+|         |                            | _- access on postman / insomnia_      | :green_circle: 
 | dO      | Pong                       | _done : paddle segments mapped to rad_ 
 ||
 | c9      | Angular hello              | _what : hello world in angular_
