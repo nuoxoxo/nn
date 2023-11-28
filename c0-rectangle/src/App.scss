@@ -1,0 +1,116 @@
+$GB: rgb(176, 104, 116);
+$TXT: #ffffff;
+
+$IMG-SIZE-ON-MEDIA-MOBILE: 88px;
+$IMG-SIZE-ON-MEDIA-HALFMAC: 200px;
+$IMG-SIZE-ON-MEDIA-FULLMAC: 400px;
+
+$TXT-SIZE: 12px;
+$TXT-SIZEX05: calc($TXT-SIZE / 2);
+$TXT-SIZEX2: calc($TXT-SIZE * 2);
+$TXT-SIZEX3: calc($TXT-SIZE * 3);
+
+$BTN-SIZE-FULL: 64px;
+$BTN-SIZE-MOBILE: 62px;
+$BTN-MARGIN: 7px;
+
+$SEC: 2s;
+
+@keyframes rainbow-rotate {
+
+  from {
+    filter: hue-rotate(0deg);
+  } to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@mixin animation-rainbow-rotate {
+
+  background-color: random-rgb-color();
+  animation: rainbow-rotate 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@function random-rgb-color() {
+
+  $R: random(255);
+  $G: random(255);
+  $B: random(255);
+  @return rgb($R, $G, $B);
+}
+
+@mixin ButtonStyle {
+
+  width: $BTN-SIZE-FULL;
+  height: $BTN-SIZE-FULL;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  margin: $BTN-MARGIN;
+  margin-top: 8px;
+  border: none;//2px solid;
+  @include animation-rainbow-rotate();
+  // background-color: transparent;
+  /*
+  &:hover {
+    // border: 2px solid random-rgb-color();
+    border: 2px solid tomato;
+    transition: border 0.3s ease-in-out;
+  }
+  */
+}
+
+@mixin FlexBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin GridBody {
+  display: grid;
+  place-items: center;
+}
+
+body {
+  background-color: $GB;
+  color: $TXT;
+  padding:42px;
+  margin:0;
+  font-size: $TXT-SIZE;
+  // @include GridBody();
+  @include FlexBody(); 
+  .DifferentThemes {
+    @include FlexBody();
+
+  }
+}
+
+body {
+  background-color: $GB;
+  color: $TXT;
+  padding:42px;
+  margin:0;
+  font-size: $TXT-SIZE;
+  // @include GridBody();
+  @include FlexBody(); 
+
+  .DifferentThemes {
+    @include FlexBody();
+  }
+
+  .FormControl {
+    margin: 21px;
+    .MuiInputLabel-root {
+      color: rgb(209, 255, 192);
+    }
+    .MuiInputBase-root {
+      color: rgb(209, 255, 192);
+    }
+    .MuiSelect-outlined {
+      color: rgb(209, 255, 192);
+    }
+  }
+}
