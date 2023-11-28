@@ -3,7 +3,7 @@
 $ brew install nginx
 ```
 ## RUN
-```diff
+```
 $ cd ~
 $ cd /usr/local/etc/nginx
 $ nginx -c /___path___/nginx.conf 
@@ -18,7 +18,7 @@ $ npm init -y
 $ npm install express
 $ node index
 ```
-```js
+```
 const express = require('express')
 const app = express()
 require('dotenv').config()
@@ -32,7 +32,7 @@ app.listen(port, () => {
     console.log(`listening on ${port}...`)
 })
 ```
-```dockerfile
+```
 # get a minified node image on apline linux
 FROM node:slim
 
@@ -48,7 +48,7 @@ CMD [ "node", "index" ]
 EXPOSE ${PORT}
 ```
 ### RUN
-```j
+```
 *** Build docker image ***
 $ docker build . -t voila_server
 
@@ -69,7 +69,7 @@ OR
 $ cd /usr/local/Cellar/nginx/1.25.3
 $ nginx -c /___path___/nginx.conf
 ```
-```j
+```
 *** In case unstoppable ***
 $ ps -ef | grep nginx
 $ kill -9 PID
