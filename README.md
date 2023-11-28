@@ -50,6 +50,7 @@
 | c2      | ~~&nbsp;Cronway&nbsp;~~    | _conway on react_                      | :red_circle:
 | c1      | _API hw._                  | _api reach-out_                        | :green_circle:
 | cO      | Rect                       | _what : Ranch deploy_                  | :green_circle:
+|         | [*io/ranch*](https://nuoxoxo.github.io/ranch)| 
 ||
 | b9      | IPA                        | _1-line api reach-out_ 
 || [*io/ipa*](https://nuoxoxo.github.io/ipa) | _todo : save array to localstorage_ | :green_circle:
