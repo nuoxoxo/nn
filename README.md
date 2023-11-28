@@ -3,7 +3,7 @@
 | e4      | _bar!_                     | _what : a notistack vite demo ---> deployment_  | [⚙️](https://nuoxoxo.github.io/snk)
 | e3      | SNL                        | _what : C++ exam set turned useful_ 
 | e2      | Socket                     | _**WebSocket (2/3)** Socket_           | :green_circle: 
-||| _- curr : test ok using Postman_ 
+||| _- curr : test ok on Postman_ 
 | e1      | NGINX                      | _what : docker . nginx.conf_           | :yellow_circle: 
 ||| _- Weird [bug](e1-ngx/README.md) from homebrew_
 | eO      | Gateway                    | _**WebSocket (1/3)** Gateway_          | :green_circle: 
