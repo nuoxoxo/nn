@@ -7,7 +7,7 @@
 | e1      | NGINX                      | _what : docker . nginx.conf_           | :yellow_circle: 
 ||| _- Weird [bug](e1-ngx/README.md) from homebrew_
 | eO      | Gateway                    | _**WebSocket (1/3)** Gateway_          | :green_circle: 
-||| _- Test using Postman (see instr.)_ 
+||| _- Test on Postman (see instr.)_ 
 ||
 | d9      | Restful                    | _picking up from *d4*_                 | :yellow_circle:
 ||| _- todo : jest e2e-spec_
