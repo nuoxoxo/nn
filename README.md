@@ -1,6 +1,6 @@
 | Ref.    | Job                        | Desc.                                  | Run            |
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| e4      | _bar!_                     | _what : a notistack vite demo ---> deployment_  | <a href='https://nuoxoxo.github.io/snk'><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' width=16px></a>
+| e4      | _bar!_                     | _what : a notistack vite demo ---> deployment_  | <a href='https://nuoxoxo.github.io/snk'><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' width=19px></a>
 [⚙️](https://nuoxoxo.github.io/snk)
 | e3      | SNL                        | _what : C++ exam set turned useful_ 
 | e2      | Socket                     | _**WebSocket (2/3)** Socket_           | :green_circle: 
@@ -50,7 +50,7 @@
 |         | [*io/dmd*](https://nuoxoxo.github.io/dmd)| _2nd : btns . nightmode . memo_| :green_circle: 
 | c2      | ~~&nbsp;Cronway&nbsp;~~    | _conway on react_                      | :red_circle:
 | c1      | _API hw._                  | _api reach-out_                        | :green_circle:
-| cO      | _¿Rectrangle?_ | _that thing has been deployed_ | <a href="https://nuoxoxo.github.io/ranch"><img src='https://media.tenor.com/D-LrcqeyoN0AAAAi/hand-falcaolucas.gif' width='18px' /></a>
+| cO      | _¿Rectrangle?_ | _that thing has been deployed_ | <a href="https://nuoxoxo.github.io/ranch"><img src='https://media.tenor.com/D-LrcqeyoN0AAAAi/hand-falcaolucas.gif' width='19px' /></a>
 ||
 | b9      | IPA                        | _1-line api reach-out_ 
 || [*io/ipa*](https://nuoxoxo.github.io/ipa) | _todo : save array to localstorage_ | :green_circle:
