@@ -49,8 +49,7 @@
 |         | [*io/dmd*](https://nuoxoxo.github.io/dmd)| _2nd : btns . nightmode . memo_| :green_circle: 
 | c2      | ~~&nbsp;Cronway&nbsp;~~    | _conway on react_                      | :red_circle:
 | c1      | _API hw._                  | _api reach-out_                        | :green_circle:
-| cO      | Rect                       | _what : Ranch deploy_                  | :green_circle:
-|         | [*io/ranch*](https://nuoxoxo.github.io/ranch)| 
+| cO      | _¿Rectrangle?_ | _that thing has been deployed_ | <a href="https://nuoxoxo.github.io/ranch"><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' width='18px' /></a>
 ||
 | b9      | IPA                        | _1-line api reach-out_ 
 || [*io/ipa*](https://nuoxoxo.github.io/ipa) | _todo : save array to localstorage_ | :green_circle:
