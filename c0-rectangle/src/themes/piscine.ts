@@ -23,7 +23,7 @@ function drawWavyLine(ctx: CanvasRenderingContext2D, startX: number, startY: num
   ctx.moveTo(startX, startY);
   const waveFrequency = 40;
   for (let x = startX; x <= endX; x += 1) {
-    const y = startY + 5 * Math.sin((x - startX) / waveFrequency);
+    const y = endY + 5 * Math.sin((x - startX) / waveFrequency);
     ctx.lineTo(x, y);
   }
   ctx.strokeStyle = color;
