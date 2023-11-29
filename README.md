@@ -50,7 +50,6 @@
 | c2      | ~~&nbsp;Cronway&nbsp;~~    | _conway on react_                      | :red_circle:
 | c1      | _API hw._                  | _api reach-out_                        | :green_circle:
 | cO      | _¿Rectrangle?_ | _that thing has been deployed_ | <a href="https://nuoxoxo.github.io/ranch"><img src='https://media.tenor.com/D-LrcqeyoN0AAAAi/hand-falcaolucas.gif' width='19px' /></a>
-||| _vite w. port : `vite --port 10086`_ 
 ||
 | b9      | IPA                        | _1-line api reach-out_ 
 || [*io/ipa*](https://nuoxoxo.github.io/ipa) | _todo : save array to localstorage_ | :green_circle:
