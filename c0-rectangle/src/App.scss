@@ -82,20 +82,6 @@ body {
   font-size: $TXT-SIZE;
   // @include GridBody();
   @include FlexBody(); 
-  .DifferentThemes {
-    @include FlexBody();
-
-  }
-}
-
-body {
-  background-color: $GB;
-  color: $TXT;
-  padding:42px;
-  margin:0;
-  font-size: $TXT-SIZE;
-  // @include GridBody();
-  @include FlexBody(); 
 
   .DifferentThemes {
     @include FlexBody();
@@ -112,5 +98,16 @@ body {
     .MuiSelect-outlined {
       color: rgb(209, 255, 192);
     }
+  }
+  @media only screen and (max-width: 600px) {
+    padding: 20px;
+    transform: scale(0.5);
+    .FormControl {
+      margin: 10px;
+    }
+  }
+
+  @media only screen and (min-width: 601px) and (max-width: 1024px) {
+    padding: 30px;
   }
 }
