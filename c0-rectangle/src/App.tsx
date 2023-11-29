@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import { Football } from './themes/football';
 import { Beach } from './themes/beach';
 import { Night } from './themes/night';
@@ -6,7 +7,9 @@ import { Farm } from './themes/farm';
 import { Seaside } from './themes/seaside';
 import { Sunset } from './themes/sunset';
 import { Ranch } from './themes/ranch';
-import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import { FrenchFlag } from './themes/flagfrance';
+import { BrazilianFlag } from './themes/flagbrazil';
+import { IcelandicFlag } from './themes/flagiceland';
 import './App.scss'
 
 enum Theme {
@@ -17,6 +20,9 @@ enum Theme {
   SEASIDE = 'Seaside',
   SUNSET = 'Sunset',
   RANCH = 'Ranch',
+  FRENCHFLAG = 'FrenchFlag',
+  BRAZILIANFLAG = 'BrazilianFlag',
+  ICELANDICFLAG = 'IcelandicFlag',
 }
 
 const App: React.FC = () => {
@@ -76,6 +82,18 @@ const App: React.FC = () => {
         const basketball_instance = new Ranch();
         basketball_instance.drawRanchAll(canvas, context);
         break;
+      case Theme.FRENCHFLAG:
+        const frenchflag_instance = new FrenchFlag();
+        frenchflag_instance.drawFrenchFlag(canvas, context);
+        break;
+      case Theme.BRAZILIANFLAG:
+        const brazilianflag_instance = new BrazilianFlag();
+        brazilianflag_instance.drawBrazilianFlag(canvas, context);
+        break;
+      case Theme.ICELANDICFLAG:
+        const icelandicflag_instance = new IcelandicFlag();
+        icelandicflag_instance.drawIcelandicFlag(canvas, context);
+        break;
       default:
         break;
     }
@@ -101,6 +119,9 @@ const App: React.FC = () => {
           <MenuItem value={Theme.SEASIDE}>Seaside</MenuItem>
           <MenuItem value={Theme.SUNSET}>Sunset</MenuItem>
           <MenuItem value={Theme.RANCH}>Ranch</MenuItem>
+          <MenuItem value={Theme.FRENCHFLAG}>French Flag</MenuItem>
+          <MenuItem value={Theme.BRAZILIANFLAG}>Brazilian Flag</MenuItem>
+          <MenuItem value={Theme.ICELANDICFLAG}>Icelandic Flag</MenuItem>
         </Select>
       </FormControl>
     </div>
