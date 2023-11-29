@@ -1,7 +1,7 @@
 | Ref.    | Job                        | Desc.                                  | Run            |
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | e4      | _bar!_                     | _what : a notistack vite demo ---> deployment_  | <a href='https://nuoxoxo.github.io/snk'><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' width=19px></a>
-||| _vite w/ port: `vite --port 10086`_ 
+||| _vite w. port: `vite --port 10086`_ 
 | e3      | SNL                        | _what : C++ exam set turned useful_ 
 | e2      | Socket                     | _**WebSocket (2/3)** Socket_           | :green_circle: 
 ||| _- curr : test ok on Postman_ 
