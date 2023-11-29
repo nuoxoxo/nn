@@ -11,6 +11,7 @@ import { FrenchFlag } from './themes/flagfrance';
 import { BrazilianFlag } from './themes/flagbrazil';
 import { IcelandicFlag } from './themes/flagiceland';
 import { Piscine } from './themes/piscine';
+import { Pool } from './themes/pool';
 import './App.scss'
 
 enum Theme {
@@ -25,6 +26,7 @@ enum Theme {
   BRAZILIANFLAG = 'BrazilianFlag',
   ICELANDICFLAG = 'IcelandicFlag',
   PISCINE = 'Piscine',
+  POOL = 'Pool',
 }
 
 const App: React.FC = () => {
@@ -100,6 +102,10 @@ const App: React.FC = () => {
         const piscine_instance = new Piscine();
         piscine_instance.drawPiscine(canvas, context);
         break;
+      case Theme.POOL:
+        const pool_instance = new Pool();
+        pool_instance.drawPool(canvas, context);
+        break;
       default:
         break;
     }
@@ -129,6 +135,7 @@ const App: React.FC = () => {
           <MenuItem value={Theme.BRAZILIANFLAG}>Brazilian Flag</MenuItem>
           <MenuItem value={Theme.ICELANDICFLAG}>Icelandic Flag</MenuItem>
           <MenuItem value={Theme.PISCINE}>Piscine</MenuItem>
+          <MenuItem value={Theme.POOL}>Pool</MenuItem>
         </Select>
       </FormControl>
     </div>
