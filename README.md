@@ -1,6 +1,7 @@
 | Ref.    | Job                        | Desc.                                  | Run            |
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| e4      | _bar!_                     | _what : a notistack vite demo ---> deployment_  | [⚙️](https://nuoxoxo.github.io/snk)
+| e4      | _bar!_                     | _what : a notistack vite demo ---> deployment_  | <a href='https://nuoxoxo.github.io/snk'><img src='https://media.tenor.com/D-LrcqeyoN0AAAAi/hand-falcaolucas.gif' width=16px></a>
+[⚙️](https://nuoxoxo.github.io/snk)
 | e3      | SNL                        | _what : C++ exam set turned useful_ 
 | e2      | Socket                     | _**WebSocket (2/3)** Socket_           | :green_circle: 
 ||| _- curr : test ok on Postman_ 
