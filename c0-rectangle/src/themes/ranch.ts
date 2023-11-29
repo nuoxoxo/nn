@@ -9,6 +9,7 @@ export class Ranch {
 }
 
 function drawRanch(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
+
 	// sky
 	ctx.beginPath();
 	ctx.rect(0, 0, canvas.width, canvas.height / 2);

@@ -10,6 +10,7 @@ import { Ranch } from './themes/ranch';
 import { FrenchFlag } from './themes/flagfrance';
 import { BrazilianFlag } from './themes/flagbrazil';
 import { IcelandicFlag } from './themes/flagiceland';
+import { Piscine } from './themes/piscine';
 import './App.scss'
 
 enum Theme {
@@ -23,6 +24,7 @@ enum Theme {
   FRENCHFLAG = 'FrenchFlag',
   BRAZILIANFLAG = 'BrazilianFlag',
   ICELANDICFLAG = 'IcelandicFlag',
+  PISCINE = 'Piscine',
 }
 
 const App: React.FC = () => {
@@ -94,6 +96,10 @@ const App: React.FC = () => {
         const icelandicflag_instance = new IcelandicFlag();
         icelandicflag_instance.drawIcelandicFlag(canvas, context);
         break;
+      case Theme.PISCINE:
+        const piscine_instance = new Piscine();
+        piscine_instance.drawPiscine(canvas, context);
+        break;
       default:
         break;
     }
@@ -122,6 +128,7 @@ const App: React.FC = () => {
           <MenuItem value={Theme.FRENCHFLAG}>French Flag</MenuItem>
           <MenuItem value={Theme.BRAZILIANFLAG}>Brazilian Flag</MenuItem>
           <MenuItem value={Theme.ICELANDICFLAG}>Icelandic Flag</MenuItem>
+          <MenuItem value={Theme.PISCINE}>Piscine</MenuItem>
         </Select>
       </FormControl>
     </div>
