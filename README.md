@@ -1,5 +1,7 @@
+<!--
 <a href='https://nuoxoxo.github.io/snk'><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' width=13px></a> _New!_  \
 <a href="https://nuoxoxo.github.io/ranch"><img src='https://media.tenor.com/D-LrcqeyoN0AAAAi/hand-falcaolucas.gif' width='13px' /></a> _New!_  
+-->
 
 | Ref.    | Job                        | Desc.                                  | Run            |
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
@@ -52,7 +54,7 @@
 |         | [*io/dmd*](https://nuoxoxo.github.io/dmd)| _2nd : btns . nightmode . memo_| :green_circle: 
 | c2      | ~~&nbsp;Cronway&nbsp;~~    | _conway on react_                      | :red_circle:
 | c1      | _API hw._                  | _api reach-out_                        | :green_circle:
-| cO      | _¿Rectrangle?_ | _that thing has been deployed_ | <a href="https://nuoxoxo.github.io/ranch"><img src='https://media.tenor.com/D-LrcqeyoN0AAAAi/hand-falcaolucas.gif' width='19px' /></a>
+| cO      | _¿Ranch?_ | _that thing has been deployed_ | <a href="https://nuoxoxo.github.io/ranch"><img src='https://media.tenor.com/D-LrcqeyoN0AAAAi/hand-falcaolucas.gif' width='19px' /></a>
 ||
 | b9      | IPA                        | _1-line api reach-out_ 
 || [*io/ipa*](https://nuoxoxo.github.io/ipa) | _todo : save array to localstorage_ | :green_circle:
