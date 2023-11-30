@@ -1,3 +1,6 @@
+<a href='https://nuoxoxo.github.io/snk'><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' width=13px></a> _New!_  \
+<a href="https://nuoxoxo.github.io/ranch"><img src='https://media.tenor.com/D-LrcqeyoN0AAAAi/hand-falcaolucas.gif' width='13px' /></a> _New!_  
+
 | Ref.    | Job                        | Desc.                                  | Run            |
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | e4      | _bar!_                     | _what : a notistack vite demo ---> deployment_  | <a href='https://nuoxoxo.github.io/snk'><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' width=19px></a>
