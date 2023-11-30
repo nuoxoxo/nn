@@ -2,11 +2,11 @@
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | e4      | _bar!_                     | _what : a notistack vite demo ---> deployment_  | <a href='https://nuoxoxo.github.io/snk'><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' width=19px></a>
 | e3      | SNL                        | _what : C++ exam set turned useful_ 
-| e2      | Socket                     | _**WebSocket (2/3)** Socket_           | :green_circle: 
+| e2      | (ws) Socket                 | _**WebSocket (2/3)** Socket_           | :green_circle: 
 ||| _- curr : test ok on Postman_ 
 | e1      | NGINX                      | _what : docker . nginx.conf_           | :yellow_circle: 
 ||| _- Weird [bug](e1-ngx/README.md) from homebrew_
-| eO      | Gateway                    | _**WebSocket (1/3)** Gateway_          | :green_circle: 
+| eO      | (ws) Gateway                | _**WebSocket (1/3)** Gateway_          | :green_circle: 
 ||| _- Test on Postman (see instr.)_ 
 ||
 | d9      | Restful                    | _picking up from *d4*_                 | :yellow_circle:
