@@ -7,7 +7,7 @@
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | e6      | p5js                       | _p5js_ using `p5` . preferred          | :yellow_circle: 
 |         |                            | - _curr : navbar (left, shrinkable)_
-|         |                            | - _switchable components_
+|         |                            | - _todo : switchable components_
 | e5      | p5js testout               | _p5js_ on `react-p5` . **deprecated**  | :green_circle: 
 | e4      | _bar!_                     | _what : a notistack vite demo ---> deployment_  | <a href='https://nuoxoxo.github.io/snk'><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' width=19px></a>
 | e3      | SNL                        | _what : C++ exam set turned useful_ 
