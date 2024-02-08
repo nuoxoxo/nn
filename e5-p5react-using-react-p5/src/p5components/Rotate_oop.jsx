@@ -55,7 +55,7 @@ const Rotate_oop = () => {
     p5.rectMode(p5.CENTER)
     p5.angleMode(p5.DEGREES)
     p5.noStroke()
-    const Bright_gold = p5.color("rgb(250,215,0,100)")
+    const Bright_gold = p5.color(250,215,0,100)
     R = p5.height / unit_size
     C = p5.width / unit_size
     let r = -1
