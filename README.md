@@ -5,7 +5,7 @@
 
 | Ref.    | Job                        | Desc.                                  | <a href='https://nuoxoxo.github.io/snk'><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' width=19px></a> 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| e5      | p5js testout no.2          | _p5js_ using `p5` . preferred             | :green_circle: 
+| e5      | p5js                       | _p5js_ using `p5` . preferred             | :green_circle: 
 | e5      | p5js testout               | _p5js_ on `react-p5` . **deprecated**  | :green_circle: 
 | e4      | _bar!_                     | _what : a notistack vite demo ---> deployment_  | 
 | e3      | SNL                        | _what : C++ exam set turned useful_ 
