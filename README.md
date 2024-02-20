@@ -5,6 +5,8 @@
 
 | Ref.    | Job                        | Desc.                                  | Run 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
+| e8      | mmg                        | _what : a memory matching game_ 
+|         |                            | _todo : use `vite` instead of `npx create-`_ 
 | e7      | react test case            | _ to extend/inherit components         | 
 |         | [*io/mdp*](https://nuoxoxo.github.io/mdp) | _1st draft : added notistack, works fine_ 
 | e6      | p5js                       | _p5js_ using `p5` . preferred          | :yellow_circle: 
