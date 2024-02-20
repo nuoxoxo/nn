@@ -20,6 +20,24 @@ body {
   align-items: center;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+
+  button {
+    background: none;
+    border: 2px solid #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+  }
+  button:hover{
+    background: #c23800;
+  }
+
+}
+
 @media (prefers-color-scheme: light) {
 
   :root {
