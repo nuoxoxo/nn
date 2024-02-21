@@ -9,7 +9,7 @@ const makeImgurStr = (id: string): string => {
 }
 
 //  this the default image of the card
-const CardBackDefault_id : string = ['OeqF6i7', 'Gh7ORYQ'][1]
+const CardBackDefault_id : string = ['OeqF6i7', 'Gh7ORYQ'][1]//Math.floor(Math.random() * 2)]
 const CardBackDefault: string = makeImgurStr (CardBackDefault_id)
 
 //  shuffle default card collection
@@ -131,7 +131,7 @@ const App = () => {
         reset ()
       } else {
         console.log('/Diff')
-        setTimeout(() => reset (), 1000) // needs timeout otherwise 2nd card wont flip
+        setTimeout(() => reset (), 500) // needs timeout otherwise 2nd card wont flip
       }
     }
   }, [g1, g2])
