@@ -46,15 +46,31 @@ const CardsImgSrc: { src: string }[] = [
 
 const App = () => {
 
-  const [ g1, setg1 ] = useState<{src: string; id: number; url: string } | null>( null )
-  const [ g2, setg2 ] = useState<{src: string; id: number; url: string } | null>( null )
-  const [ hasClickedHandleGuessing, setHasClickedHandleGuessing ] = useState<Boolean>(false)
   const [ Turns, setTurns ] = useState(0)
+
   const [ Cards, setCards ] = useState<{
     src: string;
     id: number;
-    url: string
+    url: string;
+    matched: boolean
   }[]>([])
+
+  const [ g1, setg1 ] = useState<{
+    src: string;
+    id: number;
+    url: string;
+    matched: boolean
+  } | null>( null )
+
+  const [ g2, setg2 ] = useState<{
+    src: string;
+    id: number;
+    url: string;
+    matched: boolean
+  } | null>( null )
+
+  //  DBG
+  // const [ hasClickedHandleGuessing, setHasClickedHandleGuessing ] = useState<boolean>(false)
 
   // shuffle using F.Y.N. and select 8 items
   const CardsImg8 = shuffle_fisher_yates([ ... CardsImgSrc]).slice(0, 8)
@@ -63,11 +79,12 @@ const App = () => {
   const shuffle_matching_pairs = () => {
     const res = [...CardsImg8, ...CardsImg8]
       .sort(() => Math.random() - .5)
-      .map( (card) => ({
-        ...card, 
-        src: card.src,
+      .map( (c) => ({
+        ...c, 
+        src: c.src,
         id: Math.random(),
-        url: makeImgurStr(card.src)
+        url: makeImgurStr(c.src),
+        matched : false
       }))
     setCards( res )
     setTurns( 0 )
@@ -76,9 +93,14 @@ const App = () => {
   // console.log('/dbg shuffle', Turns, Cards)
 
   // handle guessing
-  const handleGuessing = (c: {src: string; id: number; url: string}): void => {
+  const handleGuessing = (c: {
+    src: string;
+    id: number;
+    url: string;
+    matched: boolean
+  }): void => {
 
-    setHasClickedHandleGuessing(true)
+    // setHasClickedHandleGuessing(true) // DBG
     g1 == null ? setg1( c ) : setg2( c )
     console.log('/guessed', c.src, c.id )
 
@@ -93,26 +115,38 @@ const App = () => {
   }
 
   useEffect(() => {
-
-    // dbg
-    console.log('/state/useEffect', 
-      'turns:', Turns, 
-      '(1):', g1?.src,
-      '(2):', g2?.src,
-    )
-
-    // compare guesses
     if ( g1 && g2 ) {
       if (g1.src == g2.src) {
-        console.log('/same')
+        console.log('/Same')
+        // operation
+        setCards ( arr => {
+          return arr.map(c => {
+            if ( c.src === g1.src ) {
+              return { ... c, matched: true  }
+            } else {
+              return c
+            }
+          })
+        })
         reset ()
       } else {
-        console.log('/diff')
+        console.log('/Diff')
         reset ()
       }
-
     }
+  }, [g1, g2])
+
+  /*
+  useEffect(() => {
+    console.log('/state/useEffect', 
+      'turns:', Turns, 
+      '(1)', '/macthed:', g1?.matched, '/src:' , g1?.src,
+      '(2)', '/macthed:', g2?.matched, '/src:' , g2?.src,
+    )
   }, [g1, g2, Turns])
+  */
+
+  console.log(Cards)
 
   return (
     <>
@@ -124,11 +158,12 @@ const App = () => {
         <div className='cards-grid'>
 
           {/* NEW way : functional component*/}
-          {Cards.map(c => (
+          {Cards.map( c => (
             <Card
               c={c}
               key={c.id}
               handleGuessing={handleGuessing}
+              flipped={c.matched || c.id === g1?.id || c.id === g2?.id}
               CardBackDefault={CardBackDefault}
             />
           ))}
