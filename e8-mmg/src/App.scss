@@ -1,4 +1,4 @@
-$Card-size: 100px;
+$Card-size: 210px;
 
 // html, body { height: 100%; }
 
@@ -13,9 +13,7 @@ $Card-size: 100px;
   // display: flex;
   // flex-direction: column;
 
-  .btn {
-    padding-bottom: 12px;
-  }
+  // .btn { padding-bottom: 12px; }
 
   button {
     background: none;
@@ -27,6 +25,14 @@ $Card-size: 100px;
   }
   button:hover{
     background: #c23800;
+  }
+
+  .cards-grid {
+    margin-top: 21px;
+    display: grid;
+    // trying this:
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
   }
 
   .cards-card {
