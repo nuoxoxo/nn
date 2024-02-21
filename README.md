@@ -7,7 +7,7 @@
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | e9      | ...                        | _... what : (saved states + infile fetcher)_ 
 | e8      | mmg                        | _what : a memory matching game_ 
-|         | [*io/mmg*](https://nuoxoxo.github.io/mmg) | _todo : update io/mmg to use img from `/in`_ 
+|         | [*io/mmg*](https://nuoxoxo.github.io/mmg) | _todo : update io/mmg to use img from `/in`_ | :green_circle:
 | e7      | react test case            | _goal : to extend/inherit a component_ | 
 |         | [*io/mdp*](https://nuoxoxo.github.io/mdp) | _1st draft : added notistack, works fine_ 
 | e6      | p5js                       | _p5js_ using `p5` . preferred          | :yellow_circle: 
