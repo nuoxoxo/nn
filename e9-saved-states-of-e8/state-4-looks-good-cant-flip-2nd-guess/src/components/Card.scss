@@ -1,0 +1,18 @@
+$Card-size: 210px;
+
+.cards-card-div {
+  .cards-card {
+    object-fit: cover;
+    width: $Card-size;
+    height: $Card-size;
+  }
+
+  .cards-card-back {
+    transform: rotateY(90deg);
+    position: absolute
+  }
+
+  .flipped .cards-card-back {
+    transform: rotateY(0deg)
+  }
+}
