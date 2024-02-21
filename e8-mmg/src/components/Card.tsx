@@ -1,32 +1,15 @@
 import './Card.scss'
 
-const Card = ({
-  c,
-  flipped,
-  handleGuessing,
-  CardBackDefault,
-} : {
-
-  c: {
-    src: string;
-    id: number;
-    url: string;
-    matched: boolean
-  }
-
+const Card = ({ c, flipped, handleGuessing, CardBackDefault, DuringFlip, } : {
+  c: { src: string; id: number; url: string; matched: boolean}
+  handleGuessing: (c: {src: string; id: number; url: string; matched: boolean}) => void
   flipped: boolean
+  DuringFlip: boolean
   CardBackDefault: string
-
-  handleGuessing: (c: {
-    src: string;
-    id: number;
-    url: string;
-    matched: boolean
-  }) => void
-  
 }) =>  {
 
   const handleClick = () => {
+    if ( DuringFlip ) return
     handleGuessing( c )
   }
 

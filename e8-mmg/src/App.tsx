@@ -3,18 +3,24 @@ import { useEffect, useState } from 'react'
 import './App.scss'
 import Card from './components/Card'
 
+
 //  URL-string maker for a stripped github/in-styles ID tring
+
 const makeImgurStr = (id: string): string => {
   return 'https://i.imgur.com/' + id + '.jpeg'
 }
 
+
 //  this the default image of the card
+
 const CardBackDefault_id : string = [
   'OeqF6i7', 'Gh7ORYQ'
 ][1]//Math.floor(Math.random() * 2)]
 const CardBackDefault: string = makeImgurStr (CardBackDefault_id)
 
+
 //  shuffle default card collection
+
 const shuffle_fisher_yates = (arr: { src: string }[]): { src: string }[] => {
 
   let currIdx = arr.length
@@ -26,7 +32,9 @@ const shuffle_fisher_yates = (arr: { src: string }[]): { src: string }[] => {
   return arr
 }
 
+
 //  default card collection
+
 const CardsImgSrc: { src: string }[] = [
   { 'src': 'Hz1X0JH' },
   { 'src': '9yv2mCJ' },
@@ -48,7 +56,8 @@ const CardsImgSrc: { src: string }[] = [
 
 const App = () => {
 
-  const [ Turns, setTurns ] = useState(0)
+  // const [ Turns, setTurns ] = useState(0)
+  const [ DuringFlip, setDuringFlip ] = useState<boolean>(false)
 
   const [ Cards, setCards ] = useState<{
     src: string;
@@ -89,7 +98,9 @@ const App = () => {
         matched : false
       }))
     setCards( res )
-    setTurns( 0 )
+    // setTurns( 0 )
+    setg1 (null)
+    setg2 (null)
   }
 
   // console.log('/dbg shuffle', Turns, Cards)
@@ -104,23 +115,35 @@ const App = () => {
 
     // setHasClickedHandleGuessing(true) // DBG
     g1 == null ? setg1( c ) : setg2( c )
-    console.log('/guessed', c.src, c.id )
+    // console.log('/guessed', c.src, c.id ) // DBG
 
     // 👇 won't log bc. not finished updating the state ---> should use useEffect
     // console.log('/state/in handler', g1, g2 )
   }
 
   const reset = () => {
+
     setg1(null)
     setg2(null)
-    setTurns(Turns + 1)
+    // setTurns(Turns + 1)
+    setTimeout(() => setDuringFlip (false), 100)
+    // 
   }
 
+  // game starts onload
+  useEffect (() => {
+    shuffle_matching_pairs()
+    setg1(null)
+    setg2(null)
+  }, [])
+
   useEffect(() => {
+
     if ( g1 && g2 ) {
+      setDuringFlip( true )
       if (g1.src == g2.src) {
-        console.log('/Same')
-        // operation
+        console.log('/Same') // DBG
+        // operation        
         setCards ( arr => {
           return arr.map(c => {
             if ( c.src === g1.src ) {
@@ -132,23 +155,14 @@ const App = () => {
         })
         reset ()
       } else {
-        console.log('/Diff')
-        setTimeout(() => reset (), 500) // needs timeout otherwise 2nd card wont flip
+        console.log('/Diff') // DBG
+        setTimeout(() => reset (), 500)
+        // needs timeout otherwise 2nd card wont flip
       }
     }
   }, [g1, g2])
 
-  /*
-  useEffect(() => {
-    console.log('/state/useEffect', 
-      'turns:', Turns, 
-      '(1)', '/macthed:', g1?.matched, '/src:' , g1?.src,
-      '(2)', '/macthed:', g2?.matched, '/src:' , g2?.src,
-    )
-  }, [g1, g2, Turns])
-  */
-
-  console.log(Cards)
+  // console.log(Cards) // DBG
 
   return (
     <>
@@ -167,6 +181,7 @@ const App = () => {
               handleGuessing={handleGuessing}
               flipped={c.matched || c.id === g1?.id || c.id === g2?.id}
               CardBackDefault={CardBackDefault}
+              DuringFlip={DuringFlip}
             />
           ))}
 
