@@ -46,8 +46,8 @@ const CardsImgSrc: { src: string }[] = [
 
 const App = () => {
 
-  const [ g1, setg1 ] = useState<{id: number; url: string } | null>( null )
-  const [ g2, setg2 ] = useState<{id: number; url: string } | null>( null )
+  const [ g1, setg1 ] = useState<{src: string; id: number; url: string } | null>( null )
+  const [ g2, setg2 ] = useState<{src: string; id: number; url: string } | null>( null )
   const [ hasClickedHandleGuessing, setHasClickedHandleGuessing ] = useState<Boolean>(false)
   const [ Turns, setTurns ] = useState(0)
   const [ Cards, setCards ] = useState<{
@@ -65,6 +65,7 @@ const App = () => {
       .sort(() => Math.random() - .5)
       .map( (card) => ({
         ...card, 
+        src: card.src,
         id: Math.random(),
         url: makeImgurStr(card.src)
       }))
@@ -75,24 +76,48 @@ const App = () => {
   // console.log('/dbg shuffle', Turns, Cards)
 
   // handle guessing
-  const handleGuessing = (c: {id: number; url: string}): void => {
+  const handleGuessing = (c: {src: string; id: number; url: string}): void => {
 
     setHasClickedHandleGuessing(true)
     g1 == null ? setg1( c ) : setg2( c )
-    console.log('/guessed', c )
+    console.log('/guessed', c.src, c.id )
 
     // 👇 won't log bc. not finished updating the state ---> should use useEffect
-    console.log('/state/in handler', g1, g2 )
+    // console.log('/state/in handler', g1, g2 )
+  }
+
+  const reset = () => {
+    setg1(null)
+    setg2(null)
+    setTurns(Turns + 1)
   }
 
   useEffect(() => {
-    if (hasClickedHandleGuessing) console.log('/state/useEffect', g1, g2)
-  }, [g1, g2])
+
+    // dbg
+    console.log('/state/useEffect', 
+      'turns:', Turns, 
+      '(1):', g1?.src,
+      '(2):', g2?.src,
+    )
+
+    // compare guesses
+    if ( g1 && g2 ) {
+      if (g1.src == g2.src) {
+        console.log('/same')
+        reset ()
+      } else {
+        console.log('/diff')
+        reset ()
+      }
+
+    }
+  }, [g1, g2, Turns])
 
   return (
     <>
       <div className='App'>
-        <h1> hello, world!</h1>
+        <h1> open console and see more! </h1>
         <div className='btn'>
           <button onClick={ shuffle_matching_pairs }>New Game</button>
         </div>

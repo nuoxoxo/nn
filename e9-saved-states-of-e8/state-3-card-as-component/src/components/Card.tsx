@@ -6,8 +6,8 @@ const Card = ({
   handleGuessing,
 } : {
   
-  c: { id: number; url: string }
-  handleGuessing: (c: { id: number; url: string }) => void
+  c: { src: string; id: number; url: string }
+  handleGuessing: (c: { src: string; id: number; url: string }) => void
   CardBackDefault: string
 
 }) =>  {
