@@ -1,7 +1,7 @@
 // import { useState } from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.scss'
-import CardGuess from './components/CardGuess'
+import Card from './components/Card'
 
 //  this the default image of the card
 const CardBackDefault: string = 'https://i.imgur.com/OeqF6i7.png'
@@ -46,20 +46,26 @@ const CardsImgSrc: { src: string }[] = [
 
 const App = () => {
 
+  const [ g1, setg1 ] = useState<{src: string; id: number; url: string } | null>( null )
+  const [ g2, setg2 ] = useState<{src: string; id: number; url: string } | null>( null )
+  const [ hasClickedHandleGuessing, setHasClickedHandleGuessing ] = useState<Boolean>(false)
   const [ Turns, setTurns ] = useState(0)
   const [ Cards, setCards ] = useState<{
     src: string;
     id: number;
-    url: string;
+    url: string
   }[]>([])
 
+  // shuffle using F.Y.N. and select 8 items
   const CardsImg8 = shuffle_fisher_yates([ ... CardsImgSrc]).slice(0, 8)
 
+  // double each item and shuffle w/ a condensed F.Y.N.
   const shuffle_matching_pairs = () => {
     const res = [...CardsImg8, ...CardsImg8]
       .sort(() => Math.random() - .5)
       .map( (card) => ({
         ...card, 
+        src: card.src,
         id: Math.random(),
         url: makeImgurStr(card.src)
       }))
@@ -67,12 +73,51 @@ const App = () => {
     setTurns( 0 )
   }
 
-  console.log('/dbg shuffle', Turns, Cards)
+  // console.log('/dbg shuffle', Turns, Cards)
+
+  // handle guessing
+  const handleGuessing = (c: {src: string; id: number; url: string}): void => {
+
+    setHasClickedHandleGuessing(true)
+    g1 == null ? setg1( c ) : setg2( c )
+    console.log('/guessed', c.src, c.id )
+
+    // 👇 won't log bc. not finished updating the state ---> should use useEffect
+    // console.log('/state/in handler', g1, g2 )
+  }
+
+  const reset = () => {
+    setg1(null)
+    setg2(null)
+    setTurns(Turns + 1)
+  }
+
+  useEffect(() => {
+
+    // dbg
+    console.log('/state/useEffect', 
+      'turns:', Turns, 
+      '(1):', g1?.src,
+      '(2):', g2?.src,
+    )
+
+    // compare guesses
+    if ( g1 && g2 ) {
+      if (g1.src == g2.src) {
+        console.log('/same')
+        reset ()
+      } else {
+        console.log('/diff')
+        reset ()
+      }
+
+    }
+  }, [g1, g2, Turns])
 
   return (
     <>
       <div className='App'>
-        <h1> hello, world!</h1>
+        <h1> open console and see more! </h1>
         <div className='btn'>
           <button onClick={ shuffle_matching_pairs }>New Game</button>
         </div>
@@ -80,7 +125,12 @@ const App = () => {
 
           {/* NEW way : functional component*/}
           {Cards.map(c => (
-            <CardGuess key={c.id} c={c} CardBackDefault={CardBackDefault}/>
+            <Card
+              c={c}
+              key={c.id}
+              handleGuessing={handleGuessing}
+              CardBackDefault={CardBackDefault}
+            />
           ))}
 
           {/* old way */}
