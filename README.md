@@ -5,7 +5,9 @@
 
 | Ref.    | Job                        | Desc.                                  | Run 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| e7      | react test case            | _ to extend/inherit components         | 
+| e8      | mmg                        | _what : a memory matching game_ 
+|         |                            | _todo : use `vite` instead of `npx create-`_ 
+| e7      | react test case            | _goal : to extend/inherit a component_ | 
 |         | [*io/mdp*](https://nuoxoxo.github.io/mdp) | _1st draft : added notistack, works fine_ 
 | e6      | p5js                       | _p5js_ using `p5` . preferred          | :yellow_circle: 
 |         |                            | - _curr : navbar (left, shrinkable)_
@@ -106,6 +108,8 @@
 ![](https://i.imgur.com/xhiA86y.png)
 -->
 
+![](https://i.imgur.com/FB0IhV0.png) \
+<!--
 ![](https://i.imgur.com/Vi97P6T.jpg) \
-![](https://i.imgur.com/PhO7Dg8.png) \
-![](https://i.imgur.com/FB0IhV0.png) 
+--->
+![](https://i.imgur.com/PhO7Dg8.png)
