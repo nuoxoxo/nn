@@ -3,14 +3,14 @@ import { useEffect, useState } from 'react'
 import './App.scss'
 import Card from './components/Card'
 
-//  this the default image of the card
-const CardBackDefault: string = 'https://i.imgur.com/OeqF6i7.png'
-
 //  URL-string maker for a stripped github/in-styles ID tring
 const makeImgurStr = (id: string): string => {
-
   return 'https://i.imgur.com/' + id + '.jpeg'
 }
+
+//  this the default image of the card
+const CardBackDefault_id : string = ['OeqF6i7', 'Gh7ORYQ'][1]
+const CardBackDefault: string = makeImgurStr (CardBackDefault_id)
 
 //  shuffle default card collection
 const shuffle_fisher_yates = (arr: { src: string }[]): { src: string }[] => {
@@ -131,7 +131,7 @@ const App = () => {
         reset ()
       } else {
         console.log('/Diff')
-        reset ()
+        setTimeout(() => reset (), 1000) // needs timeout otherwise 2nd card wont flip
       }
     }
   }, [g1, g2])
