@@ -3,13 +3,16 @@ import { useState } from 'react'
 import './App.scss'
 import CardGuess from './components/CardGuess'
 
+//  this the default image of the card
 const CardBackDefault: string = 'https://i.imgur.com/OeqF6i7.png'
 
+//  URL-string maker for a stripped github/in-styles ID tring
 const makeImgurStr = (id: string): string => {
 
   return 'https://i.imgur.com/' + id + '.jpeg'
 }
 
+//  shuffle default card collection
 const shuffle_fisher_yates = (arr: { src: string }[]): { src: string }[] => {
 
   let currIdx = arr.length
@@ -21,6 +24,7 @@ const shuffle_fisher_yates = (arr: { src: string }[]): { src: string }[] => {
   return arr
 }
 
+//  default card collection
 const CardsImgSrc: { src: string }[] = [
   { 'src': 'Hz1X0JH' },
   { 'src': '9yv2mCJ' },
@@ -80,12 +84,15 @@ const App = () => {
           ))}
 
           {/* old way */}
-          {/* {Cards.map(c => (
+          {/*
+          {Cards.map(c => (
             <div key={c.id} className='cards-card-div'>
               <img className='cards-card cards-card-back' src={CardBackDefault}/>
               <img className='cards-card cards=card-front' src={c.url} />
             </div>
-          ))} */}
+          ))}
+          */}
+
         </div>
       </div>
     </>
