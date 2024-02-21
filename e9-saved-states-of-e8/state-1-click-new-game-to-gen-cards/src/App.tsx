@@ -68,7 +68,9 @@ const App = () => {
     <>
       <div className='App'>
         <h1> hello, world!</h1>
-        <button onClick={ shuffle_matching_pairs }>New Game</button>
+        <div className='btn'>
+          <button onClick={ shuffle_matching_pairs }>New Game</button>
+        </div>
         <div className='cards-grid'>
           {Cards.map(c => (
             <div key={c.id} className='cards-card-div'>
