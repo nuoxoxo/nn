@@ -23,18 +23,38 @@ const CardBackDefault: string = makeImgurStr (CardBackDefault_id)
 
 const shuffle_fisher_yates = (arr: { src: string }[]): { src: string }[] => {
 
+  /*
   let currIdx = arr.length
   while (currIdx > 0) {
     let randIdx = Math.floor(Math.random() * currIdx)
     currIdx--
     [arr[currIdx], arr[randIdx]] = [arr[randIdx], arr[currIdx]]
   }
+  */
+  arr.sort(() => Math.random() - .5)
   return arr
 }
 
 
 //  default card collection
 
+const readLinesFromInfile = async (): Promise<{ src: string }[]> => {
+  try {
+    const filepath = '/src/infile/lines.in'
+    const response = await fetch (filepath)
+    if (!response.ok) throw new Error('failed fecthing');
+    const text = await response.text()
+    let lines = text.split('\n')
+    lines.filter((line) => line.trim() !== '')
+    const res = lines.map((line) => ({ src: line }))
+    // console.log(text)
+    return res
+  } catch (err) {
+    console.error(err)
+    return []
+  }
+}
+/*
 const CardsImgSrc: { src: string }[] = [
   { 'src': 'Hz1X0JH' },
   { 'src': '9yv2mCJ' },
@@ -53,8 +73,17 @@ const CardsImgSrc: { src: string }[] = [
   { 'src': 'BsP0ADp' },
   { 'src': 'WYnL0R8' },
 ]
+*/
 
 const App = () => {
+
+  const [CardsImgSrc, setCardsImgSrc] = useState<{ src: string }[]>([])
+  useEffect(() => {
+    // Call the function to read lines when the component mounts
+    readLinesFromInfile().then((arr: { src: string }[]) => {
+      setCardsImgSrc(arr);
+    });
+  }, []);
 
   // const [ Turns, setTurns ] = useState(0)
   const [ DuringFlip, setDuringFlip ] = useState<boolean>(false)
