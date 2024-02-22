@@ -16,6 +16,7 @@
 |         |                            | - _curr : navbar (left, shrinkable)_
 |         |                            | - _todo : switchable components_
 | e5      | p5js testout               | _p5js_ on `react-p5` . **deprecated**  | :green_circle: 
+||
 | e4      | _bar!_                     | - _what : a notistack vite demo ---> deployment_  | <a href='https://nuoxoxo.github.io/snk'><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' width=19px></a>
 | e3      | SNL                        | - _what : C++ exam set turned useful_ 
 | e2      | Socket                     | _**WebSocket (2/3)** Socket_           | :green_circle: 
@@ -35,6 +36,7 @@
 | d5      | Jwt                        | _access / refresh_                      | :green_circle:
 |         |                            | - _debugger : [Jwt](https://jwt.io)_ 
 |         |                            | - _bugfix : ~~users table bug at startup~~ Run go script_
+||
 | d4      | Restful                    | _what : cont. from d1_ 
 |         |                            | _\*Suspended\*_  
 | d3      | 42 OA                      | `@nestjs/passport passport passport-42` 
