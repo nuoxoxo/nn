@@ -1,6 +1,5 @@
 import requests, json
 
-repo = 'https://github.com/nuoxoxo/in/blob/main/'
 repo = 'https://raw.githubusercontent.com/nuoxoxo/in/main/'
 URLs = [
     repo + 'canciones.json',
