@@ -12,10 +12,20 @@ const makeImgurStr = (id: string): string => {
 
 
 //  this the default image of the card
-
-const CardBackDefault_id : string = [
-  'OeqF6i7', 'Gh7ORYQ'
-][1]//Math.floor(Math.random() * 2)]
+const CardBackDefault_array:string[] = [
+  'uwCi1Vq',
+  'Qh4bQ1D',
+  'v3N6Jpc',
+  'htyq4QF',
+  'OBb9MAP',
+  'W463cuz',
+  'Gh7ORYQ',
+  'MvE8oPW',
+  // 'OeqF6i7', 'LhpcDwF'
+]
+const CardBackDefault_id : string = CardBackDefault_array[ 
+  Math.floor(Math.random() * CardBackDefault_array.length)
+]
 const CardBackDefault: string = makeImgurStr (CardBackDefault_id)
 
 
@@ -123,12 +133,13 @@ const App = () => {
   //  DBG
   // const [ hasClickedHandleGuessing, setHasClickedHandleGuessing ] = useState<boolean>(false)
 
-  // shuffle using F.Y.N. and select 8 items
-  const CardsImg8 = shuffle_fisher_yates([ ... CardsImgSrc]).slice(0, 8)
+  // shuffle using F.Y.N. and select N items
+  const N = 12
+  const CardsImgN = shuffle_fisher_yates([ ... CardsImgSrc]).slice(0, N)
 
   // double each item and shuffle w/ a condensed F.Y.N.
   const shuffle_matching_pairs = () => {
-    const res = [...CardsImg8, ...CardsImg8]
+    const res = [...CardsImgN, ...CardsImgN]
       .sort(() => Math.random() - .5)
       .map( (c) => ({
         ...c, 
@@ -141,6 +152,9 @@ const App = () => {
     // setTurns( 0 )
     setg1 (null)
     setg2 (null)
+
+    // setIsGameStarted(true) // NEW
+
   }
 
   // console.log('/dbg shuffle', Turns, Cards)
@@ -156,7 +170,6 @@ const App = () => {
     // setHasClickedHandleGuessing(true) // DBG
     g1 == null ? setg1( c ) : setg2( c )
     // console.log('/guessed', c.src, c.id ) // DBG
-
     // 👇 won't log bc. not finished updating the state ---> should use useEffect
     // console.log('/state/in handler', g1, g2 )
   }
@@ -167,7 +180,6 @@ const App = () => {
     setg2(null)
     // setTurns(Turns + 1)
     setTimeout(() => setDuringFlip (false), 100)
-    // 
   }
 
   // game starts onload
@@ -175,7 +187,7 @@ const App = () => {
     shuffle_matching_pairs()
     setg1(null)
     setg2(null)
-  }, [])
+  }, [ CardsImgSrc ]) // Bugfix :: auto-start game onload
 
   useEffect(() => {
 
@@ -200,9 +212,34 @@ const App = () => {
         // needs timeout otherwise 2nd card wont flip
       }
     }
-  }, [g1, g2])
+  }, [g1, g2, Cards])
 
   // console.log(Cards) // DBG
+
+
+  // NEW
+  /*
+  const [timer, setTimer] = useState<number>(0)
+  const [isGameStarted, setIsGameStarted] = useState<boolean>(false)
+  useEffect(() => {
+    let intervalId: NodeJS.Timeout
+
+    if (isGameStarted) {
+      intervalId = setInterval(() => {
+        setTimer((prevTimer) => prevTimer + 0.01)
+      }, 10)
+    }
+
+    return () => clearInterval(intervalId)
+  }, [isGameStarted])
+
+  useEffect(() => {
+    if (Cards.every((card) => card.matched)) {
+      setIsGameStarted(false)
+    }
+  }, [Cards])
+  */
+
 
   return (
     <>
@@ -211,6 +248,10 @@ const App = () => {
         <div className='btn'>
           <button onClick={ shuffle_matching_pairs }>New Game</button>
         </div>
+
+        {/*  NEW  */}
+        {/* <div className='timer'>Timer: {timer} seconds</div> */}
+
         <div className='cards-grid'>
 
           {/* NEW way : functional component*/}
