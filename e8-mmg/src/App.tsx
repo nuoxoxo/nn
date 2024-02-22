@@ -49,6 +49,7 @@ const readLinesFromInfile = async (): Promise<{ src: string }[]> => {
       repo + 'canciones.json',
       repo + 'canciones_edition_jazz.json'
     ]
+    // console.log(filepaths, filepaths.length)
     const set: Set<{ src: string }> = new Set()
     for (const filepath of filepaths) {
       const response = await fetch (filepath)
@@ -181,7 +182,7 @@ const App = () => {
     if ( g1 && g2 ) {
       setDuringFlip( true )
       if (g1.src == g2.src) {
-        console.log('/Same') // DBG
+        // console.log('/Same') // DBG
         // operation        
         setCards ( arr => {
           return arr.map(c => {
@@ -194,7 +195,7 @@ const App = () => {
         })
         reset ()
       } else {
-        console.log('/Diff') // DBG
+        // console.log('/Diff') // DBG
         setTimeout(() => reset (), 500)
         // needs timeout otherwise 2nd card wont flip
       }
@@ -206,7 +207,7 @@ const App = () => {
   return (
     <>
       <div className='App'>
-        <h1> open console and see more! </h1>
+        {/* <h1> open console and see more! </h1> */}
         <div className='btn'>
           <button onClick={ shuffle_matching_pairs }>New Game</button>
         </div>
