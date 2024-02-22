@@ -212,7 +212,7 @@ const App = () => {
         // needs timeout otherwise 2nd card wont flip
       }
     }
-  }, [g1, g2])
+  }, [g1, g2, Cards])
 
   // console.log(Cards) // DBG
 
