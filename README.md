@@ -9,7 +9,7 @@
 | e9      | ...                        | _... what : (saved states + infile fetcher)_ 
 |         |                            | now saved `state-7` which reads _imgurs_ in `in`
 | e8      | mmg                        | - _what : a memory matching game_ 
-|         | [*io/mmg*](https://nuoxoxo.github.io/mmg) | _todo : update io/mmg to use img from `/in`_ | :green_circle:
+|         | [*io/mmg*](https://nuoxoxo.github.io/mmg) | - _todo : update io/mmg to use img from `/in`_ | :green_circle:
 | e7      | react test case            | - _goal : to extend/inherit a component_ | 
 |         | [*io/mdp*](https://nuoxoxo.github.io/mdp) | _1st draft : added notistack, works fine_ 
 | e6      | p5js                       | _p5js_ using `p5` . preferred          | :yellow_circle: 
@@ -21,7 +21,7 @@
 | e3      | SNL                        | - _what : C++ exam set turned useful_ 
 | e2      | Socket                     | _**WebSocket (2/3)** Socket_           | :green_circle: 
 ||| _- curr : test ok on Postman_ 
-| e1      | NGINX                      | _what : docker . nginx.conf_           | :yellow_circle: 
+| e1      | NGINX                      | - _what : docker . nginx.conf_           | :yellow_circle: 
 ||| _- Weird [bug](e1-ngx/README.md) from homebrew_
 | eO      | Gateway                    | _**WebSocket (1/3)** Gateway_          | :green_circle: 
 ||| _- Test on Postman (see instr.)_ 
