@@ -40,15 +40,25 @@ const shuffle_fisher_yates = (arr: { src: string }[]): { src: string }[] => {
 
 const readLinesFromInfile = async (): Promise<{ src: string }[]> => {
   try {
-    const filepath = '/src/infile/lines.in'
-    const response = await fetch (filepath)
-    if (!response.ok) throw new Error('failed fecthing');
-    const text = await response.text()
-    let lines = text.split('\n')
-    lines.filter((line) => line.trim() !== '')
-    const res = lines.map((line) => ({ src: line }))
-    // console.log(text)
-    return res
+    const repo: string = 'https://raw.githubusercontent.com/nuoxoxo/in/main/'
+    let filepaths = Array.from({ length: 7 }, (_, idx) => 
+      `${repo}limited_edition_0${idx + 1}.in`
+    )
+    filepaths = [
+      ... filepaths,
+      repo + 'canciones.json',
+      repo + 'canciones_edition_jazz.json'
+    ]
+    const set: Set<{ src: string }> = new Set()
+    for (const filepath of filepaths) {
+      const response = await fetch (filepath)
+      if (!response.ok) throw new Error('failed fecthing');
+      const data: Record<string, { cover: string }> = await response.json()
+      const lines = Object.values(data).map(({ cover }) => cover);
+      const temp = lines.map((line) => ({ src: line }))
+      temp.forEach( (item) => set.add (item))
+    }
+    return [ ... set ]
   } catch (err) {
     console.error(err)
     return []
