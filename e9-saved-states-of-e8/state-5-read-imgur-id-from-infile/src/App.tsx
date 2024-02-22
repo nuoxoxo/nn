@@ -40,26 +40,15 @@ const shuffle_fisher_yates = (arr: { src: string }[]): { src: string }[] => {
 
 const readLinesFromInfile = async (): Promise<{ src: string }[]> => {
   try {
-    const repo: string = 'https://raw.githubusercontent.com/nuoxoxo/in/main/'
-    let filepaths = Array.from({ length: 7 }, (_, idx) => 
-      `${repo}limited_edition_0${idx + 1}.in`
-    )
-    filepaths = [
-      ... filepaths,
-      repo + 'canciones.json',
-      repo + 'canciones_edition_jazz.json'
-    ]
-    // console.log(filepaths, filepaths.length)
-    const set: Set<{ src: string }> = new Set()
-    for (const filepath of filepaths) {
-      const response = await fetch (filepath)
-      if (!response.ok) throw new Error('failed fecthing');
-      const data: Record<string, { cover: string }> = await response.json()
-      const lines = Object.values(data).map(({ cover }) => cover);
-      const temp = lines.map((line) => ({ src: line }))
-      temp.forEach( (item) => set.add (item))
-    }
-    return [ ... set ]
+    const filepath = '/src/infile/lines.in'
+    const response = await fetch (filepath)
+    if (!response.ok) throw new Error('failed fecthing');
+    const text = await response.text()
+    let lines = text.split('\n')
+    lines.filter((line) => line.trim() !== '')
+    const res = lines.map((line) => ({ src: line }))
+    // console.log(text)
+    return res
   } catch (err) {
     console.error(err)
     return []
@@ -182,7 +171,7 @@ const App = () => {
     if ( g1 && g2 ) {
       setDuringFlip( true )
       if (g1.src == g2.src) {
-        // console.log('/Same') // DBG
+        console.log('/Same') // DBG
         // operation        
         setCards ( arr => {
           return arr.map(c => {
@@ -195,7 +184,7 @@ const App = () => {
         })
         reset ()
       } else {
-        // console.log('/Diff') // DBG
+        console.log('/Diff') // DBG
         setTimeout(() => reset (), 500)
         // needs timeout otherwise 2nd card wont flip
       }
@@ -207,7 +196,7 @@ const App = () => {
   return (
     <>
       <div className='App'>
-        {/* <h1> open console and see more! </h1> */}
+        <h1> open console and see more! </h1>
         <div className='btn'>
           <button onClick={ shuffle_matching_pairs }>New Game</button>
         </div>
