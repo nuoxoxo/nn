@@ -5,17 +5,19 @@
 
 | Ref.    | Job                        | Desc.                                  | Run 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
+||
 | e9      | ...                        | _... what : (saved states + infile fetcher)_ 
-| e8      | mmg                        | _what : a memory matching game_ 
+|         |                            | now saved `state-7` which reads _imgurs_ in `in`
+| e8      | mmg                        | - _what : a memory matching game_ 
 |         | [*io/mmg*](https://nuoxoxo.github.io/mmg) | _todo : update io/mmg to use img from `/in`_ | :green_circle:
-| e7      | react test case            | _goal : to extend/inherit a component_ | 
+| e7      | react test case            | - _goal : to extend/inherit a component_ | 
 |         | [*io/mdp*](https://nuoxoxo.github.io/mdp) | _1st draft : added notistack, works fine_ 
 | e6      | p5js                       | _p5js_ using `p5` . preferred          | :yellow_circle: 
 |         |                            | - _curr : navbar (left, shrinkable)_
 |         |                            | - _todo : switchable components_
 | e5      | p5js testout               | _p5js_ on `react-p5` . **deprecated**  | :green_circle: 
-| e4      | _bar!_                     | _what : a notistack vite demo ---> deployment_  | <a href='https://nuoxoxo.github.io/snk'><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' width=19px></a>
-| e3      | SNL                        | _what : C++ exam set turned useful_ 
+| e4      | _bar!_                     | - _what : a notistack vite demo ---> deployment_  | <a href='https://nuoxoxo.github.io/snk'><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' width=19px></a>
+| e3      | SNL                        | - _what : C++ exam set turned useful_ 
 | e2      | Socket                     | _**WebSocket (2/3)** Socket_           | :green_circle: 
 ||| _- curr : test ok on Postman_ 
 | e1      | NGINX                      | _what : docker . nginx.conf_           | :yellow_circle: 
@@ -28,8 +30,8 @@
 | d8      | Backender                  | _Submodule: [HERE](https://github.com/nuoxoxo/backender)_ 
 ||| _- (File Under) OAuth (Google, 42)_
 ||| _- (File Under) Docker Prisma Jwt_
-| d7      | Getter                     | _what : use .env_ 
-| d6      | Jwt improved               | _what : custom decor . global ATGuard_ 
+| d7      | Getter                     | - _what : use .env_ 
+| d6      | Jwt improved               | - _what : custom decor . global ATGuard_ 
 | d5      | Jwt                        | _access / refresh_                      | :green_circle:
 |         |                            | - _debugger : [Jwt](https://jwt.io)_ 
 |         |                            | - _bugfix : ~~users table bug at startup~~ Run go script_
