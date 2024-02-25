@@ -8,7 +8,7 @@
 | g1      | jukebox recoded            | _what : bandcamper & soundclouder on Astro :rocket:_ 
 |         | [*io/bandcamper*](https://nuoxoxo.github.io/bandcamper) | | :green_circle: 
 ||
-| e9      | (...saved)                 | _... what : (saved states + infile fetcher)_ 
+| e9      | (...saved)                 | - _what : saved states + infile fetcher_ 
 |         |                            | now saved `state-7` which reads _imgurs_ in `in`
 | e8      | mmg                        | - _what : a memory matching game_ 
 |         | [*io/mmg*](https://nuoxoxo.github.io/mmg) | - _todo : update io/mmg to use img from `/in`_ | :green_circle:
