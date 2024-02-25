@@ -6,7 +6,7 @@
 | Ref.    | Job                        | Desc.                                  | Run 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | g1      | jukebox recoded            | _what : bandcamper & soundclouder on Astro :rocket:_ 
-|         | [*io/mmg*](https://nuoxoxo.github.io/bandcamper) | 
+|         | [*io/bandcamper*](https://nuoxoxo.github.io/bandcamper) | 
 ||
 | e9      | ...                        | _... what : (saved states + infile fetcher)_ 
 |         |                            | now saved `state-7` which reads _imgurs_ in `in`
