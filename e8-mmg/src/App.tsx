@@ -27,14 +27,6 @@ const CardBackDefault_array:string[] = [
   // 'OeqF6i7', 'LhpcDwF'
 ]
 
-//  determin default card back patter
-const CardBackDefault: string = makeImgurStr (
-  CardBackDefault_array [
-    Math.floor(Math.random() * CardBackDefault_array.length)
-  ]
-)
-
-
 //  shuffle default card collection (FYN algo)
 const shuffle_fisher_yates = (arr: { src: string }[]): { src: string }[] => {
   arr.sort(() => Math.random() - .5)
@@ -53,16 +45,21 @@ const readLinesFromInfile = async (): Promise<{ src: string }[]> => {
       repo + 'canciones.json',
       repo + 'canciones_edition_jazz.json'
     ]
-    const set: Set<{ src: string }> = new Set()
+    const TEMP: { src: string }[] = []
     for (const filepath of filepaths) {
       const response = await fetch (filepath)
       if (!response.ok) throw new Error('failed fecthing')
       const data: Record<string, { cover: string }> = await response.json()
       const lines = Object.values(data).map(({ cover }) => cover)
       const temp = lines.map((line) => ({ src: line }))
-      temp.forEach( (item) => set.add (item))
+      temp.forEach((item) => {
+        if (!TEMP.some(existingItem => existingItem.src === item.src)) {
+          TEMP.push(item);
+        }
+      })
     }
-    return [ ... set ]
+    // console.log(TEMP)
+    return TEMP
   } catch (err) {
     console.error(err)
     return []
@@ -71,8 +68,9 @@ const readLinesFromInfile = async (): Promise<{ src: string }[]> => {
 
 const App = () => {
 
-  const [CardsImgSrc, setCardsImgSrc] = useState<{ src: string }[]>([])
-  const [ DuringFlip, setDuringFlip ] = useState<boolean>(false)  
+  const [ CardsImgSrc, setCardsImgSrc ] = useState<{ src: string }[]>([])
+  const [ DuringFlip, setDuringFlip ] = useState<boolean>(false)
+  const [ CardBack, setCardBack ] = useState<string>('')
 
   const [ Cards, setCards ] = useState<{
     src: string;
@@ -95,11 +93,19 @@ const App = () => {
     matched: boolean
   } | null>( null )
 
+  //  determin default card back pattern
+  const get_card_back = (): string => {
+    return makeImgurStr( CardBackDefault_array [
+      Math.floor(Math.random() * CardBackDefault_array.length)
+    ]
+  )}
+
   useEffect(() => {
     // Call the function to read lines when the component mounts
     readLinesFromInfile().then((arr: { src: string }[]) => {
       setCardsImgSrc(arr)
     })
+    setCardBack(get_card_back())
   }, [])
 
   const N = 12
@@ -142,12 +148,17 @@ const App = () => {
     setTimeout(() => setDuringFlip (false), 100)
   }
 
+  const handleNewGame = (): void => {
+    setCardBack(get_card_back())
+    shuffle_matching_pairs()
+  }
+
   // game starts onload
   useEffect (() => {
     shuffle_matching_pairs()
     setg1(null)
     setg2(null)
-  }, [ CardsImgSrc ]) // Bugfix :: auto-start game onload
+  }, [ CardsImgSrc, CardBack ]) // Bugfix :: auto-start game onload
 
   useEffect(() => {
 
@@ -180,7 +191,7 @@ const App = () => {
       <div className='App'>
         {/* <h1> hello, world! </h1> */}
         <div className='btn'>
-          <button onClick={ shuffle_matching_pairs }>New Game</button>
+          <button onClick={ handleNewGame/*shuffle_matching_pairs*/ }>New Game</button>
         </div>
 
         {/*  NEW  */}
@@ -195,7 +206,7 @@ const App = () => {
               key={c.id}
               handleGuessing={handleGuessing}
               flipped={c.matched || c.id === g1?.id || c.id === g2?.id}
-              CardBackDefault={CardBackDefault}
+              CardBackDefault={CardBack/*Default*/}
               DuringFlip={DuringFlip}
             />
           ))}
