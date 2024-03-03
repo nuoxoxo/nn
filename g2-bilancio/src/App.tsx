@@ -5,6 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom"
 import Dashboard, { dashboardLoader } from './pages/Dashboard';
+import Error from './pages/Error';
 
 
 function App() {
@@ -22,10 +23,15 @@ function App() {
       path: "/",
       element: <Dashboard />,
       loader: dashboardLoader,
+      errorElement: <Error />,
     },
     {
       path: "/about",
       element: <h1>About</h1>,
+    },
+    {
+      path: "*",
+      element: <Error />,
     },
   ]);
 
