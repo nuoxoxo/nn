@@ -4,7 +4,8 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom"
-import Dashboard from './Dashboard/Dashboard';
+import Dashboard, { dashboardLoader } from './pages/Dashboard';
+
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
     {
       path: "/",
       element: <Dashboard />,
+      loader: dashboardLoader,
     },
     {
       path: "/about",
