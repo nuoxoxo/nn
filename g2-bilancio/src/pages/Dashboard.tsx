@@ -10,7 +10,7 @@ export function dashboardLoader () {
 }
 
 const Dashboard = (): ReactNode => {
-  const { anon } = useLoaderData ()
+  const { anon } = useLoaderData () as { [key:string|number]: any }
   return <>
       <h1>
         Dashboard
