@@ -6,7 +6,7 @@
 | Ref.    | Job                        | Desc.                                  | Run 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | g1      | jukebox recoded            | _what : bandcamper & soundclouder on Astro :rocket:_ 
-|         | [*io/bandcamper*](https://nuoxoxo.github.io/bandcamper) | | :green_circle: 
+|         | [*io/myspace*](https://nuoxoxo.github.io/myspace) | | :green_circle: 
 ||
 | e9      | ...                        | saved files
 |         |                            | - _what : saved states + infile fetcher_ 
