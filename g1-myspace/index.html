@@ -1,17 +1,12 @@
----
-
----
-
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel='icon' type='image/svg+xml' href='./public/favicon.svg?' />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>-</title>
+		<!-- <meta name="generator" content={Astro.generator} /> -->
+		<title>Myspace</title>
 	</head>
 	<body>
-		<!-- <h1>Astro</h1> -->
 		<div class='songs'>
 			<iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/album=301352566/size=small/bgcol=ffffff/linkcol=0687f5/track=1530477844/transparent=true/" seamless><a href="https://tenzenmen.bandcamp.com/album/white">White by White</a></iframe>
 			<iframe style="border: 0; width: 100%; height: 470px;" src="https://bandcamp.com/EmbeddedPlayer/album=734395921/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/track=3880098765/transparent=true/" seamless><a href="https://haco-sound.bandcamp.com/album/haco-2024-remaster">HACO (2024 Remaster) by Haco</a></iframe>
@@ -63,6 +58,17 @@
 		</div>	
 	</body>
 	<style>
-		@import "../styles/styles.scss"
+		/* TODO :: CSS */
+		body {
+			background-color:black;
+			color:white;
+			margin:0;
+			padding:42px;
+			display: flex;
+			justify-content: space-around;
+			.songs {
+				max-width: 420px;
+			}
+		}
 	</style>
 </html>
