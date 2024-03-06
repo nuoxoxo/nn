@@ -43,33 +43,33 @@
 |         |                            | - _debugger : [Jwt](https://jwt.io)_ 
 |         |                            | - _bugfix : ~~users table bug at startup~~ Run go script_
 ||
-| d4      | Restful                    | _what : cont. from d1_ 
+| d4      | Restful                    | - _what : cont. from d1_ 
 |         |                            | _\*Suspended\*_  
 | d3      | 42 OA                      | `@nestjs/passport passport passport-42` 
-|         |                            | _- run : start dev + browser_            | :green_circle: 
+|         |                            | - _run : start dev + browser_            | :green_circle: 
 | d2      | Google OA                  | _oauth tryout_ 
 |         |                            | `@nestjs/passport passport passport-google-oauth20`
-|         |                            | _- run : start dev + browser_            | :green_circle: 
+|         |                            | - _run : start dev + browser_            | :green_circle: 
 | d1      | ~~&nbsp;Rest&nbsp;~~       | _nestjs tryout_ 
 |         |                            | _\*Suspended\*_   
-|         |                            | _- access on postman / insomnia_      | :green_circle: 
+|         |                            | - _access on postman / insomnia_      | :green_circle: 
 | dO      | Pong                       | _done : paddle segments mapped to rad_ 
 ||
-| c9      | Angular hello              | _what : hello world in angular_
+| c9      | Angular hello              | - _what : hello world in angular_
 | c8      | Fla _[sic]_                | _Guessing flags_ 
 |         | [*io/galf*](https://nuoxoxo.github.io/galf)
 | c7      | Key                        | _Guessing key signatures_ 
-|         |                            | _1st : one Reset button only_
+|         |                            | - _1st : one Reset button only_
 |         | [*io/mu*](https://nuoxoxo.github.io/mu)| _2nd : + choices_
-| c6      | Pokemon                    | _what : vanilla + astro_ 
+| c6      | Pokemon                    | - _what : vanilla + astro_ 
 |         | _io/poke - depr._                   | _bug : netlify fn to handle key_ 
-| c5      | Jukebox                    | _what : to be written in Astro_ 
+| c5      | Jukebox                    | - _what : to be written in Astro_ 
 |         | [*io/jukebox*](https://nuoxoxo.github.io/jukebox) | _1st draft : works fine_ 
-|         |                            | _bug : only mobile has good viewport_ 
+|         |                            | - _bug : only mobile has good viewport_ 
 |         |                            | _Uses 4 buttons_ | :green_circle: 
 | c4      | Aron Lostor                | _done_ 
 | c3      | Dmd                        | _Guessing weekday_ 
-|         |                            | _1st : input by typing_ 
+|         |                            | - _1st : input by typing_ 
 |         | [*io/dmd*](https://nuoxoxo.github.io/dmd)| _2nd : btns . nightmode . memo_| :green_circle: 
 | c2      | ~~&nbsp;Cronway&nbsp;~~    | _conway on react_                      | :red_circle:
 | c1      | _API hw._                  | _api reach-out_                        | :green_circle:
@@ -77,9 +77,9 @@
 ||
 | b9      | IPA                        | _1-line api reach-out_ 
 || [*io/ipa*](https://nuoxoxo.github.io/ipa) | _todo : save array to localstorage_ | :green_circle:
-| b8      | ~~&nbsp;MD Preview&nbsp;~~ | _bug : textarea div different height_ | :red_circle: 
+| b8      | ~~&nbsp;MD Preview&nbsp;~~ | - _bug : textarea div different height_ | :red_circle: 
 || [*io/mdp*](https://nuoxoxo.github.io/mdp) | _to remake_ 
-| b7      | Gig                        | _todo : on doubclick_ 
+| b7      | Gig                        | - _todo : on doubclick_ 
 || [*io/gig*](https://nuoxoxo.github.io/gig) 
 | b6      | _Bootstrap hw._            | _bug : `.container-fluid`_             | :red_circle:
 | b5      | Nut                        | _deployed_                             | :green_circle:
