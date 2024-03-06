@@ -1,0 +1,179 @@
+<html lang='en'>
+	<head>
+		<meta charset='utf-8' />
+		<link rel='icon' type='image/svg+xml' href='./assets/favicon.svg?' />
+		<meta name='viewport' content='width=device-width' />
+<!-- 		<meta name='generator' content={Astro.generator} /> -->
+		<title>epoch</title>
+	</head>
+	<body>
+		<style>
+			@font-face {
+				font-family: 'MobyMono';
+				src: url('fonts/MobyMono') format('truetype');
+			}
+			@font-face {
+				font-family: 'Zector';
+				src: url('fonts/Zector') format('truetype');
+			}
+			@font-face {
+				font-family: 'DraftingMonoThin';
+				src: url('fonts/DraftingMonoThin') format('truetype');
+			}
+			@font-face {
+				font-family: 'InteloneMono';
+				src: url('fonts/InteloneMono') format('truetype');
+			}
+			@font-face {
+				font-family: 'Cascadia';
+				src: url('fonts/Cascadia') format('truetype');
+			}
+			@font-face {
+				font-family: 'Anonymous';
+				src: url('fonts/Anonymous') format('truetype');
+			}
+			@font-face {
+				font-family: 'JMHTypewriterMono';
+				src: url('fonts/JMHTypewriterMono') format('truetype');
+			}
+			@font-face {
+				font-family: 'CREDC___';
+				src: url('fonts/CREDC___') format('truetype');
+			}
+			@font-face {
+				font-family: 'ErikaType';
+				src: url('fonts/ErikaType') format('truetype');
+			}
+			@font-face
+			{
+				font-family: 'AmericanStencil';
+				src: url('fonts/AmericanStencil') format('truetype');
+			}
+			@font-face {
+				font-family: 'Larabie';
+				src: url('fonts/Larabie') format('truetype');
+			}
+			@font-face {
+				font-family: 'SourceCodeProBlack';
+				src: url('fonts/SourceCodeProBlack') format('truetype');
+			}
+			@font-face {
+				font-family: 'TaurusMonoOutlineRegular';
+				src: url('fonts/TaurusMonoOutlineRegular') format('truetype');
+			}
+			@font-face {
+				font-family: 'TaurusMonoOutlineBold';
+				src: url('fonts/TaurusMonoOutlineBold') format('truetype');
+			}
+			@font-face {
+				font-family: 'SometypeMonoBold';
+				src: url('fonts/SometypeMonoBold') format('truetype');
+			}
+			@font-face {
+				font-family: 'SpaceMonoRegular';
+				src: url('fonts/SpaceMonoRegular') format('truetype');
+			}
+			@font-face {
+				font-family: 'OsloII';
+				src: url('fonts/OsloII') format('truetype');
+			}
+		</style>
+		<script>
+
+			'use strict'
+
+			// Font
+			const Fonts = [
+				'AmericanStencil',
+				'Anonymous',
+				'CREDC___',
+				'Cascadia',
+				'ErikaType',
+				'JMHTypewriterMono',
+				'Larabie',
+				'SourceCodeProBlack',
+				'TaurusMonoOutlineBold',
+				'TaurusMonoOutlineRegular',
+				'InteloneMono',
+				'DraftingMonoThin',
+				'Zector',
+				'MobyMono',
+				'SometypeMonoBold',
+				'SpaceMonoRegular',
+				'OsloII'
+			]
+			const Font = Fonts[Math.floor(Math.random() * Fonts.length)]
+
+
+			// Clock
+			if(!window.location.hash){
+				window.location.hash = [
+					'2024-04-07', '2024-07-11',
+				][ Math.floor(Math.random() * 2) ]
+			}
+
+			function update() {
+
+				const Curr = new Date()
+				const Qstr = new Date(
+					window.location.hash.replace('#', '')
+				)
+				const Days = (Curr /*as any*/) - (Qstr /*as any*/)
+				CLOCK.textContent = `${
+					( Days / 86400000 ).toFixed(9)
+					// 86400000 milliseconds/day
+					//		= 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
+					// 31557600000 milliseconds/year
+					//		= 86400000 * 356.25 days
+				}`
+			}
+
+			function start () {
+
+				setTimeout(() => {
+					update()
+					requestAnimationFrame(start)
+				}, 1000/30)
+			}
+
+			const CLOCK = document.createElement('span')
+			CLOCK.classList.add('fontIs-'+Font)
+			document.body.appendChild( CLOCK )
+			start()
+
+		</script>
+		<style>
+			body {
+				letter-spacing: -9px;
+				font-size:72;
+				background:black;
+				color:white;
+				text-align: center;
+				padding-top:42vh;
+			}
+			div, span {
+				cursor: grab;
+				user-select: none;
+			}
+			.fontIs-OsloII { font-family: 'OsloII'; letter-spacing: 0; }
+			.fontIs-SpaceMonoRegular { font-family: 'SpaceMonoRegular' }
+			.fontIs-SometypeMonoBold { font-family: 'SometypeMonoBold' }
+			.fontIs-DraftingMonoThin { font-family: 'DraftingMonoThin' }
+			.fontIs-MobyMono { font-family: 'MobyMono' }
+			.fontIs-Zector { font-family: 'Zector' }
+			.fontIs-InteloneMono { font-family: 'InteloneMono' }
+			.fontIs-Anonymous { font-family: 'Anonymous' }
+			.fontIs-Cascadia { font-family: 'Cascadia' }
+			.fontIs-AmericanStencil { font-family: 'AmericanStencil' }
+			.fontIs-CREDC___ { font-family: 'CREDC___' }
+			.fontIs-ErikaType { font-family: 'ErikaType' }
+			.fontIs-Larabie { font-family: 'Larabie' }
+			.fontIs-JMHTypewriterMono { font-family: 'JMHTypewriterMono' }
+			.fontIs-SourceCodeProBlack { font-family: 'SourceCodeProBlack' }
+			.fontIs-TaurusMonoOutlineBold { font-family: 'TaurusMonoOutlineBold' }
+			.fontIs-TaurusMonoOutlineRegular { font-family: 'TaurusMonoOutlineRegular' }
+			
+			
+		</style>
+	</body>
+</html>
