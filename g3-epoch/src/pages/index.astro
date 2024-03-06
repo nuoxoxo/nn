@@ -1,0 +1,60 @@
+---
+
+---
+
+<html lang='en'>
+	<head>
+		<meta charset='utf-8' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='viewport' content='width=device-width' />
+		<meta name='generator' content={Astro.generator} />
+		<title>epoch</title>
+	</head>
+	<body>
+		<script>
+			'use strict'
+			if(!window.location.hash){
+				window.location.hash = [
+					'2024-04-07', '2024-07-11', '2024-05-12',
+				][ Math.floor(Math.random() * 2) ]
+			}
+			function update() {
+				const curr = new Date()
+				const qstr = new Date(window.location.hash.replace('#', ''))
+				elem.textContent = `${
+					// 86400000 milliseconds/day
+					//		= 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
+					// 31557600000 milliseconds/year
+					//		= 86400000 * 356.25 days
+					(((curr as any) - (qstr as any)) / 86400000).toFixed(9)
+				}`
+			}
+			function start () {
+				setTimeout(() => {
+					update()
+					requestAnimationFrame(start)
+				}, 1000/30)
+			}
+			const elem = document.createElement('div')
+			document.body.appendChild( elem )
+			start()
+		</script>
+		<style>
+			@font-face {
+				font-family: 'Anonymous';
+				src: url('Anonymous.ttf') format('truetype');
+				font-weight: normal; 
+				font-style: normal;
+			}
+			body {
+				background:black;
+				color:white;
+				text-align: center;
+				padding-top:42vh;
+				font-size:66px;
+				font-family: 'Anonymous';
+				letter-spacing: -4px;
+			}
+		</style>
+	</body>
+</html>
