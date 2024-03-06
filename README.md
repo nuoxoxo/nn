@@ -5,8 +5,12 @@
 
 | Ref.    | Job                        | Desc.                                  | Run 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| g1      | jukebox recoded            | _what : bandcamper & soundclouder on Astro :rocket:_ 
-|         | [*io/myspace*](https://nuoxoxo.github.io/myspace) | | :green_circle: 
+| g3      | epoch                      | _what : my rendering of 100r's `Age`_ 
+|         | [*io/epoch*](https://nuoxoxo.github.io/epoch) | | :green_circle: 
+| g2      | golb                       | - _what : a blog, my blog_ 
+|         |                            | - _curr : only the beginning_  
+| g1      | my ` `                     | _what : simple bc player_ 
+|         | [~~*io/myspace*~~](https://nuoxoxo.github.io/myspace) | _curr : Not Rendered_  | :red_circle: 
 ||
 | e9      | ...                        | saved files
 |         |                            | - _what : saved states + infile fetcher_ 
