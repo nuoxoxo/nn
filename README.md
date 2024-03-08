@@ -5,6 +5,8 @@
 
 | Ref.    | Job                        | Desc.                                  | Run 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
+| g4      | Search & Filter            | - _what : do this before sol. testcase_
+|         |                            | - _curr : init blank_
 | g3      | epoch                      | - _what : my rendering of 100r's `Age`_ 
 |         | [*io/epoch*](https://nuoxoxo.github.io/epoch) | | :green_circle: 
 | g2      | golb                       | - _what : a blog, my blog_ 
