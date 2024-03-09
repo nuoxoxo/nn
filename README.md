@@ -6,7 +6,8 @@
 | Ref.    | Job                        | Desc.                                  | Run 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | g4      | Search & Filter            | - _what : do this before solr. testcase_
-|         |                            | - _curr : init blank, now prints all initial items_
+|         |                            | - _curr : basic functionality works!_
+|         |                            | - _curr : ~~init blank, now prints all initial items~~_
 | g3      | epoch                      | - _what : my rendering of 100r's `Age`_ 
 |         | [*io/epoch*](https://nuoxoxo.github.io/epoch) | | :green_circle: 
 | g2      | golb                       | - _what : a blog, my blog_ 
