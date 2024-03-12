@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "✰ BLOGSPOT ✰",
   description: "✰✰✰✰✰✰✰✰✰✰✰✰",
@@ -11,7 +13,7 @@ export default function RootLayout({
   const header = (
     <header>
       <div>
-        <h1>nuoxoxo's blog</h1>
+        <Link href='/'><h1>nuoxoxo's blog</h1></Link>
         <p>✰ Welcome to my playground! ✰</p>
       </div>
     </header>
