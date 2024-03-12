@@ -1,12 +1,16 @@
+import Link from "next/link"
 import "./page.css"
 import fs from 'fs'
 
 const HomePage = () => {
+
   const PostMetadata = getPostMetadata()
   const PostPreviews = PostMetadata.map(
     (slug) => (
       <div>
-        <h3>{ slug }</h3>
+        <Link href={`/posts/${slug}`}>
+          <h3>{ slug }</h3>
+        </Link>
       </div>
     )
   )
@@ -14,7 +18,9 @@ const HomePage = () => {
   return (
     <>
       <h1>Hello, World!</h1>
-      <div>{ PostPreviews }</div>
+      <div>
+        <h2>{ PostPreviews }</h2>
+      </div>
     </>
   )
 }
