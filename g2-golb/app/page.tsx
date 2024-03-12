@@ -1,5 +1,5 @@
-import Link from "next/link"
 import "./page.css"
+import Link from "next/link"
 import fs from 'fs'
 
 const HomePage = () => {
@@ -10,7 +10,7 @@ const HomePage = () => {
       // const SLUG = `/posts/${slug}`
       return (
         <div key={ slug }>
-          <Link href={`/posts/${slug}.mdx`}>
+          <Link href={`/posts/${slug}`}>
           {/* <Link href={ PATH }> */}
             <h3>{ slug }</h3>
           </Link>
