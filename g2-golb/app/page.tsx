@@ -6,18 +6,21 @@ const HomePage = () => {
 
   const PostMetadata = getPostMetadata()
   const PostPreviews = PostMetadata.map(
-    (slug) => (
-      <div>
-        <Link href={`/posts/${slug}`}>
-          <h3>{ slug }</h3>
-        </Link>
-      </div>
-    )
-  )
+    (slug) => {
+      // const SLUG = `/posts/${slug}`
+      return (
+        <div key={ slug }>
+          <Link href={`/posts/${slug}.mdx`}>
+          {/* <Link href={ PATH }> */}
+            <h3>{ slug }</h3>
+          </Link>
+        </div>
+      )
+    })
 
   return (
     <>
-      <h1>Hello, World!</h1>
+      {/* <h1>Hello, World!</h1> */}
       <div>
         <h2>{ PostPreviews }</h2>
       </div>
@@ -36,7 +39,6 @@ const getPostMetadata = () => {
     (item) => item.replace(regex, '')
   )
   return Slugs
-
 }
 
 export default HomePage
