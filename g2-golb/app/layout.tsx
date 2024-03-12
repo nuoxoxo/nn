@@ -28,6 +28,7 @@ export default function RootLayout({
       <footer>
         <div>
           <img width="300px" src="./favicon.svg" />
+          {/* <img width="300px" src={require("./favicon.svg")} /> */}
         </div>
       </footer>
     </>
