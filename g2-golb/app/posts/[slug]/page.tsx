@@ -4,9 +4,9 @@ const getContent = (slug: string) : string => {
   const Path = 'posts/'
   const Ext = '.mdx'
   const File = `${Path}${slug}${Ext}`
-  const res = fs.readFileSync(File, 'utf8')
-  console.log(File)
-  return res
+  const Content = fs.readFileSync(File, 'utf8')
+  const matterRes = matter()
+  return 
 }
 
 const BlogPost = (props: any) => {
@@ -17,7 +17,6 @@ const BlogPost = (props: any) => {
       <p>{ getContent(props.params.slug) }</p>
     </>
   )
-
 }
 
 export default BlogPost
