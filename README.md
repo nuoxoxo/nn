@@ -8,7 +8,7 @@
 | g4      | Search & Filter            | - _what : do this before solr. testcase_
 |         |                            | - _curr : basic functionality works!_
 |         |                            | - _~~curr : init blank, now prints all initial items~~_
-| g3      | epoch                      | - _what : my rendering of 100r's `Age`_ 
+| g3      | epoch                      | - _what : my take on 100r's `Age`_ 
 |         | [*io/epoch*](https://nuoxoxo.github.io/epoch) | | :green_circle: 
 | g2      | golb                       | - _what : a blog, my blog_ 
 |         |                            | - _curr : only the beginning_  
