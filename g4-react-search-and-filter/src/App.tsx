@@ -1,51 +1,51 @@
 // import { useState } from 'react'
-import { useEffect, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
-import "./App.scss";
+import { useEffect, useState } from "react"
+import { v4 as uuidv4 } from "uuid"
+import "./App.scss"
 
 interface Country {
-  alpha3Code: string;
-  callingCodes: string[] | null;
+  alpha3Code: string
+  callingCodes: string[] | null
   name: {
-    common: string;
-  };
+    common: string
+  }
   flags: {
-    png: string;
-  };
-  population: number;
-  region: string;
-  capital: string;
+    png: string
+  }
+  population: number
+  region: string
+  capital: string
 }
 
 function App() {
-  const [Err, setErr] = useState<Error | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [A, setA] = useState<Country[]>([]);
+  const [Err, setErr] = useState<Error | null>(null)
+  const [isLoading, setIsLoading] = useState(true)
+  const [A, setA] = useState<Country[]>([])
 
   // for Input
-  const [Query, setQuery] = useState("");
-  const [QueryParam] = useState(["name"]);
-  const [FilterRegion, setFilterRegion] = useState("All");
+  const [Query, setQuery] = useState("")
+  const [QueryParam] = useState(["name"])
+  const [FilterRegion, setFilterRegion] = useState("All")
 
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((res) => res.json())
       .then(
         (res) => {
-          setA(res);
-          setIsLoading(false);
+          setA(res)
+          setIsLoading(false)
         },
         (Err) => {
-          setErr(Err);
-          setIsLoading(false);
+          setErr(Err)
+          setIsLoading(false)
         }
-      );
-  }, []);
+      )
+  }, [])
 
   function Lookup(arr:Country[]) {
     if (!Query) {
       console.log('/empty')
-      return arr;
+      return arr
     }
     return arr.filter((item) => {
       console.log('/query', Query, item)
@@ -55,81 +55,84 @@ function App() {
           if (typeof res === 'object' && res !== null && 'common' in res)
             return (
               res.common.toString().toLowerCase().indexOf(Query.toLowerCase()) > -1
-            );
+            )
           return false
-        });
+        })
       } else if (FilterRegion == "All") {
         return QueryParam.some((newItem) => {
           const res = item[newItem as keyof Country]
           if (typeof res === 'object' && res !== null && 'common' in res)
             return (
               res.common.toString().toLowerCase().indexOf(Query.toLowerCase()) > -1
-            );
+            )
           return false
-        });
+        })
       }
-    });
+    })
   }
+
+  //  1st attempt
 
   /*
   const Lookup = (arr: Country[]): Country[] => {
     if (!Query) {
-      return arr;
+      return arr
     }
     return arr.filter((item) => {
       if ((item.region as string) == FilterRegion) {
         return QueryParam.some((new_item: string) => {
-          const res = item[new_item as keyof Country];
-          if (typeof res !== "string") return res;
-          return res.toString().toLowerCase().indexOf(Query.toLowerCase()) > -1;
-        });
+          const res = item[new_item as keyof Country]
+          if (typeof res !== "string") return res
+          return res.toString().toLowerCase().indexOf(Query.toLowerCase()) > -1
+        })
       } else if (FilterRegion == "All") {
         return QueryParam.some((new_item: string) => {
-          const res = item[new_item as keyof Country];
-          if (typeof res !== "string") return res;
-          return res.toString().toLowerCase().indexOf(Query.toLowerCase()) > -1;
-        });
+          const res = item[new_item as keyof Country]
+          if (typeof res !== "string") return res
+          return res.toString().toLowerCase().indexOf(Query.toLowerCase()) > -1
+        })
       }
-    });
-  };
+    })
+  }
   */
+
+  //  2nd attempt
 
   /*
   const Lookup = (arr: Country[]): Country[] => {
     if (!Query) {
-      return arr;
+      return arr
     }
-  
     return arr.filter((item) => {
       if (item.region === FilterRegion || FilterRegion === "All") {
         return QueryParam.some((newItem: string) => {
-          const propertyValue = item[newItem as keyof Country];
+          const propertyValue = item[newItem as keyof Country]
           if (typeof propertyValue === 'string') {
             return propertyValue
               .toLowerCase()
-              .includes(Query.toLowerCase());
+              .includes(Query.toLowerCase())
           }
-          return false;
-        });
+          return false
+        })
       } else if (FilterRegion === "All") {
         return QueryParam.some((newItem: string) => {
-          const propertyValue = item[newItem as keyof Country];
+          const propertyValue = item[newItem as keyof Country]
           if (typeof propertyValue === 'string') {
             return propertyValue
               .toLowerCase()
-              .includes(Query.toLowerCase());
+              .includes(Query.toLowerCase())
           }
-          return false;
-        });
+          return false
+        })
       }
-      return false;
-    });
-  };*/
+      return false
+    })
+  }*/
 
   if (Err) {
-    return <>{Err.message}</>;
+    return <>{Err.message}</>
   } else if (isLoading) {
-    return <>loading...</>;
+    return <>loading...</>
   }
   return (
     <>
@@ -149,8 +152,8 @@ function App() {
               value={Query}
               // realtime input/lookup is here
               onChange={(e) => {
-                setQuery(e.target.value);
-                console.log("Query:", e.target.value);
+                setQuery(e.target.value)
+                console.log("Query:", e.target.value)
               }}
             />
           </label>
@@ -158,13 +161,13 @@ function App() {
             {/* realtime input/lookup is here */}
             <select
               onChange={(e) => {
-                setFilterRegion(e.target.value);
-                console.log("FilterRegion:", e.target.value);
+                setFilterRegion(e.target.value)
+                console.log("FilterRegion:", e.target.value)
               }}
               className="custom-select"
               aria-label="Filter By Region"
             >
-              <option value="All">Filter By Region</option>
+              <option value="All">⭐ Filter By Region ⭐</option>
               <option value="Africa">Africa</option>
               <option value="Americas">America</option>
               <option value="Asia">Asia</option>
@@ -205,7 +208,7 @@ function App() {
         </ul>
       </div>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
