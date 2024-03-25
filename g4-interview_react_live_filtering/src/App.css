@@ -1,5 +1,8 @@
-.InputGroup input {
-  padding: 3px;
-  margin: 2px;
-  font-family: Cambria;
+#app {
+  font-size: 21px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }

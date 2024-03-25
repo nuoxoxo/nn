@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import './App.css';
-import BookSearch from './components/BookSearch';
+import { useState, useEffect } from "react";
+import "./App.css";
+import BookSearch from "./components/BookSearch";
 
 const App = () => {
   const [books, setBooks] = useState([]);
@@ -24,6 +24,6 @@ const App = () => {
       <BookSearch books={books} />
     </div>
   );
-}
+};
 
 export default App;
