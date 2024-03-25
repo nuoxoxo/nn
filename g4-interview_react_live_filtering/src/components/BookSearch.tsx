@@ -55,8 +55,7 @@ const BookSearch: React.FC<BookSearchProps> = (props) => {
             ) {
               return false;
             }
-            // if (!book_val_lower.includes(search_val_lower)) {
-            if (!book_val_lower.startsWith(search_val_lower)) {
+            if (!book_val_lower.includes(search_val_lower)) {
               return false;
             }
           }
