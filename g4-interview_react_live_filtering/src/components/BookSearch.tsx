@@ -50,7 +50,8 @@ const BookSearch: React.FC<BookSearchProps> = (props) => {
           if ((searchData as any)[key] !== "") {
             if (
               typeof (book as any)[key] === "number" &&
-              !book_val_lower.includes(search_val_lower)
+              // !book_val_lower.includes(search_val_lower)
+              !book_val_lower.startsWith(search_val_lower)
             ) {
               return false;
             }
