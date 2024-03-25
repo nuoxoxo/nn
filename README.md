@@ -5,9 +5,9 @@
 
 | Ref.    | Job                        | Desc.                                  | Run 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| g4      | Search & Filter            | - _what : do this before solr. testcase_
-|         |                            | - _curr : basic functionality works!_
-|         |                            | - _~~curr : init blank, now prints all initial items~~_
+| g5      | Dynamic filtering - Countries | - _done : 1st draft_
+| g4      | Dynamic filtering          | - _curr : to be rendered on gh-pages_
+|         |                            | - _done : basic functionality works!_
 | g3      | epoch                      | - _what : my take on 100r's `Age`_ 
 |         | [*io/epoch*](https://nuoxoxo.github.io/epoch) | | :green_circle: 
 | g2      | golb                       | - _what : a blog, my blog_ 
