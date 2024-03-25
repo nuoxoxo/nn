@@ -8,7 +8,7 @@ const App = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await fetch("./sample_data/books.json");
+        const response = await fetch("https://raw.githubusercontent.com/nuoxoxo/in/main/live_filter_search/sample_data/books.json");
         const data = await response.json();
         setBooks(data);
       } catch (error) {
