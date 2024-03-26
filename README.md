@@ -5,8 +5,10 @@
 
 | Ref.    | Job                        | Desc.                                  | Run 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| g5      | Dynamic filtering - Countries | - _done : 1st draft_
-| g4      | Dynamic filtering          | - _curr : to be rendered on gh-pages_
+| g5      | Countries                  | - _done : 1st draft_
+| g4      | Live Search Filtering      | 
+|         | --- _deployed_ --- | [***io/interview_react_search_filter***](https://nuoxoxo.github.io/interview_react_search_filter) | | :green_circle: 
+|         |                            | - _curr : ~~to be rendered on gh-pages~~_
 |         |                            | - _done : basic functionality works!_
 | g3      | epoch                      | - _what : my take on 100r's `Age`_ 
 |         | [*io/epoch*](https://nuoxoxo.github.io/epoch) | | :green_circle: 
@@ -20,7 +22,8 @@
 | e8      | mmg                        | - _what : a memory matching game_ 
 |         | [*io/mmg*](https://nuoxoxo.github.io/mmg) | - _todo : update io/mmg to use img from `/in`_ | :green_circle:
 | e7      | react test case            | - _goal : to extend/inherit a component_ | 
-|         | [*io/mdp*](https://nuoxoxo.github.io/mdp) | _1st draft : added notistack, works fine_ 
+|         | --- _deployed_ --- | [***io/interview_react_confirmation_component***](https://nuoxoxo.github.io/interview_react_confirmation_component) | | :green_circle: 
+|         | [~~*io/mdp*~~](https://nuoxoxo.github.io/mdp) | _1st draft : added notistack, works fine_ 
 | e6      | p5js                       | _p5js_ using `p5` . preferred          | :yellow_circle: 
 |         |                            | - _curr : navbar (left, shrinkable)_
 |         |                            | - _todo : switchable components_
