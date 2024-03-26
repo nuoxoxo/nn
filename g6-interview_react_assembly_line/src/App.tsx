@@ -23,7 +23,13 @@ function App() {
 
   const handleConfirmInput = () => {
     if (Input.trim() !== '') {
-      setStages([[...Stages[0], Input], Stages[1], Stages[2], Stages[3]])
+      setStages([
+        [
+          ...Stages[0],
+          Input
+        ],
+        ...Stages.slice(1)//Stages[1], Stages[2], Stages[3]])
+      ])
       setInput('')
     }
   }
