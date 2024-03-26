@@ -26,6 +26,7 @@ button {
     flex-direction: column;
     flex:1;
     border: thin coral dotted;
+    min-height: 42px;
     margin:1px;
     text-align: center;
   }

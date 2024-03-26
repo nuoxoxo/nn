@@ -4,10 +4,12 @@ import './App.css'
 function App() {
 
   const [Input, setInput] = useState('')
-  const [Ideas, setIdeas] = useState([])
-  const [Development/*, setDevelopment*/] = useState(['some_dev'])
-  const [Testing/*, setTesting*/] = useState(['some_test'])
-  const [Deployment/*, setDeployment*/] = useState(['some_deploy'])
+  const [ Stages, setStages] = useState([
+    [],
+    [],
+    [],
+    []
+  ])
 
   const handleSetInput = (event: any) => {
     setInput( event.target.value )
@@ -21,10 +23,7 @@ function App() {
 
   const handleConfirmInput = () => {
     if (Input.trim() !== '') {
-      setIdeas([
-        ... Ideas,
-        Input,
-      ])
+      setStages([[...Stages[0], Input], Stages[1], Stages[2], Stages[3]])
       setInput('')
     }
   }
@@ -42,34 +41,13 @@ function App() {
         <button onClick={handleConfirmInput}>insert</button>
       </div>
       <div className='assembly-line-wrapper' >
-        <div className='Ideas assembly-line-child'> {
-          Ideas.map((el, idx) => (
-            <button key={idx}>
-              { el }
-            </button>
-          ))
-        }</div>
-        <div className='Development assembly-line-child'> {
-          Development.map((el, idx) => (
-            <button key={idx}>
-              { el }
-            </button>
-          ))
-        }</div>
-        <div className='Testing assembly-line-child'> {
-          Testing.map((el, idx) => (
-            <button key={idx}>
-              { el }
-            </button>
-          ))
-        }</div>
-        <div className='Deployment assembly-line-child'> {
-          Deployment.map((el, idx) => (
-            <button key={idx}>
-              { el }
-            </button>
-          ))
-        }</div>
+        {Stages.map((stage, index) => (
+          <div key={index} className={`assembly-line-child stage-${index}`}>
+            {stage.map((el, idx) => (
+              <button key={idx}>{el}</button>
+            ))}
+          </div>
+        ))}
       </div>
     </>
   )
