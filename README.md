@@ -7,7 +7,7 @@
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | g5      | Countries                  | - _done : 1st draft_
 | g4      | Live Search Filtering      | 
-|         | - [*io/deploy*](https://nuoxoxo.github.io/interview_react_search_filter) - | - _depl : io/interview_react_search_filter_ | :green_circle: 
+|         | *io/*[***deploy***](https://nuoxoxo.github.io/interview_react_search_filter) | - _depl : io/interview_react_search_filter_ | :green_circle: 
 |         |                            | - _done : basic functionality works!_
 | g3      | epoch                      | - _what : my take on 100r's `Age`_ 
 |         | [*io/epoch*](https://nuoxoxo.github.io/epoch) | | :green_circle: 
@@ -21,7 +21,7 @@
 | e8      | mmg                        | - _what : a memory matching game_ 
 |         | [*io/mmg*](https://nuoxoxo.github.io/mmg) | - _todo : update io/mmg to use img from `/in`_ | :green_circle:
 | e7      | react test case            | - _goal : to extend/inherit a component_ | 
-|         | - [*io/deploy*](https://nuoxoxo.github.io/interview_react_confirmation_component) - | - _depl : io/interview_react_confirmation_component_ | :green_circle: 
+|         | *io/*[***deploy***](https://nuoxoxo.github.io/interview_react_confirmation_component) | - _depl : io/interview_react_confirmation_component_ | :green_circle: 
 |         |                            | - _1st draft : added notistack, works fine_ 
 | e6      | p5js                       | _p5js_ using `p5` . preferred          | :yellow_circle: 
 |         |                            | - _curr : navbar (left, shrinkable)_
