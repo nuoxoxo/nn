@@ -1,0 +1,58 @@
+.InputGroup {
+  display: flex;
+  flex-direction: column;
+  width:42%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+  margin-bottom: 21px;
+  input {
+    padding: 4px;
+    margin: 4px;
+    font-size: 15px;
+    font-family: Cambria;
+  }
+  input:focus {
+    outline:none;
+  }
+}
+
+.book-results {
+  display: grid;
+  align-items: start;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 4fr));
+  grid-template-rows: auto;
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  word-wrap: break-word;
+  
+  .book-result {
+    border: seagreen ridge;
+    display: flex;
+    flex-direction: column;
+    margin: 6px 6px 6px 0;
+    padding: 6px;
+    
+  }
+}
+
+.book-content-div {
+
+  margin-top: 3px;
+  margin-bottom: 3px;
+  display: flex;
+  
+  .book-content-left {
+    flex: 1;
+    margin-right: 6px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .InputGroup {
+    width: 64%;
+  }
+  .book-results {
+    grid-template-columns: 2fr;
+  }
+}
