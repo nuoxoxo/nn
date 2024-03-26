@@ -14,6 +14,7 @@ function App() {
       <AssemblyLine 
         stages={stages}
       />
+      {/* <img src='https://i.imgur.com/gUHZxzD.gif'/> */}
     </>
   )
 }
