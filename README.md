@@ -7,8 +7,7 @@
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | g5      | Countries                  | - _done : 1st draft_
 | g4      | Live Search Filtering      | 
-|         | - [*io/deploy*](https://nuoxoxo.github.io/interview_react_search_filter) - | - _done - deployed : io/interview_react_search_filter_ | :green_circle: 
-|         |                            | _
+|         | - [*io/deploy*](https://nuoxoxo.github.io/interview_react_search_filter) - | - _depl : io/interview_react_search_filter_ | :green_circle: 
 |         |                            | - _done : basic functionality works!_
 | g3      | epoch                      | - _what : my take on 100r's `Age`_ 
 |         | [*io/epoch*](https://nuoxoxo.github.io/epoch) | | :green_circle: 
