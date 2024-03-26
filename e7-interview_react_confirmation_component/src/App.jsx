@@ -1,6 +1,6 @@
-// import { useState } from 'react'
 import "./App.scss"
-import Confirmation from "./components/Confirmation";
+import Confirmation from "./components/Confirmation"
+import {SnackbarProvider} from 'notistack'
 
 function App() {
   return (
@@ -9,14 +9,16 @@ function App() {
         UI will show below once you complete the Confirmation component. See{" "}
         <code>App.jsx</code> for more info.
       </p>
-      <Confirmation
-        message="Is the pie a lie?"
-        type="message"
-        accept={
-          () => console.log("accepted") // prints to browser console
-        }
-        decline={() => console.log("declined")}
-      />
+      <SnackbarProvider maxSnack={3}>
+        <Confirmation
+          message="Is the pie a lie?"
+          type="message"
+          accept={
+            () => console.log("accepted") // prints to browser console
+          }
+          decline={() => console.log("declined")}
+        />
+      </SnackbarProvider>
     </div>
   )
 }
