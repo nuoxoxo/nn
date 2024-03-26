@@ -1,0 +1,47 @@
+button {
+  font-size: 21px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex:1;
+  margin:1px;
+  align-items: center;
+  margin-block-end: 1em;
+  height: 42px;
+  button {
+    margin: 6px;
+  }
+  input {
+    font-size: 21px;
+    /* width: 42%; */
+    height: 88%
+  }
+}
+
+.assembly-line-wrapper {
+  display: flex;
+  .assembly-line-child {
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    border: thin coral dotted;
+    min-height: 42px;
+    margin:1px;
+    text-align: center;
+    
+  }
+  button {
+    margin: 6px;
+    flex: 1;
+    /* background-color: black; */
+  }
+  .stage-1 button {border: 1px solid #04AA6D;}
+  .stage-1 button:hover {background-color: #04AA6D;}
+  .stage-2 button {border: 1px solid #1D7299;}
+  .stage-2 button:hover {background-color: #1D7299;}
+  .stage-3 button {border: 1px solid #CE2F60;}
+  .stage-3 button:hover {background-color: #CE2F60;}
+  .stage-4 button {border: 1px solid #D397F8;}
+  .stage-4 button:hover {background-color: #D397F8;}
+}
