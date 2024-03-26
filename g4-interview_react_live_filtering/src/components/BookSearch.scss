@@ -1,57 +1,58 @@
-.BookSearch-div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-form {
-  width: 86%;
-  height: 100%
-}
-
 .InputGroup {
   display: flex;
   flex-direction: column;
-  width:100%;
-  min-width: 512px;
-  margin-bottom: 12px;
+  width:42%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
   
+  margin-bottom: 21px;
   input {
-    padding: 12px;
-    margin: 2px;
+    padding: 4px;
+    margin: 4px;
+    font-size: 15px;
     font-family: Cambria;
-    font-size: 16px;
+  }
+  input:focus {
+    outline:none;
   }
 }
 
-.book-result {
-
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
-  margin-top: 42px;
-}
-
-.book-result {
-  width:86%;
-  // margin-bottom: 42px;
+.book-results {
+  display: grid;
+  align-items: start;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 4fr));
+  grid-template-rows: auto;
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  word-wrap: break-word;
+  
+  .book-result {
+    border: seagreen ridge;
+    display: flex;
+    flex-direction: column;
+    margin: 6px 6px 6px 0;
+    padding: 6px;
+    
+  }
 }
 
 .book-content-div {
+
+  margin-top: 3px;
+  margin-bottom: 3px;
   display: flex;
+  
+  .book-content-left {
+    flex: 1;
+    margin-right: 6px;
+  }
 }
 
-.book-content {
-  margin-bottom: 6px;
-}
-
-.book-content-left {
-  width:100%;
-  margin-right: 6px;
-}
-
-.book-content-right {
-  width:100%;
-  text-align: right;
-  white-space: nowrap;
+@media screen and (max-width: 600px) {
+  .InputGroup {
+    width: 64%;
+  }
+  .book-results {
+    grid-template-columns: 2fr;
+  }
 }

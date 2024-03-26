@@ -109,48 +109,50 @@ const BookSearch: React.FC<BookSearchProps> = (props) => {
           />
         </div>
       </form>
-      {filteredBooks.map((book, index) => (
-        <div
-          key={index}
-          data-testid="book"
-          className="book-result"
-        >
-          <div className="book-content-div">
-            <span className="book-content book-content-left">Author: </span>
-            <span className="book-content book-content-right">
-              {book.author}
-            </span>
+      <div className="book-results">
+        {filteredBooks.map((book, index) => (
+          <div
+            key={index}
+            data-testid="book"
+            className="book-result"
+          >
+            <div className="book-content-div">
+              <span className="book-content book-content-left">Author: </span>
+              <span className="book-content book-content-right">
+                {book.author}
+              </span>
+            </div>
+            <div className="book-content-div">
+              <span className="book-content book-content-left">Country: </span>
+              <span className="book-content book-content-right">
+                {book.country}
+              </span>
+            </div>
+            <div className="book-content-div">
+              <span className="book-content book-content-left">Language: </span>
+              <span className="book-content book-content-right">
+                {book.language}
+              </span>
+            </div>
+            <div className="book-content-div">
+              <span className="book-content book-content-left">Pages: </span>
+              <span className="book-content book-content-right">
+                {book.pages}
+              </span>
+            </div>
+            <div className="book-content-div">
+              <span className="book-content book-content-left">Title: </span>
+              <span className="book-content book-content-right">
+                {book.title}
+              </span>
+            </div>
+            <div className="book-content-div">
+              <span className="book-content book-content-left">Year: </span>
+              <span className="book-content book-content-right">{book.year}</span>
+            </div>
           </div>
-          <div className="book-content-div">
-            <span className="book-content book-content-left">Country: </span>
-            <span className="book-content book-content-right">
-              {book.country}
-            </span>
-          </div>
-          <div className="book-content-div">
-            <span className="book-content book-content-left">Language: </span>
-            <span className="book-content book-content-right">
-              {book.language}
-            </span>
-          </div>
-          <div className="book-content-div">
-            <span className="book-content book-content-left">Pages: </span>
-            <span className="book-content book-content-right">
-              {book.pages}
-            </span>
-          </div>
-          <div className="book-content-div">
-            <span className="book-content book-content-left">Title: </span>
-            <span className="book-content book-content-right">
-              {book.title}
-            </span>
-          </div>
-          <div className="book-content-div">
-            <span className="book-content book-content-left">Year: </span>
-            <span className="book-content book-content-right">{book.year}</span>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
