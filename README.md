@@ -5,6 +5,9 @@
 
 | Ref.    | Job                        | Desc.                                  | Run 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
+| g7      | React AssemblyLine         | - _todo : deploy_
+|         |                            | - _curr : 1st draft done_
+| g6      | React AssemblyLine draft   | - _done : no long press no moveing leftwards_
 | g5      | Countries                  | - _done : 1st draft_
 | g4      | Live Search Filtering      | 
 |         | *io/*[***deploy***](https://nuoxoxo.github.io/interview_react_search_filter) | - _depl : io/interview_react_search_filter_ | :green_circle: 
