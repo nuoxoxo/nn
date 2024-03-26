@@ -12,7 +12,7 @@ export default defineConfig(({ command }) => {
   }
 
   if (command !== 'serve') {
-    config.base = '/interview_react_live_filter_search/'
+    config.base = '/interview_react_search_filter/'
   }
 
   return config
