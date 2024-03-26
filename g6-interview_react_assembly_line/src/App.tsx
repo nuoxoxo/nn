@@ -3,12 +3,14 @@ import './App.css'
 
 function App() {
 
+  const stageNames = ["Idea", "Dev.", "Test", "Depl"];
+
   const [Input, setInput] = useState('')
-  const [ Stages, setStages] = useState([
+  const [ Stages, setStages] = useState<string[][]>([
     [],
-    [],
-    [],
-    []
+    ['dvpt'],
+    ['test'],
+    ['dep']
   ])
 
   const handleSetInput = (event: any) => {
@@ -24,14 +26,23 @@ function App() {
   const handleConfirmInput = () => {
     if (Input.trim() !== '') {
       setStages([
-        [
-          ...Stages[0],
-          Input
-        ],
-        ...Stages.slice(1)//Stages[1], Stages[2], Stages[3]])
+        [ ... Stages[0], Input],
+        ... Stages.slice(1)//Stages[1], Stages[2], Stages[3]])
       ])
       setInput('')
     }
+  }
+
+  const handleShortPress = ( idxStage: number, idxStuff: number ) => {
+    const N = Stages.length
+    if ( idxStage < N ) {
+      const res = [ ... Stages]
+      const node: string = Stages[idxStage][idxStuff]
+      res[ idxStage ].splice(idxStuff, 1)
+      if ( idxStage < N - 1 )
+        res[ idxStage + 1 ].push( node )
+      setStages( res )
+    } 
   }
 
   return (
@@ -48,9 +59,15 @@ function App() {
       </div>
       <div className='assembly-line-wrapper' >
         {Stages.map((stage, index) => (
-          <div key={index} className={`assembly-line-child stage-${index}`}>
+          <div key={index} className={`assembly-line-child stage-${index + 1}`}>
+            <h2>{stageNames[index]}</h2>
             {stage.map((el, idx) => (
-              <button key={idx}>{el}</button>
+              <button 
+                key={idx}
+                onClick={() => handleShortPress( index, idx )}
+              >
+                {el}
+              </button>
             ))}
           </div>
         ))}
