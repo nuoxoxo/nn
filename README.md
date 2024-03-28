@@ -7,7 +7,7 @@
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | g7      | React AssemblyLine         | - _curr : deployed_
 |         | *io/*[***deploy***](https://nuoxoxo.github.io/interview_react_assembly_line) | - _depl : io/interview_react_assembly_line_ | :green_circle: 
-| g6      | ... (saved files)          | - _what : Assemblyline w/o long press or downgrade_
+| g6      | _... (saved files)_        | - _what : Assemblyline w/o long press or downgrade_
 | g5      | Countries                  | - _done : 1st draft_
 | g4      | Live Search Filtering      | 
 |         | *io/*[***deploy***](https://nuoxoxo.github.io/interview_react_search_filter) | - _depl : io/interview_react_search_filter_ | :green_circle: 
@@ -19,7 +19,7 @@
 | g1      | myspace                    | - _what : simple bc player_ 
 |         |                            | - _curr : deprecated, not deployed_ | :red_circle: 
 ||
-| e9      | ... (saved files)          | - _what : saved states + infile fetcher_ 
+| e9      | _... (saved files)_        | - _what : saved states + infile fetcher_ 
 | e8      | mmg                        | - _what : a memory matching game_ 
 |         | [*io/mmg*](https://nuoxoxo.github.io/mmg) | - _todo : update io/mmg to use img from `/in`_ | :green_circle:
 | e7      | react test case            | - _goal : to extend/inherit a component_ | 
