@@ -14,10 +14,10 @@
 |         |                            | - _done : basic functionality works!_
 | g3      | epoch                      | - _what : my take on 100r's `Age`_ 
 |         | [*io/epoch*](https://nuoxoxo.github.io/epoch) | | :green_circle: 
-| g2      | golb                       | - _what : a blog, my blog_ 
-|         |                            | - _curr : only the beginning_  
-| g1      | my ` `                     | - _what : simple bc player_ 
-|         | [~~*io/myspace*~~](https://nuoxoxo.github.io/myspace) | - _curr : Not Rendered_  | :red_circle: 
+| g2      | golb                       | - _what : a blog_ 
+|         |                            | - _curr : only did the beginning_  
+| g1      | myspace                    | - _what : simple bc player_ 
+|         |                            | - _curr : deprecated, not deployed_ | :red_circle: 
 ||
 | e9      | ... (saved files)          | - _what : saved states + infile fetcher_ 
 | e8      | mmg                        | - _what : a memory matching game_ 
