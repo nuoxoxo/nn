@@ -21,29 +21,37 @@ func main() {
 	}
 	router := gin.Default()
 
-	// root
+	// sample routes
 
-	router.GET("", func(ctx *gin.Context) {
-		ctx.String(http.StatusOK, "Hello, GET request received")
-	})
-	router.POST("", func(ctx *gin.Context) {
-		ctx.String(http.StatusOK, "Hello, POST request received")
-	})
+	router.GET("/studs", getStuds)
 
 	// other routes
 
-	router.GET("/hello", func(ctx *gin.Context) {
-		ctx.String(http.StatusOK, "Hello, World!")
-	})
-	router.GET("/studs", func(ctx *gin.Context) {
-		ctx.IndentedJSON(http.StatusOK, samples)
-	})
-	router.POST("/post", func(ctx *gin.Context) {
-		ctx.String(http.StatusOK, "POST request received")
-	})
+	router.GET("/", defaultSample)
+	router.POST("/", defaultSample)
+	router.PUT("/", defaultSample)
+	router.PATCH("/", defaultSample)
+	router.DELETE("/", defaultSample)
+	router.OPTIONS("/", defaultSample)
+	router.POST("/post", defaultSample)
+	router.GET("/hello", helloWorld)
 
-	router.Run("localhost:3000")
+	router.Run(":10086")
 
+}
+
+// define routes
+
+func getStuds(ctx *gin.Context) {
+	ctx.IndentedJSON(http.StatusOK, samples)
+}
+
+func helloWorld(ctx *gin.Context) {
+	ctx.String(http.StatusOK, "Hello, World!")
+}
+
+func defaultSample(ctx *gin.Context) {
+	ctx.String(http.StatusOK, ctx.Request.Method+"\nrequest received on route\n"+ctx.FullPath())
 }
 
 // helper
