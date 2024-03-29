@@ -7,19 +7,19 @@
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | g7      | React AssemblyLine         | - _curr : deployed_
 |         | *io/*[***deploy***](https://nuoxoxo.github.io/interview_react_assembly_line) | - _depl : io/interview_react_assembly_line_ | :green_circle: 
-| g6      | ... (saved files)          | - _what : Assemblyline w/o long press or downgrade_
+| g6      | _... (saved files)_        | - _what : Assemblyline w/o long press ie. downgrade_
 | g5      | Countries                  | - _done : 1st draft_
 | g4      | Live Search Filtering      | 
 |         | *io/*[***deploy***](https://nuoxoxo.github.io/interview_react_search_filter) | - _depl : io/interview_react_search_filter_ | :green_circle: 
 |         |                            | - _done : basic functionality works!_
 | g3      | epoch                      | - _what : my take on 100r's `Age`_ 
 |         | [*io/epoch*](https://nuoxoxo.github.io/epoch) | | :green_circle: 
-| g2      | golb                       | - _what : a blog, my blog_ 
-|         |                            | - _curr : only the beginning_  
-| g1      | my ` `                     | - _what : simple bc player_ 
-|         | [~~*io/myspace*~~](https://nuoxoxo.github.io/myspace) | - _curr : Not Rendered_  | :red_circle: 
+| g2      | golb                       | - _what : a blog_ 
+|         |                            | - _curr : only did the beginning_  
+| g1      | myspace                    | - _what : simple bc player_ 
+|         |                            | - _curr : deprecated, not deployed_ | :red_circle: 
 ||
-| e9      | ... (saved files)          | - _what : saved states + infile fetcher_ 
+| e9      | _... (saved files)_        | - _what : saved states + infile fetcher_ 
 | e8      | mmg                        | - _what : a memory matching game_ 
 |         | [*io/mmg*](https://nuoxoxo.github.io/mmg) | - _todo : update io/mmg to use img from `/in`_ | :green_circle:
 | e7      | react test case            | - _goal : to extend/inherit a component_ | 
