@@ -16,7 +16,7 @@
 |         | [*io/epoch*](https://nuoxoxo.github.io/epoch) | | :green_circle: 
 | g2      | golb                       | - _what : a blog_ 
 |         |                            | - _curr : only did the beginning_  
-| g1      | CRUD API w/ Chi            | - _deprecated_ | :red_circle: 
+| g1      | CRUD API w/ Chi            | - _deprecated_ | <img height='20px' src='https://i.imgur.com/RkqJhTb.png' />
 ||
 | e9      | _... saved files_        | - _what : saved states + infile fetcher_ 
 | e8      | mmg                        | - _what : a memory matching game_ 
@@ -29,7 +29,7 @@
 |         |                            | - _todo : switchable components_
 | e5      | p5js testout               | _p5js_ on `react-p5` . **deprecated**  | :green_circle: 
 ||
-| e4      | _bar!_                     | - _what : a notistack vite demo ---> deployment_  | <a href='https://nuoxoxo.github.io/snk'><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' width=19px></a>
+| e4      | _bar!_                     | - _what : a notistack vite demo ---> deployment_  | <a href='https://nuoxoxo.github.io/snk'><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' height=20px></a>
 | e3      | SNL                        | - _what : C++ exam set turned useful_ 
 | e2      | Socket                     | _**WebSocket (2/3)** Socket_           | :green_circle: 
 ||| _- curr : test ok on Postman_ 
