@@ -5,11 +5,11 @@
 
 | Ref.    | Job                        | Desc.                                  | Run 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| g7      | assembly line comp.         | - _curr : deployed_                   | 
+| g7      | assembly line comp.        | - _curr : deployed_                   | 
 |         | [*deployment*](https://nuoxoxo.github.io/interview_react_assembly_line) | - _depl : `io/interview_react_assembly_line`_ | :atom:
-| g6      | _... saved files_        | - _what : Assemblyline w/o long press ie. downgrade_
-| g5      | Countries                  | - _done : 1st draft_
-| g4      | live search filter  | - _what : BookSearch comp. w/ dynamic filtering_ 
+| g6      | _... saved files_          | - _what : Assemblyline w/o long press ie. downgrade_
+| g5      | countries                  | - _done : 1st draft_
+| g4      | live search filter         | - _what : BookSearch comp. w/ dynamic filtering_ 
 |         | [*deployment*](https://nuoxoxo.github.io/interview_react_search_filter) | - _depl : `io/interview_react_search_filter`_ | :atom:
 |         |                            | - _done : basic functionality works!_
 | g3      | epoch                      | - _what : my take on 100r's `Age`_ 
@@ -18,10 +18,10 @@
 |         |                            | - _curr : only did the beginning_  
 | g1      | CRUD API w/ Chi            | - _deprecated_ | <img height='20px' src='https://i.imgur.com/RkqJhTb.png' />
 ||
-| e9      | _... saved files_        | - _what : saved states + infile fetcher_ 
+| e9      | _... saved files_          | - _what : saved states + infile fetcher_ 
 | e8      | mmg                        | - _what : a memory matching game_ 
 |         | [*io/mmg*](https://nuoxoxo.github.io/mmg) | - _todo : update io/mmg to use img from `/in`_ | :green_circle:
-| e7      | Confirmation component     | - _goal : Extending/inheriting a component_ 
+| e7      | confirmation comp.         | - _goal : Extending/inheriting a component_ 
 |         | [*deployment*](https://nuoxoxo.github.io/interview_react_confirmation_component) | - _depl : `io/interview_react_confirmation_component`_ | :atom:
 |         |                            | - _1st draft : added notistack, works fine_ 
 | e6      | p5js                       | _p5js_ using `p5` . preferred          | :yellow_circle: 
@@ -111,10 +111,6 @@
 |         | Todolist                   | _use components_ 
 | a1      | Todolist                   | (vite) 
 | aO      | Todolist                   | _bug : EACCES_                         | :yellow_circle: 
-<!---
-| eO      | Sqlize                     | _\*Abandonned\*_                       | :yellow_circle:
-||| _- nginx does weird stuff_
---->
 
 ![](https://i.imgur.com/2FVvwuZ.png) \
 ![](https://i.imgur.com/nIAzsy5.png) \
