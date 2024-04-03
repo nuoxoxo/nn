@@ -16,7 +16,7 @@
 |         | [*io/epoch*](https://nuoxoxo.github.io/epoch) | | :green_circle: 
 | g2      | golb                       | - _what : a blog_ 
 |         |                            | - _curr : only did the beginning_  
-| g1      | CRUD API w/ Chi            | - _deprecated_ | <img height='20px' src='https://i.imgur.com/RkqJhTb.png' />
+| g1      | CRUD API w/ Chi            | - _what : a deprecated Go project_ | <img height='20px' src='https://i.imgur.com/RkqJhTb.png' />
 ||
 | e9      | _... saved files_          | - _what : saved states + infile fetcher_ 
 | e8      | mmg                        | - _what : a memory matching game_ 
