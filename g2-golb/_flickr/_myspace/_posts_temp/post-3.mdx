@@ -1,0 +1,112 @@
+---
+title: "Leetcode 2O23 Nov - Dec690"
+subtitle: "Leetcode 2O23 Nov - Dec #1690"
+date: "2023-11-11"
+---
+
+# Dec
+Day     |          |         | &#8203;
+:------:| :------: | :------ | :-------------:
+13      | Dict     | [1582. Special Positions in a Binary Matrix](https://leetcode.com/problems/special-positions-in-a-binary-matrix) | 🟢 
+12      |          | [1464. Maximum Product of Two Elements in an Array](https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/) | 🟢 
+11      |          | [1287. Element Appearing More Than 25% In Sorted Array](https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array/) | 🟢 
+10      | Trick    | [867. Transpose Matrix](https://leetcode.com/problems/transpose-matrix/) | 🟢 
+||| ↳ `list(zip(*))`
+9       | DFS      | [94. Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/) | 🔴 
+||| ↳ Classic inorder 3-line DFS 
+8       |  DFS     | [606. Construct String from Binary Tree](https://leetcode.com/problems/construct-string-from-binary-tree/) | 🔴 
+||| ↳ Seal of all endpoint for DFS (cf. [Springs](https://adventofcode.com/2023/day/12))
+7       | Greedy   | [1903. Largest Odd Number in String](https://leetcode.com/problems/largest-odd-number-in-string/) | 🟢 
+||| ↳ Pop back
+6       | Math     | [1716. Calculate Money in Leetcode Bank](https://leetcode.com/problems/calculate-money-in-leetcode-bank/) | 🟢 
+5       | Math     | [1688. Count of Matches in Tournament](https://leetcode.com/problems/count-of-matches-in-tournament/) | 🟢 
+4       |          | [2264. Largest 3-Same-Digit Number in String](https://leetcode.com/problems/largest-3-same-digit-number-in-string/) | 🟢 
+3       | Interval | [1266. Minimum Time Visiting All Points](https://leetcode.com/problems/minimum-time-visiting-all-points/) | 🟢 
+||| ↳ Manhattan distance
+2       |          | [1160. Find Words That Can Be Formed by Characters](https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/) | 🟢 
+1       |          | [1662. Check If Two String Arrays are Equivalent](https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/) | 🟢 
+
+
+# Nov
+Day     |          |         | &#8203;
+:------:| :------: | :------ | :-------------:
+30      | Math     | [1611. Minimum One Bit Operations to M](https://leetcode.com/problems/minimum-one-bit-operations-to-make-integers-zero) | 🔴 no 
+||| ↳ math insight + recursion
+29      | Bit      | [191. Count 1 bits](https://leetcode.com/problems/number-of-1-bits) | 🟢 
+28      | Math     | [2147. Ways to divide](https://leetcode.com/problems/number-of-ways-to-divide-a-long-corridor) | py 🔴 
+||| ↳ Logic pb, no DP just linear
+27      | DP       | [935. Knight dialer](https://leetcode.com/problems/knight-dialer) | 🟡 
+||| ↳ Dp on an array up to n-1 steps
+26      | Sort     | [1727. Max submatrix](https://leetcode.com/problems/largest-submatrix-with-rearrangements/) | 🟡  
+||| (1) greedy+DP: get max streak of H 
+||| (2) sort each row: get max(HxW)
+25      | Algebra  | [1685. Sorted AbsoDiffSum](https://leetcode.com/problems/sum-of-absolute-differences-in-a-sorted-array) | 🟡 
+||| ↳ combines PrefixSum + SuffixSum 
+24      | Greedy   | [1561. Max coins](https://leetcode.com/problems/maximum-number-of-coins-you-can-get/) | 🟡 
+23      | Sort     | [1630. Arithmetic Subarrays](https://leetcode.com/problems/arithmetic-subarrays) | 🟡
+|       |          | - simple traversal  
+||
+|       |          | 🟡 27. Remove Element | py
+|       |          | 🟡 88. Merge Sorted Array | py
+||
+22      | Sort     | [1424. Diagonal Traverse II](https://leetcode.com/problems/diagonal-traverse-ii/) | 🟡 
+|       |          | - r+c as key storing each cell 
+|       |          | **Go** : key order is undefined
+|       |          | ***--- Total 700 reached 🚀 ---***
+21      | Logic    | [1814. Nice pairs](https://leetcode.com/problems/count-nice-pairs-in-an-array/) | 🟡 
+|       |          | - `n*(n-1)/2` 
+||| ↳ count pairing w/o order 
+20      | Logic    | [2391. Min time for garbage](https://leetcode.com/problems/minimum-amount-of-time-to-collect-garbage/) | 🟡 
+||| - greedy* . each type is independent 
+19      | Sort     | [1887. Min steps make all eq.](https://leetcode.com/problems/reduction-operations-to-make-the-array-elements-equal/) | 🟡 
+||      | - insight . 2 slightly diff solns
+18      |          | [1838. Most frequent](https://leetcode.com/problems/frequency-of-the-most-frequent-element/description/?envType=daily-question&envId=2023-11-18)     | cc 🟡 
+|| BS   | - Hard . Binsearch ok but slow 
+|| SLWD | 🟣  ___todo: there's a faster way___
+17      | Greedy   | [1877. Min max pair](https://leetcode.com/problems/minimize-maximum-pair-sum-in-array) | 🟡 
+||| - 2 ways . locally optimal choice 
+16      | Greedy   | [1980. Unique bin string](https://leetcode.com/problems/find-unique-binary-string/) | 🟡
+||| - locally optimal choice 
+15      | Greedy   | 1846. Max element       | 🟡
+||| - sort the array first 
+14      | Logic    | 1930. Len3 palinsub     | 🟡
+||| - map out & count btw L- & R-most idx
+||| alt. - exhaustion TLE in python 
+13      | Logic    | 2785. Sort vowels       | 🟡 
+12      | Graph    | [815. Bus Routes](https://leetcode.com/problems/bus-routes/) | 🔴 _cc_ 
+||| ↳ BFS (use a _visited_ set) 
+11      | DIJKSTRA | [2642. Shortest path finder](https://leetcode.com/problems/design-graph-with-shortest-path-calculator/) | 🔴 
+||| ↳ HeapQ / PriorityQ 
+10      | Graph    | [1743. Restore array](https://leetcode.com/problems/restore-the-array-from-adjacent-pairs/)     | 🟡
+|       |          | _Toposort CLASSIC_
+||| ↳ BFS (w/wo using set) 
+9       | Math     | [1759. Count substring](https://leetcode.com/problems/count-number-of-homogenous-substrings/)   | 🟡 
+|       |          | - `n*(n+1)/2` Gauss algo 
+8       | Math     | 2849. Reach cell        | 🟡 
+7       | Prefix   | 1921. Kill monster      | 🟡 
+6       | Heap     | 1845. Seat mgmt         | !go 🟡 
+5       | Logic    | 1535. Find winner       | 🟡 
+4       |          | 1503. All Ants Fall Out | ❌
+|       | Logic    | - math insight, is a hard problem 
+3       |          | 1441. Push to array
+|       | Logic    | - insight . greedy-like |🟡 
+2       |          | [2265. Count avg nodes](https://leetcode.com/problems/count-nodes-equal-to-average-of-subtree/) | 🟡 
+|       | BFS      | - double bfs : O(n * n)  
+|       | DFS      | 🔵 _TODO_
+1       |          | [501. Find mode in BST](https://leetcode.com/problems/find-mode-in-binary-search-tree/)
+|       | BFS      | _combined w/ map_       | 🟢 
+
+
+# 🧶  
+| Day   |          |         | &#8203;
+:------:| :------: | :------ | :-------------:
+|       | Sorting  | 179. Largest num        | cc 🟢 
+|       | Sorting  | 164. Max gap            | cc 🟢 
+|       | Logic    | 2869. Collect items     | 🟢 
+|       | Logic    | 455. Assign Cookies     | 🟢 py
+|       | 2ptr     | 1268. Suggestions       | 🟡 
+|       | BFS      | 785. Is Bipartite       | 🟡 _todo_
+|       | Math     | 780. Reaching Points    | 🔴 _todo_
+|       | Logic    | 1689                    | _easy todo_
+|       | Design   | 1476                    | _easy todo_ 
+

@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #49243E;
+  --preview-color: #704264;
+  --border-color: #704264;
+  --shadow-color: #787A91;
+  --text-color: #FAF0E6;
+  --title-color: var(--text-color);
+  --h123-color: var(--text-color);
+  --date-color: #BB8493;  
+}
+
+@layer base {
+  @font-face {
+    font-family: 'PretendardStandardLight';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/PretendardStandardLight.otf) format('opentype');
+  };
+  @font-face {
+    font-family: 'CorporateLogoMediumVer3';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/CorporateLogoMediumVer3.otf) format('opentype');
+  };
+}
+
+html, body {
+  height: 100%;  
+  background-color: var(--bg-color);
+  /* font-family: 'CorporateLogoMediumVer3'; */
+}
