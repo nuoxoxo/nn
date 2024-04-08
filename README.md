@@ -12,7 +12,7 @@
 | g4      | live search filter         | - _what : BookSearch comp. w/ dynamic filtering_ 
 |         | [*deployment*](https://nuoxoxo.github.io/interview_react_search_filter) | - _depl : `io/interview_react_search_filter`_ | :atom:
 |         |                            | - _done : basic functionality works!_
-| g3      | epoch                      | - _what : my take on 100r's `Age`_ 
+| g3      | Epoch                      | - _what : my take on 100r's `Age`_ 
 |         | [*io/epoch*](https://nuoxoxo.github.io/epoch) | | :green_circle: 
 | g2      | golb                       | - _what : a blog_ 
 |         |                            | - _curr : only did the beginning_  
