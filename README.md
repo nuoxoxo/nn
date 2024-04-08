@@ -7,7 +7,7 @@
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
 | g7      | assembly line comp.        | - _curr : deployed_                   | 
 |         | [*deployment*](https://nuoxoxo.github.io/interview_react_assembly_line) | - _depl : `io/interview_react_assembly_line`_ | :atom:
-| g6      | _... saved files_          | - _what : Assemblyline w/o long press ie. downgrade_
+| g6      | _... saved files_          | - _what : Assemblyline w/o long press_
 | g5      | countries                  | - _done : 1st draft_
 | g4      | live search filter         | - _what : BookSearch comp. w/ dynamic filtering_ 
 |         | [*deployment*](https://nuoxoxo.github.io/interview_react_search_filter) | - _depl : `io/interview_react_search_filter`_ | :atom:
