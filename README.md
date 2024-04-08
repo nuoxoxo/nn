@@ -19,7 +19,7 @@
 | g1      | CRUD API w/ Chi            | - _what : a deprecated Go project_ | <img height='20px' src='https://i.imgur.com/RkqJhTb.png' />
 ||
 | e9      | _... saved files_          | - _what : saved states + infile fetcher_ 
-| e8      | Mmg                        | - _what : a memory matching game_ 
+| e8      | mmg                        | - _what : a memory matching game_ 
 |         | [*io/mmg*](https://nuoxoxo.github.io/mmg) | - _todo : update io/mmg to use img from `/in`_ | :green_circle:
 | e7      | Confirmation component     | - _goal : Extending/inheriting a component_ 
 |         | [*deployment*](https://nuoxoxo.github.io/interview_react_confirmation_component) | - _depl : `io/interview_react_confirmation_component`_ | :atom:
