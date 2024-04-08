@@ -21,7 +21,7 @@
 | e9      | _... saved files_          | - _what : saved states + infile fetcher_ 
 | e8      | mmg                        | - _what : a memory matching game_ 
 |         | [*io/mmg*](https://nuoxoxo.github.io/mmg) | - _todo : update io/mmg to use img from `/in`_ | :green_circle:
-| e7      | confirmation comp.         | - _goal : Extending/inheriting a component_ 
+| e7      | Confirmation component     | - _goal : Extending/inheriting a component_ 
 |         | [*deployment*](https://nuoxoxo.github.io/interview_react_confirmation_component) | - _depl : `io/interview_react_confirmation_component`_ | :atom:
 |         |                            | - _1st draft : added notistack, works fine_ 
 | e6      | p5js                       | _p5js_ using `p5` . preferred          | :yellow_circle: 
