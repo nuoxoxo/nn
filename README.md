@@ -5,7 +5,7 @@
 
 | Ref.    | Job                        | Desc.                                  | Run 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| g7      | assembly line comp.        | - _curr : deployed_                   | 
+| g7      | AssemblyLine component     | - _curr : deployed_                   | 
 |         | [*deployment*](https://nuoxoxo.github.io/interview_react_assembly_line) | - _depl : `io/interview_react_assembly_line`_ | :atom:
 | g6      | _... saved files_          | - _what : Assemblyline w/o long press_
 | g5      | countries                  | - _done : 1st draft_
