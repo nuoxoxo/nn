@@ -9,7 +9,7 @@
 |         | [*deployment*](https://nuoxoxo.github.io/interview_react_assembly_line) | - _depl : `io/interview_react_assembly_line`_ | :atom:
 | g6      | _... saved files_          | - _what : Assemblyline w/o long press_
 | g5      | Countries                  | - _done : 1st draft_
-| g4      | live search filter         | - _what : BookSearch comp. w/ dynamic filtering_ 
+| g4      | Search filter Component    | - _what : BookSearch comp. w/ dynamic filtering_ 
 |         | [*deployment*](https://nuoxoxo.github.io/interview_react_search_filter) | - _depl : `io/interview_react_search_filter`_ | :atom:
 |         |                            | - _done : basic functionality works!_
 | g3      | Epoch                      | - _what : my take on 100r's `Age`_ 
