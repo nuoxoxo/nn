@@ -5,20 +5,20 @@
 
 | Ref.    | Job                        | Desc.                                  | Run 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| g7      | assembly line comp.         | - _curr : deployed_                   | 
+| g7      | AssemblyLine component     | - _curr : deployed_                   | 
 |         | [*deployment*](https://nuoxoxo.github.io/interview_react_assembly_line) | - _depl : `io/interview_react_assembly_line`_ | :atom:
-| g6      | _... saved files_        | - _what : Assemblyline w/o long press ie. downgrade_
+| g6      | _... saved files_          | - _what : Assemblyline w/o long press_
 | g5      | Countries                  | - _done : 1st draft_
-| g4      | live search filter  | - _what : BookSearch comp. w/ dynamic filtering_ 
+| g4      | Search filter component    | - _what : BookSearch comp. w/ dynamic filtering_ 
 |         | [*deployment*](https://nuoxoxo.github.io/interview_react_search_filter) | - _depl : `io/interview_react_search_filter`_ | :atom:
 |         |                            | - _done : basic functionality works!_
-| g3      | epoch                      | - _what : my take on 100r's `Age`_ 
+| g3      | Epoch                      | - _what : my take on 100r's `Age`_ 
 |         | [*io/epoch*](https://nuoxoxo.github.io/epoch) | | :green_circle: 
-| g2      | golb                       | - _what : a blog_ 
+| g2      | Golb                       | - _what : a blog_ 
 |         |                            | - _curr : only did the beginning_  
-| g1      | CRUD API w/ Chi            | - _deprecated_ | :red_circle: 
+| g1      | CRUD API w/ Chi            | - _what : a deprecated Go project_ | <img height='20px' src='https://i.imgur.com/RkqJhTb.png' />
 ||
-| e9      | _... saved files_        | - _what : saved states + infile fetcher_ 
+| e9      | _... saved files_          | - _what : saved states + infile fetcher_ 
 | e8      | mmg                        | - _what : a memory matching game_ 
 |         | [*io/mmg*](https://nuoxoxo.github.io/mmg) | - _todo : update io/mmg to use img from `/in`_ | :green_circle:
 | e7      | Confirmation component     | - _goal : Extending/inheriting a component_ 
@@ -29,7 +29,7 @@
 |         |                            | - _todo : switchable components_
 | e5      | p5js testout               | _p5js_ on `react-p5` . **deprecated**  | :green_circle: 
 ||
-| e4      | _bar!_                     | - _what : a notistack vite demo ---> deployment_  | <a href='https://nuoxoxo.github.io/snk'><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' width=19px></a>
+| e4      | _bar!_                     | - _what : a notistack vite demo ---> deployment_  | <a href='https://nuoxoxo.github.io/snk'><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' height=20px></a>
 | e3      | SNL                        | - _what : C++ exam set turned useful_ 
 | e2      | Socket                     | _**WebSocket (2/3)** Socket_           | :green_circle: 
 ||| _- curr : test ok on Postman_ 
@@ -111,10 +111,6 @@
 |         | Todolist                   | _use components_ 
 | a1      | Todolist                   | (vite) 
 | aO      | Todolist                   | _bug : EACCES_                         | :yellow_circle: 
-<!---
-| eO      | Sqlize                     | _\*Abandonned\*_                       | :yellow_circle:
-||| _- nginx does weird stuff_
---->
 
 ![](https://i.imgur.com/2FVvwuZ.png) \
 ![](https://i.imgur.com/nIAzsy5.png) \
