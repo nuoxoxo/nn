@@ -14,8 +14,8 @@
 |         |                            | - _done : basic functionality works!_
 | g3      | Epoch                      | - _what : my take on 100r's `Age`_ 
 |         | [*io/epoch*](https://nuoxoxo.github.io/epoch) | | :green_circle: 
-| g2      | Golb                       | - _what : a blog_ 
-|         |                            | - _curr : only did the beginning_  
+| g2      | Message board              | - _what : a msg board on Next_ | 🔺 
+|         |                            | - _curr : 🟡 On-going 🟡_  
 | g1      | CRUD API w/ Chi            | - _what : a deprecated Go project_ | <img height='20px' src='https://i.imgur.com/RkqJhTb.png' />
 ||
 | e9      | _... saved files_          | - _what : saved states + infile fetcher_ 
