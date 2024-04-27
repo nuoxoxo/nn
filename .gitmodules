@@ -1,3 +1,6 @@
 [submodule "d8-backender"]
 	path = d8-backender
 	url = https://github.com/nuoxoxo/backender.git
+[submodule "g8-gobacker"]
+	path = g8-gobacker
+	url = https://github.com/nuoxoxo/gobacker.git
