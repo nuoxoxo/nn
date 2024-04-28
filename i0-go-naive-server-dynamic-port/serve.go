@@ -5,9 +5,12 @@ import (
     "net/http"
     "net"
     "log"
+    "time"
 )
 
 func main () {
+
+    go logger()
 
     fileServer := http.FileServer( http.Dir("./static") )
 
@@ -15,7 +18,7 @@ func main () {
     http.HandleFunc("/hello", handleHelloWorld)
     http.HandleFunc("/action", handleAction)
 
-    fmt.Println("Server is  up")
+    fmt.Println("Server is up")
     listener, err := net.Listen("tcp", ":0") // using net.Listen for dynamic porting
     if err != nil {
         fmt.Println("Failed to start server")
@@ -63,4 +66,18 @@ func handleAction( w http.ResponseWriter, r * http.Request ) {
     fmt.Fprintln(w, "Msg: \n\t", msg)
 }
 
+// added logger
 
+func logger () {
+
+    ticker := time.NewTicker( 12 * time.Second)
+
+    defer ticker.Stop()
+
+    for true {
+        select {
+            case <- ticker.C:
+                log.Println(":logger:")
+        }
+    }
+}
