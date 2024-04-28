@@ -1,11 +1,11 @@
-<!--
-<a href='https://nuoxoxo.github.io/snk'><img src='https://deno.com/images/artwork/HypnoDeno.gif?__frsh_c=dad2' width=13px></a> _New!_  \
-<a href="https://nuoxoxo.github.io/ranch"><img src='https://media.tenor.com/D-LrcqeyoN0AAAAi/hand-falcaolucas.gif' width='13px' /></a> _New!_  
--->
-
 | Ref.    | Job                        | Desc.                                  | Run 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| g8      || _todo_ 
+| i0      | _GoServer alt._            | - _what : server_ 
+|         |                            | - _curr : dynamic port, ticker_ 
+||
+| g9      | _GoServer_                 | - _what : server_
+|         |                            | - _curr : predef. port, added ticker_ 
+| g8      | Gobacker                   | _Submodule: [HERE](https://github.com/nuoxoxo/gobacker)_ 
 | g7      | AssemblyLine component     | - _curr : deployed_                   | 
 |         | [*deployment*](https://nuoxoxo.github.io/interview_react_assembly_line) | - _depl : `io/interview_react_assembly_line`_ | :atom:
 | g6      | _... saved files_          | - _what : Assemblyline w/o long press_
