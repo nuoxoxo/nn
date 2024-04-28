@@ -1,8 +1,8 @@
 | Ref.    | Job                        | Desc.                                  | Run 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| i1      | _GoServer alt._            | - _what : server_ 
+| m1      | _GoServer alt._            | - _what : server_ 
 |         |                            | - _curr : dynamic port, ticker_ 
-| i0      | _GoServer_                 | - _what : server_
+| m0      | _GoServer_                 | - _what : server_
 |         |                            | - _curr : predef. port, added ticker_ 
 ||
 | g9      | _todo_                     | - _TODO_
