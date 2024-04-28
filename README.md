@@ -1,10 +1,12 @@
 | Ref.    | Job                        | Desc.                                  | Run 
 | :-----: | :------------------------- | :------------------------------------- | :------------: |
-| i0      | _GoServer alt._            | - _what : server_ 
+| i1      | _GoServer alt._            | - _what : server_ 
 |         |                            | - _curr : dynamic port, ticker_ 
-||
-| g9      | _GoServer_                 | - _what : server_
+| i0      | _GoServer_                 | - _what : server_
 |         |                            | - _curr : predef. port, added ticker_ 
+||
+| g9      | _todo_                     | - _TODO_
+|         |                            | - _curr : 🟡 On-going 🟡_  
 | g8      | Gobacker                   | _Submodule: [HERE](https://github.com/nuoxoxo/gobacker)_ 
 | g7      | AssemblyLine component     | - _curr : deployed_                   | 
 |         | [*deployment*](https://nuoxoxo.github.io/interview_react_assembly_line) | - _depl : `io/interview_react_assembly_line`_ | :atom:
